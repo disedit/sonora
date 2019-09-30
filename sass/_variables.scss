@@ -3,6 +3,12 @@ $primary: #D74139;
 $secondary: #02AF71;
 $background: #F5EBE6;
 $foreground: #FFD8CA;
+$text: #1a1512;
 
 $font-family-sans-serif: Sonora, sans-serif;
 $body-bg: $background;
+$body-color: $text;
+
+@import 'bootstrap/scss/_functions';
+@import 'bootstrap/scss/_variables';
+@import 'bootstrap/scss/_mixins';
