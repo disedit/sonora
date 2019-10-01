@@ -11,7 +11,7 @@
         <b-nav-item to='/artists'>
           Artistes
         </b-nav-item>
-        <b-nav-item href="#">
+        <b-nav-item to='/schedule'>
           Programació
         </b-nav-item>
         <b-nav-item to='/about'>
