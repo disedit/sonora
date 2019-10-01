@@ -1,12 +1,25 @@
 <template>
   <div class="artists">
     <div class="artists-picture-container">
-      <div class="artists-picture" :style="{backgroundImage: image}">
-        <img :src="artistImage" />
+      <div class="artists-picture">
+        <div v-if="$route.path">
+          <nuxt-link to="/artists">Torna a artistes</nuxt-link>
+        </div>
+        <div v-if="!artistVideoPlay" class="artists-picture-holder">
+          <img :src="artistImage" alt="" />
+          <div v-if="artistVideo" class="artists-video-button">
+            <b-button @click="playVideo" variant="outline-light">Play</b-button>
+          </div>
+        </div>
+        <div v-else class="artists-video-holder">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/cee6883w2Nk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
       </div>
     </div>
     <div class="artists-list">
-      <nuxt-child @image="setImage" />
+      <nuxt-child @image="setImage" @video="setVideo" />
     </div>
   </div>
 </template>
@@ -15,12 +28,28 @@
   export default {
     data() {
       return {
-        artistImage: null
+        artistImage: null,
+        artistVideo: null,
+        artistVideoPlay: false
       }
     },
+
+    watch: {
+      '$route': function () {
+        this.artistVideo = null
+        this.artistVideoPlay = false
+      }
+    },
+
     methods: {
       setImage (image) {
         this.artistImage = image
+      },
+      setVideo (video) {
+        this.artistVideo = video
+      },
+      playVideo () {
+        this.artistVideoPlay = true
       }
     }
   }
@@ -38,36 +67,49 @@
 
     &-picture {
       grid-area: picture;
-      margin-top: 10vh;
-      height: 60vh;
       position: sticky;
       top: 2rem;
 
+      &-holder {
+        position: relative;
+        margin-top: 10vh;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: $primary;
+        }
+      }
+
       img {
         width: 100%;
+        filter: grayscale(100%);
+        mix-blend-mode: screen;
+        transition: .4s ease-in-out;
       }
     }
 
-    &-list {
-      grid-area: list;
-
-      ul {
-        padding: 0;
+    &-video {
+      &-button {
+        position: absolute;
+        bottom: 0;
+        left: 0;
       }
 
-      li {
-        font-size: 3rem;
-        list-style: none;
-        padding: 0;
+      &-holder {
+        margin-top: 10vh;
       }
+    }
+  }
 
-      a {
-        &::after {
-          display: none;
-        }
-        &:hover {
-          color: $text;
-        }
+  .artist-full-page {
+    .artists-picture {
+      img {
+        mix-blend-mode: normal;
       }
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="artists-list">
     <h2>Artistes</h2>
     <ul>
       <li v-for="artist in artists" :key="artist.id" @mouseover="$emit('image', artist.image)">
@@ -26,5 +26,28 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../../sass/variables';
 
+  .artists-list {
+    grid-area: list;
+
+    ul {
+      padding: 0;
+    }
+
+    li {
+      font-size: 3rem;
+      list-style: none;
+      padding: 0;
+    }
+
+    a {
+      &::after {
+        display: none;
+      }
+      &:hover {
+        color: $text;
+      }
+    }
+  }
 </style>

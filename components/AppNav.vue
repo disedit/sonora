@@ -50,6 +50,14 @@ export default {
     }
   }
 
+  .artist-full-page {
+    .navbar-nav {
+      a.nav-link {
+        color: $background;
+      }
+    }
+  }
+
   @include media-breakpoint-down(md) {
     .navbar {
       &-nav {
