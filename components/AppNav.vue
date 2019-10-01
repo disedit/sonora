@@ -14,7 +14,7 @@
         <b-nav-item href="#">
           Programació
         </b-nav-item>
-        <b-nav-item href="#">
+        <b-nav-item to='/about'>
           About
         </b-nav-item>
       </b-navbar-nav>
