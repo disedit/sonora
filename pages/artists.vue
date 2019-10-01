@@ -1,12 +1,20 @@
 <template>
   <div class="artists">
     <div class="artists-picture-container">
-      <div class="artists-picture" :style="{backgroundImage: image}">
-        <img :src="artistImage" />
+      <div class="artists-picture">
+        <div v-if="!artistVideoPlay">
+          <img :src="artistImage" />
+          <div v-if="artistVideo">
+            <button @click="playVideo">Play</button>
+          </div>
+        </div>
+        <div v-else>
+          Embed
+        </div>
       </div>
     </div>
     <div class="artists-list">
-      <nuxt-child @image="setImage" />
+      <nuxt-child @image="setImage" @video="setVideo" />
     </div>
   </div>
 </template>
@@ -15,12 +23,20 @@
   export default {
     data() {
       return {
-        artistImage: null
+        artistImage: null,
+        artistVideo: null,
+        artistVideoPlay: false
       }
     },
     methods: {
       setImage (image) {
         this.artistImage = image
+      },
+      setVideo (video) {
+        this.artistVideo = video
+      },
+      playVideo () {
+        this.artistVideoPlay = true
       }
     }
   }
