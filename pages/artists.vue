@@ -1,44 +1,35 @@
 <template>
   <div class="artists">
     <div class="artists-picture-container">
-      <div class="artists-picture"></div>
+      <div class="artists-picture" :style="{backgroundImage: image}">
+        <img :src="artistImage" />
+      </div>
     </div>
     <div class="artists-list">
-      <h2>Artistes</h2>
-      <ul>
-        <li><nuxt-link to='/'>Artistsaasd</nuxt-link></li>
-        <li><nuxt-link to='/'>Artistsaasd</nuxt-link></li>
-        <li><nuxt-link to='/'>Artistsaasd</nuxt-link></li>
-        <li><nuxt-link to='/'>Artistsaasd</nuxt-link></li>
-        <li><nuxt-link to='/'>Artistsaasd</nuxt-link></li>
-        <li><nuxt-link to='/'>Artistsaasd</nuxt-link></li>
-        <li><nuxt-link to='/'>Artistsaasd</nuxt-link></li>
-        <li><nuxt-link to='/'>Artistsaasd</nuxt-link></li>
-        <li><nuxt-link to='/'>Artistsaasd</nuxt-link></li>
-        <li><nuxt-link to='/'>Artistsaasd</nuxt-link></li>
-        <li><nuxt-link to='/'>Artistsaasd</nuxt-link></li>
-        <li><nuxt-link to='/'>Artistsaasd</nuxt-link></li>
-        <li><nuxt-link to='/'>Artistsaasd</nuxt-link></li>
-        <li><nuxt-link to='/'>Artistsaasd</nuxt-link></li>
-        <li><nuxt-link to='/'>Artistsaasd</nuxt-link></li>
-        <li><nuxt-link to='/'>Artistsaasd</nuxt-link></li>
-        <li><nuxt-link to='/'>Artistsaasd</nuxt-link></li>
-        <li><nuxt-link to='/'>Artistsaasd</nuxt-link></li>
-      </ul>
-      </div>
+      <nuxt-child @image="setImage" />
+    </div>
   </div>
 </template>
 
 <script>
   export default {
-
+    data() {
+      return {
+        artistImage: null
+      }
+    },
+    methods: {
+      setImage (image) {
+        this.artistImage = image
+      }
+    }
   }
 </script>
 
 <style lang="scss" scoped>
   @import '../sass/variables';
 
-  .artists{
+  .artists {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "picture list";
@@ -48,10 +39,13 @@
     &-picture {
       grid-area: picture;
       margin-top: 10vh;
-      background: red;
       height: 60vh;
       position: sticky;
       top: 2rem;
+
+      img {
+        width: 100%;
+      }
     }
 
     &-list {
@@ -60,11 +54,13 @@
       ul {
         padding: 0;
       }
+
       li {
         font-size: 3rem;
         list-style: none;
         padding: 0;
       }
+
       a {
         &::after {
           display: none;
@@ -85,6 +81,5 @@
         display: none;
       }
     }
-
   }
 </style>
