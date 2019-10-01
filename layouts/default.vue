@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ 'artist-full-page': $route.name.startsWith('artists-') }">
+  <div :class="{ 'page': true, 'artist-full-page': $route.name.startsWith('artists-') }">
     <app-nav />
     <div class="app-container"><nuxt /></div>
   </div>
@@ -14,17 +14,12 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @import '../sass/variables';
 
   .app-container {
     max-width: 1600px;
     margin: 0 auto;
     padding: 0 1rem;
-  }
-
-  .artist-full-page {
-    background: $primary;
-    min-height: 100vh;
   }
 </style>

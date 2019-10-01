@@ -34,3 +34,25 @@ a {
 h2 {
   font-size: 7rem;
 }
+
+.page {
+  transition: .4s ease-in-out;
+}
+
+.artist-full-page {
+  background: $primary;
+  min-height: 100vh;
+
+  a {
+    color: $background;
+
+    &::after {
+      display: block;
+      background: $background;
+    }
+
+    &:hover {
+      color: $text;
+    }
+  }
+}
