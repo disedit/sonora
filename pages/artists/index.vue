@@ -1,5 +1,5 @@
 <template>
-  <div class="artists-list">
+  <div>
     <h2>Artistes</h2>
     <ul>
       <li v-for="artist in artists" :key="artist.id" @mouseover="$emit('image', artist.image)">
@@ -30,6 +30,10 @@
 
   .artists-list {
     grid-area: list;
+
+    h2 {
+      line-height: 1;
+    }
 
     ul {
       padding: 0;

@@ -65,6 +65,10 @@
     grid-gap: 3rem;
     margin-top: 2rem;
 
+    &-list {
+      grid-area: list;
+    }
+
     &-picture {
       grid-area: picture;
       position: sticky;

@@ -23,18 +23,25 @@
 
   .concert {
     padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
 
     &-date {
+      padding: 0.5rem 0;
       color: $secondary;
       font-size: 2rem;
     }
+
     &-details {
+      border-top: 2px solid $primary;
+      padding-top: 0.5rem;
+      margin-top: auto;
       font-size: 2rem;
     }
+
     &-artists {
       border-top: 2px solid $primary;
-      border-bottom: 2px solid $primary;
-      padding: 0.5rem 0;
+      padding-top: 0.5rem;
       margin: 0.5rem 0;
       color: $primary;
       font-size: 4rem;

@@ -57,4 +57,16 @@ import Concert from '@/components/Concert'
       grid-column: 1 / -1;
     }
   }
+
+  @include media-breakpoint-down(md) {
+    .schedule {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    .schedule {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
