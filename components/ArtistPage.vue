@@ -1,12 +1,9 @@
 <template>
   <div>
     <h2><slot name="header"></slot></h2>
+
     <div class="text">
       <slot></slot>
-    </div>
-
-    <div v-if="video">
-      {{ video }}
     </div>
 
     <ul class="social">
@@ -56,7 +53,16 @@
 
     li {
       display: inline-block;
-      font-size: 2rem;
+      font-size: 2.5rem;
+      margin-right: .5rem;
+    }
+  }
+
+  .image {
+    img {
+      width: 100%;
+      filter: grayscale(100%);
+      margin: 1rem 0;
     }
   }
 </style>

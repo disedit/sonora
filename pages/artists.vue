@@ -13,7 +13,7 @@
         </div>
         <div v-else class="artists-video-holder">
           <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/cee6883w2Nk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" :src="`https://www.youtube.com/embed/${artistVideo}/?autoplay=1`" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -96,8 +96,8 @@
     &-video {
       &-button {
         position: absolute;
-        bottom: 0;
-        left: 0;
+        bottom: 1rem;
+        left: 1rem;
       }
 
       &-holder {
@@ -121,6 +121,23 @@
 
       &-picture-container {
         display: none;
+      }
+    }
+
+    .artist-full-page {
+      .artists {
+        grid-template-areas:
+          "picture"
+          "list";
+
+        &-picture-container {
+          display: block;
+        }
+
+        &-picture-holder,
+        &-video-holder {
+          margin-top: 1rem;
+        }
       }
     }
   }

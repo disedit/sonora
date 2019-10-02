@@ -19,9 +19,10 @@ export default {
   components: {
     ArtistPage
   },
+
   mounted () {
     this.$emit('image', image)
-    this.$emit('video', 'video')
+    this.$emit('video', '_nERNNOtll0')
   }
 }
 </script>
