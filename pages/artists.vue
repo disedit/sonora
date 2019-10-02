@@ -2,8 +2,10 @@
   <div class="artists">
     <div class="artists-picture-container">
       <div class="artists-picture">
-        <div v-if="$route.path">
-          <nuxt-link to="/artists">Torna a artistes</nuxt-link>
+        <div class="artists-nav">
+          <nuxt-link to="/artists" v-if="$route.path != '/artists'">
+            <fa :icon="['far', 'arrow-left']" /> Torna a artistes
+          </nuxt-link>
         </div>
         <div v-if="!artistVideoPlay" class="artists-picture-holder">
           <img :src="artistImage" alt="" />
@@ -69,6 +71,14 @@
       grid-area: list;
     }
 
+    &-nav {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      height: 8.25rem;
+      padding-bottom: 2.5rem;
+    }
+
     &-picture {
       grid-area: picture;
       position: sticky;
@@ -76,7 +86,6 @@
 
       &-holder {
         position: relative;
-        margin-top: 10vh;
 
         &::before {
           content: '';
