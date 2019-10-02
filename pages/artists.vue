@@ -10,7 +10,9 @@
         <div v-if="!artistVideoPlay" class="artists-picture-holder">
           <img :src="artistImage" alt="" />
           <div v-if="artistVideo" class="artists-video-button">
-            <b-button @click="playVideo" variant="outline-light">Play</b-button>
+            <b-button @click="playVideo" variant="primary" class="play-button">
+              <fa :icon="['far', 'play']" /> Play
+            </b-button>
           </div>
         </div>
         <div v-else class="artists-video-holder">
@@ -112,10 +114,12 @@
         bottom: 1rem;
         left: 1rem;
       }
+    }
 
-      &-holder {
-        margin-top: 10vh;
-      }
+    .play-button {
+      border-radius: 0;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
   }
 
