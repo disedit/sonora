@@ -10,7 +10,7 @@
         <div v-if="!artistVideoPlay" class="artists-picture-holder">
           <img :src="artistImage" alt="" />
           <div v-if="artistVideo" class="artists-video-button">
-            <b-button @click="playVideo" variant="primary" class="play-button">
+            <b-button @click="playVideo" variant="dark" class="play-button">
               <fa :icon="['far', 'play']" /> Play
             </b-button>
           </div>
@@ -112,7 +112,7 @@
       &-button {
         position: absolute;
         bottom: 1rem;
-        left: 1rem;
+        right: 1rem;
       }
     }
 

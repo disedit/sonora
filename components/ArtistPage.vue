@@ -22,6 +22,9 @@
       <li v-if="social.hasOwnProperty('youtube')">
         <a :href="social.youtube" target="_blank" rel="noopener noreferrer"><fa :icon="['fab', 'youtube']" /></a>
       </li>
+      <li v-if="social.hasOwnProperty('website')">
+        <a :href="social.website" target="_blank" rel="noopener noreferrer"><fa :icon="['far', 'globe']" /></a>
+      </li>
     </ul>
   </div>
 </template>
@@ -44,6 +47,7 @@
 
   .text {
     margin: 1rem 0;
+    font-size: 1.8rem;
   }
 
   .social {
@@ -53,7 +57,7 @@
 
     li {
       display: inline-block;
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-right: .5rem;
     }
   }

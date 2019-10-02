@@ -53,7 +53,7 @@ export default {
         },
         {
           set: '@fortawesome/pro-regular-svg-icons',
-          icons: ['faArrowLeft', 'faPlay']
+          icons: ['faArrowLeft', 'faPlay', 'faGlobe']
         }
       ]
     }]

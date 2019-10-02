@@ -1,5 +1,6 @@
 import BorrianaBigBandImg from '@/assets/images/artists/borriana-big-band.jpg'
 import CantaCanallaImg from '@/assets/images/artists/canta-canalla.jpg'
+import CarlesDeniaImg from '@/assets/images/artists/carles-denia.jpg'
 
 const artists = [
   {
@@ -11,6 +12,11 @@ const artists = [
     id: 'canta-canalla',
     name: 'Canta Canalla',
     image: CantaCanallaImg
+  },
+  {
+    id: 'carles-denia',
+    name: 'Carles Dénia',
+    image: CarlesDeniaImg
   }
 ]
 
