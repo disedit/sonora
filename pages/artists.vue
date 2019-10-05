@@ -84,7 +84,7 @@
     &-picture {
       grid-area: picture;
       position: sticky;
-      top: 2rem;
+      top: 0;
 
       &-holder {
         position: relative;

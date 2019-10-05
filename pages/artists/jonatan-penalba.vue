@@ -18,9 +18,11 @@
 
 <script>
 import ArtistPage from '@/components/ArtistPage'
-import image from '@/assets/images/artists/carles-denia.jpg'
+import image from '@/assets/images/artists/jonatan-penalba.jpg'
 
 export default {
+  scrollToTop: true,
+
   components: {
     ArtistPage
   },

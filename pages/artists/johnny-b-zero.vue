@@ -23,9 +23,11 @@
 
 <script>
 import ArtistPage from '@/components/ArtistPage'
-import image from '@/assets/images/artists/carles-denia.jpg'
+import image from '@/assets/images/artists/johnny-b-zero.jpg'
 
 export default {
+  scrollToTop: true,
+
   components: {
     ArtistPage
   },

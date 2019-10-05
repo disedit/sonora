@@ -24,6 +24,8 @@ import ArtistPage from '@/components/ArtistPage'
 import image from '@/assets/images/artists/borriana-big-band.jpg'
 
 export default {
+  scrollToTop: true,
+
   components: {
     ArtistPage
   },

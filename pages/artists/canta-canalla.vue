@@ -21,6 +21,8 @@ import ArtistPage from '@/components/ArtistPage'
 import image from '@/assets/images/artists/canta-canalla.jpg'
 
 export default {
+  scrollToTop: true,
+
   components: {
     ArtistPage
   },

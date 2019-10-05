@@ -13,6 +13,8 @@
   import artists from './artists'
 
   export default {
+    scrollToTop: true,
+
     data() {
       return {
         artists: artists
@@ -43,6 +45,8 @@
       font-size: 3rem;
       list-style: none;
       padding: 0;
+      line-height: 1;
+      margin-bottom: 1.25rem;
     }
 
     a {

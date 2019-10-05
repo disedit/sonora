@@ -1,14 +1,15 @@
 import BorrianaBigBandImg from '@/assets/images/artists/borriana-big-band.jpg'
 import CantaCanallaImg from '@/assets/images/artists/canta-canalla.jpg'
+import CarlesDeniaImg from '@/assets/images/artists/carles-denia.jpg'
 import CarlesPastorImg from '@/assets/images/artists/carles-pastor.jpg'
+import ClaraAndresJuliaImg from '@/assets/images/artists/clara-andres-julia.jpg'
 import DaniMiquelImg from '@/assets/images/artists/dani-miquel.jpg'
 import ElsJovensImg from '@/assets/images/artists/els-jovens.jpg'
 import FridaImg from '@/assets/images/artists/frida.jpg'
 import FruKatinkaImg from '@/assets/images/artists/fru-katinka.jpg'
 import JohnnyBZeroImg from '@/assets/images/artists/johnny-b-zero.jpg'
 import JonatanPenalbaImg from '@/assets/images/artists/jonatan-penalba.jpg'
-import JrMackenzieImg from '@/assets/images/artists/jr-mackenzie.jpg'
-import JuliaClaraAndresImg from '@/assets/images/artists/julia-clara-andres.jpg'
+import JuniorMackenzieImg from '@/assets/images/artists/junior-mackenzie.jpg'
 import JunesKaleidoscopeImg from '@/assets/images/artists/junes-kaleidoscope.jpg'
 import NovembreElectricImg from '@/assets/images/artists/novembre-electric.jpg'
 import PauAlabajosImg from '@/assets/images/artists/pau-alabajos.jpg'
@@ -31,9 +32,19 @@ const artists = [
     image: CantaCanallaImg
   },
   {
+    id: 'carles-denia',
+    name: 'Carles Dénia',
+    image: CarlesDeniaImg
+  },
+  {
     id: 'carles-pastor',
     name: 'Carles Pastor',
     image: CarlesPastorImg
+  },
+  {
+    id: 'clara-andres-julia',
+    name: 'Clara Andrés + Júlia (L\'eix radical)',
+    image: ClaraAndresJuliaImg
   },
   {
     id: 'dani-miquel',
@@ -66,14 +77,9 @@ const artists = [
     image: JonatanPenalbaImg
   },
   {
-    id: 'jr-mackenzie',
+    id: 'junior-mackenzie',
     name: 'Junior Mackenzie',
-    image: JrMackenzieImg
-  },
-  {
-    id: 'julia-clara-andrés',
-    name: 'Júlia i Clara Andrés',
-    image: JuliaClaraAndresImg
+    image: JuniorMackenzieImg
   },
   {
     id: 'junes-kaleidoscope',
@@ -107,7 +113,7 @@ const artists = [
   },
   {
     id: 'santero-y-los-muchachos',
-    name: 'Santero y los Muchachos',
+    name: 'Santero y Los Muchachos',
     image: SanteroImg
   },
   {

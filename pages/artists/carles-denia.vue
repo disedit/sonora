@@ -33,6 +33,8 @@ import ArtistPage from '@/components/ArtistPage'
 import image from '@/assets/images/artists/carles-denia.jpg'
 
 export default {
+  scrollToTop: true,
+
   components: {
     ArtistPage
   },
