@@ -13,6 +13,8 @@
   import artists from './artists'
 
   export default {
+    name: 'artists-list',
+
     scrollToTop: true,
 
     data() {

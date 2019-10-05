@@ -98,7 +98,7 @@ const artists = [
   },
   {
     id: 'pavvla',
-    name: 'Pavvla',
+    name: 'PAVVLA',
     image: PavvlaImg
   },
   {

@@ -3,7 +3,7 @@
     <div class="artists-picture-container">
       <div class="artists-picture">
         <div class="artists-nav">
-          <nuxt-link to="/artists" v-if="$route.path != '/artists'">
+          <nuxt-link to="/artists" v-if="$route.path != '/artists' && !isHome">
             <fa :icon="['far', 'arrow-left']" /> Torna a artistes
           </nuxt-link>
         </div>
@@ -23,13 +23,26 @@
       </div>
     </div>
     <div class="artists-list">
-      <nuxt-child @image="setImage" @video="setVideo" />
+      <nuxt-child v-if="!isHome" @image="setImage" @video="setVideo" />
+      <artists-list v-else @image="setImage" @video="setVideo" />
     </div>
   </div>
 </template>
 
 <script>
+  import ArtistsList from './artists/index'
+
   export default {
+    name: 'artists',
+
+    components: {
+      ArtistsList,
+    },
+
+    props: {
+      isHome: Boolean
+    },
+
     data() {
       return {
         artistImage: null,
