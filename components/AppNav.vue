@@ -8,22 +8,33 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav class="ml-auto">
-        <b-nav-item to='/artists'>
+        <b-nav-item to="/about">
+          Què és
+        </b-nav-item>
+        <b-nav-item to="/artists">
           Artistes
         </b-nav-item>
-        <b-nav-item to='/schedule'>
+        <b-nav-item to="/schedule">
           Programació
         </b-nav-item>
-        <b-nav-item to='/about'>
-          About
-        </b-nav-item>
-        <b-nav-item to='/contact'>
+        <b-nav-item to="/contact">
           Contacte
         </b-nav-item>
       </b-navbar-nav>
 
       <b-navbar-nav class="ml-auto">
-        Icones
+        <b-nav-item href="https://www.facebook.com/GVAInstitutValenciadeCultura/" target="_blank" rel="noopener noreferrer">
+          <fa :icon="['fab', 'facebook-square']" /> <span class="sr-only">Facebook</span>
+        </b-nav-item>
+        <b-nav-item href="https://twitter.com/GVAivc" target="_blank" rel="noopener noreferrer">
+          <fa :icon="['fab', 'twitter-square']" /> <span class="sr-only">Twitter</span>
+        </b-nav-item>
+        <b-nav-item href="https://www.instagram.com/sonora_circuit/" target="_blank" rel="noopener noreferrer">
+          <fa :icon="['fab', 'instagram']" /> <span class="sr-only">Instagram</span>
+        </b-nav-item>
+        <b-nav-item href="https://www.youtube.com/channel/UCOJWX2GnBA8M8z0Uvajh86Q" target="_blank" rel="noopener noreferrer">
+          <fa :icon="['fab', 'youtube']" /> <span class="sr-only">Youtube</span>
+        </b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
