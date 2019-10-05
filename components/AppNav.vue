@@ -1,7 +1,7 @@
 <template>
   <b-navbar toggleable="md" type="light" fixed="top">
-    <b-navbar-brand href="#">
-      Sonora
+    <b-navbar-brand to="/">
+      <Logo />
     </b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse" />
@@ -30,8 +30,14 @@
 </template>
 
 <script>
+import Logo from './Logo'
+
 export default {
-  name: 'AppNav'
+  name: 'AppNav',
+
+  components: {
+    Logo
+  },
 }
 </script>
 
@@ -52,11 +58,34 @@ export default {
         }
       }
     }
+
+    .navbar-brand {
+      svg {
+        height: 36px;
+        width: 87px;
+      }
+  
+      &::after {
+        display: none;
+      }
+
+      &:hover {
+        .lt {
+          fill: $primary;
+        }
+      }
+    }
   }
 
   .artist-full-page {
     .navbar-light {
       background: $primary;
+
+      .navbar-brand:hover {
+        .lt {
+          fill: $background;
+        }
+      }
     }
 
     .navbar-nav {
