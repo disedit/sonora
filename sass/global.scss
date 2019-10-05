@@ -2,6 +2,11 @@
 @import 'fonts';
 @import 'bootstrap/scss/bootstrap';
 
+//body
+body {
+  padding-top: 4rem;
+}
+
 //links
 a {
   position: relative;
@@ -35,7 +40,8 @@ h2 {
   font-size: 7rem;
 }
 
-.page {
+.page,
+.navbar {
   transition: .4s ease-in-out;
 }
 

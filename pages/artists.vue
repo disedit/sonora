@@ -67,7 +67,6 @@
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "picture list";
     grid-gap: 3rem;
-    margin-top: 2rem;
 
     &-list {
       grid-area: list;
@@ -84,7 +83,7 @@
     &-picture {
       grid-area: picture;
       position: sticky;
-      top: 0;
+      top: 6rem;
 
       &-holder {
         position: relative;

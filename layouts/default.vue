@@ -20,6 +20,6 @@ export default {
   .app-container {
     max-width: 1600px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 2rem;
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="md" type="light">
+  <b-navbar toggleable="md" type="light" fixed="top">
     <b-navbar-brand href="#">
       Sonora
     </b-navbar-brand>
@@ -39,6 +39,7 @@ export default {
   @import '../sass/variables';
 
   .navbar-light {
+    background: $background;
     border-bottom: 2px $primary solid;
 
     .navbar-nav {
@@ -54,6 +55,10 @@ export default {
   }
 
   .artist-full-page {
+    .navbar-light {
+      background: $primary;
+    }
+
     .navbar-nav {
       a.nav-link {
         color: $background;
