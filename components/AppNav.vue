@@ -24,16 +24,16 @@
 
       <b-navbar-nav class="ml-auto">
         <b-nav-item href="https://www.facebook.com/GVAInstitutValenciadeCultura/" target="_blank" rel="noopener noreferrer">
-          <fa :icon="['fab', 'facebook-square']" /> <span class="sr-only">Facebook</span>
+          <fa :icon="['fab', 'facebook-square']" /> <span class="d-md-none">Facebook</span>
         </b-nav-item>
         <b-nav-item href="https://twitter.com/GVAivc" target="_blank" rel="noopener noreferrer">
-          <fa :icon="['fab', 'twitter-square']" /> <span class="sr-only">Twitter</span>
+          <fa :icon="['fab', 'twitter-square']" /> <span class="d-md-none">Twitter</span>
         </b-nav-item>
         <b-nav-item href="https://www.instagram.com/sonora_circuit/" target="_blank" rel="noopener noreferrer">
-          <fa :icon="['fab', 'instagram']" /> <span class="sr-only">Instagram</span>
+          <fa :icon="['fab', 'instagram']" /> <span class="d-md-none">Instagram</span>
         </b-nav-item>
         <b-nav-item href="https://www.youtube.com/channel/UCOJWX2GnBA8M8z0Uvajh86Q" target="_blank" rel="noopener noreferrer">
-          <fa :icon="['fab', 'youtube']" /> <span class="sr-only">Youtube</span>
+          <fa :icon="['fab', 'youtube']" /> <span class="d-md-none">Youtube</span>
         </b-nav-item>
       </b-navbar-nav>
     </b-collapse>
@@ -108,10 +108,6 @@ export default {
 
   @include media-breakpoint-down(md) {
     .navbar {
-      &-nav {
-        padding: 1rem 0;
-      }
-
       &-toggler {
         border: 0;
 

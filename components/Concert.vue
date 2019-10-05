@@ -1,7 +1,9 @@
 <template>
   <div class="concert">
     <div class="concert-date">{{ date }}</div>
-    <h3 class="concert-artists"><slot></slot></h3>
+    <h3 class="concert-artists">
+      <slot></slot>
+    </h3>
     <div class="concert-details">{{ venue }} ({{ place }})</div>
   </div>
 </template>
@@ -41,10 +43,14 @@
 
     &-artists {
       border-top: 2px solid $primary;
-      padding-top: 0.5rem;
-      margin: 0.5rem 0;
       color: $primary;
       font-size: 4rem;
+
+      span {
+        display: block;
+        margin: 1rem 0;
+        line-height: 1;
+      }
     }
   }
 </style>
