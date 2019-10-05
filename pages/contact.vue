@@ -2,65 +2,69 @@
   <div class="contact">
     <h2>Contacte</h2>
     <div class="contact-form">
-      <b-form @submit="onSubmit" @reset="onReset" v-if="show">
-      <b-form-group
-        id="input-group-1"
-        label="Correu Electrònic:"
-        label-for="input-1"
-      >
-        <b-form-input
-          id="input-1"
-          v-model="form.email"
-          type="email"
-          required
-          placeholder="El teu e-mail"
-        ></b-form-input>
-      </b-form-group>
+      <b-form @submit.prevent="onSubmit" v-if="!submitted">
+        <b-form-group
+          id="email-group"
+          label="Correu electrònic"
+          label-for="email">
+          <b-form-input
+            id="email"
+            v-model="form.email"
+            type="email"
+            required
+            placeholder="El teu e-mail">
+          </b-form-input>
+        </b-form-group>
 
-      <b-form-group id="input-group-2" label="La teua pregunta" label-for="input-2">
-        <b-form-textarea
-          id="input-2"
-          v-model="form.name"
-          required
-          rows="4"
-          max-rows="6"
-          placeholder="Enter name"
-        ></b-form-textarea>
-      </b-form-group>
-      <b-button type="submit" variant="primary">Submit</b-button>
+        <b-form-group
+          id="message-group"
+          label="La teua pregunta"
+          label-for="message">
+          <b-form-textarea
+            id="message"
+            v-model="form.message"
+            required
+            rows="4"
+            max-rows="6"
+            placeholder="Escriu ací la teua pregunta">
+          </b-form-textarea>
+        </b-form-group>
+        <b-button type="submit" variant="primary" :disabled="submitting">Envia</b-button>
       </b-form>
+      <div v-else class="submitted">
+        <div class="alert alert-success">
+          Hem rebut el teu correu. Et contestarem tan prompte com siga possible.
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+  import axios from 'axios'
+
   export default {
     data() {
       return {
         form: {
           email: '',
-          name: '',
+          message: '',
         },
-        show: true
+        submitted: false,
+        submitting: false
       }
     },
     methods: {
-      onSubmit(evt) {
-        evt.preventDefault()
-        alert(JSON.stringify(this.form))
-      },
-      onReset(evt) {
-        evt.preventDefault()
-        // Reset our form values
-        this.form.email = ''
-        this.form.name = ''
-        this.form.food = null
-        this.form.checked = []
-        // Trick to reset/clear native browser form validation state
-        this.show = false
-        this.$nextTick(() => {
-          this.show = true
-        })
+      onSubmit () {
+        this.submitting = true;
+        axios.post('https://disedit.com/sonora/contact.php', this.form)
+          .then(() => {
+            this.submitted = true;
+          }).catch(error => {
+            alert(error)
+          }).then(() => {
+            this.submitting = false;
+          })
       }
     }
   }
@@ -70,7 +74,7 @@
   @import '../sass/variables';
 
   .contact {
-    padding-top: 2rem;
+    max-width: 800px;
 
     .contact-form {
       padding-top: 2rem;
@@ -90,4 +94,8 @@
     font-size: 1.6rem;
   }
 
+  .alert-success {
+    background: $secondary;
+    color: $background;
+  }
 </style>
