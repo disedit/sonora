@@ -67,7 +67,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import '../../sass/variables';
+
   h4 {
-    text-decoration: underline;
+    color: $background;
   }
 </style>

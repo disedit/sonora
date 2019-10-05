@@ -51,7 +51,6 @@ import Concert from '@/components/Concert'
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2rem;
-    padding-top: 2rem;
 
     &-header {
       grid-column: 1 / -1;
