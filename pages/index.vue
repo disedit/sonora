@@ -1,15 +1,17 @@
 <template>
   <main>
-    <section>Home...</section>
+    <section><logo full /></section>
     <artists is-home />
   </main>
 </template>
 
 <script>
+import Logo from '@/components/Logo'
 import Artists from './artists'
 
 export default {
   components: {
+    Logo,
     Artists
   },
 }
