@@ -3,21 +3,28 @@
     <div class="artists-picture-container">
       <div class="artists-picture">
         <div class="artists-nav">
-          <nuxt-link to="/artists" v-if="$route.path != '/artists' && !isHome">
+          <nuxt-link v-if="$route.path != '/artists' && !isHome" to="/artists">
             <fa :icon="['far', 'arrow-left']" /> Torna a artistes
           </nuxt-link>
         </div>
         <div v-if="!artistVideoPlay" class="artists-picture-holder">
-          <img :src="artistImage" alt="" />
+          <img :src="artistImage" alt="">
           <div v-if="artistVideo" class="artists-video-button">
-            <b-button @click="playVideo" variant="dark" class="play-button">
+            <b-button variant="dark" class="play-button" @click="playVideo">
               <fa :icon="['far', 'play']" /> Play
             </b-button>
           </div>
         </div>
         <div v-else class="artists-video-holder">
           <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="560" height="315" :src="`https://www.youtube.com/embed/${artistVideo}/?autoplay=1`" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe
+              width="560"
+              height="315"
+              :src="`https://www.youtube.com/embed/${artistVideo}/?autoplay=1`"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            />
           </div>
         </div>
       </div>
@@ -30,46 +37,46 @@
 </template>
 
 <script>
-  import ArtistsList from './artists/index'
+import ArtistsList from './artists/index'
 
-  export default {
-    name: 'artists',
+export default {
+  name: 'Artists',
 
-    components: {
-      ArtistsList,
+  components: {
+    ArtistsList
+  },
+
+  props: {
+    isHome: Boolean
+  },
+
+  data () {
+    return {
+      artistImage: null,
+      artistVideo: null,
+      artistVideoPlay: false
+    }
+  },
+
+  watch: {
+    '$route' () {
+      this.artistVideo = null
+      this.artistVideoPlay = false
+    }
+  },
+
+  methods: {
+    setImage (image) {
+      this.artistImage = image
     },
-
-    props: {
-      isHome: Boolean
+    setVideo (video) {
+      this.artistVideo = video
     },
-
-    data() {
-      return {
-        artistImage: null,
-        artistVideo: null,
-        artistVideoPlay: false
-      }
-    },
-
-    watch: {
-      '$route': function () {
-        this.artistVideo = null
-        this.artistVideoPlay = false
-      }
-    },
-
-    methods: {
-      setImage (image) {
-        this.artistImage = image
-      },
-      setVideo (video) {
-        this.artistVideo = video
-      },
-      playVideo () {
-        this.artistVideoPlay = true
-      }
+    playVideo () {
+      this.artistVideoPlay = true
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>

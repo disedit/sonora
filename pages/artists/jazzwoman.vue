@@ -5,8 +5,11 @@
       twitter: 'https://twitter.com/JazzWoman_Music',
       instagram: 'https://www.instagram.com/jazzwoman.music/',
       spotify: 'https://open.spotify.com/artist/7yMJSfFJgb2YFBAKSckG4z?si=D-LInekOS8K-sYcBw2HTow'
-    }">
-    <template v-slot:header>Jazzwoman</template>
+    }"
+  >
+    <template v-slot:header>
+      Jazzwoman
+    </template>
     <p>
       Rapera de València formada com a saxofonista al conservatori i a les xarangues. Tanmateix, va
       trobar en el rap el seu camí per a lluitar contra les injustícies i el masclisme. És membre del

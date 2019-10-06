@@ -4,11 +4,14 @@
       facebook: 'https://www.facebook.com/Carles-D%C3%A9nia-115516288460497/',
       twitter: 'https://twitter.com/CarlesDenia',
       website: 'http://www.carlesdenia.com/',
-    }">
-    <template v-slot:header>Carles Dénia</template>
+    }"
+  >
+    <template v-slot:header>
+      Carles Dénia
+    </template>
 
     <p>
-      Carles Dénia ha assumit un repte majúscul en la seua última creació: adaptar el Cant Espiritual,
+      <strong>Carles Dénia</strong> ha assumit un repte majúscul en la seua última creació: adaptar el Cant Espiritual,
       l’obra magna del poeta valencià Ausiàs March (1400-1459). Es tracta d’una oració delirant,
       complexa, plena de passió i sinceritat on l’autor mostra obertament les seues febleses. En el
       seu exercici creatiu, Carles Dénia porta els versos de March al segle XXI. I ho fa amb tocs de

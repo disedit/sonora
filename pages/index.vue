@@ -6,14 +6,14 @@
 </template>
 
 <script>
-import Logo from '@/components/Logo'
 import Artists from './artists'
+import Logo from '@/components/Logo'
 
 export default {
   components: {
     Logo,
     Artists
-  },
+  }
 }
 </script>
 

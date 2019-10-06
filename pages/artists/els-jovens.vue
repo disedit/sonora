@@ -5,8 +5,11 @@
       twitter: 'https://twitter.com/elsjovens',
       instagram: 'https://www.instagram.com/elsjovens/',
       spotify: 'https://open.spotify.com/artist/7Aop1VVQPR8WTm07073xoy?si=dy_2-QgPSUORuJRNr8rvIQ'
-    }">
-    <template v-slot:header>Els Jóvens</template>
+    }"
+  >
+    <template v-slot:header>
+      Els Jóvens
+    </template>
 
     <p>
       <strong>Els Jóvens</strong> és un grup de folk de L’Alacantí que vol ampliar els registres de la música tradicional valenciana. El seu repertori integra alguns patrons i recursos del folklore, com ara jotes, cants de batre, bandúrries o postisses, dins d’una manera actual de fer cançons i explicar el món. No volen tornar a cantar ni reinterpretar els clàssics, sinó donar visibilitat a la música tradicional aportant noves cançons que sonen enèrgiques, divertides i lliures de prejudicis.

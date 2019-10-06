@@ -1,6 +1,8 @@
 <template>
   <div class="schedule">
-    <h2 class="schedule-header">Programació</h2>
+    <h2 class="schedule-header">
+      Programació
+    </h2>
     <concert venue="Palau La Marquesa" place="Gandia" date="19 d'octubre">
       <span>Novembre Elèctric</span>
       <span>Pavvla</span>
@@ -37,11 +39,11 @@
 <script>
 import Concert from '@/components/Concert'
 
-  export default {
-    components: {
-      Concert,
-    },
+export default {
+  components: {
+    Concert
   }
+}
 </script>
 
 <style lang="scss" scoped>

@@ -6,8 +6,11 @@
       website: 'http://danimiquel.cat/',
       instagram: 'https://www.instagram.com/danimiquel/',
       spotify: 'https://open.spotify.com/artist/3RvCCC63losASebpl75PvC?si=joMtGIKvS0ytIQzWerDUPg'
-    }">
-    <template v-slot:header>Dani Miquel</template>
+    }"
+  >
+    <template v-slot:header>
+      Dani Miquel
+    </template>
 
     <p>
       <strong>Dani Miquel</strong> és el protagonista d’un dels grans fenòmens de la música valenciana. Els seus

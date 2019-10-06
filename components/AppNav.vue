@@ -48,7 +48,7 @@ export default {
 
   components: {
     Logo
-  },
+  }
 }
 </script>
 
@@ -75,7 +75,7 @@ export default {
         height: 36px;
         width: 87px;
       }
-  
+
       &::after {
         display: none;
       }

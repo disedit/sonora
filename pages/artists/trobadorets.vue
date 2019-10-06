@@ -5,8 +5,11 @@
       twitter: 'https://twitter.com/trobadorets?lang=ca',
       instagram: 'https://www.instagram.com/trobadorets/',
       spotify: 'https://open.spotify.com/artist/59GCyQu1AitFqjUexnqX4m?si=Oy-DfSIMTFqIqzkRXplq-A'
-    }">
-    <template v-slot:header>Trobadorets</template>
+    }"
+  >
+    <template v-slot:header>
+      Trobadorets
+    </template>
     <p>
       Grup de música familiar de Castelló format en l’any 2010 i encapçalat pel cantant Pau Sancho. Nascut per tal d’animar les activitats infantils de Vilafranca (Alt Maestrat) i actuar en algunes llibreries de les comarques castellonenques, el projecte va anar creixent fins a convertir-se en una de les formacions que més concerts fa al llarg de l’any. Trobadorets va presentar el seu quart treball discogràfic, titulat A xalar!, en estiu de 2018 amb la participació de Dani Chiva (contrabaix, baix), Gerard Chiva (guitarra), Víctor Peris (percussionista), Javi Ruá (guitarra) i Santi Vicente (diversos instruments). Tanmateix, la formació mostra tot el seu potencial en els directes, on l’escenografia i la teatralitat són elements fonamentals.
     </p>

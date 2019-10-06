@@ -6,8 +6,11 @@
       website: 'http://www.carlesdenia.com/',
       instagram: 'https://www.instagram.com/carles_pastor76/',
       spotify: 'https://open.spotify.com/artist/4WeRVZvQxz4Yu0Dr8RTLOv?si=b614A14KSDGJBXaBVhtOPA'
-    }">
-    <template v-slot:header>Carles Pastor</template>
+    }"
+  >
+    <template v-slot:header>
+      Carles Pastor
+    </template>
     <p>
       <strong>Carles Pastor</strong> és un músic independent resident a La Safor amb 20 anys de trajectòria. Després
       de quatre àlbums -Travellers (2006), La noia del nord (Indústria Zero, 2009), Els ulls de Bob

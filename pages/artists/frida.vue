@@ -5,8 +5,11 @@
       twitter: 'https://twitter.com/FridaGrup',
       instagram: 'https://www.instagram.com/fridagrup/',
       spotify: 'https://open.spotify.com/artist/5WrFF7JJ5hPqQXX4O599RF?si=KbM4Y3hWR9OiVaSUO5OnmQ'
-    }">
-    <template v-slot:header>Frida</template>
+    }"
+  >
+    <template v-slot:header>
+      Frida
+    </template>
     <p>
       <strong>Frida</strong> és un grup de València que va nàixer en 2013 com una formació clàssica de rap: dos MC’s
       (Tom i J. Winston) i un Dj. Després d’editar dues maquetes -Free Rap (2013) i Neologismes

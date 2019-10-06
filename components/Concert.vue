@@ -1,23 +1,36 @@
 <template>
   <div class="concert">
-    <div class="concert-date">{{ date }}</div>
+    <div class="concert-date">
+      {{ date }}
+    </div>
     <h3 class="concert-artists">
-      <slot></slot>
+      <slot />
     </h3>
-    <div class="concert-details">{{ venue }} ({{ place }})</div>
+    <div class="concert-details">
+      {{ venue }} ({{ place }})
+    </div>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'concert',
+export default {
+  name: 'Concert',
 
-    props: {
-        date: String,
-        place: String,
-        venue: String
+  props: {
+    date: {
+      type: String,
+      default: null
     },
+    place: {
+      type: String,
+      default: null
+    },
+    venue: {
+      type: String,
+      default: null
+    }
   }
+}
 </script>
 
 <style lang="scss" scoped>

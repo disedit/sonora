@@ -5,8 +5,11 @@
       twitter: 'https://twitter.com/JunesKaleidoscp',
       instagram: 'https://www.instagram.com/juneskaleidoscope/',
       spotify: 'https://open.spotify.com/artist/4HQIymniDByxyvA5kOogLl?si=p9-QF8F7RV-qFhzb6SMFDA'
-    }">
-    <template v-slot:header>June’s Kaleidoscope</template>
+    }"
+  >
+    <template v-slot:header>
+      June’s Kaleidoscope
+    </template>
     <p>
       <strong>June’s Kaleidoscope</strong> és l’alter ego de la cantautora i pianista Arantxa Iranzo. La vocalista va
       deixar València després de graduar-se en piano clàssic per a establir-se a Londres. A la capital

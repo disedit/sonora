@@ -1,7 +1,9 @@
 <template>
   <div :class="{ 'page': true, 'artist-full-page': $route.name.startsWith('artists-') }">
     <app-nav />
-    <div class="app-container"><nuxt /></div>
+    <div class="app-container">
+      <nuxt />
+    </div>
   </div>
 </template>
 

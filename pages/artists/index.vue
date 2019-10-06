@@ -3,30 +3,32 @@
     <h2>Artistes</h2>
     <ul>
       <li v-for="artist in artists" :key="artist.id" @mouseover="$emit('image', artist.image)">
-        <nuxt-link :to="`/artists/${artist.id}`">{{ artist.name }}</nuxt-link>
+        <nuxt-link :to="`/artists/${artist.id}`">
+          {{ artist.name }}
+        </nuxt-link>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-  import artists from './artists'
+import artists from './artists'
 
-  export default {
-    name: 'artists-list',
+export default {
+  name: 'ArtistsList',
 
-    scrollToTop: true,
+  scrollToTop: true,
 
-    data() {
-      return {
-        artists: artists
-      }
-    },
-
-    mounted () {
-      this.$emit('image', artists[0].image)
+  data () {
+    return {
+      artists
     }
+  },
+
+  mounted () {
+    this.$emit('image', artists[0].image)
   }
+}
 </script>
 
 <style lang="scss" scoped>

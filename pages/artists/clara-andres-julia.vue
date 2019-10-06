@@ -1,6 +1,8 @@
 <template>
   <artist-page :social="{}">
-    <template v-slot:header>Clara Andrés + Júlia (L'eix radical)</template>
+    <template v-slot:header>
+      Clara Andrés + Júlia (L'eix radical)
+    </template>
 
     <p>
       La cantautora olivera <strong>Clara Andrés</strong> i el duet alcoià de dream pop <strong>Júlia</strong> uneixen forces en el
@@ -12,7 +14,9 @@
       amb el dream pop més còsmic... i viceversa.
     </p>
 
-    <h4 class="mt-4">Clara Andrés</h4>
+    <h4 class="mt-4">
+      Clara Andrés
+    </h4>
 
     <ul class="social">
       <li>

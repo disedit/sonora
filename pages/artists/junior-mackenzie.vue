@@ -6,8 +6,11 @@
       twitter: 'https://twitter.com/juniormackenzie',
       instagram: 'https://www.instagram.com/juniormackenziegram/',
       spotify: 'https://open.spotify.com/artist/0jD7HsSxNzzWWhFUOWlrRt?si=4CsfUX6qS9yMLDAU8E_57w'
-    }">
-    <template v-slot:header>Junior Mackenzie</template>
+    }"
+  >
+    <template v-slot:header>
+      Junior Mackenzie
+    </template>
     <p>
       <strong>Junior Mackenzie</strong> és el nom artístic del cantant, compositor i guitarrista castellonenc Juan
       Fortea. Ell mateix afirma que la seua música no és fàcil de descriure. Tanmateix, reconeix la

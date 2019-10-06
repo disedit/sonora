@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h2><slot name="header"></slot></h2>
+    <h2><slot name="header" /></h2>
 
     <div class="text">
-      <slot></slot>
+      <slot />
     </div>
 
     <ul class="social">
@@ -30,14 +30,20 @@
 </template>
 
 <script>
-  export default {
-    name: 'artist-page',
+export default {
+  name: 'ArtistPage',
 
-    props: {
-      social: Object,
-      video: String
+  props: {
+    social: {
+      type: Object,
+      default: () => {}
+    },
+    video: {
+      type: String,
+      default: null
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>

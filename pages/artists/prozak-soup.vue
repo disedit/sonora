@@ -1,8 +1,4 @@
 
-
-
-
-
 <template>
   <artist-page
     :social="{
@@ -11,8 +7,11 @@
       twitter: 'https://twitter.com/ProzakSoup',
       instagram: 'https://www.instagram.com/prozaksoupoficial/',
       spotify: 'https://open.spotify.com/artist/6EF4cCHpvhR4aPEPVG7xgc?si=YZpMbxMlT6uURunGo1CEzA'
-    }">
-    <template v-slot:header>Prozak Soup</template>
+    }"
+  >
+    <template v-slot:header>
+      Prozak Soup
+    </template>
     <p>
       Formació de la Safor que combina l’electrònica amb instruments convencionals per a oferir una proposta contundent i trencadora dins del panorama musical valencià. La seua barreja estilística i les seues lletres agredolces s’han plasmat en tres discs: Imbècil (Mésdemil, 2014), Bang! (Maldito Records, 2016) i Very Empastre (2017). Aquests treballs van ser produïts i enregistrats a Atomic Studio i Novoestudios de la mà dels productors Mark Dasousa i Facundo Novo. El seus singles “Més enllà del vel”, “Brolla la màgia”, “Voldria veure’t dansar” i “Bandera blanca” -els dos últims, homenatges particulars a Franco Battiato- també han sonat a esdeveniments com el Festivern, Feslloch, Gazpatxo Rock, Festardor, ViñaRock i Shikillo. Actualment treballen en el seu pròxim llançament.
     </p>
