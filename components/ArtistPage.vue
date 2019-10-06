@@ -41,6 +41,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../sass/variables';
+
   h2 {
     line-height: 1;
   }
@@ -57,8 +59,21 @@
 
     li {
       display: inline-block;
-      font-size: 3rem;
       margin-right: .5rem;
+    }
+
+    a {
+      display: block;
+      background: $background;
+      color: $text;
+      padding: .5rem 1rem;
+      border-radius: 20rem;
+      font-size: 1.75rem;
+
+      &:hover {
+        background: $text;
+        color: $background;
+      }
     }
   }
 
