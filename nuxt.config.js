@@ -29,14 +29,14 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/bootstrap'
+    //
   ],
   /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    //'@nuxtjs/eslint-module'
+    // '@nuxtjs/eslint-module'
   ],
   /*
   ** Nuxt.js modules
@@ -44,6 +44,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    ['bootstrap-vue/nuxt'],
     ['nuxt-fontawesome', {
       component: 'fa',
       imports: [
@@ -63,6 +64,21 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+  },
+  /*
+  **
+  */
+  bootstrapVue: {
+    bootstrapCSS: false,
+    bootstrapVueCSS: false,
+    componentPlugins: [
+      'NavbarPlugin',
+      'FormPlugin',
+      'FormInputPlugin',
+      'FormGroupPlugin',
+      'ButtonPlugin',
+      'FormTextareaPlugin'
+    ]
   },
   /*
   ** Build configuration
