@@ -45,7 +45,9 @@ h2 {
   transition: .4s ease-in-out;
 }
 
-.artist-full-page {
+.artist-full-page,
+.page-schedule,
+.page-about {
   background: $primary;
   min-height: 100vh;
 
@@ -64,5 +66,43 @@ h2 {
 
   strong {
     color: $background;
+  }
+
+  .navbar-light {
+    background: $primary;
+  
+    .navbar-brand:hover {
+      .lt {
+        fill: $background;
+      }
+    }
+
+    .navbar-nav {
+      a.nav-link {
+        color: $background;
+
+        &:hover {
+          color: $text;
+        }
+      }
+    }
+  }
+}
+
+.page-schedule {
+  background: $terciary;
+
+  .navbar-light {
+    background: $terciary;
+    border-color: $terciary;
+  }
+}
+
+.page-about {
+  background: $quaternary;
+
+  .navbar-light {
+    background: $quaternary;
+    border-color: $quaternary;
   }
 }

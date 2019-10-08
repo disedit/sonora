@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ 'page': true, 'artist-full-page': $route.name.startsWith('artists-') }">
+  <div :class="['page', $route.name.startsWith('artists-') ? 'artist-full-page' : null, `page-${$route.name}`]">
     <app-nav />
     <div class="app-container">
       <nuxt />

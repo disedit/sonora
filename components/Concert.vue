@@ -48,15 +48,15 @@ export default {
     }
 
     &-details {
-      border-top: 2px solid $primary;
+      border-top: 2px solid $background;
       padding-top: 0.5rem;
       margin-top: auto;
       font-size: 2rem;
     }
 
     &-artists {
-      border-top: 2px solid $primary;
-      color: $primary;
+      border-top: 2px solid $background;
+      color: $background;
       font-size: 4rem;
 
       span {
