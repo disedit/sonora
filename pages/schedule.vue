@@ -3,7 +3,7 @@
     <h2 class="schedule-header">
       Programació
     </h2>
-    <concert venue="Palau La Marquesa" place="Gandia" date="19 d'octubre">
+    <concert venue="Palau La Marquesa" place="Gandia" date="19 d'octubre" thumbnail="junior-mackenzie" :class="[thumbnail =! null ? 'has-thumbnail' : '']">
       <nuxt-link to="/artists/novembre-electric">Novembre Elèctric</nuxt-link>
       <nuxt-link to="/artists/pavvla">Pavvla</nuxt-link>
       <nuxt-link to="/artists/fru-katinka">Fru Katinka</nuxt-link>
@@ -57,6 +57,22 @@ export default {
     &-header {
       grid-column: 1 / -1;
     }
+
+    &-image-container {
+      padding-top: 3rem; 
+    }
+
+    &-image {
+      width: 300px;
+      background-image: url("../assets/images/artists/novembre-electric.jpg");
+      background-size: cover;
+      filter: grayscale(100%);
+      mix-blend-mode: screen;
+    }
+  }
+
+  .has-thumbnail {
+    grid-column: span 2;
   }
 
   @include media-breakpoint-down(md) {

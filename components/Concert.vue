@@ -1,13 +1,18 @@
 <template>
   <div class="concert">
-    <div class="concert-date">
-      {{ date }}
+    <div class="concert-info">
+      <div class="concert-info-date">
+        {{ date }}
+      </div>
+      <h3 class="concert-info-artists">
+        <slot />
+      </h3>
+      <div class="concert-info-details">
+        {{ venue }} ({{ place }})
+      </div>
     </div>
-    <h3 class="concert-artists">
-      <slot />
-    </h3>
-    <div class="concert-details">
-      {{ venue }} ({{ place }})
+    <div class="concert-thumbnail" v-if="thumbnail">
+      <img src="../assets/images/artists/junior-mackenzie.jpg"/>
     </div>
   </div>
 </template>
@@ -28,6 +33,10 @@ export default {
     venue: {
       type: String,
       default: null
+    },
+    thumbnail: {
+      type: String,
+      default: null
     }
   }
 }
@@ -37,35 +46,49 @@ export default {
   @import '../sass/variables';
 
   .concert {
-    padding-top: 3rem;
-    display: flex;
-    flex-direction: column;
+    display: grid;
 
-    &-date {
-      padding: 0.5rem 0;
-      color: lighten($secondary, 10%);
-      font-size: 2rem;
+    &-thumbnail {
+      img {
+        width: 100%;
+      }
     }
 
-    &-details {
-      border-top: 2px solid $background;
-      padding-top: 0.5rem;
-      margin-top: auto;
-      font-size: 2rem;
+    &-has-thumbnail {
+      grid-template-columns: 1fr 1fr;
     }
 
-    &-artists {
-      border-top: 2px solid $background;
-      color: $background;
-      font-size: 4rem;
+    &-info {
+      padding-top: 3rem;
+      display: flex;
+      flex-direction: column;
 
-      a {
-        display: block;
-        margin: 1rem 0;
-        line-height: 1;
+      &-date {
+        padding: 0.5rem 0;
+        color: lighten($secondary, 10%);
+        font-size: 2rem;
+      }
 
-        &::after {
-          display: none;
+      &-details {
+        border-top: 2px solid $background;
+        padding-top: 0.5rem;
+        margin-top: auto;
+        font-size: 2rem;
+      }
+
+      &-artists {
+        border-top: 2px solid $background;
+        color: $background;
+        font-size: 4rem;
+
+        a {
+          display: block;
+          margin: 1rem 0;
+          line-height: 1;
+
+          &::after {
+            display: none;
+          }
         }
       }
     }
