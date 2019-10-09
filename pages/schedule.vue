@@ -19,7 +19,7 @@
     </concert>
     <concert venue="per concretar" place="L'Alcúdia" date="29 de novembre">
       <nuxt-link to="/artists/carles-pastor">Carles Pastor</nuxt-link>
-      <nuxt-link to="/artists/julia-clara-andres">Júlia i Clara Andrés</nuxt-link>
+      <nuxt-link to="/artists/clara-andres-julia">Clara Andrés + Júlia</nuxt-link>
     </concert>
     <concert venue="Casal Jove" place="Port de Sagunt" date="21 de desembre">
       <nuxt-link to="/artists/frida">Frida</nuxt-link>

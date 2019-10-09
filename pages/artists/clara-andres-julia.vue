@@ -1,7 +1,7 @@
 <template>
   <artist-page :social="{}">
     <template v-slot:header>
-      Clara Andrés + Júlia (L'eix radical)
+      Clara Andrés + Júlia <span class="muted">(L'eix radical)</span>
     </template>
 
     <p>
@@ -33,7 +33,7 @@
       </li>
     </ul>
 
-    <h4>Júlia</h4>
+    <h4 class="mt-4">Júlia</h4>
 
     <ul class="social">
       <li>
@@ -75,5 +75,11 @@ export default {
 
   h4 {
     color: $background;
+  }
+
+  .muted {
+    opacity: .5;
+    font-size: 3rem;
+    white-space: nowrap;
   }
 </style>

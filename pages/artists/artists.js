@@ -43,7 +43,7 @@ const artists = [
   },
   {
     id: 'clara-andres-julia',
-    name: 'Clara Andrés + Júlia (L\'eix radical)',
+    name: 'Clara Andrés + Júlia',
     image: ClaraAndresJuliaImg
   },
   {
