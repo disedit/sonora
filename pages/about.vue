@@ -14,7 +14,7 @@
       </p>
     </div>
     
-    <img class="about-cartell" src="../assets/images/cartell-vilafranca.jpg" alt="Cartell del festival per Carla Fuentes">
+    <img class="about-poster" src="../assets/images/cartell-vilafranca.jpg" alt="Cartell del festival per Carla Fuentes">
 
     <div class="about-text about-text-2">
        <p>
@@ -44,7 +44,7 @@
     display: grid;
     grid-template-columns: 30vw 1fr;
     grid-template-areas: ". title"
-                          "cartell text-1"
+                          "poster text-1"
                           "image text-2";
 
     grid-column-gap: 2.2rem;
@@ -80,31 +80,31 @@
       width: 100%;
     }
   
-    &-cartell {
-      grid-area: cartell;
+    &-poster {
+      grid-area: poster;
       height: 100%;
       justify-self: end;
     }
   }
 
   @include media-breakpoint-down(md) {
-  .about {
-    grid-template-columns: 1fr;
-    grid-template-areas: "title"
-                          "text-1"
-                          "cartell"
-                          "text-2"
-                          "image";
+    .about {
+      grid-template-columns: 1fr;
+      grid-template-areas: "title"
+                            "text-1"
+                            "poster"
+                            "text-2"
+                            "image";
 
-    &-cartell {
-      height: 600px;
-      justify-self: center;
-    }
+      &-poster {
+        height: 600px;
+        justify-self: center;
+      }
 
-    img {
-      margin: 1rem;
-    }
-    
+      img {
+        margin: 1rem;
+      }
+      
     }
   }
 
