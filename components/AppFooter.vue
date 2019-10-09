@@ -17,7 +17,7 @@
       </div>
       <div class="col-md-4 text-right">
         <a href="https://ivc.gva.es/val/ivc-val/qui-som-ivc/avis-legal-val/politica-de-privadesa/nota-legal-val" target="_blank" rel="noopener noreferrer">Nota legal</a>
-        <a href="#" @click.prevent="showContact">Contacte</a>
+        <a href="#" @click.prevent="showContact" id="footerContactButton">Contacte</a>
       </div>
     </div>
   </footer>
@@ -29,7 +29,7 @@
 
     methods: {
       showContact () {
-
+        this.$root.$emit('bv::show::modal', 'contact', '#footerContactButton')
       }
     }
   }

@@ -54,7 +54,7 @@ export default {
         },
         {
           set: '@fortawesome/pro-regular-svg-icons',
-          icons: ['faArrowLeft', 'faPlay', 'faGlobe']
+          icons: ['faArrowLeft', 'faArrowRight', 'faPlay', 'faGlobe']
         }
       ]
     }]
@@ -77,7 +77,8 @@ export default {
       'FormInputPlugin',
       'FormGroupPlugin',
       'ButtonPlugin',
-      'FormTextareaPlugin'
+      'FormTextareaPlugin',
+      'ModalPlugin'
     ]
   },
   /*

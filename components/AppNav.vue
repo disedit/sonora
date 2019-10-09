@@ -20,7 +20,7 @@
       </b-navbar-nav>
 
       <b-navbar-nav class="ml-auto">
-        <b-nav-item to="/contact">
+        <b-nav-item href="#" @click.prevent="showContact" id="navContactButton">
           Contacte
         </b-nav-item>
         <b-nav-item href="https://www.facebook.com/GVAInstitutValenciadeCultura/" target="_blank" rel="noopener noreferrer">
@@ -48,6 +48,12 @@ export default {
 
   components: {
     Logo
+  },
+
+  methods: {
+    showContact () {
+      this.$root.$emit('bv::show::modal', 'contact', '#navContactButton')
+    }
   }
 }
 </script>

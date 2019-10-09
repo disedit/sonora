@@ -19,7 +19,7 @@
 
         <b-form-group
           id="message-group"
-          label="La teua pregunta"
+          label="Missatge"
           label-for="message"
         >
           <b-form-textarea
@@ -32,7 +32,7 @@
           />
         </b-form-group>
         <b-button type="submit" variant="primary" :disabled="submitting">
-          Envia
+          Envia <fa :icon="['far', 'arrow-right']" />
         </b-button>
       </b-form>
       <div v-else class="submitted">
@@ -41,6 +41,14 @@
         </div>
       </div>
     </div>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="0" width="0">
+      <defs>
+        <filter id="multiply">
+          <feFlood flood-color="#D74139" flood-opacity="1" result="flood"/>
+          <feBlend mode="multiply" in1="flood" in2="SourceGraphic"/>
+        </filter>
+      </defs>
+    </svg>
   </div>
 </template>
 
@@ -80,9 +88,13 @@ export default {
   .contact {
     max-width: 800px;
 
+    h2 {
+      font-size: 4rem;
+    }
+
     .contact-form {
       padding-top: 2rem;
-      font-size: 1.8rem;
+      font-size: 1.35rem;
     }
   }
 

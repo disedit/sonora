@@ -5,17 +5,22 @@
       <nuxt />
       <app-footer />
     </div>
+    <b-modal id="contact" hide-footer hide-header size="lg">
+      <contact />
+    </b-modal>
   </div>
 </template>
 
 <script>
 import AppNav from '@/components/AppNav'
 import AppFooter from '@/components/AppFooter'
+import Contact from '@/components/Contact'
 
 export default {
   components: {
     AppNav,
-    AppFooter
+    AppFooter,
+    Contact
   },
 
   mounted () {
