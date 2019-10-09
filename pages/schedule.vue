@@ -3,45 +3,36 @@
     <h2 class="schedule-header">
       Programació
     </h2>
-    <concert venue="Palau La Marquesa" place="Gandia" date="19 d'octubre">
-      <nuxt-link to="/artists/novembre-electric">Novembre Elèctric</nuxt-link>
-      <nuxt-link to="/artists/pavvla">Pavvla</nuxt-link>
-      <nuxt-link to="/artists/fru-katinka">Fru Katinka</nuxt-link>
-    </concert>
-    <concert venue="Palau Altea" place="Altea" date="31 d'octubre">
-      <nuxt-link to="/artists/dani-miquel">Dani Miquel</nuxt-link>
-    </concert>
-    <concert venue="Teatre Principal" place="Castelló" date="8 de novembre">
-      <nuxt-link to="/artists/feliu-ventura">Feliu Ventura</nuxt-link>
-    </concert>
-    <concert venue="Auditori de Castelló" place="Castelló" date="8 de novembre">
-      <nuxt-link to="/artists/junior-mackenzie">Junior Mackenzie</nuxt-link>
-    </concert>
-    <concert venue="per concretar" place="L'Alcúdia" date="29 de novembre">
-      <nuxt-link to="/artists/carles-pastor">Carles Pastor</nuxt-link>
-      <nuxt-link to="/artists/clara-andres-julia">Clara Andrés + Júlia</nuxt-link>
-    </concert>
-    <concert venue="Casal Jove" place="Port de Sagunt" date="21 de desembre">
-      <nuxt-link to="/artists/frida">Frida</nuxt-link>
-      <nuxt-link to="/artists/prozak">Prozak</nuxt-link>
-      <nuxt-link to="/artists/jazzwoman">Jazzwoman</nuxt-link>
-    </concert>
-    <concert venue="Rockodrom" place="Pedreguer" date="25 de gener">
-      <nuxt-link to="/artists/santero-y-los-muchachos">Santero y Los Muchachos</nuxt-link>
-      <nuxt-link to="/artists/junior-mackenzie">Junior Mackenzie</nuxt-link>
-    </concert>
-    <concert venue="Arniches" place="Alacant" date="8 de febrer">
-      <nuxt-link to="/artists/carles-denie">Carles Dénia</nuxt-link>
+    <concert
+      v-for="(concert, i) in fullConcerts"
+      :key="i"
+      :venue="concert.venue"
+      :place="concert.place"
+      :date="concert.date"
+      compact>
+      <nuxt-link
+        v-for="concertArtist in concert.fullArtists"
+        :key="concertArtist.id"
+        :to="`/artists/${concertArtist.id}`">
+        {{ concertArtist.name }}
+      </nuxt-link>
     </concert>
   </div>
 </template>
 
 <script>
+import ArtistsMixin from '@/mixins/artists-mixin.js'
 import Concert from '@/components/Concert'
 
 export default {
   components: {
     Concert
+  },
+
+  mixins: [ArtistsMixin],
+
+  mounted () {
+    this.setFullConcerts()
   }
 }
 </script>

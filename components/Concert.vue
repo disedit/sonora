@@ -19,15 +19,19 @@ export default {
   props: {
     date: {
       type: String,
-      default: null
+      default: ''
     },
     place: {
       type: String,
-      default: null
+      default: ''
     },
     venue: {
       type: String,
-      default: null
+      default: ''
+    },
+    compact: {
+      type: Boolean,
+      default: false
     }
   }
 }
@@ -67,6 +71,19 @@ export default {
         &::after {
           display: none;
         }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .concert {
+      &-artists {
+        font-size: 2.5rem;
+      }
+
+      &-details,
+      &-date {
+        font-size: 1.5rem;
       }
     }
   }
