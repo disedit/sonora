@@ -7,6 +7,7 @@ import DaniMiquelImg from '@/assets/images/artists/dani-miquel.jpg'
 import ElsJovensImg from '@/assets/images/artists/els-jovens.jpg'
 import FridaImg from '@/assets/images/artists/frida.jpg'
 import FruKatinkaImg from '@/assets/images/artists/fru-katinka.jpg'
+import JazzwomanImg from '@/assets/images/artists/jazzwoman.jpg'
 import JohnnyBZeroImg from '@/assets/images/artists/johnny-b-zero.jpg'
 import JonatanPenalbaImg from '@/assets/images/artists/jonatan-penalba.jpg'
 import JuniorMackenzieImg from '@/assets/images/artists/junior-mackenzie.jpg'
@@ -65,6 +66,11 @@ const artists = [
     id: 'fru-katinka',
     name: 'Fru Katinka',
     image: FruKatinkaImg
+  },
+  {
+    id: 'jazzwoman',
+    name: 'Jazzwoman',
+    image: JazzwomanImg
   },
   {
     id: 'johnny-b-zero',

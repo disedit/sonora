@@ -8,13 +8,12 @@
       :key="i"
       :venue="concert.venue"
       :place="concert.place"
-      :date="concert.date"
-      compact>
+      :date="concert.date">
       <nuxt-link
-        v-for="concertArtist in concert.fullArtists"
-        :key="concertArtist.id"
-        :to="`/artists/${concertArtist.id}`">
-        {{ concertArtist.name }}
+        v-for="artist in concert.fullArtists"
+        :key="artist.id"
+        :to="`/artists/${artist.id}`">
+        {{ artist.name }}
       </nuxt-link>
     </concert>
   </div>

@@ -19,7 +19,7 @@ const concerts = [
   },
   {
     artists: [
-      'feliu-ventura'
+      'Feliu Ventura'
     ],
     date: '8 de novembre',
     venue: 'Teatre Principal',
@@ -44,7 +44,7 @@ const concerts = [
   {
     artists: [
       'frida',
-      'prozak',
+      'prozak-soup',
       'jazzwoman'
     ],
     date: '21 de desembre',

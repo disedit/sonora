@@ -8,10 +8,10 @@
       :date="concert.date"
       compact>
       <nuxt-link
-        v-for="concertArtist in concert.fullArtists"
-        :key="concertArtist.id"
-        :to="`/artists/${concertArtist.id}`">
-        {{ concertArtist.name }}
+        v-for="artist in concert.fullArtists"
+        :key="artist.id"
+        :to="`/artists/${artist.id}`">
+        {{ artist.name }}
       </nuxt-link>
     </concert>
   </div>
@@ -30,8 +30,16 @@
 
     mixins: [ArtistsMixin],
 
+    props: {
+      all: {
+        type: Boolean,
+        default: false
+      }
+    },
+
     mounted () {
-      this.setFullConcerts(this.artist)
+      const filter = !this.all ? this.artist : false 
+      this.setFullConcerts(filter)
     },
 
     computed: {

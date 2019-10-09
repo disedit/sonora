@@ -24,7 +24,11 @@ export default {
           const artistInfo = artists.find((elem) => {
             return elem.id === artist
           })
-          fullArtists.push(artistInfo)
+          if (artistInfo) {
+            fullArtists.push(artistInfo)
+          } else {
+            fullArtists.push({ id: artist, name: artist, image: '', noLink: true })
+          }
         })
 
         return {
