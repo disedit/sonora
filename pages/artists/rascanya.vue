@@ -17,6 +17,9 @@
     <p>
       Nominats com a millor disc de música d’arrel per <em>Aiua</em> en els I Premis Carles Santos de la Música Valenciana.
     </p>
+    <p>
+      Rascanya actuarà en format de ball, amb un mestre a peu de plaça i breus explicacions des de l’escenari per a que el públic no pare de ballar. Un espectacle dinàmic, divertit i participatiu.
+    </p>
   </artist-page>
 </template>
 
