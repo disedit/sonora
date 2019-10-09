@@ -1,6 +1,12 @@
 <template>
   <main>
-    <section><logo full /></section>
+    <section>
+      <logo full />
+      <div class="hero-poster">
+        <img src="../assets/images/ilustracio.png" alt="" />
+      </div>
+    </section>
+    
     <artists is-home />
   </main>
 </template>
@@ -19,6 +25,19 @@ export default {
 
 <style lang="scss" scoped>
   section {
-    height: 80vh;
+    display: flex;
+    align-items: center;
+    height: 95vh;
+    flex-direction: column;
+    margin-bottom: 3rem;
+  }
+
+  .hero-poster {
+    img {
+      object-fit: cover;
+      object-position: 0 0;
+      width: 100%;
+      height: 60vh;
+    }
   }
 </style>

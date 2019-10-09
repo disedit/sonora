@@ -14,7 +14,7 @@
       </p>
     </div>
     
-    <img class="about-cartell" src="../assets/images/cartell-vilafranca.jpg" alt="Cartell del festival per Carla Fuentes">
+    <img class="about-poster" src="../assets/images/cartell-vilafranca.jpg" alt="Cartell del festival per Carla Fuentes">
 
     <div class="about-text about-text-2">
        <p>
@@ -45,7 +45,7 @@
     grid-template-columns: 30vw 1fr;
     grid-template-areas:
       ". title"
-      "cartell text-1"
+      "poster text-1"
       "image text-2";
     grid-column-gap: 2.2rem;
 
@@ -79,8 +79,8 @@
       width: 100%;
     }
   
-    &-cartell {
-      grid-area: cartell;
+    &-poster {
+      grid-area: poster;
       justify-self: end;
       width: 100%;
       max-width: 300px;
@@ -93,11 +93,11 @@
       grid-template-areas:
         "title"
         "text-1"
-        "cartell"
+        "poster"
         "text-2"
         "image";
 
-      &-cartell {
+      &-poster {
         justify-self: center;
       }
 
