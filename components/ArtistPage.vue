@@ -26,12 +26,20 @@
         <a :href="social.website" target="_blank" rel="noopener noreferrer"><fa :icon="['far', 'globe']" /></a>
       </li>
     </ul>
+
+    <artist-concerts />
   </div>
 </template>
 
 <script>
+import ArtistConcerts from './ArtistConcerts'
+
 export default {
   name: 'ArtistPage',
+
+  components: {
+    ArtistConcerts
+  },
 
   props: {
     social: {
@@ -65,7 +73,7 @@ export default {
 
     li {
       display: inline-block;
-      margin-right: .5rem;
+      margin: .5rem .5rem .5rem 0;
     }
 
     a {
@@ -92,6 +100,12 @@ export default {
       width: 100%;
       filter: grayscale(100%);
       margin: 1rem 0;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .text {
+      font-size: 1.4rem;
     }
   }
 </style>
