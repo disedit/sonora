@@ -42,4 +42,10 @@ export default {
     margin: 0 auto;
     padding: 2rem;
   }
+
+  @include media-breakpoint-down(sm) {
+    .main-container {
+      padding: 1rem;
+    }
+  }
 </style>

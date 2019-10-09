@@ -123,3 +123,9 @@ body,
     border: 0;
   }
 }
+
+@include media-breakpoint-down(sm) {
+  h2 {
+    font-size: 4rem;
+  }
+}

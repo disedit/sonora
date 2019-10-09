@@ -10,7 +10,7 @@
       <p>
         L’objectiu principal d’aquesta nova iniciativa és la creació d’una plataforma estable i regular perquè els intèrprets valencians puguen mostrar els seus treballs en sales
         públiques i privades. D’aquesta manera, grups i solistes tindran la possibilitat d’actuar en diferents punts del territori fora de la temporada estival.
-        El cartell de Sonora ha sigut realitzat per la coneguda il·lustradora valenciana Carla Fuentes
+        El cartell de Sonora ha sigut realitzat per la coneguda il·lustradora valenciana Carla Fuentes.
       </p>
     </div>
     
@@ -29,7 +29,7 @@
         de qualitat que atrega a nous públics i consolide la projecció dels nostres artistes.
       </p>
 
-      <p>Benvingudes i benvinguts a Sonora</p>
+      <p>Benvingudes i benvinguts a Sonora.</p>
     </div>
 
     <img class="about-image" src="../assets/images/jovens-concert.jpeg" alt="Els Joves a Vilafranca">
@@ -43,10 +43,10 @@
   .about {
     display: grid;
     grid-template-columns: 30vw 1fr;
-    grid-template-areas: ". title"
-                          "cartell text-1"
-                          "image text-2";
-
+    grid-template-areas:
+      ". title"
+      "cartell text-1"
+      "image text-2";
     grid-column-gap: 2.2rem;
 
     h2 {
@@ -66,7 +66,6 @@
       &-2 {
         grid-area: text-2;
       }
-
     }
 
     &-title {
@@ -82,30 +81,37 @@
   
     &-cartell {
       grid-area: cartell;
-      height: 100%;
       justify-self: end;
+      width: 100%;
+      max-width: 300px;
     }
   }
 
   @include media-breakpoint-down(md) {
-  .about {
-    grid-template-columns: 1fr;
-    grid-template-areas: "title"
-                          "text-1"
-                          "cartell"
-                          "text-2"
-                          "image";
+    .about {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "title"
+        "text-1"
+        "cartell"
+        "text-2"
+        "image";
 
-    &-cartell {
-      height: 600px;
-      justify-self: center;
-    }
+      &-cartell {
+        justify-self: center;
+      }
 
-    img {
-      margin: 1rem;
-    }
-    
+      &-text {
+        p {
+          font-size: 1.4rem;
+        }
+      }
+
+      img {
+        max-width: 400px;
+        width: 100%;
+        margin: 1rem auto;
+      }
     }
   }
-
 </style>

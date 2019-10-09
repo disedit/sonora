@@ -154,9 +154,17 @@ export default {
     .artists {
       grid-template-areas: "list";
       grid-template-columns: 1fr;
+      grid-gap: 1rem;
 
       &-picture-container {
         display: none;
+      }
+
+      &-nav {
+        align-items: flex-start;
+        justify-content: flex-start;
+        height: auto;
+        padding-bottom: 0;
       }
     }
 
