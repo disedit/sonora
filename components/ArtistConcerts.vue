@@ -30,16 +30,8 @@
 
     mixins: [ArtistsMixin],
 
-    props: {
-      all: {
-        type: Boolean,
-        default: false
-      }
-    },
-
     mounted () {
-      const filter = !this.all ? this.artist : false 
-      this.setFullConcerts(filter)
+      this.setFullConcerts(this.artist)
     },
 
     computed: {
