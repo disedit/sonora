@@ -43,7 +43,7 @@ export default {
 
     &-date {
       padding: 0.5rem 0;
-      color: $secondary;
+      color: lighten($secondary, 10%);
       font-size: 2rem;
     }
 
@@ -59,10 +59,14 @@ export default {
       color: $background;
       font-size: 4rem;
 
-      span {
+      a {
         display: block;
         margin: 1rem 0;
         line-height: 1;
+
+        &::after {
+          display: none;
+        }
       }
     }
   }

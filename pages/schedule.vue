@@ -4,34 +4,34 @@
       Programació
     </h2>
     <concert venue="Palau La Marquesa" place="Gandia" date="19 d'octubre">
-      <span>Novembre Elèctric</span>
-      <span>Pavvla</span>
-      <span>Fru Katinka</span>
+      <nuxt-link to="/artists/novembre-electric">Novembre Elèctric</nuxt-link>
+      <nuxt-link to="/artists/pavvla">Pavvla</nuxt-link>
+      <nuxt-link to="/artists/fru-katinka">Fru Katinka</nuxt-link>
     </concert>
     <concert venue="Palau Altea" place="Altea" date="31 d'octubre">
-      <span>Dani Miquel</span>
+      <nuxt-link to="/artists/dani-miquel">Dani Miquel</nuxt-link>
     </concert>
     <concert venue="Teatre Principal" place="Castelló" date="8 de novembre">
-      <span>Feliu Ventura</span>
+      <nuxt-link to="/artists/feliu-ventura">Feliu Ventura</nuxt-link>
     </concert>
     <concert venue="Auditori de Castelló" place="Castelló" date="8 de novembre">
-      <span>Junior Mackenzie</span>
+      <nuxt-link to="/artists/junior-mackenzie">Junior Mackenzie</nuxt-link>
     </concert>
     <concert venue="per concretar" place="L'Alcúdia" date="29 de novembre">
-      <span>Carles Pastor</span>
-      <span>Júlia i Clara Andrés</span>
+      <nuxt-link to="/artists/carles-pastor">Carles Pastor</nuxt-link>
+      <nuxt-link to="/artists/julia-clara-andres">Júlia i Clara Andrés</nuxt-link>
     </concert>
     <concert venue="Casal Jove" place="Port de Sagunt" date="21 de desembre">
-      <span>Frida</span>
-      <span>Prozak</span>
-      <span>Jazzwoman</span>
+      <nuxt-link to="/artists/frida">Frida</nuxt-link>
+      <nuxt-link to="/artists/prozak">Prozak</nuxt-link>
+      <nuxt-link to="/artists/jazzwoman">Jazzwoman</nuxt-link>
     </concert>
     <concert venue="Rockodrom" place="Pedreguer" date="25 de gener">
-      <span>Santero y Los Muchachos</span>
-      <span>Junior Mackenzie</span>
+      <nuxt-link to="/artists/santero-y-los-muchachos">Santero y Los Muchachos</nuxt-link>
+      <nuxt-link to="/artists/junior-mackenzie">Junior Mackenzie</nuxt-link>
     </concert>
     <concert venue="Arniches" place="Alacant" date="8 de febrer">
-      <span>Carles Dénia</span>
+      <nuxt-link to="/artists/carles-denie">Carles Dénia</nuxt-link>
     </concert>
   </div>
 </template>
