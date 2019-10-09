@@ -1,9 +1,9 @@
 <template>
   <main>
     <section>
-      <logo full />
+      <logo class="logo" full />
       <div class="hero-poster">
-        <img src="../assets/images/ilustracio.png" alt="" />
+        <img src="../assets/images/ilustracio.png" alt="I·lustració del cartell" />
       </div>
     </section>
     
@@ -24,12 +24,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import '../sass/variables';
+
   section {
     display: flex;
     align-items: center;
-    height: 95vh;
+    height: calc(100vh - 6rem);
     flex-direction: column;
-    margin-bottom: 3rem;
+    margin: 0 -2rem 3rem -2rem;
+    border-bottom: 2px $text solid;
+  }
+
+  .logo {
+    max-width: 100%;
+    padding: 0 1rem;
   }
 
   .hero-poster {
@@ -38,6 +46,12 @@ export default {
       object-position: 0 0;
       width: 100%;
       height: 60vh;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    section {
+      margin: 0 -1rem 2rem -1rem;
     }
   }
 </style>
