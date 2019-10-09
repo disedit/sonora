@@ -23,24 +23,11 @@ export default {
     Contact
   },
 
-  mounted () {
-    this.updatePageClass(this.$route.name)
-  },
-
-  watch: {
-    '$route': function (route) {
-      this.updatePageClass(route.name)
-    }
-  },
-
-  methods: {
-    updatePageClass (pageName) {
-      const body = document.getElementsByTagName("body")[0]
-      body.className = ''
-      if (pageName.startsWith('artists-')) {
-        body.classList.add('page-artist')
-      } else {
-        body.classList.add(`page-${pageName}`)
+  head () {
+    const pageName = this.$route.name.startsWith('artists-') ? 'artist' : this.$route.name
+    return {
+      bodyAttrs: {
+        class: `page-${pageName}`
       }
     }
   }
