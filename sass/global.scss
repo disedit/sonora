@@ -40,12 +40,12 @@ h2 {
   font-size: 7rem;
 }
 
-.page,
+body,
 .navbar {
   transition: .4s ease-in-out;
 }
 
-.artist-full-page,
+.page-artist,
 .page-schedule,
 .page-about {
   background: $primary;
@@ -55,7 +55,6 @@ h2 {
     color: $background;
 
     &::after {
-      display: block;
       background: $background;
     }
 

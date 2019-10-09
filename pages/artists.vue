@@ -142,7 +142,7 @@ export default {
     }
   }
 
-  .artist-full-page {
+  .page-artist {
     .artists-picture {
       img {
         mix-blend-mode: normal;
@@ -160,7 +160,7 @@ export default {
       }
     }
 
-    .artist-full-page {
+    .page-artist {
       .artists {
         grid-template-areas:
           "picture"

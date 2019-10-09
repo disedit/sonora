@@ -76,6 +76,10 @@ export default {
       border-radius: 20rem;
       font-size: 1.75rem;
 
+      &::after {
+        display: none;
+      }
+
       &:hover {
         background: $text;
         color: $background;

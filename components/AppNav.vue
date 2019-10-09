@@ -17,12 +17,12 @@
         <b-nav-item to="/schedule">
           Programació
         </b-nav-item>
-        <b-nav-item to="/contact">
-          Contacte
-        </b-nav-item>
       </b-navbar-nav>
 
       <b-navbar-nav class="ml-auto">
+        <b-nav-item to="/contact">
+          Contacte
+        </b-nav-item>
         <b-nav-item href="https://www.facebook.com/GVAInstitutValenciadeCultura/" target="_blank" rel="noopener noreferrer">
           <fa :icon="['fab', 'facebook-square']" /> <span class="d-md-none">Facebook</span>
         </b-nav-item>
@@ -84,24 +84,6 @@ export default {
         .lt {
           fill: $primary;
         }
-      }
-    }
-  }
-
-  .artist-full-page {
-    .navbar-light {
-      background: $primary;
-
-      .navbar-brand:hover {
-        .lt {
-          fill: $background;
-        }
-      }
-    }
-
-    .navbar-nav {
-      a.nav-link {
-        color: $background;
       }
     }
   }

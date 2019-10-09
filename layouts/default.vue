@@ -1,17 +1,43 @@
 <template>
-  <div :class="['page', $route.name.startsWith('artists-') ? 'artist-full-page' : null, `page-${$route.name}`]">
+  <div class="page">
     <app-nav />
-    <div class="app-container">
+    <div class="main-container">
       <nuxt />
+      <app-footer />
     </div>
   </div>
 </template>
 
 <script>
 import AppNav from '@/components/AppNav'
+import AppFooter from '@/components/AppFooter'
+
 export default {
   components: {
-    AppNav
+    AppNav,
+    AppFooter
+  },
+
+  mounted () {
+    this.updatePageClass(this.$route.name)
+  },
+
+  watch: {
+    '$route': function (route) {
+      this.updatePageClass(route.name)
+    }
+  },
+
+  methods: {
+    updatePageClass (pageName) {
+      const body = document.getElementsByTagName("body")[0]
+      body.className = ''
+      if (pageName.startsWith('artists-')) {
+        body.classList.add('page-artist')
+      } else {
+        body.classList.add(`page-${pageName}`)
+      }
+    }
   }
 }
 </script>
@@ -19,7 +45,7 @@ export default {
 <style lang="scss">
   @import '../sass/variables';
 
-  .app-container {
+  .main-container {
     max-width: 1600px;
     margin: 0 auto;
     padding: 2rem;
