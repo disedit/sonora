@@ -25,6 +25,15 @@ export default {
     }
   },
 
+  // Prefetch all artist images
+  head () {
+    const link = []
+    this.artists.forEach((artist) => {
+      link.push({ rel: 'prefetch', as: 'image', href: artist.image })
+    })
+    return { link }
+  },
+
   mounted () {
     this.$emit('image', artists[0].image)
   }
