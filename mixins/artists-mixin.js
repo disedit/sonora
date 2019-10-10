@@ -1,5 +1,5 @@
-import concerts from '@/pages/artists/concerts'
-import artists from '@/pages/artists/artists'
+import concerts from '@/content/concerts'
+import artists from '@/content/artists'
 
 export default {
   data () {

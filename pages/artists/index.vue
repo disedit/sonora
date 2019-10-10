@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import artists from './artists'
+import artists from '@/content/artists'
 
 export default {
   name: 'ArtistsList',
