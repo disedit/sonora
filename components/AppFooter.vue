@@ -1,26 +1,28 @@
 <template>
-  <footer>
-    <hr class="my-4" />
-    Logos
-    <hr class="my-4" />
-    <div class="row">
-      <div class="col-md-8">
-        <h6>© Institut Valencià de Cultura</h6>
-        <address>
-        Plaça de l'Ajuntament, 17
-        46002 València
-        </address>
-        <div>
-          <span>Tel. <a href="tel:+34963539300">963 539 300</a></span>
-          <span>E-mail <a href="mailto:ivc@gva.es">ivc@gva.es</a></span>
+  <div class="main-container">
+    <footer>
+      <hr class="my-4" />
+      Logos
+      <hr class="my-4" />
+      <div class="row">
+        <div class="col-md-8">
+          <h6>© Institut Valencià de Cultura</h6>
+          <address>
+          Plaça de l'Ajuntament, 17
+          46002 València
+          </address>
+          <div>
+            <span>Tel. <a href="tel:+34963539300">963 539 300</a></span>
+            <span>E-mail <a href="mailto:ivc@gva.es">ivc@gva.es</a></span>
+          </div>
+        </div>
+        <div class="col-md-4 text-right">
+          <a href="https://ivc.gva.es/val/ivc-val/qui-som-ivc/avis-legal-val/politica-de-privadesa/nota-legal-val" target="_blank" rel="noopener noreferrer">Nota legal</a>
+          <a href="#" @click.prevent="showContact" id="footerContactButton">Contacte</a>
         </div>
       </div>
-      <div class="col-md-4 text-right">
-        <a href="https://ivc.gva.es/val/ivc-val/qui-som-ivc/avis-legal-val/politica-de-privadesa/nota-legal-val" target="_blank" rel="noopener noreferrer">Nota legal</a>
-        <a href="#" @click.prevent="showContact" id="footerContactButton">Contacte</a>
-      </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 </template>
 
 <script>

@@ -1,21 +1,23 @@
 <template>
-  <div class="schedule">
-    <h2 class="schedule-header">
-      Programació
-    </h2>
-    <concert
-      v-for="(concert, i) in fullConcerts"
-      :key="i"
-      :venue="concert.venue"
-      :place="concert.place"
-      :date="concert.date">
-      <nuxt-link
-        v-for="artist in concert.fullArtists"
-        :key="artist.id"
-        :to="`/artists/${artist.id}`">
-        {{ artist.name }}
-      </nuxt-link>
-    </concert>
+  <div class="main-container">
+    <div class="schedule">
+      <h2 class="schedule-header">
+        Programació
+      </h2>
+      <concert
+        v-for="(concert, i) in fullConcerts"
+        :key="i"
+        :venue="concert.venue"
+        :place="concert.place"
+        :date="concert.date">
+        <nuxt-link
+          v-for="artist in concert.fullArtists"
+          :key="artist.id"
+          :to="`/artists/${artist.id}`">
+          {{ artist.name }}
+        </nuxt-link>
+      </concert>
+    </div>
   </div>
 </template>
 

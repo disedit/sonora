@@ -31,8 +31,9 @@ export default {
     align-items: center;
     height: calc(100vh - 6rem);
     flex-direction: column;
-    margin: 0 -2rem 5rem -2rem;
+    margin-bottom: 5rem;
     border-bottom: 2px $text solid;
+    padding-top: 3rem;
   }
 
   .logo {
@@ -51,7 +52,7 @@ export default {
 
   @include media-breakpoint-down(sm) {
     section {
-      margin: 0 -1rem 2rem -1rem;
+      margin-bottom: 3rem;
     }
   }
 </style>

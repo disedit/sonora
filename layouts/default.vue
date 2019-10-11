@@ -1,10 +1,8 @@
 <template>
   <div class="page">
     <app-nav />
-    <div class="main-container">
-      <nuxt />
-      <app-footer />
-    </div>
+    <nuxt />
+    <app-footer />
     <b-modal id="contact" hide-footer hide-header size="lg">
       <contact />
     </b-modal>

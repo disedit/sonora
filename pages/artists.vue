@@ -1,39 +1,41 @@
 <template>
-  <div class="artists">
-    <div class="artists-picture-container">
-      <div class="artists-picture">
-        <div class="artists-nav">
-          <nuxt-link v-if="$route.path != '/artists' && !isHome" to="/artists">
-            <fa :icon="['far', 'arrow-left']" /> Torna a artistes
-          </nuxt-link>
-        </div>
-        <div v-if="!artistVideoPlay" class="artists-picture-holder">
-          <div v-for="artist in artists" :key="artist.id" class="artist-image">
-            <img v-show="artistImage === artist.image" :src="artist.image" :alt="artist.name">
+  <div class="main-container">
+    <div class="artists">
+      <div class="artists-picture-container">
+        <div class="artists-picture">
+          <div class="artists-nav">
+            <nuxt-link v-if="$route.path != '/artists' && !isHome" to="/artists">
+              <fa :icon="['far', 'arrow-left']" /> Torna a artistes
+            </nuxt-link>
           </div>
-          <div v-if="artistVideo" class="artists-video-button">
-            <b-button variant="dark" class="play-button" @click="playVideo">
-              <fa :icon="['far', 'play']" /> Play
-            </b-button>
+          <div v-if="!artistVideoPlay" class="artists-picture-holder">
+            <div v-for="artist in artists" :key="artist.id" class="artist-image">
+              <img v-show="artistImage === artist.image" :src="artist.image" :alt="artist.name">
+            </div>
+            <div v-if="artistVideo" class="artists-video-button">
+              <b-button variant="dark" class="play-button" @click="playVideo">
+                <fa :icon="['far', 'play']" /> Play
+              </b-button>
+            </div>
           </div>
-        </div>
-        <div v-else class="artists-video-holder">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe
-              width="560"
-              height="315"
-              :src="`https://www.youtube.com/embed/${artistVideo}/?autoplay=1`"
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            />
+          <div v-else class="artists-video-holder">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe
+                width="560"
+                height="315"
+                :src="`https://www.youtube.com/embed/${artistVideo}/?autoplay=1`"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="artists-list">
-      <nuxt-child v-if="!isHome" @image="setImage" @video="setVideo" />
-      <artists-list v-else @image="setImage" @video="setVideo" is-home />
+      <div class="artists-list">
+        <nuxt-child v-if="!isHome" @image="setImage" @video="setVideo" />
+        <artists-list v-else @image="setImage" @video="setVideo" is-home />
+      </div>
     </div>
   </div>
 </template>
