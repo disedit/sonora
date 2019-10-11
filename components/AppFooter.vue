@@ -1,9 +1,13 @@
 <template>
   <div class="main-container">
     <footer>
-      <hr class="my-4" />
-      Logos
-      <hr class="my-4" />
+      <hr class="mt-4" />
+      <div class="logos">
+        <img src="../assets/images/logos/conselleria.png" alt="Conselleria d'Educació" />
+        <img src="../assets/images/logos/ivc.png" alt="IVC" />
+        <img src="../assets/images/logos/fes-cultura.png" alt="Fes Cultura" />
+      </div>
+      <hr class="mb-4" />
       <div class="row">
         <div class="col-md-8">
           <h6>© Institut Valencià de Cultura</h6>
@@ -43,5 +47,15 @@
   footer {
     margin-top: 2rem;
     color: rgba($text, .65);
+  }
+
+  .logos {
+    text-align: center;
+    background: $background;
+
+    img {
+      width: 200px;
+      mix-blend-mode: multiply;
+    }
   }
 </style>
