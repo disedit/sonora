@@ -2,7 +2,7 @@
   <div class="main-container">
     <div class="schedule">
       <h2 class="schedule-header">
-        Programació
+        Programa
       </h2>
       <concert
         v-for="(concert, i) in fullConcerts"

@@ -29,7 +29,7 @@ export default {
   section {
     display: flex;
     align-items: center;
-    height: calc(100vh - 6rem);
+    height: calc(100vh - 4rem);
     flex-direction: column;
     margin-bottom: 5rem;
     border-bottom: 2px $text solid;

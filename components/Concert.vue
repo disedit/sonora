@@ -56,6 +56,7 @@ export default {
       padding-top: 0.5rem;
       margin-top: auto;
       font-size: 2rem;
+      min-height: 106px;
     }
 
     &-artists {

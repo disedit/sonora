@@ -99,7 +99,7 @@ const artists = [
   },
   {
     id: 'pau-alabajos',
-    name: 'Pau Alabajos',
+    name: 'Pau Alabajos amb la Banda Municipal Castelló',
     image: PauAlabajosImg
   },
   {

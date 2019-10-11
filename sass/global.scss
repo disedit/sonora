@@ -88,8 +88,13 @@ body,
   }
 }
 
-.page-schedule {
-  background: $terciary;
+.page-artist .logos {
+  background: $primary !important;
+}
+
+.page-schedule,
+.page-schedule .logos {
+  background: $terciary !important;
 
   .navbar-light {
     background: $terciary;
@@ -97,8 +102,9 @@ body,
   }
 }
 
-.page-about {
-  background: $quaternary;
+.page-about,
+.page-about .logos {
+  background: $quaternary !important;
 
   .navbar-light {
     background: $quaternary;
