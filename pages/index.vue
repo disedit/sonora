@@ -31,7 +31,7 @@ export default {
     align-items: center;
     height: calc(100vh - 6rem);
     flex-direction: column;
-    margin: 0 -2rem 3rem -2rem;
+    margin: 0 -2rem 5rem -2rem;
     border-bottom: 2px $text solid;
   }
 

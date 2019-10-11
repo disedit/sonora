@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Artistes</h2>
+    <h2 v-if="!isHome">Artistes</h2>
     <ul>
       <li v-for="artist in artists" :key="artist.id" @mouseover="$emit('image', artist.image)">
         <nuxt-link :to="`/artists/${artist.id}`">
@@ -18,6 +18,13 @@ export default {
   name: 'ArtistsList',
 
   scrollToTop: true,
+
+  props: {
+    isHome: {
+      type: Boolean,
+      default: false
+    },
+  },
 
   data () {
     return {

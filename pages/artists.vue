@@ -8,7 +8,9 @@
           </nuxt-link>
         </div>
         <div v-if="!artistVideoPlay" class="artists-picture-holder">
-          <img :src="artistImage" alt="">
+          <div v-for="artist in artists" :key="artist.id" class="artist-image">
+            <img v-show="artistImage === artist.image" :src="artist.image" :alt="artist.name">
+          </div>
           <div v-if="artistVideo" class="artists-video-button">
             <b-button variant="dark" class="play-button" @click="playVideo">
               <fa :icon="['far', 'play']" /> Play
@@ -31,12 +33,13 @@
     </div>
     <div class="artists-list">
       <nuxt-child v-if="!isHome" @image="setImage" @video="setVideo" />
-      <artists-list v-else @image="setImage" @video="setVideo" />
+      <artists-list v-else @image="setImage" @video="setVideo" is-home />
     </div>
   </div>
 </template>
 
 <script>
+import artists from '@/content/artists'
 import ArtistsList from './artists/index'
 
 export default {
@@ -52,6 +55,7 @@ export default {
 
   data () {
     return {
+      artists,
       artistImage: null,
       artistVideo: null,
       artistVideoPlay: false
