@@ -3,7 +3,7 @@
     <section>
       <logo class="logo" full />
       <div class="hero-poster">
-        <img src="../assets/images/ilustracio.png" alt="I·lustració del cartell" />
+        <img src="../assets/images/ilustracio.jpg" alt="I·lustració del cartell" />
       </div>
     </section>
     
