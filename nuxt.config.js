@@ -1,4 +1,4 @@
-import ogThumbnail from './assets/thumbnail.jpg'
+import ogThumbnail from './assets/images/thumbnail.jpg'
 
 export default {
   mode: 'universal',
