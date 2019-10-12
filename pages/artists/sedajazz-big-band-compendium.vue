@@ -44,7 +44,7 @@ export default {
 
   mounted () {
     this.$emit('image', image)
-    this.$emit('video', '233746909', 'vimeo')
+    this.$emit('video', 'https://player.vimeo.com/video/233746909?autoplay=1&byline=0', 'vimeo')
   }
 }
 </script>

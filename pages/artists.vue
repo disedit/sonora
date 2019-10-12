@@ -23,10 +23,13 @@
               <iframe
                 width="560"
                 height="315"
-                :src="`https://www.youtube.com/embed/${artistVideo}/?autoplay=1`"
+                :src="!artistVideoPlatform || artistVideoPlatform === 'youtube' ? `https://www.youtube.com/embed/${artistVideo}/?autoplay=1` : artistVideo"
                 frameborder="0"
+                scrolling="no"
+                style="border:none; overflow:hidden"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
+                allowTransparency
               />
             </div>
           </div>
@@ -60,6 +63,7 @@ export default {
       artists,
       artistImage: null,
       artistVideo: null,
+      artistVideoPlatform: 'youtube',
       artistVideoPlay: false
     }
   },
@@ -75,8 +79,9 @@ export default {
     setImage (image) {
       this.artistImage = image
     },
-    setVideo (video) {
+    setVideo (video, platform) {
       this.artistVideo = video
+      this.artistVideoPlatform = platform
     },
     playVideo () {
       this.artistVideoPlay = true
