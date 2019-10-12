@@ -34,15 +34,15 @@
       </div>
       <div class="artists-list">
         <nuxt-child v-if="!isHome" @image="setImage" @video="setVideo" />
-        <artists-list v-else @image="setImage" @video="setVideo" is-home />
+        <artists-list v-else is-home @image="setImage" @video="setVideo" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import artists from '@/content/artists'
 import ArtistsList from './artists/index'
+import artists from '@/content/artists'
 
 export default {
   name: 'Artists',

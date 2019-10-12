@@ -6,40 +6,42 @@
       :venue="concert.venue"
       :place="concert.place"
       :date="concert.date"
-      compact>
+      compact
+    >
       <nuxt-link
-        v-for="artist in concert.fullArtists"
-        :key="artist.id"
-        :to="`/artists/${artist.id}`">
-        {{ artist.name }}
+        v-for="concertArtist in concert.fullArtists"
+        :key="concertArtist.id"
+        :to="`/artists/${concertArtist.id}`"
+      >
+        {{ concertArtist.name }}
       </nuxt-link>
     </concert>
   </div>
 </template>
 
 <script>
-  import Concert from './Concert'
-  import ArtistsMixin from '@/mixins/artists-mixin.js'
+import Concert from './Concert'
+import ArtistsMixin from '@/mixins/artists-mixin.js'
 
-  export default {
-    name: 'ArtistConcerts',
+export default {
+  name: 'ArtistConcerts',
 
-    components: {
-      Concert
-    },
+  components: {
+    Concert
+  },
 
-    mixins: [ArtistsMixin],
+  mixins: [ArtistsMixin],
 
-    mounted () {
-      this.setFullConcerts(this.artist)
-    },
-
-    computed: {
-      artist: function () {
-        return this.$route.name.replace(/artists-/g, '')
-      }
+  computed: {
+    artist () {
+      return this.$route.name.replace(/artists-/g, '')
     }
+  },
+
+  mounted () {
+    this.setFullConcerts(this.artist)
   }
+}
 </script>
 
 <style lang="scss" scoped>

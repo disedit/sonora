@@ -20,7 +20,7 @@
       </b-navbar-nav>
 
       <b-navbar-nav class="ml-auto">
-        <b-nav-item href="#" @click.prevent="showContact" id="navContactButton">
+        <b-nav-item id="navContactButton" href="#" @click.prevent="showContact">
           Contacte
         </b-nav-item>
         <b-nav-item href="https://www.facebook.com/GVAInstitutValenciadeCultura/" target="_blank" rel="noopener noreferrer">
