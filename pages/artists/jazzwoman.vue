@@ -4,6 +4,7 @@
       facebook: 'https://www.facebook.com/JazzWoman-301017713327266/',
       twitter: 'https://twitter.com/JazzWoman_Music',
       instagram: 'https://www.instagram.com/jazzwoman.music/',
+      youtube: 'https://www.youtube.com/channel/UC8vU5uzIvN68GA4Kya3w0zw',
       spotify: 'https://open.spotify.com/artist/7yMJSfFJgb2YFBAKSckG4z?si=D-LInekOS8K-sYcBw2HTow'
     }"
   >

@@ -3,6 +3,7 @@
     :social="{
       facebook: 'https://www.facebook.com/Veragreenland/',
       instagram: 'https://www.instagram.com/veragreen_band/',
+      youtube: 'https://www.youtube.com/channel/UCm0Q-0DAf2_-HjxOv9_t7wg/videos',
       spotify: 'https://open.spotify.com/artist/4zzG67sucjcErB0RI5FxFG?si=mMctmn_FT2m7Yr-UzbF03A'
     }"
   >

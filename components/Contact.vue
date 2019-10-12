@@ -44,8 +44,8 @@
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="0" width="0">
       <defs>
         <filter id="multiply">
-          <feFlood flood-color="#D74139" flood-opacity="1" result="flood"/>
-          <feBlend mode="multiply" in1="flood" in2="SourceGraphic"/>
+          <feFlood flood-color="#D74139" flood-opacity="1" result="flood" />
+          <feBlend mode="multiply" in1="flood" in2="SourceGraphic" />
         </filter>
       </defs>
     </svg>

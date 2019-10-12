@@ -27,18 +27,10 @@ const concerts = [
   },
   {
     artists: [
-      'Feliu Ventura'
+      'feliu-ventura'
     ],
     date: '8 de novembre',
     venue: 'Teatre Principal',
-    place: 'Castelló'
-  },
-  {
-    artists: [
-      'junior-mackenzie'
-    ],
-    date: '8 de novembre',
-    venue: 'Auditori de Castelló',
     place: 'Castelló'
   },
   {
@@ -71,7 +63,7 @@ const concerts = [
   },
   {
     artists: [
-      'Sedajazz Big Band Compendium'
+      'sedajazz-big-band-compendium'
     ],
     date: '24 de gener',
     venue: 'Casa de Cultura KAKV',
@@ -88,7 +80,7 @@ const concerts = [
   },
   {
     artists: [
-      'Òscar Briz',
+      'oscar-briz',
       'vera-green'
     ],
     date: '25 de gener',
@@ -106,7 +98,7 @@ const concerts = [
   },
   {
     artists: [
-      'Botifarra a Banda'
+      'botifarra-a-banda'
     ],
     date: '7 de febrer',
     venue: 'Teatre Principal',
@@ -139,8 +131,8 @@ const concerts = [
   },
   {
     artists: [
-      'Andre Valor',
-      'Eva Olivencia'
+      'andreu-valor',
+      'eva-olivencia'
     ],
     date: '23 de febrer',
     venue: 'La Llotja',

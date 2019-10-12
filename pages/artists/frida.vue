@@ -4,6 +4,7 @@
       facebook: 'https://www.facebook.com/Fridagrup/',
       twitter: 'https://twitter.com/FridaGrup',
       instagram: 'https://www.instagram.com/fridagrup/',
+      youtube: 'https://www.youtube.com/user/Fridafreerap',
       spotify: 'https://open.spotify.com/artist/5WrFF7JJ5hPqQXX4O599RF?si=KbM4Y3hWR9OiVaSUO5OnmQ'
     }"
   >

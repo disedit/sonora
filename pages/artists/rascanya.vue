@@ -3,8 +3,8 @@
     :social="{
       website: 'http://www.rascanya.cat',
       facebook: 'https://www.facebook.com/rascanya/',
-      twitter: 'https://twitter.com/JonatanPenalba',
       instagram: 'https://www.instagram.com/rascanya_cat/',
+      youtube: 'https://www.youtube.com/channel/UCSs0RDIuPKheRm2sMqPr0tQ',
       spotify: 'https://open.spotify.com/artist/63bsq7UKtzHlI9K7DKnm7k?si=Z99vNMA5TNWlRNknsS5WCw'
     }"
   >

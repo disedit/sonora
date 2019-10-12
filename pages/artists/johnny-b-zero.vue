@@ -4,6 +4,7 @@
       facebook: 'https://www.facebook.com/johnnybzeroband/',
       twitter: 'https://twitter.com/JohnnyBZero',
       instagram: 'https://www.instagram.com/johnnybzero/',
+      youtube: 'https://www.youtube.com/channel/UC0YjCH68cz5KVtuM-zf7QHQ',
       spotify: 'https://open.spotify.com/artist/0JQpaf96mXplPylTI94CK5?si=gmHpvmUFRgieVaLPmrrcog'
     }"
   >

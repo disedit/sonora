@@ -4,6 +4,7 @@
       facebook: 'https://www.facebook.com/Trobadorets-119898938086489/',
       twitter: 'https://twitter.com/trobadorets?lang=ca',
       instagram: 'https://www.instagram.com/trobadorets/',
+      youtube: 'https://www.youtube.com/channel/UCmX22rtkmGX9mxYUAmKlYCA',
       spotify: 'https://open.spotify.com/artist/59GCyQu1AitFqjUexnqX4m?si=Oy-DfSIMTFqIqzkRXplq-A'
     }"
   >

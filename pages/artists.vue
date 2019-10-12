@@ -23,10 +23,13 @@
               <iframe
                 width="560"
                 height="315"
-                :src="`https://www.youtube.com/embed/${artistVideo}/?autoplay=1`"
+                :src="!artistVideoPlatform || artistVideoPlatform === 'youtube' ? `https://www.youtube.com/embed/${artistVideo}/?autoplay=1` : artistVideo"
                 frameborder="0"
+                scrolling="no"
+                style="border:none; overflow:hidden"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
+                allowTransparency
               />
             </div>
           </div>
@@ -34,15 +37,15 @@
       </div>
       <div class="artists-list">
         <nuxt-child v-if="!isHome" @image="setImage" @video="setVideo" />
-        <artists-list v-else @image="setImage" @video="setVideo" is-home />
+        <artists-list v-else is-home @image="setImage" @video="setVideo" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import artists from '@/content/artists'
 import ArtistsList from './artists/index'
+import artists from '@/content/artists'
 
 export default {
   name: 'Artists',
@@ -60,6 +63,7 @@ export default {
       artists,
       artistImage: null,
       artistVideo: null,
+      artistVideoPlatform: 'youtube',
       artistVideoPlay: false
     }
   },
@@ -75,8 +79,9 @@ export default {
     setImage (image) {
       this.artistImage = image
     },
-    setVideo (video) {
+    setVideo (video, platform) {
       this.artistVideo = video
+      this.artistVideoPlatform = platform
     },
     playVideo () {
       this.artistVideoPlay = true
