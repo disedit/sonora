@@ -2,7 +2,6 @@
   <artist-page
     :social="{
       facebook: 'https://www.facebook.com/Dani-Miquel-168273646524508/',
-      twitter: 'https://twitter.com/CarlesDenia',
       website: 'http://danimiquel.cat/',
       instagram: 'https://www.instagram.com/danimiquel/',
       spotify: 'https://open.spotify.com/artist/3RvCCC63losASebpl75PvC?si=joMtGIKvS0ytIQzWerDUPg'

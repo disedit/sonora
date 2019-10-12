@@ -1,26 +1,30 @@
 <template>
   <div class="main-container">
     <div class="about">
-      <h2 class="about-title">Un nou circuit musical valencià</h2>
+      <h2 class="about-title">
+        Un nou circuit musical valencià
+      </h2>
       <div class="about-text about-text-1">
         <p>
-        <a href="https://ivc.gva.es/">L’Institut Valencià de Cultura</a> presenta Sonora, el nou circuit de la música valenciana, que portarà a la tardor als grups guanyadors i finalistes dels
+          <a href="https://ivc.gva.es/">L’Institut Valencià de Cultura</a> presenta Sonora, el nou circuit de la música valenciana, que portarà a la tardor als grups guanyadors i finalistes dels
           Premis Carles Santos de la Música Valenciana per tot el territori valencià.
         </p>
-        
+
         <p>
           L’objectiu principal d’aquesta nova iniciativa és la creació d’una plataforma estable i regular perquè els intèrprets valencians puguen mostrar els seus treballs en sales
           públiques i privades. D’aquesta manera, grups i solistes tindran la possibilitat d’actuar en diferents punts del territori fora de la temporada estival.
           El cartell de Sonora ha sigut realitzat per la coneguda il·lustradora valenciana Carla Fuentes.
         </p>
       </div>
-      
+
       <img class="about-poster" src="../assets/images/cartell-vilafranca.jpg" alt="Cartell del festival per Carla Fuentes">
 
       <div class="about-text about-text-2">
         <p>
           El concert de presentació del circuit Sonora va tindre lloc el passat divendres 10 de maig a Vilafranca coincidint amb la Capitalitat Cultural Valenciana que aquesta
-          població comparteix enguany amb Altea. El concert va estar protagonitzat per <router-link to="/artists/els-jovens">Els Jóvens</router-link>, grans guanyadors de l’edició 2018 dels premis Carles Santos amb tres guardons:
+          població comparteix enguany amb Altea. El concert va estar protagonitzat per <router-link to="/artists/els-jovens">
+            Els Jóvens
+          </router-link>, grans guanyadors de l’edició 2018 dels premis Carles Santos amb tres guardons:
           Millor Disc, Grup Revelació i Millor Cançó. A partir d’ací, el cicle Sonora es desenvoluparà entre novembre de 2019 i febrer de 2020 al llarg i ample del territori valencià,
           amb la intenció de cobrir zones on la programació d’espectacles és menor. Al mateix temps, es pretén desestacionalitzar l'oferta musical.
         </p>
@@ -34,7 +38,6 @@
       </div>
 
       <img class="about-image" src="../assets/images/jovens-concert.jpeg" alt="Els Joves a Vilafranca">
-
     </div>
   </div>
 </template>
@@ -83,14 +86,14 @@ export default {
     &-title {
       grid-area: title;
     }
-    
+
     &-image {
       grid-area: image;
       align-self: center;
       filter: grayscale(100%);
       width: 100%;
     }
-  
+
     &-poster {
       grid-area: poster;
       justify-self: end;

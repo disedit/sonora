@@ -4,6 +4,8 @@
       facebook: 'https://www.facebook.com/Carles-D%C3%A9nia-115516288460497/',
       twitter: 'https://twitter.com/CarlesDenia',
       website: 'http://www.carlesdenia.com/',
+      spotify: 'https://open.spotify.com/artist/2D7y6v6J3Gs41ewyv6NWzk',
+      youtube: 'https://www.youtube.com/channel/UCm3aPl_Wk20S5XoB8APP0Fw'
     }"
   >
     <template v-slot:header>

@@ -2,8 +2,7 @@
   <artist-page
     :social="{
       facebook: 'https://www.facebook.com/borrianabigband/',
-      twitter: 'has',
-      youtube: 'has',
+      youtube: 'https://www.youtube.com/channel/UCkpK4wG17WYBZyqjjLqKgHg',
       instagram: 'https://www.instagram.com/borrianabigband/',
       spotify: 'https://open.spotify.com/artist/59jy68zDZbQuTcJxul5NC0?si=luCssiC1S-qGWizmp_Ko7g',
       website: 'https://borrianabigband.com/'

@@ -3,7 +3,6 @@
     :social="{
       facebook: 'https://www.facebook.com/carlespastormusic/',
       twitter: 'https://twitter.com/Cpastor76',
-      website: 'http://www.carlesdenia.com/',
       instagram: 'https://www.instagram.com/carles_pastor76/',
       spotify: 'https://open.spotify.com/artist/4WeRVZvQxz4Yu0Dr8RTLOv?si=b614A14KSDGJBXaBVhtOPA'
     }"
