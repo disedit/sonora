@@ -4,6 +4,7 @@
       facebook: 'https://www.facebook.com/juneskaleidoscope/',
       twitter: 'https://twitter.com/JunesKaleidoscp',
       instagram: 'https://www.instagram.com/juneskaleidoscope/',
+      youtube: 'https://www.youtube.com/user/Juneskaleidoscope',
       spotify: 'https://open.spotify.com/artist/4HQIymniDByxyvA5kOogLl?si=p9-QF8F7RV-qFhzb6SMFDA'
     }"
   >

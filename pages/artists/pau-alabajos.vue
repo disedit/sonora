@@ -6,6 +6,7 @@
       facebook: 'https://www.facebook.com/paualabajos/',
       twitter: 'https://twitter.com/PauAlabajos',
       instagram: 'https://www.instagram.com/paualabajos/',
+      youtube: 'https://www.youtube.com/user/paualabajos',
       spotify: 'https://open.spotify.com/artist/2fx0EsmjDotI8Vq4daoB2g?si=8tQpODhyQM6UGyzYK48G8w'
     }"
   >

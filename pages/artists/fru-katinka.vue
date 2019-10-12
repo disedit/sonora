@@ -4,6 +4,7 @@
       facebook: 'https://www.facebook.com/FruKatinkaLOVE/',
       twitter: 'https://twitter.com/frukatinka',
       instagram: 'https://www.instagram.com/frukatinka/',
+      youtube: 'https://www.youtube.com/channel/UCfqDz1umPu4H_fkRm874yvw',
       spotify: 'https://open.spotify.com/artist/651vtw2URONkPrvHKXUPES?si=RGYhjmmdTVS6Go7yfn_zBQ'
     }"
   >

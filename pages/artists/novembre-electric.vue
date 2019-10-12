@@ -4,6 +4,7 @@
       facebook: 'https://www.facebook.com/Novelectric/',
       twitter: 'https://twitter.com/NElctric',
       instagram: 'https://www.instagram.com/novembre_electric/',
+      youtube: 'https://www.youtube.com/channel/UC6ZgQKBHf8bVHlWgBm89Eyg',
       spotify: 'https://open.spotify.com/artist/0hwP1zFS6XO7kSohkYwUjT?si=p3HEKnSMTEiVO-FwJLWcfw'
     }"
   >

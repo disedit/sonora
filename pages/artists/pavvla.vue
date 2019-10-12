@@ -6,6 +6,7 @@
       facebook: 'https://www.facebook.com/pavvlamusic/',
       twitter: 'https://twitter.com/pavvla_',
       instagram: 'https://www.instagram.com/pavvla_/',
+      youtube: 'https://www.youtube.com/channel/UCWY3BpVws7XVxFKQ0eaUovA',
       spotify: 'https://open.spotify.com/artist/6VyWLGXsjUekjMDWZ1jcwU?si=M1fhQNUUT1Gk3fBnXX09HA'
     }"
   >

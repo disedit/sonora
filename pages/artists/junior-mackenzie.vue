@@ -5,6 +5,7 @@
       facebook: 'https://www.facebook.com/juniormackenzie.official/',
       twitter: 'https://twitter.com/juniormackenzie',
       instagram: 'https://www.instagram.com/juniormackenziegram/',
+      youtube: 'https://www.youtube.com/user/JuniorMackenzie',
       spotify: 'https://open.spotify.com/artist/0jD7HsSxNzzWWhFUOWlrRt?si=4CsfUX6qS9yMLDAU8E_57w'
     }"
   >

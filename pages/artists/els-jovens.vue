@@ -4,6 +4,7 @@
       facebook: 'https://www.facebook.com/elsjovenshantornat/',
       twitter: 'https://twitter.com/elsjovens',
       instagram: 'https://www.instagram.com/elsjovens/',
+      youtube: 'https://www.youtube.com/channel/UCq7L4buafGO2yHcjCdnaGxg',
       spotify: 'https://open.spotify.com/artist/7Aop1VVQPR8WTm07073xoy?si=dy_2-QgPSUORuJRNr8rvIQ'
     }"
   >

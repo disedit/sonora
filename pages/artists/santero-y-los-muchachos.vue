@@ -5,6 +5,7 @@
       facebook: 'https://www.facebook.com/SanteroYLosMuchachos/',
       twitter: 'https://twitter.com/SanteroyM',
       instagram: 'https://www.instagram.com/santeroylosmuchachos/',
+      youtube: 'https://www.youtube.com/channel/UChi_9Jr8YnrjbyiqLA5-eXQ',
       spotify: 'https://open.spotify.com/artist/1KX80l2v6D9jbexW3IkWvR?si=PWahdT98Sp2fbqFzGtblvA'
     }"
   >

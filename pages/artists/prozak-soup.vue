@@ -6,6 +6,7 @@
       facebook: 'https://www.facebook.com/ProzakSoup/',
       twitter: 'https://twitter.com/ProzakSoup',
       instagram: 'https://www.instagram.com/prozaksoupoficial/',
+      youtube: 'https://www.youtube.com/user/ProzakSoup',
       spotify: 'https://open.spotify.com/artist/6EF4cCHpvhR4aPEPVG7xgc?si=YZpMbxMlT6uURunGo1CEzA'
     }"
   >

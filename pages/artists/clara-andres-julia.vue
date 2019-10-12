@@ -50,6 +50,9 @@
       <li>
         <a href="https://open.spotify.com/artist/4oWkLfD8NExnAt1fBctUNF?si=Ww7MrCC4RFO98OUWLFTH2" target="_blank" rel="noopener noreferrer"><fa :icon="['fab', 'spotify']" /></a>
       </li>
+      <li>
+        <a href="https://www.youtube.com/user/juliagrup" target="_blank" rel="noopener noreferrer"><fa :icon="['fab', 'youtube']" /></a>
+      </li>
     </ul>
   </artist-page>
 </template>
