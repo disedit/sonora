@@ -29,7 +29,7 @@ const concerts = [
     artists: [
       'feliu-ventura'
     ],
-    date: '8 de novembre',
+    date: '9 de novembre',
     venue: 'Teatre Principal',
     place: 'Castelló'
   },
