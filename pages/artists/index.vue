@@ -28,6 +28,15 @@ export default {
     }
   },
 
+  head () {
+    return {
+      title: 'Artistes - Sonora',
+      meta: [
+        { property: 'og:image', content: `https://circuitsonora.com/thumbnail.jpg` }
+      ]
+    }
+  },
+
   data () {
     return {
       artists

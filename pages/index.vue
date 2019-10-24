@@ -19,7 +19,15 @@ export default {
   components: {
     Logo,
     Artists
-  }
+  },
+
+  head () {
+    return {
+      meta: [
+        { property: 'og:image', content: `https://circuitsonora.com/thumbnail.jpg` }
+      ]
+    }
+  },
 }
 </script>
 

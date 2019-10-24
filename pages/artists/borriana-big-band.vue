@@ -32,6 +32,15 @@ export default {
     ArtistPage
   },
 
+  head () {
+    return {
+      title: 'Borriana Big Band - Sonora',
+      meta: [
+        { property: 'og:image', content: `https://circuitsonora.com${image}` }
+      ]
+    }
+  },
+
   mounted () {
     this.$emit('image', image)
     this.$emit('video', 'MvhDk4rRBFo')

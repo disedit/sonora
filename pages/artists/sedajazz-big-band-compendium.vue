@@ -42,6 +42,15 @@ export default {
     ArtistPage
   },
 
+  head () {
+    return {
+      title: 'Sedajazz Big Band Compendium - Sonora',
+      meta: [
+        { property: 'og:image', content: `https://circuitsonora.com${image}` }
+      ]
+    }
+  },
+
   mounted () {
     this.$emit('image', image)
     this.$emit('video', 'https://player.vimeo.com/video/233746909?autoplay=1&byline=0', 'vimeo')

@@ -36,6 +36,15 @@ export default {
     ArtistPage
   },
 
+  head () {
+    return {
+      title: 'Eva Olivencia - Sonora',
+      meta: [
+        { property: 'og:image', content: `https://circuitsonora.com${image}` }
+      ]
+    }
+  },
+
   mounted () {
     this.$emit('image', image)
     this.$emit('video', 'https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F2650426105181749%2Fvideos%2F1955885911380012%2F&show_text=0&width=560&autoplay=true', 'facebook')

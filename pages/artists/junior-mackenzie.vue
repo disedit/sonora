@@ -44,6 +44,15 @@ export default {
     ArtistPage
   },
 
+  head () {
+    return {
+      title: 'Junior Mackenzie - Sonora',
+      meta: [
+        { property: 'og:image', content: `https://circuitsonora.com${image}` }
+      ]
+    }
+  },
+
   mounted () {
     this.$emit('image', image)
     this.$emit('video', '1OAbdqJIGOk')
