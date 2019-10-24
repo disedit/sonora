@@ -46,7 +46,10 @@
 export default {
   head () {
     return {
-      title: 'Què és - Sonora'
+      title: 'Què és - Sonora',
+      meta: [
+        { property: 'og:image', content: `https://circuitsonora.com/thumbnail.jpg` }
+      ]
     }
   }
 }

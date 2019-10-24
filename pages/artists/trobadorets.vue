@@ -31,6 +31,15 @@ export default {
     ArtistPage
   },
 
+  head () {
+    return {
+      title: 'Trobadorets - Sonora',
+      meta: [
+        { property: 'og:image', content: `https://circuitsonora.com${image}` }
+      ]
+    }
+  },
+
   mounted () {
     this.$emit('image', image)
     this.$emit('video', 'tBr578cem3Y')

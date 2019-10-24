@@ -34,6 +34,15 @@ export default {
     ArtistPage
   },
 
+  head () {
+    return {
+      title: 'Rascanya - Sonora',
+      meta: [
+        { property: 'og:image', content: `https://circuitsonora.com${image}` }
+      ]
+    }
+  },
+
   mounted () {
     this.$emit('image', image)
     this.$emit('video', 'GuBy0_4gNO8')

@@ -34,6 +34,15 @@ export default {
 
   mixins: [ArtistsMixin],
 
+    head () {
+    return {
+      title: 'Programació - Sonora',
+      meta: [
+        { property: 'og:image', content: `https://circuitsonora.com/thumbnail.jpg` }
+      ]
+    }
+  },
+
   mounted () {
     this.setFullConcerts()
   }
