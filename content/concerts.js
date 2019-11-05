@@ -29,7 +29,7 @@ const concerts = [
     artists: [
       'feliu-ventura'
     ],
-    date: '9 de novembre',
+    date: '8 de novembre, 20h',
     venue: 'Teatre Principal',
     place: 'Castelló'
   },
@@ -100,7 +100,7 @@ const concerts = [
     artists: [
       'botifarra-a-banda'
     ],
-    date: '7 de febrer',
+    date: '7 de febrer, 20h',
     venue: 'Teatre Principal',
     place: 'Requena'
   },
