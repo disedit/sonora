@@ -5,7 +5,7 @@ const concerts = [
       'pavvla',
       'fru-katinka'
     ],
-    date: '19 d\'octubre',
+    date: '19 d\'octubre, 13h',
     venue: 'Casa de Cultura',
     place: 'Gandia'
   },
@@ -13,7 +13,7 @@ const concerts = [
     artists: [
       'dani-miquel'
     ],
-    date: '31 d\'octubre',
+    date: '31 d\'octubre ',
     venue: 'Palau Altea',
     place: 'Altea'
   },
@@ -21,7 +21,7 @@ const concerts = [
     artists: [
       'pau-alabajos'
     ],
-    date: '8 de novembre',
+    date: '8 de novembre, 20h',
     venue: 'Teatre Principal',
     place: 'Castelló'
   },
@@ -38,8 +38,8 @@ const concerts = [
       'carles-pastor',
       'clara-andres-julia'
     ],
-    date: '29 de novembre',
-    venue: 'Per concretar',
+    date: '29 de novembre, 22h',
+    venue: 'Casa de la cultura',
     place: 'L\'Alcúdia'
   },
   {
@@ -48,7 +48,7 @@ const concerts = [
       'prozak-soup',
       'jazzwoman'
     ],
-    date: '21 de desembre',
+    date: '21 de desembre, 20h',
     venue: 'Port de Sagunt',
     place: 'Casal Jove'
   },
@@ -57,7 +57,7 @@ const concerts = [
       'jonatan-penalba',
       'rascanya'
     ],
-    date: '29 de desembre',
+    date: '28 de desembre, 19:30h',
     venue: 'Teatre Principal',
     place: 'Morella'
   },
@@ -108,7 +108,7 @@ const concerts = [
     artists: [
       'carles-denia'
     ],
-    date: '8 de febrer',
+    date: '8 de febrer, 20h',
     venue: 'Arniches',
     place: 'Alacant'
   },
