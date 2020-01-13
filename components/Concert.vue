@@ -1,5 +1,5 @@
 <template>
-  <div class="concert">
+  <div :class="{ 'concert': true, 'dimmed': dimmed }">
     <div class="concert-date">
       {{ date }}
     </div>
@@ -21,6 +21,10 @@ export default {
       type: String,
       default: ''
     },
+    utc: {
+      type: Date,
+      default: () => new Date()
+    },
     place: {
       type: String,
       default: ''
@@ -33,6 +37,13 @@ export default {
       type: Boolean,
       default: false
     }
+  },
+
+  computed: {
+    dimmed () {
+      const today = new Date()
+      return today > this.utc
+    }
   }
 }
 </script>
@@ -41,7 +52,6 @@ export default {
   @import '../sass/variables';
 
   .concert {
-    padding-top: 3rem;
     display: flex;
     flex-direction: column;
 
@@ -74,6 +84,10 @@ export default {
         }
       }
     }
+  }
+
+  .dimmed {
+    opacity: .5;
   }
 
   @include media-breakpoint-down(sm) {

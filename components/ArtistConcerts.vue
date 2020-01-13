@@ -1,11 +1,12 @@
 <template>
-  <div>
+  <div class="artist-concerts">
     <concert
       v-for="(concert, i) in fullConcerts"
       :key="i"
       :venue="concert.venue"
       :place="concert.place"
       :date="concert.date"
+      :utc="concert.utc"
       compact
     >
       <nuxt-link
@@ -45,5 +46,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.artist-concerts {
+  margin-top: 3rem;
+}
 </style>

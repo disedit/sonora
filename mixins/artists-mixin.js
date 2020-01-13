@@ -5,17 +5,25 @@ export default {
   data () {
     return {
       concerts,
-      fullConcerts: null
+      fullConcerts: null,
+      fullUpcomingConcerts: null,
+      fullPastConcerts: null
     }
   },
 
   methods: {
-    setFullConcerts (filter) {
+    setFullConcerts (filter, upcoming) {
+      const today = new Date()
       const filteredConcerts = filter
         ? this.concerts.filter((concert) => {
           return concert.artists.includes(filter)
+        }) : upcoming ? this.concerts.filter((concert) => {
+          return today <= concert.utc
+        }) : this.concerts.filter((concert) => {
+          return today > concert.utc
         })
-        : this.concerts
+
+      console.log(filteredConcerts)
 
       const fullConcerts = filteredConcerts.map((concert) => {
         const fullArtists = []
@@ -37,7 +45,13 @@ export default {
         }
       })
 
-      this.fullConcerts = fullConcerts
+      if (filter) {
+        this.fullConcerts = fullConcerts
+      } else if (upcoming) {
+        this.fullUpcomingConcerts = fullConcerts
+      } else {
+        this.fullPastConcerts = fullConcerts
+      }
     }
   }
 }
