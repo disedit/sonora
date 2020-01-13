@@ -5,7 +5,7 @@ const concerts = [
       'pavvla',
       'fru-katinka'
     ],
-    date: '19 d\'octubre',
+    date: '19 d\'octubre, 13h',
     utc: new Date('2019-10-19'),
     venue: 'Casa de Cultura',
     place: 'Gandia'
@@ -23,8 +23,8 @@ const concerts = [
     artists: [
       'pau-alabajos'
     ],
-    date: '8 de novembre',
-    utc: new Date('2019-11-08'),
+    date: '8 de novembre, 20h',
+    utc: new Date('2019-11-08 20:00'),
     venue: 'Teatre Principal',
     place: 'Castelló'
   },
@@ -42,9 +42,9 @@ const concerts = [
       'carles-pastor',
       'clara-andres-julia'
     ],
-    date: '29 de novembre',
-    utc: new Date('2019-11-29'),
-    venue: 'Per concretar',
+    date: '29 de novembre, 22h',
+    utc: new Date('2019-11-29 22:00'),
+    venue: 'Casa de la cultura',
     place: 'L\'Alcúdia'
   },
   {
@@ -53,8 +53,8 @@ const concerts = [
       'prozak-soup',
       'jazzwoman'
     ],
-    date: '21 de desembre',
-    utc: new Date('2019-12-21'),
+    date: '21 de desembre, 20h',
+    utc: new Date('2019-12-21 20:00'),
     venue: 'Port de Sagunt',
     place: 'Casal Jove'
   },
@@ -63,8 +63,8 @@ const concerts = [
       'jonatan-penalba',
       'rascanya'
     ],
-    date: '29 de desembre',
-    utc: new Date('2019-12-19 29:00'),
+    date: '29 de desembre, 19:30h',
+    utc: new Date('2019-12-29 19:30'),
     venue: 'Teatre Principal',
     place: 'Morella'
   },
