@@ -5,11 +5,34 @@
         Programa
       </h2>
       <concert
-        v-for="(concert, i) in fullConcerts"
+        v-for="(concert, i) in fullUpcomingConcerts"
         :key="i"
         :venue="concert.venue"
         :place="concert.place"
         :date="concert.date"
+        :utc="concert.utc"
+      >
+        <nuxt-link
+          v-for="artist in concert.fullArtists"
+          :key="artist.id"
+          :to="`/artists/${artist.id}`"
+        >
+          {{ artist.name }}
+        </nuxt-link>
+      </concert>
+
+      <h3 class="past-concerts">
+        Concerts <br>
+        passats
+        <fa :icon="['far', 'arrow-right']" />
+      </h3>
+      <concert
+        v-for="(concert, i) in fullPastConcerts"
+        :key="i"
+        :venue="concert.venue"
+        :place="concert.place"
+        :date="concert.date"
+        :utc="concert.utc"
       >
         <nuxt-link
           v-for="artist in concert.fullArtists"
@@ -34,7 +57,7 @@ export default {
 
   mixins: [ArtistsMixin],
 
-    head () {
+  head () {
     return {
       title: 'Programació - Sonora',
       meta: [
@@ -44,7 +67,8 @@ export default {
   },
 
   mounted () {
-    this.setFullConcerts()
+    this.setFullConcerts(false, true)
+    this.setFullConcerts(false, false)
   }
 }
 </script>
@@ -60,6 +84,15 @@ export default {
     &-header {
       grid-column: 1 / -1;
     }
+  }
+
+  .past-concerts {
+    background: $black;
+    color: $terciary;
+    padding: 3rem;
+    font-size: 4rem;
+    border: 3px $black solid;
+    opacity: .5;
   }
 
   @include media-breakpoint-down(md) {
