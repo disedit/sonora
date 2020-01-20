@@ -23,8 +23,6 @@ export default {
           return today > concert.utc
         })
 
-      console.log(filteredConcerts)
-
       const fullConcerts = filteredConcerts.map((concert) => {
         const fullArtists = []
 
