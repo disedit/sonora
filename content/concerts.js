@@ -92,7 +92,7 @@ const concerts = [
       'santero-y-los-muchachos',
       'junior-mackenzie'
     ],
-    date: '25 de gener, 18h',
+    date: '25 de gener, 22.30h',
     utc: new Date('2020-01-26'),
     venue: 'Rockodrom',
     place: 'Pedreguer'
