@@ -149,8 +149,8 @@ const concerts = [
       'andreu-valor',
       'eva-olivencia'
     ],
-    date: '23 de febrer, 21h',
-    utc: new Date('2020-02-24'),
+    date: '28 de febrer, 21h',
+    utc: new Date('2020-02-29'),
     venue: 'La Llotja',
     place: 'Elx'
   }
