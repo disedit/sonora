@@ -13,7 +13,7 @@
               <img v-show="artistImage === artist.image" :src="artist.image" :alt="artist.name">
             </div>
             <div v-if="artistVideo" class="artists-video-button">
-              <b-button variant="dark" class="play-button" @click="playVideo">
+              <b-button variant="dark" @click="playVideo" class="play-button">
                 <fa :icon="['far', 'play']" /> Play
               </b-button>
             </div>
@@ -22,8 +22,8 @@
             <div class="embed-responsive embed-responsive-16by9">
               <iframe
                 width="560"
-                height="315"
                 :src="!artistVideoPlatform || artistVideoPlatform === 'youtube' ? `https://www.youtube.com/embed/${artistVideo}/?autoplay=1` : artistVideo"
+                height="315"
                 frameborder="0"
                 scrolling="no"
                 style="border:none; overflow:hidden"
@@ -37,15 +37,15 @@
       </div>
       <div class="artists-list">
         <nuxt-child v-if="!isHome" @image="setImage" @video="setVideo" />
-        <artists-list v-else is-home @image="setImage" @video="setVideo" />
+        <artists-list v-else @image="setImage" is-home @video="setVideo" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import ArtistsList from './artists/index'
 import artists from '@/content/artists'
+import ArtistsList from './artists/index'
 
 export default {
   name: 'Artists',
