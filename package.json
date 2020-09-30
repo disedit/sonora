@@ -23,11 +23,10 @@
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.0.0",
-    "@nuxtjs/google-fonts": "^1.0.3",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
-    "node-sass": "^4.14.0",
+    "node-sass": "^4.12.0",
     "sass-loader": "^8.0.0"
   }
 }

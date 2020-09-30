@@ -17,8 +17,23 @@
         <b-nav-item to="/artists">
           Artistes
         </b-nav-item>
-        <b-nav-item to="/contact">
-          Artistes
+      </b-navbar-nav>
+
+      <b-navbar-nav class="ml-auto">
+        <b-nav-item id="navContactButton" href="#" @click.prevent="showContact">
+          Contacte
+        </b-nav-item>
+        <b-nav-item href="https://www.facebook.com/GVAInstitutValenciadeCultura/" target="_blank" rel="noopener noreferrer">
+          <fa :icon="['fab', 'facebook-square']" /> <span class="d-md-none">Facebook</span>
+        </b-nav-item>
+        <b-nav-item href="https://twitter.com/GVAivc" target="_blank" rel="noopener noreferrer">
+          <fa :icon="['fab', 'twitter-square']" /> <span class="d-md-none">Twitter</span>
+        </b-nav-item>
+        <b-nav-item href="https://www.instagram.com/sonora_circuit/" target="_blank" rel="noopener noreferrer">
+          <fa :icon="['fab', 'instagram']" /> <span class="d-md-none">Instagram</span>
+        </b-nav-item>
+        <b-nav-item href="https://www.youtube.com/channel/UCOJWX2GnBA8M8z0Uvajh86Q" target="_blank" rel="noopener noreferrer">
+          <fa :icon="['fab', 'youtube']" /> <span class="d-md-none">Youtube</span>
         </b-nav-item>
       </b-navbar-nav>
     </b-collapse>
@@ -33,6 +48,12 @@ export default {
 
   components: {
     Logo
+  },
+
+  methods: {
+    showContact () {
+      this.$root.$emit('bv::show::modal', 'contact', '#navContactButton')
+    }
   }
 }
 </script>
@@ -41,12 +62,11 @@ export default {
   @import '../sass/variables';
 
   .navbar-light {
-    border-bottom: 1px $black solid;
+    background: $background;
+    border-bottom: 2px $primary solid;
 
     .navbar-nav {
       a.nav-link {
-        font-family: $font-headings;
-        font-variation-settings: $font-headings-light;
         font-size: 1.25rem;
         color: $primary;
 
