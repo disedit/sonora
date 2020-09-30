@@ -1,37 +1,36 @@
 <template>
-  <div class="main-container">
     <footer>
-      <hr class="mt-4">
-      <div class="logos">
-        <img src="../assets/images/logos/conselleria.png" alt="Conselleria d'Educació">
-        <img src="../assets/images/logos/ivc.png" alt="IVC">
-        <img src="../assets/images/logos/fes-cultura.png" alt="Fes Cultura">
-      </div>
-      <hr class="mb-4">
-      <div class="row">
-        <div class="col-md-8">
-          <h6>© Institut Valencià de Cultura</h6>
+      <div class="app-footer">
+        <div class="sonora">
+          <logo /> 
+          <div>© Institut Valencià de Cultura</div>
+          <div>Nota Legal</div>
+        </div>
+        <div class="address">
           <address>
-            Plaça de l'Ajuntament, 17
-            46002 València
+            Plaça de l'Ajuntament, 17 46002 València
           </address>
           <div>
             <span>Tel. <a href="tel:+34963539300">963 539 300</a></span>
             <span>E-mail <a href="mailto:ivc@gva.es">ivc@gva.es</a></span>
           </div>
         </div>
-        <div class="col-md-4 text-right">
-          <a href="https://ivc.gva.es/val/ivc-val/qui-som-ivc/avis-legal-val/politica-de-privadesa/nota-legal-val" target="_blank" rel="noopener noreferrer">Nota legal</a>
-          <a id="footerContactButton" href="#" @click.prevent="showContact">Contacte</a>
+        <div class="logos">
+          <img src="../assets/images/logos/generalitat.svg" style="width: 200px; margin-right: 1rem;"alt="Conselleria d'Educació">
+          <img src="../assets/images/logos/ivc-cultura.png" style="width: 210px;" alt="IVC - Fes Cultura">
         </div>
       </div>
     </footer>
-  </div>
 </template>
 
 <script>
+import Logo from '@/components/Logo'
 export default {
   name: 'AppFooter',
+
+  components: {
+    Logo,
+  },
 
   methods: {
     showContact () {
@@ -41,21 +40,53 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @import '../sass/variables';
 
-  footer {
-    margin-top: 2rem;
-    color: rgba($text, .65);
+  .app-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.75fr;
+    gap: 1rem;
+    margin: 2rem 0;
+    align-items: end;
+    padding: 1rem 3rem;
+    border-top: 2px solid $black;
+
+    address {
+      margin-bottom: .25rem;
+    }
+
+    svg {
+      height: auto;
+      width: 100px;
+      margin: 1rem 0;
+    }
+
+    .logos {
+      justify-self: end;
+    }
   }
 
-  .logos {
-    text-align: center;
-    background: $background;
+  @include media-breakpoint-down(lg) {
+    .app-footer {
+      grid-template-columns: 1fr 1fr;
 
-    img {
-      width: 200px;
-      mix-blend-mode: multiply;
+      .logos {
+        justify-self: start;
+        grid-column: span 2;
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) { 
+    .app-footer {
+      grid-template-columns: 1fr;
+      
+      .logos {
+        justify-self: start;
+        grid-column: span 1;
+      }
     }
   }
 </style>
