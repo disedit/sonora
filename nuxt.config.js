@@ -48,6 +48,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/google-fonts',
     ['bootstrap-vue/nuxt'],
     ['nuxt-fontawesome', {
       component: 'fa',
@@ -85,6 +86,15 @@ export default {
       'ModalPlugin'
     ]
   },
+  /*
+  ** Google fonts
+  */
+  googleFonts: {
+    families: {
+      Inter: [400]
+    }
+  },
+
   /*
   ** Build configuration
   */

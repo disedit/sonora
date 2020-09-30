@@ -1,13 +1,26 @@
 //colors
-$primary: #D74139;
-$secondary: #02AF71;
-$background: #F5EBE6;
-$foreground: #FFD8CA;
-$text: #1a1512;
-$terciary: #607AB8;
-$quaternary: #d99336;
+$red: #F24957;
+$purple: #5B38A6;
+$blue: #99D9F2;
+$brown: #88735E;
+$orange: #F27405;
+$black: #231B28;
+$white: #FDFBFA;
 
-$font-family-sans-serif: Sonora, sans-serif;
+$primary: $red;
+$secondary: $purple;
+$terciary: $blue;
+$quaternary: $brown;
+
+$background: $white;
+$foreground: $white;
+$text: $black;
+
+$font-family-sans-serif: Inter, sans-serif;
+$font-headings: 'GT Flexa VAR', sans-serif;
+$font-headings-thin: "wght" 200, "wdth" 100, "ital" 0;
+$font-headings-light: "wght" 300, "wdth" 100, "ital" 0;
+$font-headings-regular: "wght" 400, "wdth" 100, "ital" 0;
 $body-bg: $background;
 $body-color: $text;
 
