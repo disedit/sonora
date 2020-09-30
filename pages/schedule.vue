@@ -1,33 +1,8 @@
 <template>
   <div class="main-container">
     <div class="schedule">
-      <h2 class="schedule-header">
-        Programa
-      </h2>
       <concert
         v-for="(concert, i) in fullUpcomingConcerts"
-        :key="i"
-        :venue="concert.venue"
-        :place="concert.place"
-        :date="concert.date"
-        :utc="concert.utc"
-      >
-        <nuxt-link
-          v-for="artist in concert.fullArtists"
-          :key="artist.id"
-          :to="`/artists/${artist.id}`"
-        >
-          {{ artist.name }}
-        </nuxt-link>
-      </concert>
-
-      <h3 class="past-concerts">
-        Concerts <br>
-        passats
-        <fa :icon="['far', 'arrow-right']" />
-      </h3>
-      <concert
-        v-for="(concert, i) in fullPastConcerts"
         :key="i"
         :venue="concert.venue"
         :place="concert.place"
@@ -76,13 +51,34 @@ export default {
 <style lang="scss" scoped>
   @import '../sass/variables';
 
-  .schedule {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 2rem;
+  .main-container {
+    margin: 0 auto;
+  }
 
-    &-header {
-      grid-column: 1 / -1;
+  .schedule {
+    display: inline-grid;
+    grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
+    grid-auto-rows: 1fr;
+    width: 100%;
+
+    .concert {
+      border: 1px solid $black;
+      margin: 0 -1px -1px 0;
+      padding: 1.5rem;
+      background-color: $white;
+    }
+
+    &::before {
+      content: '';
+      width: 0;
+      padding-bottom: 100%;
+      grid-row: 1 / 1;
+      grid-column: 1 / 1;
+    }
+
+    *:first-child {
+      grid-row: 1 / 1;
+      grid-column: 1 / 1;
     }
   }
 
@@ -95,15 +91,10 @@ export default {
     opacity: .5;
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(xs) {
     .schedule {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
   }
 
-  @include media-breakpoint-down(xs) {
-    .schedule {
-      grid-template-columns: 1fr;
-    }
-  }
 </style>

@@ -21,13 +21,14 @@ $font-headings: 'GT Flexa VAR', sans-serif;
 $font-headings-thin: "wght" 200, "wdth" 100, "ital" 0;
 $font-headings-light: "wght" 300, "wdth" 100, "ital" 0;
 $font-headings-regular: "wght" 400, "wdth" 100, "ital" 0;
+$font-headings-light-extended: "wght" 300, "wdth" 120, "ital" 0;
 $body-bg: $background;
 $body-color: $text;
 
 $text-base: 1.25rem;
 $text-sm: 1rem;
-$text-lg: 2.25rem;
-$text-xl: 3.25rem;
+$text-lg: 2rem;
+$text-xl: 3rem;
 
 // navbar
 $navbar-safe-area: 4rem;

@@ -54,33 +54,32 @@ export default {
   .concert {
     display: flex;
     flex-direction: column;
-
-    &-date {
-      padding: 0.5rem 0;
-      color: lighten($secondary, 10%);
-      font-size: 2rem;
-    }
+    font-size: $text-base;
+    font-family: $font-headings;
 
     &-details {
-      border-top: 2px solid $background;
-      padding-top: 0.5rem;
       margin-top: auto;
-      font-size: 2rem;
-      min-height: 106px;
+      font-variation-settings: $font-headings-light-extended;
+    }
+
+    &-date {
+      font-variation-settings: $font-headings-light-extended;
     }
 
     &-artists {
-      border-top: 2px solid $background;
-      color: $background;
-      font-size: 4rem;
+      margin-top: 1.5rem;
 
       a {
         display: block;
-        margin: 1rem 0;
         line-height: 1;
+        color: $black;
+        font-size: $text-xl;
+        text-transform: uppercase;
+        font-variation-settings: $font-headings-thin;
 
-        &::after {
-          display: none;
+        &:hover {
+          color: $purple;
+          font-variation-settings: $font-headings-regular;
         }
       }
     }
@@ -90,15 +89,17 @@ export default {
     opacity: .5;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(xs) {
     .concert {
       &-artists {
-        font-size: 2.5rem;
+        a {
+          font-size: 1.75rem;
+        }
       }
 
       &-details,
       &-date {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
       }
     }
   }
