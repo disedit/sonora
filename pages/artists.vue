@@ -1,45 +1,7 @@
 <template>
-  <div class="main-container">
-    <div class="artists">
-      <div class="artists-picture-container">
-        <div class="artists-picture">
-          <div class="artists-nav">
-            <nuxt-link v-if="$route.path != '/artists' && !isHome" to="/artists">
-              <fa :icon="['far', 'arrow-left']" /> Torna a artistes
-            </nuxt-link>
-          </div>
-          <div v-if="!artistVideoPlay" class="artists-picture-holder">
-            <div v-for="artist in artists" :key="artist.id" class="artist-image">
-              <img v-show="artistImage === artist.image" :src="artist.image" :alt="artist.name">
-            </div>
-            <div v-if="artistVideo" class="artists-video-button">
-              <b-button variant="dark" @click="playVideo" class="play-button">
-                <fa :icon="['far', 'play']" /> Play
-              </b-button>
-            </div>
-          </div>
-          <div v-else class="artists-video-holder">
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe
-                width="560"
-                :src="!artistVideoPlatform || artistVideoPlatform === 'youtube' ? `https://www.youtube.com/embed/${artistVideo}/?autoplay=1` : artistVideo"
-                height="315"
-                frameborder="0"
-                scrolling="no"
-                style="border:none; overflow:hidden"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                allowTransparency
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="artists-list">
-        <nuxt-child v-if="!isHome" @image="setImage" @video="setVideo" />
-        <artists-list v-else @image="setImage" is-home @video="setVideo" />
-      </div>
-    </div>
+  <div class="artists">
+    <nuxt-child v-if="!isHome" @image="setImage" />
+    <artists-list v-else @image="setImage" />
   </div>
 </template>
 
@@ -55,36 +17,22 @@ export default {
   },
 
   props: {
-    isHome: Boolean
+    isHome: {
+      type: Boolean,
+      default: false
+    }
   },
 
   data () {
     return {
       artists,
-      artistImage: null,
-      artistVideo: null,
-      artistVideoPlatform: 'youtube',
-      artistVideoPlay: false
-    }
-  },
-
-  watch: {
-    '$route' () {
-      this.artistVideo = null
-      this.artistVideoPlay = false
+      artistImage: null
     }
   },
 
   methods: {
     setImage (image) {
       this.artistImage = image
-    },
-    setVideo (video, platform) {
-      this.artistVideo = video
-      this.artistVideoPlatform = platform
-    },
-    playVideo () {
-      this.artistVideoPlay = true
     }
   }
 }
@@ -93,107 +41,4 @@ export default {
 <style lang="scss" scoped>
   @import '../sass/variables';
 
-  .artists {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "picture list";
-    grid-gap: 3rem;
-
-    &-list {
-      grid-area: list;
-    }
-
-    &-nav {
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-end;
-      height: 8.25rem;
-      padding-bottom: 2.5rem;
-    }
-
-    &-picture {
-      grid-area: picture;
-      position: sticky;
-      top: 6rem;
-
-      &-holder {
-        position: relative;
-
-        &::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: $primary;
-        }
-      }
-
-      img {
-        width: 100%;
-        filter: grayscale(100%);
-        mix-blend-mode: screen;
-        transition: .4s ease-in-out;
-      }
-    }
-
-    &-video {
-      &-button {
-        position: absolute;
-        bottom: 1rem;
-        right: 1rem;
-      }
-    }
-
-    .play-button {
-      border-radius: 0;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
-  }
-
-  .page-artist {
-    .artists-picture {
-      img {
-        mix-blend-mode: normal;
-      }
-    }
-  }
-
-  @include media-breakpoint-down(md) {
-    .artists {
-      grid-template-areas: "list";
-      grid-template-columns: 1fr;
-      grid-gap: 1rem;
-
-      &-picture-container {
-        display: none;
-      }
-
-      &-nav {
-        align-items: flex-start;
-        justify-content: flex-start;
-        height: auto;
-        padding-bottom: 0;
-      }
-    }
-
-    .page-artist {
-      .artists {
-        grid-template-areas:
-          "picture"
-          "list";
-
-        &-picture-container {
-          display: block;
-        }
-
-        &-picture-holder,
-        &-video-holder {
-          margin-top: 1rem;
-        }
-      }
-    }
-  }
 </style>

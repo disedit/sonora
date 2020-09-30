@@ -29,6 +29,9 @@ $text-sm: 1rem;
 $text-lg: 2.25rem;
 $text-xl: 3.25rem;
 
+// navbar
+$navbar-safe-area: 4rem;
+
 @import 'bootstrap/scss/_functions';
 @import 'bootstrap/scss/_variables';
 @import 'bootstrap/scss/_mixins';

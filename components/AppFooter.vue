@@ -1,26 +1,28 @@
 <template>
-    <footer>
-      <div class="app-footer">
-        <div class="sonora">
-          <logo /> 
-          <div>© Institut Valencià de Cultura</div>
-          <div>Nota Legal</div>
-        </div>
-        <div class="address">
-          <address>
-            Plaça de l'Ajuntament, 17 46002 València
-          </address>
-          <div>
-            <span>Tel. <a href="tel:+34963539300">963 539 300</a></span>
-            <span>E-mail <a href="mailto:ivc@gva.es">ivc@gva.es</a></span>
-          </div>
-        </div>
-        <div class="logos">
-          <img src="../assets/images/logos/generalitat.svg" style="width: 200px; margin-right: 1rem;"alt="Conselleria d'Educació">
-          <img src="../assets/images/logos/ivc-cultura.png" style="width: 210px;" alt="IVC - Fes Cultura">
+  <footer>
+    <div class="app-footer">
+      <div class="sonora">
+        <logo />
+        <div>© Institut Valencià de Cultura</div>
+        <div>
+          <a href="https://ivc.gva.es/val/ivc-val/qui-som-ivc/avis-legal-val/politica-de-privadesa/nota-legal-val" target="_blank" rel="noopener noreferrer">Nota Legal</a>
         </div>
       </div>
-    </footer>
+      <div class="address">
+        <address>
+          Plaça de l'Ajuntament, 17 46002 València
+        </address>
+        <div>
+          <span>Tel. <a href="tel:+34963539300">963 539 300</a></span>
+          <span>E-mail <a href="mailto:ivc@gva.es">ivc@gva.es</a></span>
+        </div>
+      </div>
+      <div class="logos">
+        <img src="../assets/images/logos/generalitat.svg" style="width: 200px; margin-right: 1rem;"alt="Conselleria d'Educació">
+        <img src="../assets/images/logos/ivc-cultura.png" style="width: 210px;" alt="IVC - Fes Cultura">
+      </div>
+    </div>
+  </footer>
 </template>
 
 <script>
@@ -29,7 +31,7 @@ export default {
   name: 'AppFooter',
 
   components: {
-    Logo,
+    Logo
   },
 
   methods: {
@@ -50,7 +52,7 @@ export default {
     margin: 2rem 0;
     align-items: end;
     padding: 1rem 3rem;
-    border-top: 2px solid $black;
+    border-top: 1px solid $black;
 
     address {
       margin-bottom: .25rem;
@@ -79,10 +81,10 @@ export default {
     }
   }
 
-  @include media-breakpoint-down(sm) { 
+  @include media-breakpoint-down(sm) {
     .app-footer {
       grid-template-columns: 1fr;
-      
+
       .logos {
         justify-self: start;
         grid-column: span 1;

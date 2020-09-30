@@ -112,8 +112,7 @@ export default {
       }
     }
 
-    &.scrolled,
-    &.shown {
+    &.scrolled {
       border-bottom: 1px $black solid;
       background: $white;
     }
@@ -166,7 +165,16 @@ export default {
         &-brand {
           svg {
             height: 38px;
-            width: 100px;
+            width: 80px;
+          }
+        }
+
+        &-nav {
+          margin-top: 1rem;
+
+          a.nav-link {
+            font-size: 1.5rem;
+            padding: .5rem 0;
           }
         }
 
@@ -208,6 +216,11 @@ export default {
             }
           }
         }
+      }
+
+      &.shown {
+        border-bottom: 1px $black solid;
+        background: $white;
       }
     }
   }

@@ -1,9 +1,6 @@
 <template>
-  <div>
-    <h2 v-if="!isHome">
-      Artistes
-    </h2>
-    <ul>
+  <div class="artist-list">
+    <ul aria-label="Artistes 2020">
       <li v-for="artist in artists" :key="artist.id" @mouseover="$emit('image', artist.image)">
         <nuxt-link :to="`/artists/${artist.id}`">
           {{ artist.name }}
@@ -61,31 +58,39 @@ export default {
 <style lang="scss" scoped>
   @import '../../sass/variables';
 
-  .artists-list {
-    grid-area: list;
-
-    h2 {
-      line-height: 1;
-    }
+  .artist-list {
+    font-family: $font-headings;
+    font-variation-settings: $font-headings-thin;
+    font-size: calc(1.5vw + 1.25rem);
+    text-align: center;
+    padding-top: 350px;
 
     ul {
+      list-style: none;
+      margin: 0;
       padding: 0;
     }
 
     li {
-      font-size: 3rem;
-      list-style: none;
-      padding: 0;
-      line-height: 1;
-      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     a {
+      display: block;
+      color: $black;
+      transition: .2s ease;
+      line-height: 1;
+      padding: .75rem 0;
+
+      &:hover {
+        color: $purple;
+        font-variation-settings: $font-headings-regular;
+      }
+
       &::after {
         display: none;
-      }
-      &:hover {
-        color: $text;
       }
     }
   }

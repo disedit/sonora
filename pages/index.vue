@@ -1,23 +1,22 @@
 <template>
   <main>
-    <section>
-      <logo class="logo" full />
-      <div class="hero-poster">
-        <img src="../assets/images/illustracio.jpg" alt="I·lustració del cartell">
-      </div>
+    <header>
+      <h1>CIRCUIT DE MÚSICA VALENCIANA</h1>
+      <p class="dates">
+        25.10.20 → 13.3.21
+      </p>
+    </header>
+    <section id="artists">
+      <artists is-home />
     </section>
-
-    <artists is-home />
   </main>
 </template>
 
 <script>
 import Artists from './artists'
-import Logo from '@/components/Logo'
 
 export default {
   components: {
-    Logo,
     Artists
   },
 
@@ -27,40 +26,30 @@ export default {
         { property: 'og:image', content: `https://circuitsonora.com/thumbnail.jpg` }
       ]
     }
-  },
+  }
 }
 </script>
 
 <style lang="scss" scoped>
   @import '../sass/variables';
 
+  header {
+    min-height: calc(100vh);
+    text-align: center;
+    padding-top: 30vh;
+    margin-top: -$navbar-safe-area;
+    background: $blue;
+
+    h1,
+    p {
+      font-family: $font-headings;
+      font-variation-settings: $font-headings-thin;
+      font-size: calc(1.8vw + 1.25rem);
+      margin: 0;
+    }
+  }
+
   section {
-    display: flex;
-    align-items: center;
-    height: calc(100vh - 4rem);
-    flex-direction: column;
-    margin-bottom: 5rem;
-    border-bottom: 2px $text solid;
-    padding-top: 3rem;
-  }
-
-  .logo {
-    max-width: 100%;
-    padding: 0 1rem;
-  }
-
-  .hero-poster {
-    img {
-      object-fit: cover;
-      object-position: 0 0;
-      width: 100%;
-      height: 60vh;
-    }
-  }
-
-  @include media-breakpoint-down(sm) {
-    section {
-      margin-bottom: 3rem;
-    }
+    background: linear-gradient(to bottom, $blue 0, $white 800px);
   }
 </style>
