@@ -1,10 +1,12 @@
 <template>
   <main>
-    <header>
+    <header id="home">
       <h1>CIRCUIT DE MÚSICA VALENCIANA</h1>
       <p class="dates">
         25.10.20 → 13.3.21
       </p>
+      <div :style="{ transform: `translateX(${shapesPos}%)` }" class="fixed shapes" />
+      <div :style="{ transform: `translateX(${illustrationPos}%)` }" class="fixed illustration" />
     </header>
     <section id="artists">
       <artists is-home />
@@ -18,6 +20,37 @@ import Artists from './artists'
 export default {
   components: {
     Artists
+  },
+
+  data () {
+    return {
+      shapesPos: 0,
+      illustrationPos: 0
+    }
+  },
+
+  beforeMount () {
+    this.handleScroll()
+    window.addEventListener('scroll', this.handleScroll)
+  },
+
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+
+  methods: {
+    handleScroll () {
+      const scroll = window.scrollY
+      const threshold = 1500
+
+      if (scroll < threshold) {
+        this.shapesPos = (scroll * 100 / threshold) * -1
+        this.illustrationPos = (scroll * 100 / threshold)
+      } else {
+        this.shapesPos = -100
+        this.illustrationPos = 100
+      }
+    }
   },
 
   head () {
@@ -34,6 +67,7 @@ export default {
   @import '../sass/variables';
 
   header {
+    position: relative;
     min-height: calc(100vh);
     text-align: center;
     padding-top: 30vh;
@@ -42,14 +76,39 @@ export default {
 
     h1,
     p {
+      position: relative;
       font-family: $font-headings;
       font-variation-settings: $font-headings-thin;
       font-size: calc(1.8vw + 1.25rem);
       margin: 0;
+      z-index: 10;
     }
   }
 
   section {
     background: linear-gradient(to bottom, $blue 0, $white 800px);
+    padding-top: 250px;
+  }
+
+  .fixed {
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    will-change: transform;
+    transition: .2s;
+
+    &.shapes {
+      left: 0;
+      height: 80vh;
+      width: 40vw;
+      background: yellow;
+    }
+
+    &.illustration {
+      right: 0;
+      height: 60vh;
+      width: 60vw;
+      background: red;
+    }
   }
 </style>

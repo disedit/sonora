@@ -4,12 +4,12 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Sonora - Circuit de Música Valenciana',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
-      { name: 'theme-color', content: '#f5ebe6' }
+      { hid: 'description', name: 'description', content: '' },
+      { name: 'theme-color', content: '#F24957' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicons/favicon.ico' },
@@ -22,7 +22,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#F24957' },
   /*
   ** Global CSS
   */

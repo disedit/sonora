@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="logos">
-        <img src="../assets/images/logos/generalitat.svg" style="width: 200px; margin-right: 1rem;"alt="Conselleria d'Educació">
+        <img src="../assets/images/logos/generalitat.svg" style="width: 200px; margin-right: 1rem;" alt="Conselleria d'Educació">
         <img src="../assets/images/logos/ivc-cultura.png" style="width: 210px;" alt="IVC - Fes Cultura">
       </div>
     </div>

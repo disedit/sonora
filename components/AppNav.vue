@@ -1,7 +1,8 @@
 <template>
-  <b-navbar :class="{ scrolled, shown }" toggleable="md" type="light" fixed="top">
+  <b-navbar :class="{ scrolled, shown }" toggleable="md" type="light" fixed="top" label="Navegació">
     <b-navbar-brand to="/" class="d-md-none">
-      <Logo />
+      <Logo aria-hidden="true" />
+      <span class="sr-only">Sonora (pàgina principal)</span>
     </b-navbar-brand>
 
     <b-navbar-toggle @click="shown = !shown" label="Obrir menú" target="nav-collapse" />
@@ -159,7 +160,7 @@ export default {
     }
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(sm) {
     .navbar-light {
       .navbar {
         &-brand {

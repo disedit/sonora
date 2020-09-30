@@ -1,7 +1,12 @@
 <template>
   <div class="artist-list">
     <ul aria-label="Artistes 2020">
-      <li v-for="artist in artists" :key="artist.id" @mouseover="$emit('image', artist.image)">
+      <li
+        v-for="artist in artists"
+        :key="artist.id"
+        @mouseover="$emit('image', artist.image)"
+        @mouseout="$emit('image', null)"
+      >
         <nuxt-link :to="`/artists/${artist.id}`">
           {{ artist.name }}
         </nuxt-link>
@@ -47,10 +52,6 @@ export default {
       link.push({ rel: 'prefetch', as: 'image', href: artist.image })
     })
     return { link }
-  },
-
-  mounted () {
-    this.$emit('image', artists[0].image)
   }
 }
 </script>
@@ -59,11 +60,13 @@ export default {
   @import '../../sass/variables';
 
   .artist-list {
+    position: relative;
     font-family: $font-headings;
     font-variation-settings: $font-headings-thin;
     font-size: calc(1.5vw + 1.25rem);
     text-align: center;
-    padding-top: 350px;
+    padding: 0 1rem;
+    z-index: 10;
 
     ul {
       list-style: none;
@@ -73,8 +76,6 @@ export default {
 
     li {
       text-transform: uppercase;
-      max-width: 600px;
-      margin: 0 auto;
     }
 
     a {
@@ -82,7 +83,7 @@ export default {
       color: $black;
       transition: .2s ease;
       line-height: 1;
-      padding: .75rem 0;
+      padding: .75rem;
 
       &:hover {
         color: $purple;
