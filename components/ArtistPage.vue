@@ -1,34 +1,49 @@
 <template>
-  <div>
-    <h2><slot name="header" /></h2>
+  <article :class="['artist', `artist-accent-${artist.accent}`, `artist-shape-${artist.shape}`]">
+    <section class="artist-content">
+      <header>
+        <h2>
+          <slot name="header">
+            {{ artist.name }}
+          </slot>
+        </h2>
+      </header>
 
-    <div class="text">
-      <slot />
-    </div>
+      <div class="text">
+        <slot />
+      </div>
 
-    <ul class="social">
-      <li v-if="social.hasOwnProperty('facebook')">
-        <a :href="social.facebook" target="_blank" rel="noopener noreferrer"><fa :icon="['fab', 'facebook-square']" /></a>
-      </li>
-      <li v-if="social.hasOwnProperty('twitter')">
-        <a :href="social.twitter" target="_blank" rel="noopener noreferrer"><fa :icon="['fab', 'twitter-square']" /></a>
-      </li>
-      <li v-if="social.hasOwnProperty('instagram')">
-        <a :href="social.instagram" target="_blank" rel="noopener noreferrer"><fa :icon="['fab', 'instagram']" /></a>
-      </li>
-      <li v-if="social.hasOwnProperty('spotify')">
-        <a :href="social.spotify" target="_blank" rel="noopener noreferrer"><fa :icon="['fab', 'spotify']" /></a>
-      </li>
-      <li v-if="social.hasOwnProperty('youtube')">
-        <a :href="social.youtube" target="_blank" rel="noopener noreferrer"><fa :icon="['fab', 'youtube']" /></a>
-      </li>
-      <li v-if="social.hasOwnProperty('website')">
-        <a :href="social.website" target="_blank" rel="noopener noreferrer"><fa :icon="['far', 'globe']" /></a>
-      </li>
-    </ul>
-
-    <artist-concerts />
-  </div>
+      <ul class="social">
+        <li v-if="social.hasOwnProperty('facebook')">
+          <a :href="social.facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </li>
+        <li v-if="social.hasOwnProperty('twitter')">
+          <a :href="social.twitter" target="_blank" rel="noopener noreferrer">Twitter</a>
+        </li>
+        <li v-if="social.hasOwnProperty('instagram')">
+          <a :href="social.instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </li>
+        <li v-if="social.hasOwnProperty('spotify')">
+          <a :href="social.spotify" target="_blank" rel="noopener noreferrer">Spotify</a>
+        </li>
+        <li v-if="social.hasOwnProperty('youtube')">
+          <a :href="social.youtube" target="_blank" rel="noopener noreferrer">Youtube</a>
+        </li>
+        <li v-if="social.hasOwnProperty('website')">
+          <a :href="social.website" target="_blank" rel="noopener noreferrer">Pàgina web</a>
+        </li>
+      </ul>
+    </section>
+    <section class="artist-image">
+      <img :src="artist.image" :alt="`Foto de ${artist.name}`">
+    </section>
+    <section class="artist-video">
+      Vídeo
+    </section>
+    <aside class="artist-concerts">
+      <artist-concerts />
+    </aside>
+  </article>
 </template>
 
 <script>
@@ -50,6 +65,12 @@ export default {
       type: String,
       default: null
     }
+  },
+
+  computed: {
+    artist () {
+      return this.$store.state.artist
+    }
   }
 }
 </script>
@@ -57,55 +78,4 @@ export default {
 <style lang="scss" scoped>
   @import '../sass/variables';
 
-  h2 {
-    line-height: 1;
-  }
-
-  .text {
-    margin: 1rem 0;
-    font-size: 1.8rem;
-  }
-
-  .social {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-      display: inline-block;
-      margin: .5rem .5rem .5rem 0;
-    }
-
-    a {
-      display: block;
-      background: $background;
-      color: $text;
-      padding: .5rem 1rem;
-      border-radius: 20rem;
-      font-size: 1.75rem;
-
-      &::after {
-        display: none;
-      }
-
-      &:hover {
-        background: $text;
-        color: $background;
-      }
-    }
-  }
-
-  .image {
-    img {
-      width: 100%;
-      filter: grayscale(100%);
-      margin: 1rem 0;
-    }
-  }
-
-  @include media-breakpoint-down(sm) {
-    .text {
-      font-size: 1.4rem;
-    }
-  }
 </style>

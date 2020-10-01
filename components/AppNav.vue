@@ -68,7 +68,13 @@ export default {
 
   .navbar-light {
     transition: .2s ease;
-    border-bottom: 1px rgba($black, 0) solid;
+    border-bottom: 1px $black solid;
+    background: $white;
+
+    @at-root .page-index & {
+      border-color: transparent;
+      background: transparent;
+    }
 
     .navbar-nav {
       a.nav-link {

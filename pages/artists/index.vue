@@ -1,17 +1,26 @@
 <template>
-  <div class="artist-list">
-    <ul aria-label="Artistes 2020">
-      <li
-        v-for="artist in artists"
-        :key="artist.id"
-        @mouseover="$emit('image', artist.id)"
-        @mouseout="$emit('image', null)"
-      >
-        <nuxt-link :to="`/artists/${artist.id}`" :class="`accent-${artist.accent}`">
-          {{ artist.name }}
-        </nuxt-link>
-      </li>
-    </ul>
+  <div class="artists">
+    <div class="artists-images d-none d-lg-block">
+      <template v-for="artist in artists">
+        <div v-show="showingArtist === artist.id" :key="artist.id" class="artist-image" aria-hidden="true">
+          <img :src="artist.image" alt="">
+        </div>
+      </template>
+    </div>
+    <div class="artists-list">
+      <ul aria-label="Artistes 2020">
+        <li
+          v-for="artist in artists"
+          :key="artist.id"
+          @mouseover="showingArtist = artist.id"
+          @mouseout="showingArtist = null"
+        >
+          <nuxt-link :to="`/artists/${artist.id}`" :class="`accent-${artist.accent}`">
+            {{ artist.name }}
+          </nuxt-link>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -23,35 +32,26 @@ export default {
 
   scrollToTop: true,
 
-  props: {
-    isHome: {
-      type: Boolean,
-      default: false
-    }
-  },
-
-  head () {
-    return {
-      title: 'Artistes - Sonora',
-      meta: [
-        { property: 'og:image', content: `https://circuitsonora.com/thumbnail.jpg` }
-      ]
-    }
-  },
-
-  data () {
-    return {
-      artists
-    }
-  },
-
-  // Prefetch all artist images
   head () {
     const link = []
     this.artists.forEach((artist) => {
       link.push({ rel: 'prefetch', as: 'image', href: artist.image })
     })
-    return { link }
+
+    return {
+      title: 'Artistes - Sonora',
+      meta: [
+        { property: 'og:image', content: `https://circuitsonora.com/thumbnail.jpg` }
+      ],
+      ...link
+    }
+  },
+
+  data () {
+    return {
+      artists,
+      showingArtist: null
+    }
   }
 }
 </script>
@@ -59,53 +59,93 @@ export default {
 <style lang="scss" scoped>
   @import '../../sass/variables';
 
-  .artist-list {
-    position: relative;
-    font-family: $font-headings;
-    font-variation-settings: $font-headings-thin;
-    font-size: calc(1.5vw + 1.25rem);
-    text-align: center;
-    padding: 0 1rem;
-    margin-bottom: 100px;
-    z-index: 10;
+  .artists {
+    display: grid;
+    grid-template-columns: 1fr 100px 600px 100px 1fr;
+    padding-top: 100px;
+    margin-bottom: -2rem;
 
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    &-images {
+      position: relative;
+      grid-area: 1 / 1 / 2 / 3;
+      z-index: 20;
+      margin-top: -100vh;
     }
 
-    li {
-      text-transform: uppercase;
+    &-list {
+      position: relative;
+      grid-area: 1 / 2 / 2 / -2;
+      z-index: 30;
+
+      ul {
+        list-style: none;
+        margin: 0;
+        margin-bottom: 100px;
+        padding: 0 1rem;
+        font-family: $font-headings;
+        font-variation-settings: $font-headings-thin;
+        font-size: calc(1.5vw + 1.25rem);
+        text-align: center;
+      }
+
+      li {
+        text-transform: uppercase;
+      }
+
+      a {
+        display: block;
+        color: $black;
+        transition: .2s ease;
+        line-height: 1;
+        padding: .75rem;
+
+        &:hover {
+          color: $purple;
+          font-variation-settings: $font-headings-regular;
+        }
+
+        &::after {
+          display: none;
+        }
+
+        &.accent-red:hover {
+          color: $red;
+        }
+
+        &.accent-blue:hover {
+          color: $blue;
+        }
+
+        &.accent-brown:hover {
+          color: $brown;
+        }
+      }
     }
 
-    a {
-      display: block;
-      color: $black;
-      transition: .2s ease;
-      line-height: 1;
-      padding: .75rem;
+    @include media-breakpoint-down(md) {
+      grid-template-columns: 1fr;
 
-      &:hover {
-        color: $purple;
-        font-variation-settings: $font-headings-regular;
+      .artists-list {
+        grid-area: 1 / 1 / 1 / 1;
       }
+    }
+  }
 
-      &::after {
-        display: none;
-      }
+  .artist-image {
+    position: sticky;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 20;
 
-      &.accent-red:hover {
-        color: $red;
-      }
-
-      &.accent-blue:hover {
-        color: $blue;
-      }
-
-      &.accent-brown:hover {
-        color: $brown;
-      }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: bottom center;
+      margin-left: 1rem;
     }
   }
 </style>

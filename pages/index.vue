@@ -9,17 +9,17 @@
       <div :style="{ transform: `translateX(${illustrationPos}%)` }" class="fixed illustration" />
     </header>
     <section id="artists">
-      <artists is-home />
+      <artists-list />
     </section>
   </main>
 </template>
 
 <script>
-import Artists from './artists'
+import ArtistsList from './artists/index'
 
 export default {
   components: {
-    Artists
+    ArtistsList
   },
 
   data () {
@@ -41,7 +41,7 @@ export default {
   methods: {
     handleScroll () {
       const scroll = window.scrollY
-      const threshold = 1300
+      const threshold = 1000
 
       if (scroll < threshold) {
         this.shapesPos = (scroll * 100 / threshold) * -1
@@ -110,7 +110,7 @@ export default {
     &.illustration {
       right: 0;
       width: 65vw;
-      background: url('~assets/images/illustrations/home.png');
+      background: url('~assets/images/illustrations/home.jpg');
       background-position: bottom right;
       background-size: contain;
       background-repeat: no-repeat;

@@ -7,6 +7,7 @@
       spotify: 'https://open.spotify.com/artist/4QLpUTkxZy7o3SQOYYbdeg?si=-IjALbdESbuHjmhXBCOMwQ',
       website: 'http://andreu-valor.blogspot.com/'
     }"
+    video="jdjdj"
   >
     <template v-slot:header>
       Andreu Valor
