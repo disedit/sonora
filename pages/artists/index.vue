@@ -4,10 +4,10 @@
       <li
         v-for="artist in artists"
         :key="artist.id"
-        @mouseover="$emit('image', artist.image)"
+        @mouseover="$emit('image', artist.id)"
         @mouseout="$emit('image', null)"
       >
-        <nuxt-link :to="`/artists/${artist.id}`">
+        <nuxt-link :to="`/artists/${artist.id}`" :class="`accent-${artist.accent}`">
           {{ artist.name }}
         </nuxt-link>
       </li>
@@ -66,6 +66,7 @@ export default {
     font-size: calc(1.5vw + 1.25rem);
     text-align: center;
     padding: 0 1rem;
+    margin-bottom: 100px;
     z-index: 10;
 
     ul {
@@ -92,6 +93,18 @@ export default {
 
       &::after {
         display: none;
+      }
+
+      &.accent-red:hover {
+        color: $red;
+      }
+
+      &.accent-blue:hover {
+        color: $blue;
+      }
+
+      &.accent-brown:hover {
+        color: $brown;
       }
     }
   }

@@ -30,7 +30,6 @@
 
 <script>
 import ArtistPage from '@/components/ArtistPage'
-import image from '@/assets/images/artists/andreu-valor.jpg'
 
 export default {
   scrollToTop: true,
@@ -43,14 +42,9 @@ export default {
     return {
       title: 'Andreu Valor - Sonora',
       meta: [
-        { property: 'og:image', content: `https://circuitsonora.com${image}` }
+        { property: 'og:image', content: `https://circuitsonora.com` }
       ]
     }
-  },
-
-  mounted () {
-    this.$emit('image', image)
-    this.$emit('video', 'Svp7dNilPfY')
   }
 }
 </script>

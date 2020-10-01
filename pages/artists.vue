@@ -2,14 +2,14 @@
   <div class="artists">
     <div class="artists-images d-none d-lg-block">
       <template v-for="artist in artists">
-        <div v-show="artistImage === artist.image" :key="artist.id" class="artist-image" aria-hidden="true">
+        <div v-show="showingArtist === artist.id" :key="artist.id" class="artist-image" aria-hidden="true">
           <img :src="artist.image" alt="">
         </div>
       </template>
     </div>
     <div class="artists-content">
-      <nuxt-child v-if="!isHome" @image="setImage" />
-      <artists-list v-else @image="setImage" />
+      <nuxt-child v-if="!isHome" @image="setArtist" />
+      <artists-list v-else @image="setArtist" />
     </div>
   </div>
 </template>
@@ -35,13 +35,13 @@ export default {
   data () {
     return {
       artists,
-      artistImage: null
+      showingArtist: null
     }
   },
 
   methods: {
-    setImage (image) {
-      this.artistImage = image
+    setArtist (id) {
+      this.showingArtist = id
     }
   }
 }
@@ -54,6 +54,7 @@ export default {
     display: grid;
     grid-template-columns: 1fr 100px 600px 100px 1fr;
     padding-top: 100px;
+    margin-bottom: -2rem;
 
     &-images {
       position: relative;

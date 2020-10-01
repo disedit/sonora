@@ -17,7 +17,7 @@
         </p>
       </div>
 
-      <img class="about-poster" src="../assets/images/cartell-vilafranca.jpg" alt="Cartell del festival per Carla Fuentes">
+      <img class="about-poster" src="" alt="Cartell del festival per Carla Fuentes">
 
       <div class="about-text about-text-2">
         <p>
@@ -37,7 +37,7 @@
         <p>Benvingudes i benvinguts a Sonora.</p>
       </div>
 
-      <img class="about-image" src="../assets/images/jovens-concert.jpeg" alt="Els Joves a Vilafranca">
+      <img class="about-image" src="" alt="Els Joves a Vilafranca">
     </div>
   </div>
 </template>

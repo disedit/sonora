@@ -41,7 +41,7 @@ export default {
   methods: {
     handleScroll () {
       const scroll = window.scrollY
-      const threshold = 1500
+      const threshold = 1300
 
       if (scroll < threshold) {
         this.shapesPos = (scroll * 100 / threshold) * -1
@@ -70,7 +70,7 @@ export default {
     position: relative;
     min-height: calc(100vh);
     text-align: center;
-    padding-top: 30vh;
+    padding-top: 20vh;
     margin-top: -$navbar-safe-area;
     background: $blue;
 
@@ -93,22 +93,28 @@ export default {
   .fixed {
     position: fixed;
     z-index: 1;
+    top: 0;
     bottom: 0;
     will-change: transform;
     transition: .2s;
 
     &.shapes {
       left: 0;
-      height: 80vh;
-      width: 40vw;
-      background: yellow;
+      width: 45vw;
+      background: url('~assets/images/shapes/home-orange.svg'), url('~assets/images/shapes/home-red.svg');
+      background-position: left 0 bottom -10vw, left bottom;
+      background-size: contain, 25%;
+      background-repeat: no-repeat;
     }
 
     &.illustration {
       right: 0;
-      height: 60vh;
-      width: 60vw;
-      background: red;
+      width: 65vw;
+      background: url('~assets/images/illustrations/home.png');
+      background-position: bottom right;
+      background-size: contain;
+      background-repeat: no-repeat;
+      mix-blend-mode: multiply;
     }
   }
 </style>
