@@ -49,9 +49,8 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr 1.75fr;
     gap: 1rem;
-    margin: 2rem 0;
     align-items: end;
-    padding: 1rem 3rem;
+    padding: 1rem 3rem 3rem;
     border-top: 1px solid $black;
 
     address {

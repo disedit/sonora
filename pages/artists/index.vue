@@ -2,7 +2,7 @@
   <div class="artists">
     <div class="artists-images d-none d-lg-block">
       <template v-for="artist in artists">
-        <div v-show="showingArtist === artist.id" :key="artist.id" class="artist-image" aria-hidden="true">
+        <div v-show="showingArtist === artist.id" :key="artist.id" class="artist-image-wrapper" aria-hidden="true">
           <img :src="artist.image" alt="">
         </div>
       </template>
@@ -61,9 +61,8 @@ export default {
 
   .artists {
     display: grid;
-    grid-template-columns: 1fr 100px 600px 100px 1fr;
+    grid-template-columns: 28% 4% auto 4% 28%;
     padding-top: 100px;
-    margin-bottom: -2rem;
 
     &-images {
       position: relative;
@@ -79,13 +78,14 @@ export default {
 
       ul {
         list-style: none;
-        margin: 0;
+        margin: 0 auto;
         margin-bottom: 100px;
         padding: 0 1rem;
         font-family: $font-headings;
         font-variation-settings: $font-headings-thin;
         font-size: calc(1.5vw + 1.25rem);
         text-align: center;
+        max-width: 800px;
       }
 
       li {
@@ -108,16 +108,10 @@ export default {
           display: none;
         }
 
-        &.accent-red:hover {
-          color: $red;
-        }
-
-        &.accent-blue:hover {
-          color: $blue;
-        }
-
-        &.accent-brown:hover {
-          color: $brown;
+        @each $name, $colors in $combos {
+          &.accent-#{$name}:hover {
+            color: map-get($colors, 'primary');
+          }
         }
       }
     }
@@ -128,24 +122,6 @@ export default {
       .artists-list {
         grid-area: 1 / 1 / 1 / 1;
       }
-    }
-  }
-
-  .artist-image {
-    position: sticky;
-    display: flex;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 20;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: bottom center;
-      margin-left: 1rem;
     }
   }
 </style>

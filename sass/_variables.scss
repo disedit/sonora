@@ -1,5 +1,5 @@
 //colors
-$red: #F24957;
+$red: #E7344C;
 $purple: #5B38A6;
 $blue: #99D9F2;
 $brown: #88735E;
@@ -11,6 +11,24 @@ $primary: $red;
 $secondary: $purple;
 $terciary: $blue;
 $quaternary: $brown;
+$combos: (
+  'red': (
+    'primary': $red,
+    'secondary': $purple
+  ),
+  'blue': (
+    'primary': $blue,
+    'secondary': $red
+  ),
+  'brown': (
+    'primary': $brown,
+    'secondary': $blue
+  ),
+  'purple': (
+    'primary': $purple,
+    'secondary': $brown
+  )
+);
 
 $background: $white;
 $foreground: $white;

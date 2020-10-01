@@ -45,6 +45,24 @@ body,
   transition: .4s ease-in-out;
 }
 
+.artist-image-wrapper {
+  position: sticky;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+
+  img {
+    width: 105%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+    margin-left: -5%;
+  }
+}
+
 @include media-breakpoint-down(sm) {
   h2 {
     font-size: 4rem;
