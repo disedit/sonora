@@ -37,7 +37,11 @@ a {
 }
 
 h2 {
-  font-size: 7rem;
+  font-size: $text-xl;
+  text-transform: uppercase;
+  font-family: $font-headings;
+  font-variation-settings: $font-headings-thin;
+  text-align: center;
 }
 
 body,
@@ -61,11 +65,5 @@ body,
     object-fit: contain;
     object-position: bottom center;
     margin-left: -5%;
-  }
-}
-
-@include media-breakpoint-down(sm) {
-  h2 {
-    font-size: 4rem;
   }
 }
