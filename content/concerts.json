@@ -1,0 +1,24 @@
+{
+  "concerts": [
+    {
+      "artists": [
+        "fran-yera",
+        "mafalda"
+      ],
+      "date": "19 d'octubre, 13h",
+      "utc": "2020-10-10",
+      "venue": "Casa de Cultura",
+      "place": "Gandia"
+    },
+    {
+      "artists": [
+        "mara-aranda",
+        "xavi-sarria"
+      ],
+      "date": "19 d'octubre, 13h",
+      "utc": "2019-10-09",
+      "venue": "Casa de Cultura",
+      "place": "Gandia"
+    }
+  ]
+}

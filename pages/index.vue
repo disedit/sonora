@@ -9,13 +9,13 @@
       <div :style="{ transform: `translateX(${illustrationPos}%)` }" class="fixed illustration" />
     </header>
     <section id="artists">
-      <artists-list />
+      <artists-list :artists="artists" />
     </section>
   </main>
 </template>
 
 <script>
-import ArtistsList from './artists/index'
+import ArtistsList from '@/components/ArtistsList'
 
 export default {
   components: {
@@ -26,6 +26,17 @@ export default {
     return {
       shapesPos: 0,
       illustrationPos: 0
+    }
+  },
+
+  async asyncData ({ $content }) {
+    const artists = await $content('artists')
+      .only(['name', 'slug', 'image', 'accent'])
+      .sortBy('order', 'asc')
+      .fetch()
+
+    return {
+      artists
     }
   },
 
@@ -54,9 +65,15 @@ export default {
   },
 
   head () {
+    const links = []
+    this.artists.forEach((artist) => {
+      links.push({ rel: 'prefetch', as: 'image', href: `/images/artists/${artist.image}` })
+    })
+
     return {
       meta: [
-        { property: 'og:image', content: `https://circuitsonora.com/thumbnail.jpg` }
+        { property: 'og:image', content: `https://circuitsonora.com/thumbnail.jpg` },
+        ...links
       ]
     }
   }
@@ -93,7 +110,7 @@ export default {
   .fixed {
     position: fixed;
     z-index: 1;
-    top: 0;
+    top: $navbar-safe-area;
     bottom: 0;
     will-change: transform;
     transition: .2s;
@@ -103,7 +120,7 @@ export default {
       width: 45vw;
       background: url('~assets/images/shapes/home-orange.svg'), url('~assets/images/shapes/home-red.svg');
       background-position: left 0 bottom -10vw, left bottom;
-      background-size: contain, 25%;
+      background-size: contain;
       background-repeat: no-repeat;
     }
 

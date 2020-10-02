@@ -21,10 +21,6 @@ export default {
       type: String,
       default: ''
     },
-    utc: {
-      type: Date,
-      default: () => new Date()
-    },
     place: {
       type: String,
       default: ''
@@ -36,13 +32,10 @@ export default {
     compact: {
       type: Boolean,
       default: false
-    }
-  },
-
-  computed: {
-    dimmed () {
-      const today = new Date()
-      return today > this.utc
+    },
+    dimmed: {
+      type: Boolean,
+      default: false
     }
   }
 }

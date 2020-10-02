@@ -1,20 +1,38 @@
 <template>
   <div class="main-container">
     <div class="schedule">
+      <!-- Upcoming concerts -->
       <concert
-        v-for="(concert, i) in fullUpcomingConcerts"
-        :key="i"
+        v-for="(concert, i) in upcomingConcerts"
+        :key="`upcoming${i}`"
         :venue="concert.venue"
         :place="concert.place"
         :date="concert.date"
-        :utc="concert.utc"
       >
         <nuxt-link
-          v-for="artist in concert.fullArtists"
-          :key="artist.id"
-          :to="`/artists/${artist.id}`"
+          v-for="artist in concert.artists"
+          :key="`upcoming${i}${artist}`"
+          :to="`/artists/${artist}`"
         >
-          {{ artist.name }}
+          {{ artists[artist].name }}
+        </nuxt-link>
+      </concert>
+
+      <!-- Past concerts -->
+      <concert
+        v-for="(concert, i) in pastConcerts"
+        :key="`past${i}`"
+        :venue="concert.venue"
+        :place="concert.place"
+        :date="concert.date"
+        dimmed
+      >
+        <nuxt-link
+          v-for="artist in concert.artists"
+          :key="`past${i}${artist}`"
+          :to="`/artists/${artist}`"
+        >
+          {{ artists[artist].name }}
         </nuxt-link>
       </concert>
     </div>
@@ -22,7 +40,6 @@
 </template>
 
 <script>
-import ArtistsMixin from '@/mixins/artists-mixin.js'
 import Concert from '@/components/Concert'
 
 export default {
@@ -30,7 +47,38 @@ export default {
     Concert
   },
 
-  mixins: [ArtistsMixin],
+  async asyncData ({ $content }) {
+    /* Gett all concerts */
+    const concerts = await $content('concerts').fetch()
+
+    /* Get all artists */
+    const artistsList = await $content('artists').only(['name', 'slug']).fetch()
+    const artists = {}
+
+    /* Create easily accessible index of artists */
+    artistsList.forEach((artist) => {
+      artists[artist.slug] = artist
+    })
+
+    /* Filter upcoming concerts */
+    const today = new Date()
+    const upcomingConcerts = concerts.concerts.filter((concert) => {
+      const concertDate = new Date(concert.utc)
+      return today <= concertDate
+    })
+
+    /* Filter past concerts */
+    const pastConcerts = concerts.concerts.filter((concert) => {
+      const concertDate = new Date(concert.utc)
+      return today > concertDate
+    })
+
+    return {
+      upcomingConcerts,
+      pastConcerts,
+      artists
+    }
+  },
 
   head () {
     return {
@@ -39,11 +87,6 @@ export default {
         { property: 'og:image', content: `https://circuitsonora.com/thumbnail.jpg` }
       ]
     }
-  },
-
-  mounted () {
-    this.setFullConcerts(false, true)
-    this.setFullConcerts(false, false)
   }
 }
 </script>

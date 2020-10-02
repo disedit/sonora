@@ -3,29 +3,23 @@
     <app-nav />
     <nuxt />
     <app-footer />
-    <b-modal id="contact" hide-footer hide-header size="lg">
-      <contact />
-    </b-modal>
   </div>
 </template>
 
 <script>
 import AppNav from '@/components/AppNav'
 import AppFooter from '@/components/AppFooter'
-import Contact from '@/components/Contact'
 
 export default {
   components: {
     AppNav,
-    AppFooter,
-    Contact
+    AppFooter
   },
 
   head () {
-    const pageName = this.$route.name.startsWith('artists-') ? 'artist' : this.$route.name
     return {
       bodyAttrs: {
-        class: `page-${pageName}`
+        class: `page-${this.$route.name}`
       }
     }
   }

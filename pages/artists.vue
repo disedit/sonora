@@ -4,11 +4,7 @@
 
 <script>
 export default {
-  name: 'Artists',
-
-  fetch ({ store, route }) {
-    store.dispatch('setArtist', route.name)
-  }
+  name: 'Artists'
 }
 </script>
 

@@ -1,5 +1,6 @@
 export default {
-  mode: 'universal',
+  target: 'static',
+
   /*
   ** Headers of the page
   */
@@ -49,21 +50,9 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxt/content',
     '@nuxtjs/google-fonts',
-    ['bootstrap-vue/nuxt'],
-    ['nuxt-fontawesome', {
-      component: 'fa',
-      imports: [
-        {
-          set: '@fortawesome/free-brands-svg-icons',
-          icons: ['faFacebookSquare', 'faTwitterSquare', 'faSpotify', 'faInstagram', 'faYoutube']
-        },
-        {
-          set: '@fortawesome/pro-regular-svg-icons',
-          icons: ['faArrowLeft', 'faArrowRight', 'faPlay', 'faGlobe']
-        }
-      ]
-    }]
+    ['bootstrap-vue/nuxt']
   ],
   /*
   ** Axios module configuration
@@ -83,8 +72,7 @@ export default {
       'FormInputPlugin',
       'FormGroupPlugin',
       'ButtonPlugin',
-      'FormTextareaPlugin',
-      'ModalPlugin'
+      'FormTextareaPlugin'
     ]
   },
   /*
@@ -94,6 +82,13 @@ export default {
     families: {
       Inter: [400]
     }
+  },
+
+  /*
+  ** Content
+  */
+  content: {
+    nestedProperties: ['concerts.artists']
   },
 
   /*
