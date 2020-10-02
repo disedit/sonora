@@ -1,13 +1,176 @@
 <template>
-  <div />
+  <div class="contact-wrapper">
+    <div class="main-container contact">
+      <h2>Contacta amb nosaltres emplenant el següent formulari</h2>
+      <div class="contact-form">
+        <b-form v-if="!submitted" @submit.prevent="onSubmit">
+          <b-form-group
+            id="email-group"
+            label="Correu electrònic"
+            label-for="email"
+          >
+            <b-form-input
+              id="email"
+              v-model="form.email"
+              type="email"
+              required
+              placeholder="El teu e-mail"
+            />
+          </b-form-group>
+
+          <b-form-group
+            id="message-group"
+            label="Missatge"
+            label-for="message"
+          >
+            <b-form-textarea
+              id="message"
+              v-model="form.message"
+              required
+              rows="4"
+              max-rows="6"
+              placeholder="Escriu ací la teua pregunta"
+            />
+          </b-form-group>
+          <b-button :disabled="submitting" type="submit" variant="primary">
+            Enviar <fa :icon="['far', 'arrow-right']" />
+          </b-button>
+        </b-form>
+        <div v-else class="submitted">
+          <div class="alert alert-success">
+            Hem rebut el teu correu. Et contestarem tan prompte com siga possible.
+          </div>
+        </div>
+      </div>
+    </div>
+    <img class="contact-shape" src="../assets/images/shapes/contact.svg" alt="">
+  </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
-  name: 'Contact'
+  data () {
+    return {
+      form: {
+        email: '',
+        message: ''
+      },
+      submitted: false,
+      submitting: false
+    }
+  },
+  methods: {
+    onSubmit () {
+      this.submitting = true
+      axios.post('https://disedit.com/sonora/contact.php', this.form)
+        .then(() => {
+          this.submitted = true
+        }).catch((error) => {
+          alert(error)
+        }).then(() => {
+          this.submitting = false
+        })
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
+  @import '../sass/variables';
 
+  .contact {
+    h2 {
+      text-align: left;
+    }
+
+    &-form {
+      padding-top: 2rem;
+      font-size: $text-base;
+
+      form {
+        display: grid;
+        grid-template-columns: 1fr 1.75fr;
+
+        .form-control {
+          background: transparent;
+        }
+
+        #message-group {
+          margin-left: -1px;
+        }
+
+        #message {
+          min-height: 40vh;
+          overflow-y: auto !important;
+        }
+
+        .btn.btn-primary {
+          width: auto;
+          grid-column: 2;
+          align-self: end;
+          justify-self: end;
+          padding: .5rem 2rem;
+          text-transform: uppercase;
+          background-color: $white;
+          color: $black;
+          border: 1px solid $black;
+
+          &:hover {
+            background-color: darken($white, 5);
+          }
+        }
+      }
+    }
+
+    &-wrapper {
+      position: relative;
+    }
+
+    &-shape {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 60vw;
+      z-index: -10;
+      height: auto;
+    }
+  }
+
+  .form-control {
+    border: 1px solid $black;
+    border-radius: 0;
+    font-size: $text-base;
+    background: $background;
+  }
+
+  .btn {
+    border-radius: 0;
+    font-size: $text-base;
+  }
+
+  .alert-success {
+    background: $secondary;
+    color: $background;
+  }
+
+  @include media-breakpoint-down(md) {
+    .contact {
+      h2 {
+        font-size: $text-lg;
+      }
+
+      &-form {
+        form {
+          grid-template-columns: 1fr;
+
+          .btn.btn-primary {
+            grid-column: 1;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
 </style>
