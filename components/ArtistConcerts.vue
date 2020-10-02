@@ -1,33 +1,33 @@
 <template>
-  <div class="artist-concerts-list">
-    <concert
+  <ul class="artist-concerts-list" aria-label="Concerts de l'artista">
+    <li
       v-for="(concert, i) in concerts"
       :key="i"
-      :venue="concert.venue"
-      :place="concert.place"
-      :date="concert.date"
-      compact
     >
-      <nuxt-link
-        v-for="artist in concert.artists"
-        :key="artist"
-        :to="`/artists/${artist}`"
-      >
-        {{ artists[artist].name }}
-      </nuxt-link>
-    </concert>
-  </div>
+      <div class="concert-date">
+        {{ concert.date }} <br>
+        {{ concert.time }}
+      </div>
+
+      <div class="concert-venue mt-3">
+        <span class="concert-place">{{ concert.place }}</span> <br>
+        {{ concert.venue }}
+      </div>
+
+      <ul class="concert-artists mt-3">
+        <li v-for="artist in concert.artists" :key="i + artist">
+          <nuxt-link :to="`/artists/${artist}`">
+            {{ artists[artist].name }}
+          </nuxt-link>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </template>
 
 <script>
-import Concert from './Concert'
-
 export default {
   name: 'ArtistConcerts',
-
-  components: {
-    Concert
-  },
 
   props: {
     concerts: {
@@ -43,5 +43,39 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import "../sass/variables";
 
+  .artist-concerts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: $font-headings;
+    font-variation-settings: $font-headings-light-extended;
+
+    .concert-place {
+      text-transform: uppercase;
+    }
+
+    .concert-artists {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-transform: uppercase;
+      line-height: 1.25;
+
+      a {
+        padding: 0;
+        font-variation-settings: "wght" 300, "wdth" 100, "ital" 0;
+        font-size: 1.4rem;
+
+        &:after {
+          display: none;
+        }
+
+        &:hover {
+          font-variation-settings: "wght" 600, "wdth" 100, "ital" 0;
+        }
+      }
+    }
+  }
 </style>

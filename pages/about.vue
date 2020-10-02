@@ -2,7 +2,7 @@
   <div class="about-wrapper">
     <div class="main-container">
       <div class="about">
-        <h2 class="about-title">
+        <h2 class="about-title text-center">
           Un nou circuit musical valencià
         </h2>
         <div class="about-text-lg">

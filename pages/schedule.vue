@@ -5,9 +5,7 @@
       <concert
         v-for="(concert, i) in upcomingConcerts"
         :key="`upcoming${i}`"
-        :venue="concert.venue"
-        :place="concert.place"
-        :date="concert.date"
+        :concert="concert"
       >
         <nuxt-link
           v-for="artist in concert.artists"
@@ -22,10 +20,7 @@
       <concert
         v-for="(concert, i) in pastConcerts"
         :key="`past${i}`"
-        :venue="concert.venue"
-        :place="concert.place"
-        :date="concert.date"
-        dimmed
+        :concert="concert"
       >
         <nuxt-link
           v-for="artist in concert.artists"

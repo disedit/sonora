@@ -9,7 +9,7 @@
         <nuxt-content :document="artist" />
       </div>
 
-      <ul class="social">
+      <ul class="artist-social">
         <li v-if="artist.hasOwnProperty('facebook')">
           <a :href="artist.facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
         </li>
@@ -28,18 +28,21 @@
         <li v-if="artist.hasOwnProperty('website')">
           <a :href="artist.website" target="_blank" rel="noopener noreferrer">Pàgina web</a>
         </li>
+        <li class="video-link">
+          <a v-smooth-scroll="{ offset: -72 }" href="#video">Vídeo</a>
+        </li>
       </ul>
     </section>
     <section class="artist-image">
       <div class="artist-image-wrapper">
         <div class="artist-image-with-shapes">
           <img :src="`/images/artists/${artist.image}`" :alt="`Foto de ${artist.name}`">
-          <Shape1 v-if="artist.shape === 1" class="shape" />
-          <Shape2 v-else class="shape" />
+          <Shape1 v-if="artist.shape === 1" class="shape" aria-hidden="true" />
+          <Shape2 v-else class="shape" aria-hidden="true" />
         </div>
       </div>
     </section>
-    <section class="artist-video">
+    <section id="video" class="artist-video" aria-label="Vídeo">
       <div class="embed-responsive embed-responsive-16by9">
         <iframe
           :src="`https://www.youtube.com/embed/${artist.video}`"
@@ -184,14 +187,52 @@ export default {
 
     &-accent {
       @each $name, $colors in $combos {
-        &-#{$name} .artist-image-wrapper {
-          background: map-get($colors, 'primary');
+        &-#{$name} {
+          .artist-image-wrapper {
+            background: map-get($colors, 'primary');
 
-          &::v-deep path,
-          &::v-deep polygon {
-            fill: map-get($colors, 'secondary');
+            &::v-deep path,
+            &::v-deep polygon {
+              fill: map-get($colors, 'secondary');
+            }
+          }
+
+          .artist-social a:hover {
+            color: map-get($colors, 'primary');
+            text-decoration-color: rgba(map-get($colors, 'primary'), .25);
+          }
+
+          .artist-concerts::v-deep a {
+            color: map-get($colors, 'primary');
+
+            &:hover {
+              color: map-get($colors, 'primary');
+            }
           }
         }
+      }
+    }
+
+    &-social {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      a {
+        color: $black;
+        text-decoration: underline;
+        text-decoration-color: rgba($black, .25);
+        transition: .2s ease;
+        padding: 0;
+
+        &:after {
+          display: none;
+        }
+      }
+
+      .video-link {
+        margin-top: 2rem;
+        text-transform: uppercase;
       }
     }
   }
