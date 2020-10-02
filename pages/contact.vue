@@ -134,7 +134,7 @@ export default {
       position: absolute;
       bottom: 0;
       right: 0;
-      width: 60vw;
+      width: 70vw;
       z-index: -10;
       height: auto;
     }
@@ -160,6 +160,7 @@ export default {
   @include media-breakpoint-down(md) {
     .contact {
       h2 {
+        margin: 1rem 0;
         font-size: $text-lg;
       }
 
@@ -172,6 +173,11 @@ export default {
             width: 100%;
           }
         }
+      }
+
+      &-shape {
+        height: 60vh;
+        width: auto;
       }
     }
   }
