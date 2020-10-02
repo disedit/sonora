@@ -16,7 +16,8 @@
     "@nuxtjs/axios": "^5.3.6",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.2",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "vue-smooth-scroll": "^1.0.13"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",

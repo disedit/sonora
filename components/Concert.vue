@@ -1,13 +1,13 @@
 <template>
-  <div :class="{ 'concert': true, 'dimmed': dimmed }">
+  <div class="concert">
     <div class="concert-date">
-      {{ date }}
+      {{ concert.date }}, {{ concert.time }}
     </div>
     <h3 class="concert-artists">
       <slot />
     </h3>
     <div class="concert-details">
-      {{ venue }} ({{ place }})
+      {{ concert.venue }} ({{ concert.place }})
     </div>
   </div>
 </template>
@@ -17,25 +17,9 @@ export default {
   name: 'Concert',
 
   props: {
-    date: {
-      type: String,
-      default: ''
-    },
-    place: {
-      type: String,
-      default: ''
-    },
-    venue: {
-      type: String,
-      default: ''
-    },
-    compact: {
-      type: Boolean,
-      default: false
-    },
-    dimmed: {
-      type: Boolean,
-      default: false
+    concert: {
+      type: Object,
+      required: true
     }
   }
 }
@@ -76,10 +60,6 @@ export default {
         }
       }
     }
-  }
-
-  .dimmed {
-    opacity: .5;
   }
 
   @include media-breakpoint-down(xs) {
