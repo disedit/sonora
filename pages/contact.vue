@@ -83,6 +83,8 @@ export default {
   .contact {
     h2 {
       text-align: left;
+      max-width: 1000px;
+      margin: 2rem 0;
     }
 
     &-form {
