@@ -7,7 +7,7 @@
         </h2>
         <div class="about-text-lg">
           <p>
-            L’<a href="">Institut Valencià de Cultura</a> presenta Sonora, el nou circuit de la música valenciana, que portarà a la tardor als grups guanyadors i finalistes dels Premis Carles Santos de la Música Valenciana per tot el territori valencià.
+            L’<a href="https://ivc.gva.es" target="_blank">Institut Valencià de Cultura</a> presenta Sonora, el nou circuit de la música valenciana, que portarà a la tardor als grups guanyadors i finalistes dels Premis Carles Santos de la Música Valenciana per tot el territori valencià.
           </p>
         </div>
 
@@ -48,7 +48,7 @@
 export default {
   head () {
     return {
-      title: 'Què és - Sonora',
+      title: 'El Circuit - Sonora',
       meta: [
         { property: 'og:image', content: `https://circuitsonora.com/thumbnail.jpg` }
       ]
@@ -61,6 +61,11 @@ export default {
   @import '../sass/variables';
 
   .about {
+    a:hover {
+      color: $purple;
+      text-decoration-color: rgba($purple, .5);
+    }
+
     &-title {
       max-width: 600px;
       margin: 4rem auto 0 auto;

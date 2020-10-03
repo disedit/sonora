@@ -15,7 +15,7 @@
           @mouseover="showingArtist = artist.slug"
           @mouseout="showingArtist = null"
         >
-          <nuxt-link :to="`/artists/${artist.slug}`" :class="`accent-${artist.accent}`">
+          <nuxt-link :to="`/artistes/${artist.slug}`" :class="`accent-${artist.accent}`">
             {{ artist.name }}
           </nuxt-link>
         </li>

@@ -10,7 +10,7 @@
         @mouseover="hovering = true"
         @mouseleave="hovering = false"
       >
-        <nuxt-link :to="`/artists/${artist}`">
+        <nuxt-link :to="`/artistes/${artist}`">
           {{ artists[artist].name }}
         </nuxt-link>
       </span>

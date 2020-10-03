@@ -5,7 +5,7 @@
         <div class="artist-image-with-shapes">
           <img :src="`/images/artists/${artist.image}`" :alt="`Foto de ${artist.name}`">
           <div class="shapes fly-in">
-            <nuxt-link to="/artists" class="back-button" aria-label="Tornar a tots els artistes">
+            <nuxt-link to="/artistes" class="back-button" aria-label="Tornar a tots els artistes">
               <Arrow /> <span>Torna a Artistes</span>
             </nuxt-link>
             <Shape1 v-if="artist.shape === 1" class="shape" />

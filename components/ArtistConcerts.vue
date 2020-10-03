@@ -16,7 +16,7 @@
 
       <ul class="concert-artists mt-3">
         <li v-for="artist in concert.artists" :key="i + artist">
-          <nuxt-link :to="`/artists/${artist}`">
+          <nuxt-link :to="`/artistes/${artist}`">
             {{ artists[artist].name }}
           </nuxt-link>
         </li>

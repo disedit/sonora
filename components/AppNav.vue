@@ -11,16 +11,16 @@
         <b-nav-item to="/" class="navbar-brand d-none d-md-block">
           <Logo />
         </b-nav-item>
-        <b-nav-item to="/artists" class="link-artists">
+        <b-nav-item to="/artistes" class="link-artists">
           Artistes
         </b-nav-item>
-        <b-nav-item to="/schedule" class="link-schedule">
+        <b-nav-item to="/programa" class="link-schedule">
           Programa
         </b-nav-item>
-        <b-nav-item to="/about" class="link-about">
+        <b-nav-item to="/el-circuit" class="link-about">
           El Circuit
         </b-nav-item>
-        <b-nav-item to="/contact" class="link-contact">
+        <b-nav-item to="/contacte" class="link-contact">
           Contacte
         </b-nav-item>
       </b-navbar-nav>

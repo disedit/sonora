@@ -96,6 +96,18 @@ export default {
   },
 
   /*
+  ** Redirects
+  */
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({ path: '/schedule', redirect: { name: 'programa' } })
+      routes.push({ path: '/about', redirect: { name: 'el-circuit' } })
+      routes.push({ path: '/artists', redirect: { name: 'artistes' } })
+      routes.push({ path: '/contact', redirect: { name: 'contacte' } })
+    }
+  },
+
+  /*
   ** Build configuration
   */
   build: {
