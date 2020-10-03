@@ -1,8 +1,7 @@
 <template>
   <b-navbar :class="{ scrolled, shown }" toggleable="md" type="light" fixed="top" label="Navegació">
     <b-navbar-brand to="/" class="d-md-none">
-      <Logo aria-hidden="true" />
-      <span class="sr-only">Sonora (pàgina principal)</span>
+      <Logo />
     </b-navbar-brand>
 
     <b-navbar-toggle @click="shown = !shown" label="Obrir menú" target="nav-collapse" />
@@ -84,6 +83,7 @@ export default {
         color: $black;
         padding: 0;
         transition: .2s ease;
+        text-decoration: none;
 
         &:hover {
           color: $primary;

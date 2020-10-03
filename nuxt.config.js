@@ -5,6 +5,9 @@ export default {
   ** Headers of the page
   */
   head: {
+    htmlAttrs: {
+      lang: 'ca'
+    },
     title: 'Sonora - Circuit de Música Valenciana',
     meta: [
       { charset: 'utf-8' },
@@ -24,6 +27,7 @@ export default {
   ** Customize the progress-bar color
   */
   loading: { color: '#F24957' },
+
   /*
   ** Global CSS
   */

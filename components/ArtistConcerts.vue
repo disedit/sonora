@@ -67,6 +67,7 @@ export default {
         padding: 0;
         font-variation-settings: "wght" 300, "wdth" 100, "ital" 0;
         font-size: 1.4rem;
+        text-decoration: none;
 
         &:after {
           display: none;

@@ -53,6 +53,7 @@ export default {
         font-size: $text-xl;
         text-transform: uppercase;
         font-variation-settings: $font-headings-thin;
+        text-decoration: none;
 
         &:hover {
           color: $purple;

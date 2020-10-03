@@ -6,6 +6,7 @@
     width="950.09px"
     height="450.24px"
     viewBox="0 -30 950.09 450.24"
+    aria-label="Sonora"
   >
     <g>
       <path

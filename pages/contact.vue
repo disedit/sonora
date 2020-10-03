@@ -33,7 +33,7 @@
             />
           </b-form-group>
           <b-button :disabled="submitting" type="submit" variant="primary">
-            Enviar <fa :icon="['far', 'arrow-right']" />
+            Enviar
           </b-button>
         </b-form>
         <div v-else class="submitted">

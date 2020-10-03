@@ -1,5 +1,5 @@
 <template>
-  <div class="about-wrapper">
+  <main class="about-wrapper">
     <div class="main-container">
       <div class="about">
         <h2 class="about-title text-center">
@@ -7,7 +7,7 @@
         </h2>
         <div class="about-text-lg">
           <p>
-            L’Institut Valencià de Cultura presenta Sonora, el nou circuit de la música valenciana, que portarà a la tardor als grups guanyadors i finalistes dels Premis Carles Santos de la Música Valenciana per tot el territori valencià.
+            L’<a href="">Institut Valencià de Cultura</a> presenta Sonora, el nou circuit de la música valenciana, que portarà a la tardor als grups guanyadors i finalistes dels Premis Carles Santos de la Música Valenciana per tot el territori valencià.
           </p>
         </div>
 
@@ -41,7 +41,7 @@
       </div>
     </div>
     <img class="about-shape" src="../assets/images/shapes/circuit.svg" alt="">
-  </div>
+  </main>
 </template>
 
 <script>
