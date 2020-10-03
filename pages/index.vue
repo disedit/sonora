@@ -22,6 +22,8 @@ export default {
     ArtistsList
   },
 
+  transition: 'home',
+
   data () {
     return {
       shapesPos: 0,
@@ -83,13 +85,18 @@ export default {
 <style lang="scss" scoped>
   @import '../sass/variables';
 
+  main {
+    background: linear-gradient(to bottom, $blue 0, $blue 100vh, $white calc(100vh + 800px));
+    transition: background-position .5s;
+    background-repeat: no-repeat;
+  }
+
   header {
     position: relative;
     min-height: calc(100vh);
     text-align: center;
     padding-top: 20vh;
     margin-top: -$navbar-safe-area;
-    background: $blue;
 
     h1,
     p {
@@ -99,11 +106,11 @@ export default {
       font-size: calc(1.8vw + 1.25rem);
       margin: 0;
       z-index: 10;
+      transition: opacity .5s;
     }
   }
 
   section {
-    background: linear-gradient(to bottom, $blue 0, $white 800px);
     padding-top: 250px;
   }
 
@@ -112,8 +119,8 @@ export default {
     z-index: 1;
     top: $navbar-safe-area;
     bottom: 0;
-    will-change: transform;
-    transition: .2s;
+    transition: opacity .5s;
+    will-change: transform opacity;
 
     &.shapes {
       left: 0;
@@ -132,6 +139,18 @@ export default {
       background-size: contain;
       background-repeat: no-repeat;
       mix-blend-mode: multiply;
+    }
+  }
+
+  .home-enter,
+  .home-leave-to {
+    background-position: 0 calc((100vh + 800px) * -1);
+
+    &::v-deep .artists-list,
+    .fixed,
+    h1,
+    p {
+      opacity: 0;
     }
   }
 </style>

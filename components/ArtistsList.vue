@@ -62,6 +62,7 @@ export default {
       position: relative;
       grid-area: 1 / 2 / 2 / -2;
       z-index: 30;
+      transition: opacity .5s;
 
       ul {
         list-style: none;
@@ -85,6 +86,7 @@ export default {
         transition: .2s ease;
         line-height: 1;
         padding: .75rem;
+        text-decoration: none;
 
         &:hover {
           color: $purple;

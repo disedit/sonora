@@ -52,6 +52,7 @@ export default {
     align-items: end;
     padding: 1rem 3rem 3rem;
     border-top: 1px solid $black;
+    background: $white;
 
     address {
       margin-bottom: .25rem;

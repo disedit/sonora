@@ -1,5 +1,5 @@
 <template>
-  <div class="main-container">
+  <main class="main-container">
     <div class="schedule">
       <!-- Upcoming concerts -->
       <concert
@@ -31,7 +31,7 @@
         </nuxt-link>
       </concert>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -98,6 +98,7 @@ export default {
     grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
     grid-auto-rows: 1fr;
     width: 100%;
+    transition: opacity .5s;
 
     .concert {
       border: 1px solid $black;

@@ -1,7 +1,7 @@
 ---
 name: Mafalda
 image: mafalda.png
-accent: blue
+accent: brown
 shape: 2
 facebook: test
 twitter: test

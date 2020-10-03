@@ -30,6 +30,7 @@ h2 {
 body,
 .navbar {
   transition: .4s ease-in-out;
+  overflow-x: hidden;
 }
 
 // artists
@@ -47,5 +48,24 @@ body,
     height: 100%;
     object-fit: contain;
     object-position: bottom center;
+  }
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity .25s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+.page-artists-artist .page-leave-to,
+.page-artists-artist .page-enter {
+  opacity: 1 !important;
+
+  .artists-list,
+  .schedule {
+    opacity: 0;
   }
 }

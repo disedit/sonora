@@ -1,6 +1,20 @@
 <template>
   <article :class="['artist', `artist-accent-${artist.accent}`, `artist-shape-${artist.shape}`]">
-    <section class="artist-content">
+    <section class="artist-image">
+      <div class="artist-image-wrapper">
+        <div class="artist-image-with-shapes">
+          <img :src="`/images/artists/${artist.image}`" :alt="`Foto de ${artist.name}`">
+          <div class="shapes fly-in">
+            <nuxt-link to="/artists" class="back-button" aria-label="Tornar a tots els artistes">
+              <Arrow /> <span>Torna a Artistes</span>
+            </nuxt-link>
+            <Shape1 v-if="artist.shape === 1" class="shape" />
+            <Shape2 v-else class="shape" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="artist-content fly-in">
       <header>
         <h2>{{ artist.name }}</h2>
       </header>
@@ -33,15 +47,9 @@
         </li>
       </ul>
     </section>
-    <section class="artist-image">
-      <div class="artist-image-wrapper">
-        <div class="artist-image-with-shapes">
-          <img :src="`/images/artists/${artist.image}`" :alt="`Foto de ${artist.name}`">
-          <Shape1 v-if="artist.shape === 1" class="shape" aria-hidden="true" />
-          <Shape2 v-else class="shape" aria-hidden="true" />
-        </div>
-      </div>
-    </section>
+    <aside class="artist-concerts fly-in">
+      <artist-concerts :concerts="concerts" :artists="artists" />
+    </aside>
     <section id="video" class="artist-video" aria-label="Vídeo">
       <div class="embed-responsive embed-responsive-16by9">
         <iframe
@@ -55,13 +63,11 @@
         />
       </div>
     </section>
-    <aside class="artist-concerts">
-      <artist-concerts :concerts="concerts" :artists="artists" />
-    </aside>
   </article>
 </template>
 
 <script>
+import Arrow from '@/assets/images/icons/arrow.svg?inline'
 import Shape1 from '@/assets/images/shapes/single-1.svg?inline'
 import Shape2 from '@/assets/images/shapes/single-2.svg?inline'
 import ArtistConcerts from '@/components/ArtistConcerts'
@@ -71,6 +77,7 @@ export default {
 
   components: {
     ArtistConcerts,
+    Arrow,
     Shape1,
     Shape2
   },
@@ -131,6 +138,7 @@ export default {
       font-size: 1.25rem;
       padding: var(--section-padding);
       padding-top: calc(var(--section-padding) + #{$navbar-safe-area});
+      --offset: 200%;
 
       h2 {
         font-family: $font-headings;
@@ -152,18 +160,57 @@ export default {
         height: 100%;
       }
 
-      .shape {
+      .shapes {
         position: absolute;
+        top: 0;
         bottom: 0;
         left: 0;
-        height: 70vh;
+        right: 0;
         z-index: 1;
-        max-width: 90%;
+        display: flex;
+        --offset: -200%;
+
+        .shape {
+          max-width: 90%;
+          height: 70%;
+          margin-top: auto;
+        }
+      }
+
+      a.back-button {
+        position: absolute;
+        top: calc(var(--section-padding) + #{$navbar-safe-area});
+        left: 2rem;
+        z-index: 100;
+        color: $white;
+        text-decoration: none;
+
+        svg {
+          width: 2.5rem;
+          height: 2.5rem;
+          transition: .2s;
+        }
+
+        span {
+          opacity: 0;
+          transition: .2s ease;
+        }
+
+        &:hover {
+          svg {
+            transform: translateX(-.25rem);
+          }
+
+          span {
+            opacity: .75;
+          }
+        }
       }
 
       img {
         position: relative;
         z-index: 2;
+        pointer-events: none;
       }
     }
 
@@ -176,6 +223,7 @@ export default {
     &-concerts {
       grid-area: concerts;
       border-left: 1px $black solid;
+      background: $white;
 
       &-list {
         position: sticky;
@@ -188,12 +236,13 @@ export default {
     &-accent {
       @each $name, $colors in $combos {
         &-#{$name} {
-          .artist-image-wrapper {
+          .shapes {
             background: map-get($colors, 'primary');
 
             &::v-deep path,
             &::v-deep polygon {
               fill: map-get($colors, 'secondary');
+              transition: fill .5s;
             }
           }
 
@@ -215,25 +264,27 @@ export default {
 
     &-social {
       list-style: none;
-      margin: 0;
+      margin: 2rem 0 0 0;
       padding: 0;
-
-      a {
-        color: $black;
-        text-decoration: underline;
-        text-decoration-color: rgba($black, .25);
-        transition: .2s ease;
-        padding: 0;
-
-        &:after {
-          display: none;
-        }
-      }
 
       .video-link {
         margin-top: 2rem;
         text-transform: uppercase;
       }
+    }
+  }
+
+  .fly-in {
+    transition: 1s;
+    will-change: transform;
+  }
+
+  .page-enter,
+  .home-enter,
+  .page-leave-to,
+  .home-leave-to {
+    .fly-in {
+      transform: translateX(var(--offset, 100%));
     }
   }
 </style>
