@@ -6,29 +6,16 @@
         v-for="(concert, i) in upcomingConcerts"
         :key="`upcoming${i}`"
         :concert="concert"
-      >
-        <nuxt-link
-          v-for="artist in concert.artists"
-          :key="`upcoming${i}${artist}`"
-          :to="`/artists/${artist}`"
-        >
-          {{ artists[artist].name }}
-        </nuxt-link>
-      </concert>
+        :artists="artists"
+      />
 
       <!-- Past concerts -->
       <concert
         v-for="(concert, i) in pastConcerts"
         :key="`past${i}`"
         :concert="concert"
-      >
-        <nuxt-link
-          v-for="artist in concert.artists"
-          :key="`past${i}${artist}`"
-          :to="`/artists/${artist}`"
-        >
-          {{ artists[artist].name }}
-        </nuxt-link>
+        :artists="artists"
+      />
       </concert>
     </div>
   </main>
@@ -104,7 +91,6 @@ export default {
       border: 1px solid $black;
       margin: 0 -1px -1px 0;
       padding: 1.5rem;
-      background-color: $white;
     }
 
     &::before {

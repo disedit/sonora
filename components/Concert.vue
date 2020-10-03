@@ -1,13 +1,24 @@
 <template>
-  <div class="concert">
+  <div :class="['concert', { hovering }]">
     <div class="concert-date">
-      {{ concert.date }}, {{ concert.time }}
+      {{ concert.date }}
     </div>
     <h3 class="concert-artists">
-      <slot />
+      <span
+        v-for="artist in concert.artists"
+        :key="artist"
+        @mouseover="hovering = true"
+        @mouseleave="hovering = false"
+      >
+        <nuxt-link :to="`/artists/${artist}`">
+          {{ artists[artist].name }}
+        </nuxt-link>
+      </span>
     </h3>
     <div class="concert-details">
-      {{ concert.venue }} ({{ concert.place }})
+      {{ concert.time }}<br>
+      {{ concert.venue }}<br>
+      <span class="concert-place">{{ concert.place }}</span>
     </div>
   </div>
 </template>
@@ -20,6 +31,17 @@ export default {
     concert: {
       type: Object,
       required: true
+    },
+
+    artists: {
+      type: Object,
+      required: true
+    }
+  },
+
+  data () {
+    return {
+      hovering: false
     }
   }
 }
@@ -33,10 +55,19 @@ export default {
     flex-direction: column;
     font-size: $text-base;
     font-family: $font-headings;
+    transition: background-color .2s ease;
+
+    &.hovering {
+      background-color: $brown;
+    }
 
     &-details {
       margin-top: auto;
       font-variation-settings: $font-headings-light-extended;
+    }
+
+    &-place {
+      text-transform: uppercase;
     }
 
     &-date {
@@ -56,7 +87,7 @@ export default {
         text-decoration: none;
 
         &:hover {
-          color: $purple;
+          color: $black;
           font-variation-settings: $font-headings-regular;
         }
       }
