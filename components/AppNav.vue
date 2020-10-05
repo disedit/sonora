@@ -1,47 +1,108 @@
 <template>
-  <b-navbar :class="{ scrolled, shown }" toggleable="md" type="light" fixed="top" label="Navegació">
-    <b-navbar-brand to="/" class="d-md-none">
-      <Logo />
-    </b-navbar-brand>
+  <nav :class="['sonora-nav', { scrolled, shown }]" aria-label="Navegació">
+    <div class="sonora-nav-logo">
+      <nuxt-link to="/">
+        <Logo />
+      </nuxt-link>
+    </div>
 
-    <b-navbar-toggle @click="shown = !shown" label="Obrir menú" target="nav-collapse" />
+    <div class="sonora-nav-button">
+      <button @click="shown = !shown" :aria-expanded="shown ? 'true' : 'false'" aria-controls="navMenu">
+        <span v-if="!shown" class="text">Menú</span>
+        <span v-else class="icon"><CloseIcon /></span>
+      </button>
+    </div>
 
-    <b-collapse id="nav-collapse" is-nav>
-      <b-navbar-nav>
-        <b-nav-item to="/" class="navbar-brand d-none d-md-block">
-          <Logo />
-        </b-nav-item>
-        <b-nav-item to="/artistes" class="link-artists">
-          Artistes
-        </b-nav-item>
-        <b-nav-item to="/programa" class="link-schedule">
-          Programa
-        </b-nav-item>
-        <b-nav-item to="/el-circuit" class="link-about">
-          El Circuit
-        </b-nav-item>
-        <b-nav-item to="/contacte" class="link-contact">
-          Contacte
-        </b-nav-item>
-      </b-navbar-nav>
-    </b-collapse>
-  </b-navbar>
+    <div id="navMenu" class="sonora-nav-menu">
+      <ul class="sonora-nav-menu-items">
+        <li class="logo">
+          <nuxt-link to="/">
+            <Logo />
+          </nuxt-link>
+        </li>
+        <li class="artistes">
+          <nuxt-link to="/artistes">
+            Artistes
+          </nuxt-link>
+        </li>
+        <li class="programa">
+          <nuxt-link to="/programa">
+            Programa
+          </nuxt-link>
+        </li>
+        <li class="el-circuit">
+          <nuxt-link to="/el-circuit">
+            El Circuit
+          </nuxt-link>
+        </li>
+        <li class="contacte">
+          <nuxt-link to="/contacte">
+            Contacte
+          </nuxt-link>
+        </li>
+      </ul>
+      <div class="sonora-nav-social">
+        <Logo class="sonora-nav-social-logo" />
+
+        <ul>
+          <li>
+            <a href="" aria-label="Facebook">
+              <font-awesome-icon :icon="['fab', 'facebook']" />
+            </a>
+          </li>
+          <li>
+            <a href="" aria-label="Twitter">
+              <font-awesome-icon :icon="['fab', 'twitter']" />
+            </a>
+          </li>
+          <li>
+            <a href="" aria-label="Instagram">
+              <font-awesome-icon :icon="['fab', 'instagram']" />
+            </a>
+          </li>
+          <li>
+            <a href="" aria-label="Youtube">
+              <font-awesome-icon :icon="['fab', 'youtube']" />
+            </a>
+          </lI>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </template>
 
 <script>
+import CloseIcon from '@/assets/images/icons/close.svg?inline'
 import Logo from './Logo'
 
 export default {
   name: 'AppNav',
 
   components: {
-    Logo
+    Logo,
+    CloseIcon
   },
 
   data () {
     return {
       scrolled: false,
       shown: false
+    }
+  },
+
+  watch: {
+    '$route' () {
+      this.shown = false
+    },
+
+    shown (newVal) {
+      const bodyTag = document.getElementsByTagName('body')[0]
+
+      if (newVal) {
+        bodyTag.classList.add('nav-shown')
+      } else {
+        bodyTag.classList.remove('nav-shown')
+      }
     }
   },
 
@@ -65,57 +126,92 @@ export default {
 <style lang="scss">
   @import '../sass/variables';
 
-  .navbar-light {
+  .sonora-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     transition: .2s ease;
     border-bottom: 1px $black solid;
     background: $white;
+    z-index: 1000;
 
     @at-root .page-index & {
       border-color: transparent;
       background: transparent;
     }
 
-    .navbar-nav {
-      a.nav-link {
-        font-family: $font-headings;
-        font-variation-settings: $font-headings-light;
-        font-size: 1rem;
-        color: $black;
-        padding: 0;
-        transition: .2s ease;
-        text-decoration: none;
-
-        &:hover {
-          color: $primary;
-        }
-
-        &::after {
-          display: none;
-        }
-      }
+    &-logo,
+    &-button,
+    &-social {
+      display: none;
     }
 
-    .navbar-brand {
-      margin-right: 0;
-      padding: 0;
+    &-menu {
+      &-items {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: .5rem 0;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
 
-      svg {
-        height: 48px;
-        width: 125px;
-      }
-
-      .lt {
-        transition: .2s ease;
-      }
-
-      &::after {
-        display: none;
-      }
-
-      &:hover {
-        .lt {
-          fill: $primary;
+        li {
+          flex-shrink: 0;
+          flex-grow: 1;
+          width: 20%;
         }
+
+        a {
+          font-family: $font-headings;
+          font-variation-settings: $font-headings-light;
+          font-size: 1rem;
+          color: $black;
+          padding: 1rem;
+          text-decoration: none;
+
+          &:hover {
+            color: $primary;
+
+            .lt {
+              fill: $primary;
+            }
+          }
+
+          &.nuxt-link-active {
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      .logo {
+        order: 3;
+
+        svg {
+          height: 48px;
+          width: 125px;
+        }
+
+        .lt {
+          transition: .2s ease;
+        }
+      }
+
+      .artistes {
+        order: 1;
+      }
+
+      .programa {
+        order: 2;
+      }
+
+      .el-circuit {
+        order: 4;
+      }
+
+      .contacte {
+        order: 5;
       }
     }
 
@@ -125,109 +221,125 @@ export default {
     }
   }
 
-  @include media-breakpoint-up(md) {
-    .navbar-light {
-      .navbar-nav {
+  @include media-breakpoint-down (sm) {
+    .sonora-nav {
+      display: flex;
+      align-items: center;
+      padding: .5rem;
+
+      &-logo {
+        display: block;
+
+        svg {
+          height: 42px;
+          width: 100px;
+        }
+      }
+
+      &-button {
+        position: relative;
         display: flex;
-        justify-content: space-around;
+        margin-left: auto;
         align-items: center;
-        width: 100%;
+        z-index: 2000;
 
-        a.nav-link {
-          display: block;
-          text-align: center;
-          padding: 1rem;
-        }
-      }
-
-      .navbar-brand {
-        order: 3;
-
-        a.nav-link {
-          padding: 0;
-        }
-      }
-
-      .link-artists {
-        order: 1;
-      }
-
-      .link-schedule {
-        order: 2;
-      }
-
-      .link-about {
-        order: 4;
-      }
-
-      .link-contact {
-        order: 5;
-      }
-    }
-  }
-
-  @include media-breakpoint-down(sm) {
-    .navbar-light {
-      .navbar {
-        &-brand {
-          svg {
-            height: 38px;
-            width: 80px;
-          }
-        }
-
-        &-nav {
-          margin-top: 1rem;
-
-          a.nav-link {
-            font-size: 1.5rem;
-            padding: .5rem 0;
-          }
-        }
-
-        &-toggler {
+        button {
+          appearance: none;
+          background: transparent;
           border: 0;
+          text-align: right;
 
-          &-icon {
-            background-image: none !important;
-            position: relative;
-
-            &::before,
-            &::after {
-              content: '';
-              position: absolute;
-              background: $text;
-              height: 2px;
-              left: 3px;
-              right: 3px;
-              top: 25%;
-              transition: .4s ease-in-out;
-            }
-
-            &::after {
-              content: '';
-              top: auto;
-              bottom: 25%;
-            }
+          .text {
+            display: block;
+            padding: .5rem 1rem;
           }
 
-          &[aria-expanded="true"] {
-            .navbar-toggler-icon {
-              &::after {
-                transform: rotate(45deg) translateY(-9px);
-              }
+          .icon {
+            font-size: 1.65rem;
+            padding: 0 1rem;
+          }
+        }
+      }
 
-              &::before {
-                transform: rotate(-45deg) translateY(8px);
-              }
+      &-menu {
+        display: flex;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: $primary;
+        z-index: 1500;
+        padding-top: $navbar-safe-area;
+        transform: translateX(100%);
+        visibility: hidden;
+        transition: .5s ease;
+        flex-direction: column;
+        overflow-y: auto;
+
+        &-items {
+          flex-direction: column;
+          align-items: center;
+
+          li {
+            width: 100%;
+          }
+
+          a {
+            display: block;
+            font-size: 1.75rem;
+            text-align: center;
+            padding: 1rem;
+            line-height: 1;
+
+            &:hover {
+              color: $white;
             }
           }
+        }
+
+        .logo {
+          display: none;
+        }
+      }
+
+      &-social {
+        display: block;
+        margin-top: auto;
+        margin-bottom: 4rem;
+
+        &-logo {
+          display: block;
+          width: 90%;
+          margin: 1rem auto;
+          max-width: 120px;
+          height: auto;
+
+          .lt {
+            fill: currentColor;
+          }
+        }
+
+        ul {
+          display: flex;
+          flex-direction: row;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          justify-content: center;
+        }
+
+        li {
+          font-size: 2rem;
+          padding: 0 .75rem;
         }
       }
 
       &.shown {
-        border-bottom: 1px $black solid;
-        background: $white;
+        .sonora-nav-menu {
+          transform: translateX(0);
+          visibility: visible;
+        }
       }
     }
   }

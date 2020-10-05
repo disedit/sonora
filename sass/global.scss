@@ -5,6 +5,10 @@
 //body
 body {
   padding-top: $navbar-safe-area;
+
+  &.nav-shown {
+    overflow: hidden;
+  }
 }
 
 //links

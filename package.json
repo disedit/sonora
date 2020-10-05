@@ -20,8 +20,10 @@
     "vue-smooth-scroll": "^1.0.13"
   },
   "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.15.0",
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/fontawesome": "^1.1.2",
     "@nuxtjs/google-fonts": "^1.0.3",
     "@nuxtjs/svg": "^0.1.12",
     "babel-eslint": "^10.0.1",

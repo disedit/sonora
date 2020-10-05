@@ -46,7 +46,8 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     // '@nuxtjs/eslint-module'
-    ['@nuxtjs/svg']
+    ['@nuxtjs/svg'],
+    ['@nuxtjs/fontawesome']
   ],
   /*
   ** Nuxt.js modules
@@ -71,7 +72,6 @@ export default {
     bootstrapCSS: false,
     bootstrapVueCSS: false,
     componentPlugins: [
-      'NavbarPlugin',
       'FormPlugin',
       'FormInputPlugin',
       'FormGroupPlugin',
@@ -85,6 +85,15 @@ export default {
   googleFonts: {
     families: {
       Inter: [400]
+    }
+  },
+
+  /*
+  ** FontAwesome
+  */
+  fontawesome: {
+    icons: {
+      brands: ['faFacebook', 'faTwitter', 'faInstagram', 'faYoutube']
     }
   },
 
