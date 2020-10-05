@@ -168,6 +168,8 @@ export default {
     --section-padding: 3rem;
 
     &-content {
+      display: flex;
+      flex-direction: column;
       grid-area: content;
       border-left: 1px $black solid;
       font-size: 1.25rem;
@@ -181,6 +183,10 @@ export default {
         text-transform: uppercase;
         line-height: 1;
         font-size: 3.75rem;
+      }
+
+      .social-networks {
+        margin-top: auto;
       }
     }
 
@@ -328,6 +334,12 @@ export default {
       .fly-in {
         transform: translateX(var(--offset, 100%));
       }
+    }
+  }
+
+  @include media-breakpoint-down (lg) {
+    .artist {
+      --section-padding: 1.5rem;
     }
   }
 
