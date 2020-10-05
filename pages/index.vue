@@ -1,7 +1,7 @@
 <template>
   <main>
     <header id="home">
-      <h1>CIRCUIT DE MÚSICA VALENCIANA</h1>
+      <h1>CIRCUIT<br>DE MÚSICA<br>VALENCIANA</h1>
       <p class="dates">
         25.10.20 → 13.3.21
       </p>
@@ -54,7 +54,7 @@ export default {
   methods: {
     handleScroll () {
       const scroll = window.scrollY
-      const threshold = 1000
+      const threshold = 800
 
       if (scroll < threshold) {
         this.shapesPos = (scroll * 100 / threshold) * -1
@@ -103,10 +103,15 @@ export default {
       position: relative;
       font-family: $font-headings;
       font-variation-settings: $font-headings-thin;
-      font-size: calc(1.8vw + 1.25rem);
+      font-size: calc(1.8vw + 1.8rem);
       margin: 0;
       z-index: 10;
       transition: opacity .5s;
+      padding: 0 1rem;
+    }
+
+    br {
+      display: none;
     }
   }
 
@@ -127,7 +132,7 @@ export default {
       width: 45vw;
       background: url('~assets/images/shapes/home-orange.svg'), url('~assets/images/shapes/home-red.svg');
       background-position: left 0 bottom -10vw, left bottom;
-      background-size: contain;
+      background-size: contain, 30%;
       background-repeat: no-repeat;
     }
 
@@ -151,6 +156,26 @@ export default {
     h1,
     p {
       opacity: 0;
+    }
+  }
+
+  @include media-breakpoint-down (sm) {
+    header {
+      br {
+        display: inline;
+      }
+    }
+
+    .fixed {
+      &.shapes {
+        width: 90vw;
+        background-size: contain, 32vw;
+        background-position: left bottom, left -4vw bottom 12vw;
+      }
+
+      &.illustration {
+        display: none;
+      }
     }
   }
 </style>

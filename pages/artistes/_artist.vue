@@ -180,6 +180,8 @@ export default {
       a.back-button {
         position: absolute;
         top: calc(var(--section-padding) + #{$navbar-safe-area});
+        display: flex;
+        align-items: center;
         left: 2rem;
         z-index: 100;
         color: $white;
