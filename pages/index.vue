@@ -1,7 +1,7 @@
 <template>
   <main>
     <header id="home">
-      <h1>CIRCUIT<br>DE MÚSICA<br>VALENCIANA</h1>
+      <h1>CIRCUIT<br> DE MÚSICA<br> VALENCIANA</h1>
       <p class="dates">
         25.10.20 → 13.3.21
       </p>
@@ -103,7 +103,7 @@ export default {
       position: relative;
       font-family: $font-headings;
       font-variation-settings: $font-headings-thin;
-      font-size: calc(1.8vw + 1.8rem);
+      font-size: calc(1.3vw + 1.85rem);
       margin: 0;
       z-index: 10;
       transition: opacity .5s;

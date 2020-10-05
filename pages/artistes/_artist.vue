@@ -20,47 +20,71 @@
       </header>
 
       <div class="text">
-        <nuxt-content :document="artist" />
+        <button @click="sections.content = !sections.content" :aria-expanded="sections.content ? 'true' : 'false'" class="artist-section-title" aria-controls="artistInfo">
+          Més info
+        </button>
+        <div id="artistInfo" :class="['text-inner collapsible', { hidden: !sections.content }]">
+          <div class="text-inner-padding">
+            <nuxt-content :document="artist" />
+          </div>
+        </div>
       </div>
 
-      <ul class="artist-social">
-        <li v-if="artist.hasOwnProperty('facebook')">
-          <a :href="artist.facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
-        </li>
-        <li v-if="artist.hasOwnProperty('twitter')">
-          <a :href="artist.twitter" target="_blank" rel="noopener noreferrer">Twitter</a>
-        </li>
-        <li v-if="artist.hasOwnProperty('instagram')">
-          <a :href="artist.instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
-        </li>
-        <li v-if="artist.hasOwnProperty('spotify')">
-          <a :href="artist.spotify" target="_blank" rel="noopener noreferrer">Spotify</a>
-        </li>
-        <li v-if="artist.hasOwnProperty('youtube')">
-          <a :href="artist.youtube" target="_blank" rel="noopener noreferrer">Youtube</a>
-        </li>
-        <li v-if="artist.hasOwnProperty('website')">
-          <a :href="artist.website" target="_blank" rel="noopener noreferrer">Pàgina web</a>
-        </li>
-        <li class="video-link">
-          <a v-smooth-scroll="{ offset: -72 }" href="#video">Vídeo</a>
-        </li>
-      </ul>
+      <div class="social-networks">
+        <button @click="sections.social = !sections.social" :aria-expanded="sections.social ? 'true' : 'false'" class="artist-section-title" aria-controls="artistSocial">
+          Xarxes socials
+        </button>
+        <div id="artistSocial" :class="['social-networks-inner collapsible', { hidden: !sections.social }]">
+          <ul class="artist-social">
+            <li v-if="artist.hasOwnProperty('facebook')">
+              <a :href="artist.facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
+            </li>
+            <li v-if="artist.hasOwnProperty('twitter')">
+              <a :href="artist.twitter" target="_blank" rel="noopener noreferrer">Twitter</a>
+            </li>
+            <li v-if="artist.hasOwnProperty('instagram')">
+              <a :href="artist.instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </li>
+            <li v-if="artist.hasOwnProperty('spotify')">
+              <a :href="artist.spotify" target="_blank" rel="noopener noreferrer">Spotify</a>
+            </li>
+            <li v-if="artist.hasOwnProperty('youtube')">
+              <a :href="artist.youtube" target="_blank" rel="noopener noreferrer">Youtube</a>
+            </li>
+            <li v-if="artist.hasOwnProperty('website')">
+              <a :href="artist.website" target="_blank" rel="noopener noreferrer">Pàgina web</a>
+            </li>
+            <li class="video-link">
+              <a v-smooth-scroll="{ offset: -72 }" href="#video">Vídeo</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
     <aside class="artist-concerts fly-in">
-      <artist-concerts :concerts="concerts" :artists="artists" />
+      <button @click="sections.concerts = !sections.concerts" :aria-expanded="sections.concerts ? 'true' : 'false'" class="artist-section-title" aria-controls="artistConcerts">
+        Concerts
+      </button>
+      <div id="artistConcerts" :class="['artist-concerts-inner collapsible', { hidden: !sections.concerts }]">
+        <artist-concerts :concerts="concerts" :artists="artists" />
+      </div>
     </aside>
     <section id="video" class="artist-video" aria-label="Vídeo">
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe
-          :src="`https://www.youtube.com/embed/${artist.video}`"
-          class="embed-responsive-item"
-          width="560"
-          height="315"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        />
+      <button @click="sections.video = !sections.video" :aria-expanded="sections.video ? 'true' : 'false'" class="artist-section-title" aria-controls="artistVideo">
+        Vídeo
+      </button>
+      <div id="artistVideo" :class="['artist-video-inner collapsible', { hidden: !sections.video }]">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe
+            :src="`https://www.youtube.com/embed/${artist.video}`"
+            class="embed-responsive-item"
+            width="560"
+            height="315"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          />
+        </div>
       </div>
     </section>
   </article>
@@ -80,6 +104,17 @@ export default {
     Arrow,
     Shape1,
     Shape2
+  },
+
+  data () {
+    return {
+      sections: {
+        content: false,
+        social: false,
+        video: false,
+        concerts: false
+      }
+    }
   },
 
   async asyncData ({ $content, params }) {
@@ -227,7 +262,7 @@ export default {
       border-left: 1px $black solid;
       background: $white;
 
-      &-list {
+      &-inner {
         position: sticky;
         top: 0;
         padding: var(--section-padding);
@@ -274,19 +309,139 @@ export default {
         text-transform: uppercase;
       }
     }
+
+    &-section-title {
+      display: none;
+    }
   }
 
-  .fly-in {
-    transition: 1s;
-    will-change: transform;
-  }
-
-  .page-enter,
-  .home-enter,
-  .page-leave-to,
-  .home-leave-to {
+  @include media-breakpoint-up(md) {
     .fly-in {
-      transform: translateX(var(--offset, 100%));
+      transition: 1s;
+      will-change: transform;
+    }
+
+    .page-enter,
+    .home-enter,
+    .page-leave-to,
+    .home-leave-to {
+      .fly-in {
+        transform: translateX(var(--offset, 100%));
+      }
+    }
+  }
+
+  @include media-breakpoint-down (sm) {
+    .artist {
+      --section-padding: 1rem;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr repeat(3, auto);
+      grid-template-areas:
+        "image"
+        "content"
+        "video"
+        "concerts";
+
+      &-content {
+        padding: 0;
+        border-left: 0;
+
+        header {
+          position: absolute;
+          top: calc(#{$navbar-safe-area} + 1rem);
+          bottom: 70%;
+          left: var(--section-padding);
+          right: var(--section-padding);
+          z-index: 100;
+          display: flex;
+          align-items: center;
+
+          h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            flex-grow: 1;
+          }
+        }
+
+        .text {
+          border-bottom: 1px $black solid;
+          font-size: 1rem;
+
+          &-inner-padding {
+            padding: var(--section-padding);
+            padding-top: 0;
+          }
+
+          &::v-deep p:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      &-image {
+        border-bottom: 1px $black solid;
+
+        a.back-button {
+          display: none;
+        }
+      }
+
+      &-video {
+        background: $white;
+        border-bottom: 1px $black solid;
+      }
+
+      &-concerts {
+        border-left: 0;
+
+        &-inner {
+          position: static;
+          padding: 0;
+        }
+
+        .artist-concerts-list::v-deep > li {
+          padding: 0 var(--section-padding) 1rem var(--section-padding);
+        }
+      }
+
+      &-section-title {
+        display: block;
+        font-size: 1rem;
+        padding: 1rem;
+        appearance: none;
+        background: transparent;
+        font-family: $font-headings;
+        border: 0;
+        width: 100%;
+        text-align: left;
+        outline: 0;
+
+        &[aria-expanded='true'] {
+          color: $primary;
+        }
+      }
+
+      &-social {
+        margin: 0;
+        padding: var(--section-padding);
+        padding-top: 0;
+        font-size: 1rem;
+
+        .video-link {
+          display: none;
+        }
+      }
+
+      .collapsible {
+        overflow: hidden;
+        transition: max-height .5s ease, visibility .5s;
+        max-height: 1000px;
+      }
+
+      .hidden {
+        visibility: hidden;
+        max-height: 0;
+      }
     }
   }
 </style>

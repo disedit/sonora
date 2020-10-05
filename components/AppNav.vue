@@ -226,6 +226,13 @@ export default {
       display: flex;
       align-items: center;
       padding: .5rem;
+      border-bottom: transparent;
+      background: transparent;
+
+      &.scrolled {
+        border-bottom: 1px $black solid;
+        background: $white;
+      }
 
       &-logo {
         display: block;
@@ -248,6 +255,7 @@ export default {
           background: transparent;
           border: 0;
           text-align: right;
+          font-family: $font-family-sans-serif;
 
           .text {
             display: block;

@@ -71,7 +71,7 @@ export default {
         padding: 0 1rem;
         font-family: $font-headings;
         font-variation-settings: $font-headings-thin;
-        font-size: calc(1.5vw + 1.25rem);
+        font-size: calc(1vw + 1.75rem);
         text-align: center;
         max-width: 800px;
       }
