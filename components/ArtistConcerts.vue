@@ -52,6 +52,12 @@ export default {
     font-family: $font-headings;
     font-variation-settings: $font-headings-light-extended;
 
+    & > li:not(:last-child) {
+      border-bottom: 1px rgba($black, .25) solid;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+    }
+
     .concert-place {
       text-transform: uppercase;
     }

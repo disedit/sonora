@@ -2,13 +2,16 @@
   <footer>
     <div class="app-footer">
       <div class="sonora">
-        <logo />
-        <div>© Institut Valencià de Cultura</div>
-        <div>
-          <a href="https://ivc.gva.es/val/ivc-val/qui-som-ivc/avis-legal-val/politica-de-privadesa/nota-legal-val" target="_blank" rel="noopener noreferrer">Nota Legal</a>
-        </div>
+        <logo class="sonora-logo" />
+        <app-social class="d-none d-md-flex" />
       </div>
       <div class="address">
+        <div class="mb-1">
+          <span class="ivc">&copy; Institut Valencià de Cultura</span> <br>
+          <a href="https://ivc.gva.es/val/ivc-val/qui-som-ivc/avis-legal-val/politica-de-privadesa/nota-legal-val" class="legal-notice" target="_blank" rel="noopener noreferrer">
+            Nota Legal
+          </a>
+        </div>
         <address>
           Plaça de l'Ajuntament, 17 46002 València
         </address>
@@ -27,11 +30,14 @@
 
 <script>
 import Logo from '@/components/Logo'
+import AppSocial from '@/components/AppSocial'
+
 export default {
   name: 'AppFooter',
 
   components: {
-    Logo
+    Logo,
+    AppSocial
   },
 
   methods: {
@@ -46,48 +52,83 @@ export default {
   @import '../sass/variables';
 
   .app-footer {
+    --footer-padding: 2rem 3rem;
     display: grid;
-    grid-template-columns: 1fr 1fr 1.75fr;
+    grid-template-columns: .75fr 1fr 1.75fr;
     gap: 1rem;
-    align-items: end;
-    padding: 1rem 3rem 3rem;
+    align-items: center;
+    padding: var(--footer-padding);
     border-top: 1px solid $black;
     background: $white;
+
+    br {
+      display: none;
+    }
 
     address {
       margin-bottom: .25rem;
     }
 
-    svg {
+    .ivc::after {
+      content: ' / ';
+      opacity: .5;
+      font-size: .85rem;
+    }
+
+    .legal-notice {
+      font-size: .85rem;
+    }
+
+    .sonora {
+      &-logo {
       height: auto;
       width: 100px;
-      margin: 1rem 0;
+      }
     }
 
     .logos {
       justify-self: end;
+      text-align: right;
     }
   }
 
   @include media-breakpoint-down(lg) {
     .app-footer {
+      --footer-padding: 1.5rem;
       grid-template-columns: 1fr 1fr;
 
       .logos {
-        justify-self: start;
-        grid-column: span 2;
-        margin-top: 1rem;
+        grid-area: 2 / 2;
+      }
+
+      .address  {
+        grid-area: 2 / 1;
       }
     }
   }
 
   @include media-breakpoint-down(sm) {
     .app-footer {
+      --footer-padding: 1.5rem 1rem;
       grid-template-columns: 1fr;
+      text-align: center;
+
+      br {
+        display: inline;
+      }
+
+      .ivc::after {
+        display: none;
+      }
+
+      .addres {
+        grid-area: 2;
+      }
 
       .logos {
-        justify-self: start;
-        grid-column: span 1;
+        grid-area: 3;
+        justify-self: center;
+        text-align: center;
       }
     }
   }

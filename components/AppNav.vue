@@ -9,7 +9,7 @@
     <div class="sonora-nav-button">
       <button @click="shown = !shown" :aria-expanded="shown ? 'true' : 'false'" aria-controls="navMenu">
         <span v-if="!shown" class="text">Menú</span>
-        <span v-else class="icon"><CloseIcon /></span>
+        <span v-else class="icon"><CloseIcon /> <span class="sr-only">Cerrar menú</span></span>
       </button>
     </div>
 
@@ -44,28 +44,7 @@
       <div class="sonora-nav-social">
         <Logo class="sonora-nav-social-logo" />
 
-        <ul>
-          <li>
-            <a href="" aria-label="Facebook">
-              <font-awesome-icon :icon="['fab', 'facebook']" />
-            </a>
-          </li>
-          <li>
-            <a href="" aria-label="Twitter">
-              <font-awesome-icon :icon="['fab', 'twitter']" />
-            </a>
-          </li>
-          <li>
-            <a href="" aria-label="Instagram">
-              <font-awesome-icon :icon="['fab', 'instagram']" />
-            </a>
-          </li>
-          <li>
-            <a href="" aria-label="Youtube">
-              <font-awesome-icon :icon="['fab', 'youtube']" />
-            </a>
-          </lI>
-        </ul>
+        <app-social />
       </div>
     </div>
   </nav>
@@ -74,13 +53,15 @@
 <script>
 import CloseIcon from '@/assets/images/icons/close.svg?inline'
 import Logo from './Logo'
+import AppSocial from './AppSocial'
 
 export default {
   name: 'AppNav',
 
   components: {
     Logo,
-    CloseIcon
+    CloseIcon,
+    AppSocial
   },
 
   data () {
@@ -259,12 +240,13 @@ export default {
 
           .text {
             display: block;
-            padding: .5rem 1rem;
+            padding: .5rem 0;
           }
 
           .icon {
+            display: block;
             font-size: 1.65rem;
-            padding: 0 1rem;
+            padding: 0;
           }
         }
       }
@@ -329,17 +311,11 @@ export default {
         }
 
         ul {
-          display: flex;
-          flex-direction: row;
-          list-style: none;
-          margin: 0;
-          padding: 0;
           justify-content: center;
-        }
 
-        li {
-          font-size: 2rem;
-          padding: 0 .75rem;
+          a:hover {
+            color: $white;
+          }
         }
       }
 
