@@ -16,7 +16,6 @@
         :concert="concert"
         :artists="artists"
       />
-      </concert>
     </div>
   </main>
 </template>
@@ -82,7 +81,7 @@ export default {
 
   .schedule {
     display: inline-grid;
-    grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-auto-rows: 1fr;
     width: 100%;
     transition: opacity .5s;
@@ -116,9 +115,16 @@ export default {
     opacity: .5;
   }
 
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(lg) {
     .schedule {
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .schedule {
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
   }
 

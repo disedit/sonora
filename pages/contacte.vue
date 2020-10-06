@@ -1,7 +1,7 @@
 <template>
   <div class="contact-wrapper">
     <div class="main-container contact">
-      <h2>Contacta amb nosaltres emplenant el següent formulari</h2>
+      <h1>Contacta amb nosaltres emplenant el següent formulari</h1>
       <div class="contact-form">
         <b-form v-if="!submitted" @submit.prevent="onSubmit">
           <b-form-group
@@ -14,7 +14,6 @@
               v-model="form.email"
               type="email"
               required
-              placeholder="El teu e-mail"
             />
           </b-form-group>
 
@@ -29,7 +28,6 @@
               required
               rows="4"
               max-rows="6"
-              placeholder="Escriu ací la teua pregunta"
             />
           </b-form-group>
           <b-button :disabled="submitting" type="submit" variant="primary">
@@ -81,7 +79,7 @@ export default {
   @import '../sass/variables';
 
   .contact {
-    h2 {
+    h1 {
       text-align: left;
       max-width: 1000px;
       margin: 2rem 0;
@@ -123,6 +121,15 @@ export default {
             background-color: darken($white, 5);
           }
         }
+
+        &::v-deep {
+          input,
+          textarea {
+            &:focus {
+              box-shadow: 0 0 0 0.2rem rgba($purple, 0.25);
+            }
+          }
+        }
       }
     }
 
@@ -159,24 +166,25 @@ export default {
 
   @include media-breakpoint-down(md) {
     .contact {
-      h2 {
+      h1 {
         margin: 1rem 0;
         font-size: $text-lg;
+        text-align: center;
       }
 
       &-form {
+        margin-bottom: 2rem;
         form {
           grid-template-columns: 1fr;
 
           .btn.btn-primary {
             grid-column: 1;
-            width: 100%;
           }
         }
       }
 
       &-shape {
-        height: 60vh;
+        height: auto;
         width: auto;
       }
     }
