@@ -440,6 +440,7 @@ export default {
           appearance: none;
           background: transparent;
           font-family: $font-headings;
+          font-variation-settings: $font-headings-light;
           border: 0;
           width: 100%;
           text-align: left;

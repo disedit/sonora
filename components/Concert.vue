@@ -81,7 +81,7 @@ export default {
         display: block;
         line-height: 1;
         color: $black;
-        font-size: $text-xl;
+        font-size: $text-lg;
         text-transform: uppercase;
         font-variation-settings: $font-headings-thin;
         text-decoration: none;
@@ -94,17 +94,27 @@ export default {
     }
   }
 
-  @include media-breakpoint-down(xs) {
+  @media (min-width: 1500px) {
+    .concert-artists a {
+      font-size: $text-xl;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    .concert {
+      &-details,
+      &-date {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
     .concert {
       &-artists {
         a {
-          font-size: 1.75rem;
+          font-size: calc(1.5rem + 3vw);
         }
-      }
-
-      &-details,
-      &-date {
-        font-size: 1.25rem;
       }
     }
   }
