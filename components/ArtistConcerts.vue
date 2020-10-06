@@ -1,5 +1,5 @@
 <template>
-  <ul class="artist-concerts-list" aria-label="Concerts de l'artista">
+  <ul class="artist-concerts-list">
     <li
       v-for="(concert, i) in concerts"
       :key="i"

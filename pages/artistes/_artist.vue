@@ -16,14 +16,16 @@
     </section>
     <section class="artist-content fly-in">
       <header>
-        <h2>{{ artist.name }}</h2>
+        <h1>{{ artist.name }}</h1>
       </header>
 
       <div class="text">
-        <button @click="sections.content = !sections.content" :aria-expanded="sections.content ? 'true' : 'false'" class="artist-section-title" aria-controls="artistInfo">
-          Més info
-        </button>
-        <div id="artistInfo" :class="['text-inner collapsible', { hidden: !sections.content }]">
+        <h2 id="artistInfoTitle" class="artist-section-title">
+          <button @click="sections.content = !sections.content" :aria-expanded="sections.content ? 'true' : 'false'" aria-controls="artistInfo">
+            Més info
+          </button>
+        </h2>
+        <div id="artistInfo" :class="['text-inner collapsible', { hidden: !sections.content }]" aria-labelledby="artistInfoTitle">
           <div class="text-inner-padding">
             <nuxt-content :document="artist" />
           </div>
@@ -31,10 +33,12 @@
       </div>
 
       <div class="social-networks">
-        <button @click="sections.social = !sections.social" :aria-expanded="sections.social ? 'true' : 'false'" class="artist-section-title" aria-controls="artistSocial">
-          Xarxes socials
-        </button>
-        <div id="artistSocial" :class="['social-networks-inner collapsible', { hidden: !sections.social }]">
+        <h2 id="artistSocialTitle" class="artist-section-title">
+          <button @click="sections.social = !sections.social" :aria-expanded="sections.social ? 'true' : 'false'" aria-controls="artistSocial">
+            Xarxes socials
+          </button>
+        </h2>
+        <div id="artistSocial" :class="['social-networks-inner collapsible', { hidden: !sections.social }]" aria-labelledby="artistSocialTitle">
           <ul class="artist-social">
             <li v-if="artist.hasOwnProperty('facebook')">
               <a :href="artist.facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
@@ -62,18 +66,22 @@
       </div>
     </section>
     <aside class="artist-concerts fly-in">
-      <button @click="sections.concerts = !sections.concerts" :aria-expanded="sections.concerts ? 'true' : 'false'" class="artist-section-title" aria-controls="artistConcerts">
-        Concerts
-      </button>
-      <div id="artistConcerts" :class="['artist-concerts-inner collapsible', { hidden: !sections.concerts }]">
+      <h2 id="artistConcertsTitle" class="artist-section-title">
+        <button @click="sections.concerts = !sections.concerts" :aria-expanded="sections.concerts ? 'true' : 'false'" aria-controls="artistConcerts">
+          Concerts
+        </button>
+      </h2>
+      <div id="artistConcerts" :class="['artist-concerts-inner collapsible', { hidden: !sections.concerts }]" aria-labelledby="artistConcertsTitle">
         <artist-concerts :concerts="concerts" :artists="artists" />
       </div>
     </aside>
-    <section id="video" class="artist-video" aria-label="Vídeo">
-      <button @click="sections.video = !sections.video" :aria-expanded="sections.video ? 'true' : 'false'" class="artist-section-title" aria-controls="artistVideo">
-        Vídeo
-      </button>
-      <div id="artistVideo" :class="['artist-video-inner collapsible', { hidden: !sections.video }]">
+    <section id="video" class="artist-video">
+      <h2 id="artistVideoTitle" class="artist-section-title">
+        <button @click="sections.video = !sections.video" :aria-expanded="sections.video ? 'true' : 'false'" aria-controls="artistVideo">
+          Vídeo
+        </button>
+      </h2>
+      <div id="artistVideo" :class="['artist-video-inner collapsible', { hidden: !sections.video }]" aria-labelledby="artistVideoTitle">
         <div class="embed-responsive embed-responsive-16by9">
           <iframe
             :src="`https://www.youtube.com/embed/${artist.video}`"
@@ -177,7 +185,7 @@ export default {
       padding-top: calc(var(--section-padding) + #{$navbar-safe-area});
       --offset: 200%;
 
-      h2 {
+      h1 {
         font-family: $font-headings;
         font-variation-settings: $font-headings-thin;
         text-transform: uppercase;
@@ -368,7 +376,7 @@ export default {
           display: flex;
           align-items: center;
 
-          h2 {
+          h1 {
             font-size: 2.5rem;
             text-align: center;
             flex-grow: 1;
@@ -417,19 +425,30 @@ export default {
       }
 
       &-section-title {
-        display: block;
-        font-size: 1rem;
-        padding: 1rem;
-        appearance: none;
-        background: transparent;
-        font-family: $font-headings;
-        border: 0;
+        position: static;
         width: 100%;
-        text-align: left;
-        outline: 0;
+        height: auto;
+        display: block;
+        margin: 0;
+        padding: 0;
+        font-size: 1rem;
+        clip: unset;
 
-        &[aria-expanded='true'] {
-          color: $primary;
+        button {
+          font-size: 1rem;
+          padding: 1rem;
+          appearance: none;
+          background: transparent;
+          font-family: $font-headings;
+          border: 0;
+          width: 100%;
+          text-align: left;
+          outline: 0;
+          transition: color .5s ease;
+
+          &[aria-expanded='true'] {
+            color: $primary;
+          }
         }
       }
 
