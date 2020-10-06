@@ -26,6 +26,8 @@ export default {
 
   data () {
     return {
+      scroll: 0,
+      threshold: 800,
       shapesPos: 0,
       illustrationPos: 0
     }
@@ -53,12 +55,14 @@ export default {
 
   methods: {
     handleScroll () {
-      const scroll = window.scrollY
-      const threshold = 800
+      this.scroll = window.scrollY
+      requestAnimationFrame(this.step)
+    },
 
-      if (scroll < threshold) {
-        this.shapesPos = (scroll * 100 / threshold) * -1
-        this.illustrationPos = (scroll * 100 / threshold)
+    step () {
+      if (this.scroll < this.threshold) {
+        this.shapesPos = (this.scroll * 100 / this.threshold) * -1
+        this.illustrationPos = (this.scroll * 100 / this.threshold)
       } else {
         this.shapesPos = -100
         this.illustrationPos = 100
@@ -174,7 +178,8 @@ export default {
       }
 
       &.illustration {
-        display: none;
+        right: -20%;
+        width: 100vw;
       }
     }
   }
