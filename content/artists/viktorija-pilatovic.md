@@ -1,9 +1,9 @@
 ---
-name: Mara Aranda
+name: Viktorija Pilatovic
 image: maraaranda.png
 accent: blue
 shape: 2
-order: 40
+order: 25
 facebook: test
 twitter: test
 instagram: test

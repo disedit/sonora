@@ -3,7 +3,7 @@ name: Fran Yera
 image: franyera.png
 accent: red
 shape: 1
-order: 1
+order: 34
 facebook: test
 twitter: test
 instagram: test

@@ -1,9 +1,9 @@
 ---
-name: Mara Aranda
+name: La Fúmiga
 image: maraaranda.png
 accent: blue
 shape: 2
-order: 40
+order: 33
 facebook: test
 twitter: test
 instagram: test

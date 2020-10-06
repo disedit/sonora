@@ -1,9 +1,9 @@
 ---
-name: Mara Aranda
+name: Tardor
 image: maraaranda.png
 accent: blue
 shape: 2
-order: 40
+order: 32
 facebook: test
 twitter: test
 instagram: test

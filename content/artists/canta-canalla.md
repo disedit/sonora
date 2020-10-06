@@ -1,9 +1,9 @@
 ---
-name: Mara Aranda
-image: maraaranda.png
-accent: blue
-shape: 2
-order: 40
+name: Canta Canalla
+image: franyera.png
+accent: red
+shape: 1
+order: 1
 facebook: test
 twitter: test
 instagram: test

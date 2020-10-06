@@ -3,6 +3,7 @@ name: Mafalda
 image: mafalda.png
 accent: brown
 shape: 2
+order: 4
 facebook: test
 twitter: test
 instagram: test

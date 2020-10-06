@@ -1,9 +1,9 @@
 ---
-name: Mara Aranda
-image: maraaranda.png
-accent: blue
+name: Rodamons
+image: mafalda.png
+accent: brown
 shape: 2
-order: 40
+order: 24
 facebook: test
 twitter: test
 instagram: test

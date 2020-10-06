@@ -1,9 +1,9 @@
 ---
-name: Mara Aranda
-image: maraaranda.png
-accent: blue
-shape: 2
-order: 40
+name: Miquel Gil
+image: franyera.png
+accent: red
+shape: 1
+order: 27
 facebook: test
 twitter: test
 instagram: test

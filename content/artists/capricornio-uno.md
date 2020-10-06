@@ -1,9 +1,9 @@
 ---
-name: Mara Aranda
+name: Capricornio Uno
 image: maraaranda.png
 accent: blue
 shape: 2
-order: 40
+order: 9
 facebook: test
 twitter: test
 instagram: test

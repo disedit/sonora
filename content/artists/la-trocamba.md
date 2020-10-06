@@ -1,9 +1,9 @@
 ---
-name: Mara Aranda
-image: maraaranda.png
-accent: blue
-shape: 2
-order: 40
+name: La Trocamba
+image: xavisarria.png
+accent: purple
+shape: 1
+order: 12
 facebook: test
 twitter: test
 instagram: test

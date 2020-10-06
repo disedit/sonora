@@ -1,9 +1,9 @@
 ---
-name: Mara Aranda
+name: El Hombre Viento
 image: maraaranda.png
 accent: blue
 shape: 2
-order: 40
+order: 7
 facebook: test
 twitter: test
 instagram: test

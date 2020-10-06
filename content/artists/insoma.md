@@ -1,9 +1,9 @@
 ---
-name: Mara Aranda
+name: Insoma
 image: maraaranda.png
 accent: blue
 shape: 2
-order: 40
+order: 16
 facebook: test
 twitter: test
 instagram: test

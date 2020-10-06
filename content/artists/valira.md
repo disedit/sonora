@@ -1,9 +1,9 @@
 ---
-name: Mara Aranda
-image: maraaranda.png
-accent: blue
-shape: 2
-order: 40
+name: Valira
+image: franyera.png
+accent: red
+shape: 1
+order: 15
 facebook: test
 twitter: test
 instagram: test

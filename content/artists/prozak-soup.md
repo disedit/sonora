@@ -1,9 +1,9 @@
 ---
-name: Mara Aranda
-image: maraaranda.png
-accent: blue
+name: Prozak Soup
+image: mafalda.png
+accent: brown
 shape: 2
-order: 40
+order: 5
 facebook: test
 twitter: test
 instagram: test

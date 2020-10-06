@@ -1,9 +1,9 @@
 ---
-name: Mara Aranda
-image: maraaranda.png
-accent: blue
+name: Feliu Ventura
+image: mafalda.png
+accent: brown
 shape: 2
-order: 40
+order: 10
 facebook: test
 twitter: test
 instagram: test

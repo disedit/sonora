@@ -3,6 +3,7 @@ name: Xavi Sarrià
 image: xavisarria.png
 accent: purple
 shape: 1
+order: 39
 facebook: test
 twitter: test
 instagram: test

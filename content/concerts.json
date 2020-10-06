@@ -21,6 +21,18 @@
       "utc": "2019-10-09",
       "venue": "Casa de Cultura",
       "place": "Gandia"
+    },
+    {
+      "artists": [
+        "jazzmatics",
+        "funkiwis",
+        "ed-bloom"
+      ],
+      "date": "19 d'octubre",
+      "time": "20:00h",
+      "utc": "2019-10-09",
+      "venue": "Casa de Cultura",
+      "place": "Gandia"
     }
   ]
 }
