@@ -16,13 +16,11 @@
           <span>Tel. <a href="tel:+34963539300">963 539 300</a></span>
           <span>E-mail <a href="mailto:ivc@gva.es">ivc@gva.es</a></span>
         </div>
+        <a href="https://ivc.gva.es/val/ivc-val/qui-som-ivc/avis-legal-val/politica-de-privadesa/nota-legal-val" class="legal-notice" target="_blank" rel="noopener noreferrer">Nota Legal</a>
       </div>
       <a class="logos" href="https://ivc.gva.es/">
         <img src="../assets/images/logos/generalitat.svg" style="width: 200px; margin-right: 1rem;" alt="Conselleria d'Educació">
         <img src="../assets/images/logos/ivc-cultura.png" style="width: 210px;" alt="IVC - Fes Cultura">
-      </a>
-      <a href="https://ivc.gva.es/val/ivc-val/qui-som-ivc/avis-legal-val/politica-de-privadesa/nota-legal-val" class="legal-notice" target="_blank" rel="noopener noreferrer">
-        Nota Legal
       </a>
     </div>
   </footer>
@@ -54,7 +52,7 @@ export default {
   .app-footer {
     --footer-padding: 2rem 3rem;
     display: grid;
-    grid-template-columns: .75fr 1fr 1.75fr .5fr;
+    grid-template-columns: .75fr 1fr 1.75fr;
     gap: 1rem;
     align-items: center;
     padding: var(--footer-padding);
@@ -72,11 +70,6 @@ export default {
     .ivc::after {
       content: ' / ';
       opacity: .5;
-    }
-
-    .legal-notice {
-      align-self: end;
-      justify-self: end;
     }
 
     .sonora {
@@ -126,15 +119,9 @@ export default {
       }
 
       .logos {
-        grid-area: 4;
+        grid-area: 3;
         justify-self: center;
         text-align: center;
-      }
-
-      .legal-notice {
-        justify-self: center;
-        align-self: center;
-        grid-area: 3;
       }
     }
   }
