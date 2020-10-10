@@ -1,38 +1,20 @@
 //colors
-$red: #E7344C;
-$purple: #5B38A6;
-$blue: #99D9F2;
-$brown: #88735E;
-$orange: #F27405;
 $black: #231B28;
-$white: #FDFBFA;
-
-$combos: (
-  'red': (
-    'primary': $red,
-    'secondary': $purple
-  ),
-  'blue': (
-    'primary': $blue,
-    'secondary': $red
-  ),
-  'brown': (
-    'primary': $brown,
-    'secondary': $blue
-  ),
-  'purple': (
-    'primary': $purple,
-    'secondary': $brown
-  )
+$white: #F8F5F4;
+$colors: (
+  'yellow': #FFCC4D,
+  'green': #5DCCA6,
+  'blue': #6A86C3,
+  'orange': #EF774E
 );
 
-$background: $white;
-$foreground: $white;
-$text: $black;
-$primary: $red;
-$secondary: $purple;
-$terciary: $blue;
-$quaternary: $brown;
+$primary: map-get($colors, 'blue');
+$secondary: map-get($colors, 'orange');
+$terciary: map-get($colors, 'green');
+$quaternary: map-get($colors, 'yellow');
+
+$body-bg: $white;
+$body-color: $black;
 
 // fonts
 $font-family-sans-serif: Inter, sans-serif;
@@ -41,10 +23,9 @@ $font-headings-thin: "wght" 200, "wdth" 100, "ital" 0;
 $font-headings-light: "wght" 300, "wdth" 100, "ital" 0;
 $font-headings-regular: "wght" 400, "wdth" 100, "ital" 0;
 $font-headings-light-extended: "wght" 300, "wdth" 120, "ital" 0;
-$body-bg: $background;
-$body-color: $text;
 
 // text sizes
+$artist-font-size: calc(1vw + 1.75rem);
 $text-base: 1.25rem;
 $text-sm: 1rem;
 $text-lg: 2rem;
@@ -52,6 +33,12 @@ $text-xl: 3rem;
 
 // navbar
 $navbar-safe-area: 4.5rem;
+
+// links
+$link-color: $primary;
+$link-decoration: none;
+$link-hover-color: $secondary;
+$link-hover-decoration: none;
 
 @import 'bootstrap/scss/_functions';
 @import 'bootstrap/scss/_variables';

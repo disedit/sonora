@@ -13,15 +13,7 @@ body {
 
 //links
 a {
-  color: $black;
-  text-decoration: underline;
-  text-decoration-color: rgba($black, .25);
   transition: .2s ease-in-out;
-
-  &:hover {
-    text-decoration-color: rgba($primary, .25);
-    color: $primary;
-  }
 }
 
 h1,

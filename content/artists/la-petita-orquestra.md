@@ -1,7 +1,7 @@
 ---
 name: La Petita Orquestra
 image: mafalda.png
-accent: brown
+accent: yellow
 shape: 2
 order: 22
 facebook: test

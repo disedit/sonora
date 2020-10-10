@@ -71,7 +71,7 @@ export default {
         padding: 0 1rem;
         font-family: $font-headings;
         font-variation-settings: $font-headings-thin;
-        font-size: calc(1vw + 1.75rem);
+        font-size: $artist-font-size;
         text-align: center;
         max-width: 800px;
       }
@@ -89,7 +89,7 @@ export default {
         text-decoration: none;
 
         &:hover {
-          color: $purple;
+          color: $secondary;
           font-variation-settings: $font-headings-regular;
         }
 
@@ -97,9 +97,9 @@ export default {
           display: none;
         }
 
-        @each $name, $colors in $combos {
+        @each $name, $color in $colors {
           &.accent-#{$name}:hover {
-            color: map-get($colors, 'primary');
+            color: $color;
           }
         }
       }

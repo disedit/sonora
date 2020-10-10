@@ -1,5 +1,5 @@
 <template>
-  <div :class="['concert', { hovering }]">
+  <div :class="['concert', { hovering, dimmed }]">
     <div class="concert-date">
       {{ concert.date }}
     </div>
@@ -36,6 +36,11 @@ export default {
     artists: {
       type: Object,
       required: true
+    },
+
+    dimmed: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -56,10 +61,6 @@ export default {
     font-size: $text-base;
     font-family: $font-headings;
     transition: background-color .2s ease;
-
-    &.hovering {
-      background-color: $brown;
-    }
 
     &-details {
       margin-top: auto;
@@ -90,6 +91,18 @@ export default {
           color: $black;
           font-variation-settings: $font-headings-regular;
         }
+      }
+    }
+
+    &.hovering:not(.dimmed) {
+      background-color: $secondary;
+    }
+
+    &.dimmed {
+      opacity: .5;
+
+      a:hover {
+        font-variation-settings: $font-headings-thin;
       }
     }
   }

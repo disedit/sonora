@@ -89,12 +89,6 @@ export default {
 <style lang="scss" scoped>
   @import '../sass/variables';
 
-  main {
-    background: linear-gradient(to bottom, $blue 0, $blue 100vh, $white calc(100vh + 800px));
-    transition: background-position .5s;
-    background-repeat: no-repeat;
-  }
-
   header {
     position: relative;
     min-height: calc(100vh);
@@ -134,27 +128,24 @@ export default {
     &.shapes {
       left: 0;
       width: 45vw;
-      background: url('~assets/images/shapes/home-orange.svg'), url('~assets/images/shapes/home-red.svg');
+      background: url('~assets/images/shapes/home-blue.svg'), url('~assets/images/shapes/home-yellow.svg');
       background-position: left 0 bottom -10vw, left bottom;
-      background-size: contain, 30%;
+      background-size: contain, 28%;
       background-repeat: no-repeat;
     }
 
     &.illustration {
       right: 0;
       width: 65vw;
-      background: url('~assets/images/illustrations/home.jpg');
-      background-position: bottom right;
+      background: url('~assets/images/illustrations/home.png');
+      background-position: bottom -30px right;
       background-size: contain;
       background-repeat: no-repeat;
-      mix-blend-mode: multiply;
     }
   }
 
   .home-enter,
   .home-leave-to {
-    background-position: 0 calc((100vh + 800px) * -1);
-
     &::v-deep .artists-list,
     .fixed,
     h1,

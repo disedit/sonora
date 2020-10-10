@@ -1,7 +1,7 @@
 ---
 name: Xavier de Bétera
 image: xavisarria.png
-accent: purple
+accent: green
 shape: 1
 order: 28
 facebook: test

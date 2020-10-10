@@ -1,7 +1,7 @@
 ---
 name: GEM
 image: xavisarria.png
-accent: purple
+accent: green
 shape: 1
 order: 20
 facebook: test

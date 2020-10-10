@@ -153,10 +153,10 @@ export default {
           text-decoration: none;
 
           &:hover {
-            color: $primary;
+            color: $secondary;
 
             .lt {
-              fill: $primary;
+              fill: $secondary;
             }
           }
 
@@ -258,7 +258,7 @@ export default {
         bottom: 0;
         left: 0;
         right: 0;
-        background: $primary;
+        background: $quaternary;
         z-index: 1500;
         padding-top: $navbar-safe-area;
         transform: translateX(100%);
@@ -283,7 +283,7 @@ export default {
             line-height: 1;
 
             &:hover {
-              color: $white;
+              color: $secondary;
             }
           }
         }
@@ -313,8 +313,12 @@ export default {
         ul {
           justify-content: center;
 
-          a:hover {
-            color: $white;
+          a {
+            color: $black;
+
+            &:hover {
+              color: $secondary;
+            }
           }
         }
       }

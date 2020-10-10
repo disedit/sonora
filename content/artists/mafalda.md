@@ -1,7 +1,7 @@
 ---
 name: Mafalda
 image: mafalda.png
-accent: brown
+accent: yellow
 shape: 2
 order: 4
 facebook: test

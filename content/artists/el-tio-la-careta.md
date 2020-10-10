@@ -1,7 +1,7 @@
 ---
 name: El Tio La Careta
 image: xavisarria.png
-accent: purple
+accent: green
 shape: 1
 order: 36
 facebook: test

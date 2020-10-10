@@ -126,7 +126,7 @@ export default {
           input,
           textarea {
             &:focus {
-              box-shadow: 0 0 0 0.2rem rgba($purple, 0.25);
+              box-shadow: 0 0 0 0.2rem rgba($secondary, 0.25);
             }
           }
         }
@@ -151,7 +151,7 @@ export default {
     border: 1px solid $black;
     border-radius: 0;
     font-size: $text-base;
-    background: $background;
+    background: $body-bg;
   }
 
   .btn {
@@ -161,7 +161,7 @@ export default {
 
   .alert-success {
     background: $secondary;
-    color: $background;
+    color: $white;
   }
 
   @include media-breakpoint-down(md) {

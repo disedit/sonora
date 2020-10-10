@@ -173,14 +173,14 @@ export default {
       "image content concerts"
       "video video concerts";
     margin-top: -$navbar-safe-area;
-    --section-padding: 3rem;
+    --section-padding: 2.5rem;
 
     &-content {
       display: flex;
       flex-direction: column;
       grid-area: content;
       border-left: 1px $black solid;
-      font-size: 1.25rem;
+      font-size: 1rem;
       padding: var(--section-padding);
       padding-top: calc(var(--section-padding) + #{$navbar-safe-area});
       --offset: 200%;
@@ -189,8 +189,9 @@ export default {
         font-family: $font-headings;
         font-variation-settings: $font-headings-thin;
         text-transform: uppercase;
+        font-size: $artist-font-size;
         line-height: 1;
-        font-size: 3.75rem;
+        margin: -.75rem 0 1rem;
       }
 
       .social-networks {
@@ -223,6 +224,11 @@ export default {
           max-width: 90%;
           height: 70%;
           margin-top: auto;
+
+          &::v-deep path,
+          &::v-deep polygon {
+            fill: $white;
+          }
         }
       }
 
@@ -285,29 +291,17 @@ export default {
     }
 
     &-accent {
-      @each $name, $colors in $combos {
+      @each $name, $color in $colors {
         &-#{$name} {
           .shapes {
-            background: map-get($colors, 'primary');
-
-            &::v-deep path,
-            &::v-deep polygon {
-              fill: map-get($colors, 'secondary');
-              transition: fill .5s;
-            }
+            background: $color;
           }
 
-          .artist-social a:hover {
-            color: map-get($colors, 'primary');
-            text-decoration-color: rgba(map-get($colors, 'primary'), .25);
-          }
-
-          .artist-concerts::v-deep a {
-            color: map-get($colors, 'primary');
-
-            &:hover {
-              color: map-get($colors, 'primary');
-            }
+          .artist-social a:hover,
+          .artist-concerts::v-deep a,
+          .artist-concerts::v-deep a:hover,
+          .artist-section-title button[aria-expanded='true'] {
+            color: $color;
           }
         }
       }
@@ -317,6 +311,10 @@ export default {
       list-style: none;
       margin: 2rem 0 0 0;
       padding: 0;
+
+      a {
+        color: $black;
+      }
 
       .video-link {
         margin-top: 2rem;

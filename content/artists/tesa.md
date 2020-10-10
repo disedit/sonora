@@ -1,7 +1,7 @@
 ---
 name: Tesa
 image: mafalda.png
-accent: brown
+accent: yellow
 shape: 2
 order: 6
 facebook: test

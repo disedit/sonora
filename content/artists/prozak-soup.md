@@ -1,7 +1,7 @@
 ---
 name: Prozak Soup
 image: mafalda.png
-accent: brown
+accent: yellow
 shape: 2
 order: 5
 facebook: test

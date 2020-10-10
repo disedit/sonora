@@ -60,8 +60,8 @@ export default {
 
   .about {
     a:hover {
-      color: $purple;
-      text-decoration-color: rgba($purple, .5);
+      color: $secondary;
+      text-decoration-color: rgba($secondary, .5);
     }
 
     &-title {

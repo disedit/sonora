@@ -1,7 +1,7 @@
 ---
 name: El Diluvi
 image: xavisarria.png
-accent: purple
+accent: green
 shape: 1
 order: 11
 facebook: test
