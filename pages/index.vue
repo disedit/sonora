@@ -61,9 +61,9 @@ export default {
 
     step () {
       const { scroll, threshold } = this
-      if (scroll < threshold && scroll >= 0) {
-        this.shapesPos = (scroll * 100 / threshold) * -1
-        this.illustrationPos = (scroll * 100 / threshold)
+      if (scroll < threshold) {
+        this.shapesPos = scroll >= 0 ? (scroll * 100 / threshold) * -1 : 0
+        this.illustrationPos = scroll >= 0 ? (scroll * 100 / threshold) : 0
       } else {
         this.shapesPos = -100
         this.illustrationPos = 100
