@@ -66,14 +66,10 @@
       </div>
     </section>
     <aside class="artist-concerts fly-in">
-      <h2 id="artistConcertsTitle" class="artist-section-title">
-        <button @click="sections.concerts = !sections.concerts" :aria-expanded="sections.concerts ? 'true' : 'false'" aria-controls="artistConcerts">
-          Concerts
-        </button>
+      <h2 id="artistConcertsTitle" class="sr-only">
+        Concerts
       </h2>
-      <div id="artistConcerts" :class="['artist-concerts-inner collapsible', { hidden: !sections.concerts }]" aria-labelledby="artistConcertsTitle">
-        <artist-concerts :concerts="concerts" :artists="artists" />
-      </div>
+      <artist-concerts :concerts="concerts" :artists="artists" aria-labelledby="artistConcertsTitle" />
     </aside>
     <section id="video" class="artist-video">
       <h2 id="artistVideoTitle" class="artist-section-title">
@@ -228,29 +224,31 @@ export default {
           &::v-deep path,
           &::v-deep polygon {
             fill: $white;
+            transition: fill .5s;
           }
         }
       }
 
       a.back-button {
         position: absolute;
-        top: calc(var(--section-padding) + #{$navbar-safe-area});
+        top: calc(var(--section-padding) + #{$navbar-safe-area} - 1rem);
         display: flex;
         align-items: center;
         left: 2rem;
         z-index: 100;
-        color: $white;
+        color: $black;
         text-decoration: none;
 
         svg {
-          width: 2.5rem;
-          height: 2.5rem;
+          width: 2.25rem;
+          height: 2.25rem;
           transition: .2s;
         }
 
         span {
           opacity: 0;
           transition: .2s ease;
+          margin-left: .5rem;
         }
 
         &:hover {
@@ -259,7 +257,7 @@ export default {
           }
 
           span {
-            opacity: .75;
+            opacity: 1;
           }
         }
       }
@@ -282,11 +280,11 @@ export default {
       border-left: 1px $black solid;
       background: $white;
 
-      &-inner {
+      ul {
         position: sticky;
         top: 0;
         padding: var(--section-padding);
-        padding-top: calc(var(--section-padding) + #{$navbar-safe-area});
+        padding-top: calc(var(--section-padding) + #{$navbar-safe-area} - .75rem);
       }
     }
 
@@ -353,12 +351,12 @@ export default {
     .artist {
       --section-padding: 1rem;
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr repeat(3, auto);
+      grid-template-rows: repeat(4, auto);
       grid-template-areas:
         "image"
+        "concerts"
         "content"
-        "video"
-        "concerts";
+        "video";
 
       &-content {
         padding: 0;
@@ -366,8 +364,8 @@ export default {
 
         header {
           position: absolute;
-          top: calc(#{$navbar-safe-area} + 1rem);
-          bottom: 70%;
+          top: $navbar-safe-area;
+          bottom: 78%;
           left: var(--section-padding);
           right: var(--section-padding);
           z-index: 100;
@@ -378,6 +376,7 @@ export default {
             font-size: 2.5rem;
             text-align: center;
             flex-grow: 1;
+            margin: 0;
           }
         }
 
@@ -399,6 +398,15 @@ export default {
       &-image {
         border-bottom: 1px $black solid;
 
+        &-wrapper {
+          height: calc(100vh - 5rem);
+        }
+
+        img {
+          max-height: 70vh;
+          margin-top: auto;
+        }
+
         a.back-button {
           display: none;
         }
@@ -406,19 +414,19 @@ export default {
 
       &-video {
         background: $white;
-        border-bottom: 1px $black solid;
       }
 
       &-concerts {
         border-left: 0;
+        border-bottom: 1px $black solid;
 
-        &-inner {
+        ul {
           position: static;
           padding: 0;
         }
 
         .artist-concerts-list::v-deep > li {
-          padding: 0 var(--section-padding) 1rem var(--section-padding);
+          padding: 1rem var(--section-padding);
         }
       }
 
@@ -444,10 +452,6 @@ export default {
           text-align: left;
           outline: 0;
           transition: color .5s ease;
-
-          &[aria-expanded='true'] {
-            color: $primary;
-          }
         }
       }
 
