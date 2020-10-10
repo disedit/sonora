@@ -8,9 +8,6 @@
       <div class="address">
         <div class="mb-1">
           <span class="ivc">&copy; Institut Valencià de Cultura</span> <br>
-          <a href="https://ivc.gva.es/val/ivc-val/qui-som-ivc/avis-legal-val/politica-de-privadesa/nota-legal-val" class="legal-notice" target="_blank" rel="noopener noreferrer">
-            Nota Legal
-          </a>
         </div>
         <address>
           Plaça de l'Ajuntament, 17 46002 València
@@ -20,10 +17,13 @@
           <span>E-mail <a href="mailto:ivc@gva.es">ivc@gva.es</a></span>
         </div>
       </div>
-      <div class="logos">
+      <a class="logos" href="https://ivc.gva.es/">
         <img src="../assets/images/logos/generalitat.svg" style="width: 200px; margin-right: 1rem;" alt="Conselleria d'Educació">
         <img src="../assets/images/logos/ivc-cultura.png" style="width: 210px;" alt="IVC - Fes Cultura">
-      </div>
+      </a>
+      <a href="https://ivc.gva.es/val/ivc-val/qui-som-ivc/avis-legal-val/politica-de-privadesa/nota-legal-val" class="legal-notice" target="_blank" rel="noopener noreferrer">
+        Nota Legal
+      </a>
     </div>
   </footer>
 </template>
@@ -54,7 +54,7 @@ export default {
   .app-footer {
     --footer-padding: 2rem 3rem;
     display: grid;
-    grid-template-columns: .75fr 1fr 1.75fr;
+    grid-template-columns: .75fr 1fr 1.75fr .5fr;
     gap: 1rem;
     align-items: center;
     padding: var(--footer-padding);
@@ -72,11 +72,11 @@ export default {
     .ivc::after {
       content: ' / ';
       opacity: .5;
-      font-size: .85rem;
     }
 
     .legal-notice {
-      font-size: .85rem;
+      align-self: end;
+      justify-self: end;
     }
 
     .sonora {
@@ -121,14 +121,20 @@ export default {
         display: none;
       }
 
-      .addres {
+      .address {
         grid-area: 2;
       }
 
       .logos {
-        grid-area: 3;
+        grid-area: 4;
         justify-self: center;
         text-align: center;
+      }
+
+      .legal-notice {
+        justify-self: center;
+        align-self: center;
+        grid-area: 3;
       }
     }
   }

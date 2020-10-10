@@ -101,9 +101,19 @@ export default {
           margin-left: -1px;
         }
 
+        #email {
+          &:focus {
+            box-shadow: none;
+          }
+        }
+
         #message {
           min-height: 40vh;
           overflow-y: auto !important;
+
+          &:focus {
+            box-shadow: none;
+          }
         }
 
         .btn.btn-primary {
@@ -118,7 +128,8 @@ export default {
           border: 1px solid $black;
 
           &:hover {
-            background-color: darken($white, 5);
+            background: $black;
+            color: $white;
           }
         }
 
