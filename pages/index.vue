@@ -90,6 +90,10 @@ export default {
 <style lang="scss" scoped>
   @import '../sass/variables';
 
+  main {
+    transition: .5s;
+  }
+
   header {
     position: relative;
     min-height: calc(100vh);
