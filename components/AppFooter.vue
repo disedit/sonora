@@ -123,6 +123,10 @@ export default {
         grid-area: 3;
         justify-self: center;
         text-align: center;
+
+        img {
+          width: 150px;
+        }
       }
     }
   }

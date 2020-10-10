@@ -248,6 +248,11 @@ export default {
             display: block;
             font-size: 1.65rem;
             padding: 0;
+
+            svg {
+              width: 1.5rem;
+              height: 1.5rem;
+            }
           }
         }
       }

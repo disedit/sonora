@@ -161,6 +161,8 @@ export default {
 
   @include media-breakpoint-down (sm) {
     header {
+      padding-top: 18vh;
+
       br {
         display: inline;
       }

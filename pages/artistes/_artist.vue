@@ -23,6 +23,7 @@
         <h2 id="artistInfoTitle" class="artist-section-title">
           <button @click="sections.content = !sections.content" :aria-expanded="sections.content ? 'true' : 'false'" aria-controls="artistInfo">
             Més info
+            <span>{{ sections.content ? '-' : '+' }}</span>
           </button>
         </h2>
         <div id="artistInfo" :class="['text-inner collapsible', { hidden: !sections.content }]" aria-labelledby="artistInfoTitle">
@@ -36,6 +37,7 @@
         <h2 id="artistSocialTitle" class="artist-section-title">
           <button @click="sections.social = !sections.social" :aria-expanded="sections.social ? 'true' : 'false'" aria-controls="artistSocial">
             Xarxes socials
+            <span>{{ sections.social ? '-' : '+' }}</span>
           </button>
         </h2>
         <div id="artistSocial" :class="['social-networks-inner collapsible', { hidden: !sections.social }]" aria-labelledby="artistSocialTitle">
@@ -75,6 +77,7 @@
       <h2 id="artistVideoTitle" class="artist-section-title">
         <button @click="sections.video = !sections.video" :aria-expanded="sections.video ? 'true' : 'false'" aria-controls="artistVideo">
           Vídeo
+          <span>{{ sections.video ? '-' : '+' }}</span>
         </button>
       </h2>
       <div id="artistVideo" :class="['artist-video-inner collapsible', { hidden: !sections.video }]" aria-labelledby="artistVideoTitle">
@@ -399,7 +402,7 @@ export default {
         border-bottom: 1px $black solid;
 
         &-wrapper {
-          height: calc(100vh - 5rem);
+          height: calc(100vh - 10rem);
         }
 
         img {
@@ -441,6 +444,7 @@ export default {
         clip: unset;
 
         button {
+          display: flex;
           font-size: 1rem;
           padding: 1rem;
           appearance: none;
@@ -452,6 +456,10 @@ export default {
           text-align: left;
           outline: 0;
           transition: color .5s ease;
+
+          span {
+            margin-left: auto;
+          }
         }
       }
 
