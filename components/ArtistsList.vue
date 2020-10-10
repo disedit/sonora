@@ -97,7 +97,7 @@ export default {
           display: none;
         }
 
-        @each $name, $color in $colors {
+        @each $name, $color in $sonora-colors {
           &.accent-#{$name}:hover {
             color: $color;
           }

@@ -313,14 +313,6 @@ export default {
 
         ul {
           justify-content: center;
-
-          a {
-            color: $black;
-
-            &:hover {
-              color: $secondary;
-            }
-          }
         }
       }
 

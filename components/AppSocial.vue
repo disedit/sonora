@@ -44,4 +44,12 @@ export default {
     font-size: 1.5rem;
     padding-right: .75rem;
   }
+
+  a {
+    color: $black;
+
+    &:hover {
+      color: $secondary;
+    }
+  }
 </style>

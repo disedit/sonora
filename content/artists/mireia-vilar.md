@@ -1,7 +1,7 @@
 ---
 name: Mireia Vilar
 image: franyera.png
-accent: red
+accent: orange
 shape: 1
 order: 19
 facebook: test

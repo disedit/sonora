@@ -1,7 +1,7 @@
 ---
 name: Sis Veus
 image: franyera.png
-accent: red
+accent: orange
 shape: 1
 order: 38
 facebook: test

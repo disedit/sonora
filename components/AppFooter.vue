@@ -68,15 +68,10 @@ export default {
       margin-bottom: .25rem;
     }
 
-    .ivc::after {
-      content: ' / ';
-      opacity: .5;
-    }
-
     .sonora {
       &-logo {
-      height: auto;
-      width: 100px;
+        height: auto;
+        width: 100px;
       }
     }
 
@@ -118,10 +113,6 @@ export default {
 
       span {
         display: block;
-      }
-
-      .ivc::after {
-        display: none;
       }
 
       .address {

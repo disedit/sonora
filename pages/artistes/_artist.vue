@@ -289,7 +289,7 @@ export default {
     }
 
     &-accent {
-      @each $name, $color in $colors {
+      @each $name, $color in $sonora-colors {
         &-#{$name} {
           .shapes {
             background: $color;

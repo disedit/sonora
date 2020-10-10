@@ -1,17 +1,22 @@
 //colors
 $black: #231B28;
 $white: #F8F5F4;
-$colors: (
-  'yellow': #FFCC4D,
-  'green': #5DCCA6,
-  'blue': #6A86C3,
-  'orange': #EF774E
+$yellow: #FFCC4D;
+$green: #5DCCA6;
+$blue: #6A86C3;
+$orange: #EF774E;
+
+$sonora-colors: (
+  'yellow': $yellow,
+  'green': $green,
+  'blue': $blue,
+  'orange': $orange
 );
 
-$primary: map-get($colors, 'blue');
-$secondary: map-get($colors, 'orange');
-$terciary: map-get($colors, 'green');
-$quaternary: map-get($colors, 'yellow');
+$primary: $blue;
+$secondary: $orange;
+$terciary: $green;
+$quaternary: $yellow;
 
 $body-bg: $white;
 $body-color: $black;

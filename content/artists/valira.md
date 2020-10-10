@@ -1,7 +1,7 @@
 ---
 name: Valira
 image: franyera.png
-accent: red
+accent: orange
 shape: 1
 order: 15
 facebook: test

@@ -1,7 +1,7 @@
 ---
 name: Canta Canalla
 image: franyera.png
-accent: red
+accent: orange
 shape: 1
 order: 1
 facebook: test
