@@ -1,7 +1,7 @@
 ---
 name: Feliu Ventura
 image: mafalda.png
-accent: brown
+accent: yellow
 shape: 2
 order: 10
 facebook: test

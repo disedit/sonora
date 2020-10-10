@@ -16,29 +16,34 @@
     <div id="navMenu" class="sonora-nav-menu">
       <ul class="sonora-nav-menu-items">
         <li class="logo">
-          <nuxt-link to="/">
+          <nuxt-link to="/" aria-label="Sonora (pàgina principal)">
             <Logo />
           </nuxt-link>
         </li>
-        <li class="artistes">
+        <li>
           <nuxt-link to="/artistes">
             Artistes
           </nuxt-link>
         </li>
-        <li class="programa">
+        <li>
           <nuxt-link to="/programa">
             Programa
           </nuxt-link>
         </li>
-        <li class="el-circuit">
+        <li>
           <nuxt-link to="/el-circuit">
             El Circuit
           </nuxt-link>
         </li>
-        <li class="contacte">
+        <li>
           <nuxt-link to="/contacte">
             Contacte
           </nuxt-link>
+        </li>
+        <li>
+          <a href="https://ivc.gva.es" class="ivc" target="_blank" rel="noopener noreferer">
+            <img src="~assets/images/logos/ivc.svg" alt="Institut Valencià de Cultura">
+          </a>
         </li>
       </ul>
       <div class="sonora-nav-social">
@@ -141,7 +146,7 @@ export default {
         li {
           flex-shrink: 0;
           flex-grow: 1;
-          width: 20%;
+          width: 16.66%;
         }
 
         a {
@@ -153,10 +158,10 @@ export default {
           text-decoration: none;
 
           &:hover {
-            color: $primary;
+            color: $secondary;
 
             .lt {
-              fill: $primary;
+              fill: $secondary;
             }
           }
 
@@ -167,8 +172,6 @@ export default {
       }
 
       .logo {
-        order: 3;
-
         svg {
           height: 48px;
           width: 125px;
@@ -179,20 +182,18 @@ export default {
         }
       }
 
-      .artistes {
-        order: 1;
-      }
+      a.ivc {
+        img {
+          height: 36px;
+          opacity: .6;
+          transition: .2s ease;
+        }
 
-      .programa {
-        order: 2;
-      }
-
-      .el-circuit {
-        order: 4;
-      }
-
-      .contacte {
-        order: 5;
+        &:hover {
+          img {
+            opacity: 1;
+          }
+        }
       }
     }
 
@@ -258,7 +259,7 @@ export default {
         bottom: 0;
         left: 0;
         right: 0;
-        background: $primary;
+        background: $quaternary;
         z-index: 1500;
         padding-top: $navbar-safe-area;
         transform: translateX(100%);
@@ -283,7 +284,7 @@ export default {
             line-height: 1;
 
             &:hover {
-              color: $white;
+              color: $secondary;
             }
           }
         }
@@ -313,8 +314,12 @@ export default {
         ul {
           justify-content: center;
 
-          a:hover {
-            color: $white;
+          a {
+            color: $black;
+
+            &:hover {
+              color: $secondary;
+            }
           }
         }
       }

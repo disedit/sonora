@@ -1,7 +1,7 @@
 ---
 name: Sole Giménez
 image: xavisarria.png
-accent: purple
+accent: green
 shape: 1
 order: 17
 facebook: test

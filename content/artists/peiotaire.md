@@ -1,7 +1,7 @@
 ---
 name: Peiotaire
 image: mafalda.png
-accent: brown
+accent: yellow
 shape: 2
 order: 23
 facebook: test

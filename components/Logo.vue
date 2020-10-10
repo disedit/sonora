@@ -114,6 +114,6 @@ export default {
   @import '../sass/variables';
 
   .st0 {
-    fill: $background;
+    fill: $body-bg;
   }
 </style>

@@ -1,7 +1,7 @@
 ---
 name: Matanusca
 image: xavisarria.png
-accent: purple
+accent: green
 shape: 1
 order: 13
 facebook: test

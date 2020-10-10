@@ -1,7 +1,7 @@
 ---
 name: Rodamons
 image: mafalda.png
-accent: brown
+accent: yellow
 shape: 2
 order: 24
 facebook: test

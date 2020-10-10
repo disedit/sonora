@@ -15,6 +15,7 @@
         :key="`past${i}`"
         :concert="concert"
         :artists="artists"
+        dimmed
       />
     </div>
   </main>
