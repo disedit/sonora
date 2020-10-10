@@ -102,6 +102,8 @@ export default {
         }
 
         #email {
+          appearance: none;
+
           &:focus {
             box-shadow: none;
           }
@@ -110,6 +112,7 @@ export default {
         #message {
           min-height: 40vh;
           overflow-y: auto !important;
+          appearance: none;
 
           &:focus {
             box-shadow: none;

@@ -7,7 +7,7 @@
       </div>
       <div class="address">
         <div class="mb-1">
-          <span class="ivc">&copy; Institut Valencià de Cultura</span> <br>
+          <span class="ivc">&copy; Institut Valencià de Cultura</span>
         </div>
         <address>
           Plaça de l'Ajuntament, 17 46002 València
@@ -51,6 +51,7 @@ export default {
 
   .app-footer {
     --footer-padding: 2rem 3rem;
+    font-size: .875rem;
     display: grid;
     grid-template-columns: .75fr 1fr 1.75fr;
     gap: 1rem;
@@ -77,6 +78,11 @@ export default {
       height: auto;
       width: 100px;
       }
+    }
+
+    a.legal-notice {
+      color: $black;
+      text-decoration: underline;
     }
 
     .logos {
@@ -108,6 +114,10 @@ export default {
 
       br {
         display: inline;
+      }
+
+      span {
+        display: block;
       }
 
       .ivc::after {
