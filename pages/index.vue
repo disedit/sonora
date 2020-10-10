@@ -60,9 +60,10 @@ export default {
     },
 
     step () {
-      if (this.scroll < this.threshold) {
-        this.shapesPos = (this.scroll * 100 / this.threshold) * -1
-        this.illustrationPos = (this.scroll * 100 / this.threshold)
+      const { scroll, threshold } = this
+      if (scroll < threshold && scroll >= 0) {
+        this.shapesPos = (scroll * 100 / threshold) * -1
+        this.illustrationPos = (scroll * 100 / threshold)
       } else {
         this.shapesPos = -100
         this.illustrationPos = 100
@@ -120,10 +121,10 @@ export default {
   .fixed {
     position: fixed;
     z-index: 1;
-    top: $navbar-safe-area;
     bottom: 0;
+    height: calc(100vh - #{$navbar-safe-area});
     transition: opacity .5s;
-    will-change: transform opacity;
+    will-change: transform, opacity;
 
     &.shapes {
       left: 0;
