@@ -73,7 +73,7 @@ export default {
         font-variation-settings: $font-headings-thin;
         font-size: $artist-font-size;
         text-align: center;
-        max-width: 800px;
+        max-width: 680px;
       }
 
       li {

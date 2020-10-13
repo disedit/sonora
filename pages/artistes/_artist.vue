@@ -67,7 +67,7 @@
         </div>
       </div>
     </section>
-    <aside class="artist-concerts fly-in">
+    <aside :class="['artist-concerts', 'fly-in', {'artist-concerts--empty': concerts.length === 0}]">
       <h2 id="artistConcertsTitle" class="sr-only">
         Concerts
       </h2>
@@ -368,7 +368,7 @@ export default {
         header {
           position: absolute;
           top: $navbar-safe-area;
-          bottom: 78%;
+          bottom: 74%;
           left: var(--section-padding);
           right: var(--section-padding);
           z-index: 100;
@@ -422,6 +422,10 @@ export default {
       &-concerts {
         border-left: 0;
         border-bottom: 1px $black solid;
+
+        &.artist-concerts--empty {
+          border-bottom: 0;
+        }
 
         ul {
           position: static;
