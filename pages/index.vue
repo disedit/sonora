@@ -1,7 +1,7 @@
 <template>
   <main>
     <header id="home">
-      <h1>CIRCUIT<br> DE MÚSICA<br> VALENCIANA</h1>
+      <h1>CIRCUIT<br> DE LA MÚSICA<br> VALENCIANA</h1>
       <p class="dates">
         25.10.20 → 13.3.21
       </p>
