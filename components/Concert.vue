@@ -10,9 +10,12 @@
         @mouseover="hovering = true"
         @mouseleave="hovering = false"
       >
-        <nuxt-link :to="`/artistes/${artist}`">
+        <nuxt-link v-if="!dimmed" :to="`/artistes/${artist}`" class="artist-name">
           {{ artists[artist].name }}
         </nuxt-link>
+        <span v-else class="artist-name">
+          {{ artists[artist].name }}
+        </span>
       </span>
     </h3>
     <div class="concert-details">
@@ -78,7 +81,7 @@ export default {
     &-artists {
       margin-top: 1.5rem;
 
-      a {
+      .artist-name {
         display: block;
         line-height: 1;
         color: $black;
@@ -86,11 +89,11 @@ export default {
         text-transform: uppercase;
         font-variation-settings: $font-headings-thin;
         text-decoration: none;
+      }
 
-        &:hover {
-          color: $black;
-          font-variation-settings: $font-headings-regular;
-        }
+      a.artist-name:hover {
+        color: $black;
+        font-variation-settings: $font-headings-regular;
       }
     }
 
@@ -108,7 +111,7 @@ export default {
   }
 
   @media (min-width: 1500px) {
-    .concert-artists a {
+    .concert-artists .artist-name {
       font-size: $text-xl;
     }
   }
@@ -125,7 +128,7 @@ export default {
   @include media-breakpoint-down(sm) {
     .concert {
       &-artists {
-        a {
+        .artist-name {
           font-size: calc(1.5rem + 3vw);
         }
       }

@@ -3,38 +3,32 @@
     <div class="main-container">
       <div class="about">
         <h1 class="about-title text-center">
-          Un nou circuit musical valencià
+          Benvingudes i benvinguts a Sonora!
         </h1>
         <div class="about-text-lg">
           <p>
-            L’<a href="https://ivc.gva.es" target="_blank">Institut Valencià de Cultura</a> presenta Sonora, el nou circuit de la música valenciana, que portarà a la tardor als grups guanyadors i finalistes dels Premis Carles Santos de la Música Valenciana per tot el territori valencià.
+            L’<a href="https://ivc.gva.es" target="_blank">Institut Valencià de Cultura</a>  presenta la segona edició de Sonora, el circuit de concerts que porta als grups guanyadors i finalistes dels Premis Carles Santos de la Música Valenciana per tot el nostre territori.
           </p>
         </div>
 
         <div class="about-text">
           <p>
-            L’objectiu principal d’aquesta nova iniciativa és la creació d’una plataforma estable i regular perquè els intèrprets valencians puguen mostrar els seus treballs en sales públiques i privades. D’aquesta manera, grups i solistes tindran la possibilitat d’actuar en diferents punts del territori fora de la temporada estival. El cartell de Sonora ha sigut realitzat per la coneguda il·lustradora valenciana Carla Fuentes.
+            La segona edició de Sonora es desenvoluparà entre octubre de 2020 i març de 2021 al llarg i ample del país, per tal de crear una plataforma estable i regular perquè els intèrprets valencians puguen mostrar els seus treballs en 28 de les localitats que formen part del Circuit Cultural Valencià, dins de les programacions culturals que aquestes ofereixen. Al mateix temps, es pretén desestacionalitzar l'oferta musical i que, d’aquesta manera, grups i solistes tinguen la possibilitat d’actuar en diferents punts del territori fora de la temporada estival.
           </p>
           <img class="about-image" src="~assets/images/photos/el-circuit-1.jpg" alt="Guitarrista saluda al públic a un concert">
         </div>
 
         <div class="about-text inverted">
           <p>
-            El concert de presentació del circuit Sonora va tindre lloc el passat divendres 10 de maig a Vilafranca coincidint amb la Capitalitat Cultural Valenciana que aquesta
-            població comparteix enguany amb Altea. El concert va estar protagonitzat per <a href="https://2019.circuitsonora.com/artists/els-jovens">Els Jóvens</a>, grans guanyadors de l’edició 2018 dels premis Carles Santos amb tres guardons:
-            Millor Disc, Grup Revelació i Millor Cançó. A partir d’ací, el cicle Sonora es desenvoluparà entre novembre de 2019 i febrer de 2020 al llarg i ample del territori valencià,
-            amb la intenció de cobrir zones on la programació d’espectacles és menor. Al mateix temps, es pretén desestacionalitzar l'oferta musical.
+            Sonora suposa un pas endavant en el propòsit de portar la cultura i, en aquest cas, la música valenciana a moltes poblacions valencianes, amb una programació variada i de qualitat que atrega a nous públics i consolide la projecció dels nostres artistes.
           </p>
           <img class="about-image" src="~assets/images/photos/el-circuit-2.jpg" alt="Foto de Xavi Sarrià">
         </div>
 
         <div class="about-text-lg about-text-end">
           <p>
-            Sonora suposa un pas endavant en el propòsit de portar la cultura i, en aquest cas, la música valenciana a moltes poblacions valencianes, amb una programació variada i
-            de qualitat que atrega a nous públics i consolide la projecció dels nostres artistes.
+            Sou tots i totes benvinguts a Sonora, el circuit de la música valenciana, feu-lo vostre!
           </p>
-
-          <p>Benvingudes i benvinguts a Sonora.</p>
         </div>
       </div>
     </div>
