@@ -1,17 +1,14 @@
 ---
 name: Tesa
-image: mafalda.png
+image: tesa.png
 accent: yellow
 shape: 2
 order: 6
-facebook: test
-twitter: test
-instagram: test
-spotify: test
-website: test
-video: f7dytPY8TNQ
+facebook: https://facebook.com/tesaaltesa/
+twitter: https://twitter.com/Tesaltesa
+instagram: https://www.instagram.com/tesaaltesa/
+spotify: https://open.spotify.com/artist/38eya5J0wXElARHyRQ6xz0
+video: KD1k5MjaVhc
 ---
 
-El compositor, cantant i guitarrista contestà és un dels artistes més prolífics i actius de l’escena musical valenciana. Després del seu debut, En les nostres mans (Mésdemil, 2010), Andreu Valor ha oferit més de 800 concerts i ha signat altres sis discos. Actualment, el cantautor presenta el projecte Insurrecte, una sincera declaració de principis. En aquest cas, el músic investiga en nous formats sense perdre l’essència intimista, personal, pròxima i honesta que defineixen la seua trajectòria. Així mateix, s’apropa a noves sonoritats i textures que renoven les propostes a les quals ens tenia acostumats.
-
-Nominat com a Millor disc de cançó d’autor per “Poemitza’t” en els I Premis Carles Santos de la Música Valenciana.
+Quan es va presentar com a khaleesi del rap, Tesa possiblement no pensava que la llicència esdevindria en profecia autocomplida. El seu segon disc, 'Rural', la va establir com una de les grans de l’escena, alhora que consolidava el seu imaginari: arrels, inconformisme i reivindicació de la vida senzilla. Tot expressat amb vers directe i cert sentit lúdic, que la porta a experimentar amb sons electrònics barrejats amb tradició.

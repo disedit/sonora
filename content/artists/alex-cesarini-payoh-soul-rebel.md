@@ -1,17 +1,14 @@
 ---
-name: Alex Cesarini & Payoh Soul Rebel
-image: franyera.png
+name: Ales Cesarini & Payoh Soul Rebel
+image: ales-cesarini-payho-soul-rebel.png
 accent: orange
 shape: 1
 order: 2
-facebook: test
-twitter: test
-instagram: test
-spotify: test
-website: test
-video: f7dytPY8TNQ
+facebook: https://facebook.com/ales.cesarini
+instagram: https://www.instagram.com/alescesarinimusic/
+spotify: https://open.spotify.com/artist/1mIBxDYjBpcJikWfQOjDks
+website: https://alescesarini.wordpress.com/
+video: jYX_sVSldXw 
 ---
 
-El compositor, cantant i guitarrista contestà és un dels artistes més prolífics i actius de l’escena musical valenciana. Després del seu debut, En les nostres mans (Mésdemil, 2010), Andreu Valor ha oferit més de 800 concerts i ha signat altres sis discos. Actualment, el cantautor presenta el projecte Insurrecte, una sincera declaració de principis. En aquest cas, el músic investiga en nous formats sense perdre l’essència intimista, personal, pròxima i honesta que defineixen la seua trajectòria. Així mateix, s’apropa a noves sonoritats i textures que renoven les propostes a les quals ens tenia acostumats.
-
-Nominat com a Millor disc de cançó d’autor per “Poemitza’t” en els I Premis Carles Santos de la Música Valenciana.
+Hi ha camins que, quan es creuen, generen territoris vastíssims. Així va ocórrer quan van connectar el contrabaixista Ales Cesarini i el cantant i lletrista Payoh Soul Rebel, una sinergia que ha generat ja dos discos. L’últim d’ells, 'Dandelion', navega per les aigües de les músiques del món, descrivint un fascinant viatge sonor presentat en un quartet que completen el pianista Baptiste Bailly i el percussionista David Gadea.

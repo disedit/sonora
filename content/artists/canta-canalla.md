@@ -1,17 +1,13 @@
 ---
 name: Canta Canalla
-image: franyera.png
+image: canta-canalla.png
 accent: orange
 shape: 1
 order: 1
-facebook: test
-twitter: test
-instagram: test
-spotify: test
-website: test
-video: f7dytPY8TNQ
+facebook: https://es-es.facebook.com/cantacanalla/
+instagram: https://www.instagram.com/cantacanalla/
+spotify: https://open.spotify.com/artist/5HKgr8Q50RQ74JbHX3mLtz
+video: oKRHA1opFCM
 ---
 
-El compositor, cantant i guitarrista contestà és un dels artistes més prolífics i actius de l’escena musical valenciana. Després del seu debut, En les nostres mans (Mésdemil, 2010), Andreu Valor ha oferit més de 800 concerts i ha signat altres sis discos. Actualment, el cantautor presenta el projecte Insurrecte, una sincera declaració de principis. En aquest cas, el músic investiga en nous formats sense perdre l’essència intimista, personal, pròxima i honesta que defineixen la seua trajectòria. Així mateix, s’apropa a noves sonoritats i textures que renoven les propostes a les quals ens tenia acostumats.
-
-Nominat com a Millor disc de cançó d’autor per “Poemitza’t” en els I Premis Carles Santos de la Música Valenciana.
+Cada cançó de Canta Canalla és una porta, potser la primera, per la qual una xiqueta o un xiquet s’apunta al fascinant món de la música. Les històries i els entranyables personatges que omplin els seus dos discos són la metxa que desperta la imaginació dels menuts a ritme de rock, folk, cúmbia o twist. Amb esta banda és obligatori desfer-se de complexos i alliberar els malucs en boges coreografies. Esteu avisats!

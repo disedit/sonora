@@ -1,17 +1,15 @@
 ---
 name: Verdcel
-image: franyera.png
+image: verdcel.png
 accent: orange
 shape: 1
 order: 14
-facebook: test
-twitter: test
-instagram: test
-spotify: test
-website: test
-video: f7dytPY8TNQ
+facebook: https://facebook.com/VerdCel/
+twitter: https://twitter.com/verdcel
+instagram: https://www.instagram.com/verdcel/
+spotify: https://open.spotify.com/artist/71HiiaoODjTCsAyEzcMUw0
+website: https://verdcel.com
+video: DsR5mrsgNvw
 ---
 
-El compositor, cantant i guitarrista contestà és un dels artistes més prolífics i actius de l’escena musical valenciana. Després del seu debut, En les nostres mans (Mésdemil, 2010), Andreu Valor ha oferit més de 800 concerts i ha signat altres sis discos. Actualment, el cantautor presenta el projecte Insurrecte, una sincera declaració de principis. En aquest cas, el músic investiga en nous formats sense perdre l’essència intimista, personal, pròxima i honesta que defineixen la seua trajectòria. Així mateix, s’apropa a noves sonoritats i textures que renoven les propostes a les quals ens tenia acostumats.
-
-Nominat com a Millor disc de cançó d’autor per “Poemitza’t” en els I Premis Carles Santos de la Música Valenciana.
+En estes dos dècades de carrera, VerdCel ha vessat els confins de la música. Els seus discos –també les actuacions– s’entrellacen amb les arts plàstiques construint narracions multidisciplinàries plenes de matisos. La seua proposta original a la cançó d’autor també ha crescut cap al rock, el pop o la música d’arrel, al mateix temps que les lletres s’han omplit de grans paisatges i d’un existencialisme que fa olor a terra fresca i fèrtil.
