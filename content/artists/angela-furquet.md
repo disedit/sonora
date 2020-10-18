@@ -1,17 +1,13 @@
 ---
 name: Ángela Furquet
-image: maraaranda.png
+image: AngelaFurquet.png
 accent: blue
 shape: 2
 order: 18
-facebook: test
-twitter: test
-instagram: test
-spotify: test
-website: test
-video: f7dytPY8TNQ
+facebook: https://www.facebook.com/angela.furquet/
+instagram: https://www.instagram.com/insoma.ig/
+spotify: https://open.spotify.com/artist/5XA38EfVTfeQYzAuULkXVB
+video: pBN84OMkVBU
 ---
 
-El compositor, cantant i guitarrista contestà és un dels artistes més prolífics i actius de l’escena musical valenciana. Després del seu debut, En les nostres mans (Mésdemil, 2010), Andreu Valor ha oferit més de 800 concerts i ha signat altres sis discos. Actualment, el cantautor presenta el projecte Insurrecte, una sincera declaració de principis. En aquest cas, el músic investiga en nous formats sense perdre l’essència intimista, personal, pròxima i honesta que defineixen la seua trajectòria. Així mateix, s’apropa a noves sonoritats i textures que renoven les propostes a les quals ens tenia acostumats.
-
-Nominat com a Millor disc de cançó d’autor per “Poemitza’t” en els I Premis Carles Santos de la Música Valenciana.
+Escoltar el debut discogràfic d’Ángela Furquet va ser com vore crèixer una estranya i meravellosa planta. En 'De sol a son' posava la seua ànima conreada en el jazz i el folklore ibèric i llatinoamericà al servei dels cants de treball. Anys després, la seua veu ha tornat a brillar en Caguama Trio, un projecte on les influències jazzístiques i les arrels de dos continents es fonen pera a crear una criatura musical hipnòtica i fascinant.

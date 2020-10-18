@@ -1,17 +1,15 @@
 ---
 name: La Trocamba
-image: xavisarria.png
+image: LaTrocamba.png
 accent: green
 shape: 1
 order: 12
-facebook: test
-twitter: test
-instagram: test
-spotify: test
-website: test
-video: f7dytPY8TNQ
+facebook: https://es-es.facebook.com/latrocambamatanusca
+twitter: https://twitter.com/latrocamba
+instagram: https://www.instagram.com/latrocamba/?hl=es
+spotify: https://open.spotify.com/artist/33sPKM8aChy89QNPQsKE7k
+website: http://latrocamba.com/
+video: jxgxwK7NiSQ
 ---
 
-El compositor, cantant i guitarrista contestà és un dels artistes més prolífics i actius de l’escena musical valenciana. Després del seu debut, En les nostres mans (Mésdemil, 2010), Andreu Valor ha oferit més de 800 concerts i ha signat altres sis discos. Actualment, el cantautor presenta el projecte Insurrecte, una sincera declaració de principis. En aquest cas, el músic investiga en nous formats sense perdre l’essència intimista, personal, pròxima i honesta que defineixen la seua trajectòria. Així mateix, s’apropa a noves sonoritats i textures que renoven les propostes a les quals ens tenia acostumats.
-
-Nominat com a Millor disc de cançó d’autor per “Poemitza’t” en els I Premis Carles Santos de la Música Valenciana.
+Vents de l’est –de l’Europa de l’est, concretament– bufen pels metalls de La Trocamba Matanusca. Fills de la Vall d’Albaida, han portat a aquest racó del món els ritmes balcànics en tres discos on ha crescut la instrumentació, s’han acostat diferents veus i també han aparegut nous horitzons, com el swing o el country. L’esperit viatger i boig de la banda et transporta a una festa en terra de ningú on l’única llei és gaudir i ballar.

@@ -1,17 +1,15 @@
 ---
 name: Sis Veus
-image: franyera.png
+image: SisVeus.png
 accent: orange
 shape: 1
 order: 38
-facebook: test
-twitter: test
-instagram: test
-spotify: test
+facebook: https://es-es.facebook.com/sisveus/
+twitter: https://twitter.com/6veus?lang=es
+instagram: https://www.instagram.com/sisveus/
+spotify: https://open.spotify.com/artist/3CcArLQLL4VoegrACeCRGW
 website: test
-video: f7dytPY8TNQ
+video: r86cPTagS_8&t
 ---
 
-El compositor, cantant i guitarrista contestà és un dels artistes més prolífics i actius de l’escena musical valenciana. Després del seu debut, En les nostres mans (Mésdemil, 2010), Andreu Valor ha oferit més de 800 concerts i ha signat altres sis discos. Actualment, el cantautor presenta el projecte Insurrecte, una sincera declaració de principis. En aquest cas, el músic investiga en nous formats sense perdre l’essència intimista, personal, pròxima i honesta que defineixen la seua trajectòria. Així mateix, s’apropa a noves sonoritats i textures que renoven les propostes a les quals ens tenia acostumats.
-
-Nominat com a Millor disc de cançó d’autor per “Poemitza’t” en els I Premis Carles Santos de la Música Valenciana.
+Els versos d’Estellés van ser l’embrió de Sis Veus, la banda que van formar Eva Dénia, cantant i guitarra; Merxe Martínez al violoncel; la multiinstrumentista Maribel Crespo i tres cantadores: Maria Amparo Hurtado, Patxi Ferrer i Lola Ledesma. En el segon disc es van enlairar, reelaborant la música d’arrel amb un cançoner dedicat a les etapes vitals de la dona, expandint l’univers d’aquesta constel·lació de mestresses de la música tradicional.

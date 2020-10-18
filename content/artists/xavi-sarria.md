@@ -4,14 +4,12 @@ image: xavisarria.png
 accent: green
 shape: 1
 order: 39
-facebook: test
-twitter: test
-instagram: test
-spotify: test
-website: test
+facebook: https://es-es.facebook.com/xavisarria
+twitter: https://twitter.com/xavisarria?lang=es
+instagram: https://www.instagram.com/xavisarria/
+spotify: https://open.spotify.com/artist/4PMfEsMG04n1mU3jbQGDVA
+website: www.xavisarria.cat
 video: f7dytPY8TNQ
 ---
 
-El compositor, cantant i guitarrista contestà és un dels artistes més prolífics i actius de l’escena musical valenciana. Després del seu debut, En les nostres mans (Mésdemil, 2010), Andreu Valor ha oferit més de 800 concerts i ha signat altres sis discos. Actualment, el cantautor presenta el projecte Insurrecte, una sincera declaració de principis. En aquest cas, el músic investiga en nous formats sense perdre l’essència intimista, personal, pròxima i honesta que defineixen la seua trajectòria. Així mateix, s’apropa a noves sonoritats i textures que renoven les propostes a les quals ens tenia acostumats.
-
-Nominat com a Millor disc de cançó d’autor per “Poemitza’t” en els I Premis Carles Santos de la Música Valenciana.
+Pare de tantíssims grups sorgits a l’escena valenciana en els darrers anys, Xavi Sarrià manté la veu alerta i la tinta fresca de cançons. Ho va demostrar en 'Amb l’esperança entre les dents', el primer disc després del silenci d’Obrint Pas. I així prossegueix el seu camí solitari, amb lletres que parlen d’ell i de tots nosaltres, amb himnes de revolució i alegria. Benvinguda la maduresa d’un dels grans autors de cançons valencians d’aquest segle.

@@ -1,17 +1,14 @@
 ---
 name: Badlands
-image: maraaranda.png
+image: Badlands.png
 accent: blue
 shape: 2
 order: 29
-facebook: test
-twitter: test
-instagram: test
-spotify: test
-website: test
-video: f7dytPY8TNQ
+facebook: https://es-es.facebook.com/badlandsofficial/
+twitter: https://twitter.com/badlandsoficial?lang=es
+instagram: https://www.instagram.com/badlandsofficial/
+spotify: https://open.spotify.com/artist/2j6SOrUaoALXczUlnOzKT4
+video: tovA4FqlKMs
 ---
 
-El compositor, cantant i guitarrista contestà és un dels artistes més prolífics i actius de l’escena musical valenciana. Després del seu debut, En les nostres mans (Mésdemil, 2010), Andreu Valor ha oferit més de 800 concerts i ha signat altres sis discos. Actualment, el cantautor presenta el projecte Insurrecte, una sincera declaració de principis. En aquest cas, el músic investiga en nous formats sense perdre l’essència intimista, personal, pròxima i honesta que defineixen la seua trajectòria. Així mateix, s’apropa a noves sonoritats i textures que renoven les propostes a les quals ens tenia acostumats.
-
-Nominat com a Millor disc de cançó d’autor per “Poemitza’t” en els I Premis Carles Santos de la Música Valenciana.
+A 2014, Badlands va aparèixer d’on ningú no mirava. Van colpejar com una tempesta de sorra que sonava a country i bluegrass. Més de cinc anys després, aquella energia s'ha transformat en 'Tornado', una nova entrega de cançons amb les arrels electrificades, apuntant al rock i al pop, expandint fins a l’infinit la proposta. Sense perdre l’essència, han trobat el vent que els espenta a travessar fronteres i arrossegar multituds.

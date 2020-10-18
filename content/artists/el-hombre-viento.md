@@ -1,17 +1,16 @@
 ---
 name: El Hombre Viento
-image: maraaranda.png
+image: ElHombreViento.png
 accent: blue
 shape: 2
 order: 7
-facebook: test
-twitter: test
-instagram: test
-spotify: test
-website: test
-video: f7dytPY8TNQ
+facebook: https://es-la.facebook.com/elhombreviento
+twitter: https://twitter.com/elhombreviento_?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor
+instagram: https://www.instagram.com/elhombreviento/
+spotify: https://open.spotify.com/artist/6qJFpsoo6UNlHtmmkkvaOm
+website: https://elhombreviento.com
+video: dLWPr78NEqc
 ---
 
-El compositor, cantant i guitarrista contestà és un dels artistes més prolífics i actius de l’escena musical valenciana. Després del seu debut, En les nostres mans (Mésdemil, 2010), Andreu Valor ha oferit més de 800 concerts i ha signat altres sis discos. Actualment, el cantautor presenta el projecte Insurrecte, una sincera declaració de principis. En aquest cas, el músic investiga en nous formats sense perdre l’essència intimista, personal, pròxima i honesta que defineixen la seua trajectòria. Així mateix, s’apropa a noves sonoritats i textures que renoven les propostes a les quals ens tenia acostumats.
-
-Nominat com a Millor disc de cançó d’autor per “Poemitza’t” en els I Premis Carles Santos de la Música Valenciana.
+Dos dècades porta El Hombre Viento bufant un rap lliure, que no atén a tendències. Quasi una desena de discos –molts més si atenem a obres corals amb Juancho Marqués o Suite Soprano, per exemple– reflecteixen el seu estil poètic i honest, que ha anat contaminant-se de textures com el funk i el jazz. Lletrista, productor i multiinstrumentista, el seu rap sembla sorgir en l’encreuament entre l’elegància i la cruesa.
+ 

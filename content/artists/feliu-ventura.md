@@ -1,17 +1,15 @@
 ---
 name: Feliu Ventura
-image: mafalda.png
+image: FeliuVentura.png
 accent: yellow
 shape: 2
 order: 10
-facebook: test
-twitter: test
-instagram: test
-spotify: test
-website: test
-video: f7dytPY8TNQ
+facebook: https://es-es.facebook.com/Feliu.Ventura.Oficial/
+twitter: https://twitter.com/feliuventura?lang=es
+instagram: https://www.instagram.com/feliuventura/?hl=es
+spotify: https://open.spotify.com/artist/5Mvf1DjQ6BQ5CKra8wDDqG
+website: https://feliuventura.cat/
+video: HeJGZc5vVZc
 ---
 
-El compositor, cantant i guitarrista contestà és un dels artistes més prolífics i actius de l’escena musical valenciana. Després del seu debut, En les nostres mans (Mésdemil, 2010), Andreu Valor ha oferit més de 800 concerts i ha signat altres sis discos. Actualment, el cantautor presenta el projecte Insurrecte, una sincera declaració de principis. En aquest cas, el músic investiga en nous formats sense perdre l’essència intimista, personal, pròxima i honesta que defineixen la seua trajectòria. Així mateix, s’apropa a noves sonoritats i textures que renoven les propostes a les quals ens tenia acostumats.
-
-Nominat com a Millor disc de cançó d’autor per “Poemitza’t” en els I Premis Carles Santos de la Música Valenciana.
+Huit anys va estar Feliu Ventura cuinant les cançons d’un nou disc, fins que 'Convocatòria' va fluir com una col·lecció de cançons que esdevenen himnes íntims. Va tornar a transitar per diferents paisatges com un nòmada musical, amb una brúixola pop que amplifica el missatge i amb una veu que escriu i canta al present, amb compromís social i sense desànim. Amb un somriure militant, diu ell. Així sona el seu camí.

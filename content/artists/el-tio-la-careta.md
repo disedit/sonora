@@ -1,17 +1,15 @@
 ---
 name: El Tio La Careta
-image: xavisarria.png
+image: ElTioLaCareta.png
 accent: green
 shape: 1
 order: 36
-facebook: test
+facebook: https://es-es.facebook.com/el.lacareta
 twitter: test
-instagram: test
-spotify: test
-website: test
-video: f7dytPY8TNQ
+instagram: https://www.instagram.com/eltiolacareta/?hl=es
+spotify: https://open.spotify.com/artist/1CVkch7YM7ewazMCqtSat1
+website: https://eltiolacareta.com/ 
+video: 4daapfhoBQM
 ---
 
-El compositor, cantant i guitarrista contestà és un dels artistes més prolífics i actius de l’escena musical valenciana. Després del seu debut, En les nostres mans (Mésdemil, 2010), Andreu Valor ha oferit més de 800 concerts i ha signat altres sis discos. Actualment, el cantautor presenta el projecte Insurrecte, una sincera declaració de principis. En aquest cas, el músic investiga en nous formats sense perdre l’essència intimista, personal, pròxima i honesta que defineixen la seua trajectòria. Així mateix, s’apropa a noves sonoritats i textures que renoven les propostes a les quals ens tenia acostumats.
-
-Nominat com a Millor disc de cançó d’autor per “Poemitza’t” en els I Premis Carles Santos de la Música Valenciana.
+A la rebel·lió i l’esperança canten El Tio la Careta. Ambdós conceptes reguen les arrels mestisses d’una banda que navega per l’ska, el rock o el reggae, i que inclús es deixa dur cap a aigües llatines. El segon treball, 'Grita-Rebélate', va consolidar l’aposta musical del grup i el seu missatge crític alhora que vitalista. Així han aglutinat l’entusiasme d’un públic que balla la seua desobediència, que alça el crit sense perdre el somriure.

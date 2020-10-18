@@ -1,17 +1,13 @@
 ---
 name: Ed Bloom
-image: xavisarria.png
+image: EdBloom.png
 accent: green
 shape: 1
 order: 30
-facebook: test
-twitter: test
-instagram: test
-spotify: test
-website: test
-video: f7dytPY8TNQ
+facebook: https://es-es.facebook.com/edbloommusic
+instagram: https://www.instagram.com/edbloommusic/?hl=es
+spotify: https://open.spotify.com/artist/2ozUbpAZitp0ABpUwlHHeP
+video: QyZzMd-fpZg
 ---
 
-El compositor, cantant i guitarrista contestà és un dels artistes més prolífics i actius de l’escena musical valenciana. Després del seu debut, En les nostres mans (Mésdemil, 2010), Andreu Valor ha oferit més de 800 concerts i ha signat altres sis discos. Actualment, el cantautor presenta el projecte Insurrecte, una sincera declaració de principis. En aquest cas, el músic investiga en nous formats sense perdre l’essència intimista, personal, pròxima i honesta que defineixen la seua trajectòria. Així mateix, s’apropa a noves sonoritats i textures que renoven les propostes a les quals ens tenia acostumats.
-
-Nominat com a Millor disc de cançó d’autor per “Poemitza’t” en els I Premis Carles Santos de la Música Valenciana.
+Ed Bloom és el personatge darrere del qual el músic Miguel Jordá –després d’anys militant en bandes– s’ha llançat a transmetre emocions molt personals acumulades en el sovint indesxifrable camí de la maduresa, la vital i la creativa. Cuinat a foc lent, el disc homònim parla d’amor i desamor, de fites assolides i d’abismes salvats. Vehiculat per sons que s’arrelen en el britpop, el resultat és un treball rodó, reflexiu i enormement vitalista.

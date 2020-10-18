@@ -1,17 +1,15 @@
 ---
 name: Prozak Soup
-image: mafalda.png
+image: ProzacSoup.png
 accent: yellow
 shape: 2
 order: 5
-facebook: test
-twitter: test
-instagram: test
-spotify: test
-website: test
-video: f7dytPY8TNQ
+facebook: https://es-es.facebook.com/ProzakSoup
+twitter: https://twitter.com/prozaksoup?lang=es
+instagram: https://www.instagram.com/prozaksoupoficial/?hl=es
+spotify: https://open.spotify.com/artist/6EF4cCHpvhR4aPEPVG7xgc
+website: http://www.prozaksoup.com/
+video: 33Mt1cxB_fM
 ---
 
-El compositor, cantant i guitarrista contestà és un dels artistes més prolífics i actius de l’escena musical valenciana. Després del seu debut, En les nostres mans (Mésdemil, 2010), Andreu Valor ha oferit més de 800 concerts i ha signat altres sis discos. Actualment, el cantautor presenta el projecte Insurrecte, una sincera declaració de principis. En aquest cas, el músic investiga en nous formats sense perdre l’essència intimista, personal, pròxima i honesta que defineixen la seua trajectòria. Així mateix, s’apropa a noves sonoritats i textures que renoven les propostes a les quals ens tenia acostumats.
-
-Nominat com a Millor disc de cançó d’autor per “Poemitza’t” en els I Premis Carles Santos de la Música Valenciana.
+Per a evitar que ningú posara etiquetes a Prozak Soup, ho van fer ells: psicomàquina, milenialcore, electroanime. Potser és difícil catalogar-los, però no ho és rastrejar la seua herència mestissa, amb ADN del post-hardcore, del hip hop o d’aquella electrònica que va vertebrar la ruta més cèlebre dels noranta. L’últim disc, 'Blablabla', és un al·lucinant treball d’orfebreria amb sintetitzador ple d’existencialisme agredolç en l’era digital.

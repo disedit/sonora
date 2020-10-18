@@ -1,17 +1,14 @@
 ---
 name: Neus Ferri
-image: xavisarria.png
+image: NeusFerri.png
 accent: green
 shape: 1
 order: 37
-facebook: test
-twitter: test
-instagram: test
-spotify: test
-website: test
-video: f7dytPY8TNQ
+facebook: https://es-es.facebook.com/neusferri/
+twitter: https://twitter.com/neusferrimusic?lang=es
+instagram: https://www.instagram.com/neusferri/
+spotify: https://open.spotify.com/artist/3TGjUuD23BDUbcsytZQLPt
+video: nZPQ4klzz9Q
 ---
 
-El compositor, cantant i guitarrista contestà és un dels artistes més prolífics i actius de l’escena musical valenciana. Després del seu debut, En les nostres mans (Mésdemil, 2010), Andreu Valor ha oferit més de 800 concerts i ha signat altres sis discos. Actualment, el cantautor presenta el projecte Insurrecte, una sincera declaració de principis. En aquest cas, el músic investiga en nous formats sense perdre l’essència intimista, personal, pròxima i honesta que defineixen la seua trajectòria. Així mateix, s’apropa a noves sonoritats i textures que renoven les propostes a les quals ens tenia acostumats.
-
-Nominat com a Millor disc de cançó d’autor per “Poemitza’t” en els I Premis Carles Santos de la Música Valenciana.
+Cada pas de Neus Ferri conté un viatge apassionant: va passar més d’una dècada sobre els escenaris, va participar en un concurs de talents televisiu, va alliberar les seues composicions i, en el seu últim treball, 'Canciones de amor al odio', va esculpir la seua identitat de cantautora rock. Bateguen en ella grans referents com The Cranberries; canta i escriu com si trencara cadenes, amb el cor en la veu i els budells en les lletres.

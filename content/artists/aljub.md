@@ -1,17 +1,12 @@
 ---
 name: Aljub
-image: mafalda.png
+image: Aljub.png
 accent: yellow
 shape: 2
 order: 31
-facebook: test
-twitter: test
-instagram: test
-spotify: test
-website: test
-video: f7dytPY8TNQ
+facebook: https://www.facebook.com/pages/category/Band/Aljub-179379246004753/
+website: https://joansamaravilla.wixsite.com/joansamaravilla/aljub
+video: P3RDyYvZ1r0
 ---
 
-El compositor, cantant i guitarrista contestà és un dels artistes més prolífics i actius de l’escena musical valenciana. Després del seu debut, En les nostres mans (Mésdemil, 2010), Andreu Valor ha oferit més de 800 concerts i ha signat altres sis discos. Actualment, el cantautor presenta el projecte Insurrecte, una sincera declaració de principis. En aquest cas, el músic investiga en nous formats sense perdre l’essència intimista, personal, pròxima i honesta que defineixen la seua trajectòria. Així mateix, s’apropa a noves sonoritats i textures que renoven les propostes a les quals ens tenia acostumats.
-
-Nominat com a Millor disc de cançó d’autor per “Poemitza’t” en els I Premis Carles Santos de la Música Valenciana.
+Vora vint anys fa que Joansa Maravilla va impulsar Aljub, una banda que va beure de la música d’arrel valenciana i després es va omplir de sons de tot el Mediterrani. El so del llaüt àrab, el ney –una flauta antiga àrab– el qanun –cosina de la cítara– s’han entrellaçat amb els sons d’aquesta vora de la mar en cinc discos que demostren la perpètua vigència de la tradició. Sobretot quan qui s’acosta a ella té l’esperit rejovenidor d’Aljub.

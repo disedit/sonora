@@ -4,14 +4,11 @@ image: franyera.png
 accent: orange
 shape: 1
 order: 34
-facebook: test
-twitter: test
-instagram: test
-spotify: test
-website: test
-video: f7dytPY8TNQ
+facebook: https://es-es.facebook.com/FranYeraOficial
+twitter: https://twitter.com/fran_yera
+instagram: https://www.instagram.com/fran_yera/?hl=es
+spotify: https://open.spotify.com/artist/3gudcDs4RJMqaLmKb9PMTR
+video: gafuhKwsz_k
 ---
 
-El compositor, cantant i guitarrista contestà és un dels artistes més prolífics i actius de l’escena musical valenciana. Després del seu debut, En les nostres mans (Mésdemil, 2010), Andreu Valor ha oferit més de 800 concerts i ha signat altres sis discos. Actualment, el cantautor presenta el projecte Insurrecte, una sincera declaració de principis. En aquest cas, el músic investiga en nous formats sense perdre l’essència intimista, personal, pròxima i honesta que defineixen la seua trajectòria. Així mateix, s’apropa a noves sonoritats i textures que renoven les propostes a les quals ens tenia acostumats.
-
-Nominat com a Millor disc de cançó d’autor per “Poemitza’t” en els I Premis Carles Santos de la Música Valenciana.
+'Cuidados violentos' és l’extraordinària emancipació de Fran Yera. El raper que vam conèixer a Atupa s’enlaira en la música urbana, recorrent paisatges com el dancehall, el trap i el reggaeton. Quan canta, Yera desenvolupa un discurs introspectiu sense concessions, una reflexió en cru sobre la sexualitat i el laberint de la identitat, sobre amor, cicatrius i catarsis. Un aterrament rotund en l’escena per al seu primer vol solitari.
