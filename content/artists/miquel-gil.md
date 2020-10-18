@@ -11,3 +11,5 @@ spotify: https://open.spotify.com/artist/3wgWeRgIV5sU41Yqz6V7qn
 website: https://miquelgil.com
 video: GzIg30r1138
 ---
+
+El retorn va ser 'Geometries'. Durant els anteriors set anys, Miquel Gil havia transitat altres territoris artístics que li van omplir –encara més– la motxilla: de l’òpera contemporània al free jazz. I, de sobte, un nou disc on el mestre de cantadors torna a les arrels mediterrànies, al nostre cant tradicional. I ho fa amb els seus estimats i estimades poetes, amb sonoritats noves, amb l’ofici i l’energia de l’inesgotable renovador.

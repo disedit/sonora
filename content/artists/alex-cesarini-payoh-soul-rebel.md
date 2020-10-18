@@ -1,6 +1,6 @@
 ---
 name: Ales Cesarini & Payoh Soul Rebel
-image: ales-cesarini-payho-soul-rebel.png
+image: ales-cesarini.png
 accent: orange
 shape: 1
 order: 2

@@ -54,6 +54,9 @@
             <li v-if="artist.hasOwnProperty('spotify')">
               <a :href="artist.spotify" target="_blank" rel="noopener noreferrer">Spotify</a>
             </li>
+            <li v-if="artist.hasOwnProperty('bandcamp')">
+              <a :href="artist.bandcamp" target="_blank" rel="noopener noreferrer">Bandcamp</a>
+            </li>
             <li v-if="artist.hasOwnProperty('youtube')">
               <a :href="artist.youtube" target="_blank" rel="noopener noreferrer">Youtube</a>
             </li>
