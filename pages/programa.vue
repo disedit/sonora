@@ -82,7 +82,7 @@ export default {
 
   .schedule {
     display: inline-grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     grid-auto-rows: 1fr;
     width: 100%;
     transition: opacity .5s;
