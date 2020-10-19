@@ -45,13 +45,13 @@ export default {
     /* Filter upcoming concerts */
     const today = new Date()
     const upcomingConcerts = concerts.concerts.filter((concert) => {
-      const concertDate = new Date(concert.utc)
+      const concertDate = new Date(concert.datetime)
       return today <= concertDate
     })
 
     /* Filter past concerts */
     const pastConcerts = concerts.concerts.filter((concert) => {
-      const concertDate = new Date(concert.utc)
+      const concertDate = new Date(concert.datetime)
       return today > concertDate
     })
 
@@ -105,15 +105,6 @@ export default {
       grid-row: 1 / 1;
       grid-column: 1 / 1;
     }
-  }
-
-  .past-concerts {
-    background: $black;
-    color: $terciary;
-    padding: 3rem;
-    font-size: 4rem;
-    border: 3px $black solid;
-    opacity: .5;
   }
 
   @include media-breakpoint-down(lg) {

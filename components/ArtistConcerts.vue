@@ -10,7 +10,7 @@
       </div>
 
       <div class="concert-venue mt-3">
-        <span class="concert-place">{{ concert.place }}</span> <br>
+        <span class="concert-place">{{ concert.town }}</span> <br>
         {{ concert.venue }}
       </div>
 

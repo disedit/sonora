@@ -30,7 +30,7 @@ export default {
   @import '../sass/variables';
 
   .main-container {
-    max-width: 1600px;
+    max-width: 1700px;
     margin: 0 auto;
     padding: 2rem;
   }

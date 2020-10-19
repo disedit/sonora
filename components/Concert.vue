@@ -21,7 +21,7 @@
     <div class="concert-details">
       {{ concert.time }}<br>
       {{ concert.venue }}<br>
-      <span class="concert-place">{{ concert.place }}</span>
+      <span class="concert-place">{{ concert.town }}</span>
     </div>
   </div>
 </template>
@@ -61,7 +61,7 @@ export default {
   .concert {
     display: flex;
     flex-direction: column;
-    font-size: $text-base;
+    font-size: $text-sm;
     font-family: $font-headings;
     transition: background-color .2s ease;
 
@@ -79,7 +79,7 @@ export default {
     }
 
     &-artists {
-      margin-top: 1.5rem;
+      margin-top: 1rem;
 
       .artist-name {
         display: block;
@@ -89,6 +89,7 @@ export default {
         text-transform: uppercase;
         font-variation-settings: $font-headings-thin;
         text-decoration: none;
+        margin-bottom: 1rem;
       }
 
       a.artist-name:hover {

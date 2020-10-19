@@ -176,6 +176,8 @@ export default {
   .alert-success {
     background: $secondary;
     color: $white;
+    border: 0;
+    margin-bottom: 30rem;
   }
 
   @include media-breakpoint-down(md) {
