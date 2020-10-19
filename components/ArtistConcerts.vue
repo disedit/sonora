@@ -21,6 +21,18 @@
           </nuxt-link>
         </li>
       </ul>
+
+      <div class="concert-book">
+        <a
+          v-if="!inThePast(concert.datetime)"
+          href="https://forms.gle/mnhVQJAYz9G9pWn78"
+          class="btn"
+          target="_blank"
+          rel="noopener noreferer"
+        >
+          Reservar invitació
+        </a>
+      </div>
     </li>
   </ul>
 </template>
@@ -37,6 +49,15 @@ export default {
     artists: {
       type: Object,
       required: true
+    }
+  },
+
+  methods: {
+    inThePast (time) {
+      const now = new Date()
+      const concert = new Date(time)
+
+      return now > concert
     }
   }
 }
@@ -82,6 +103,27 @@ export default {
         &:hover {
           font-variation-settings: "wght" 600, "wdth" 100, "ital" 0;
         }
+      }
+    }
+
+    .concert-book {
+      a,
+      span {
+        display: inline-block;
+        font-family: $font-family-sans-serif;
+        padding: .5rem .75rem;
+        text-transform: uppercase;
+        background-color: $white;
+        color: $black !important;
+        border: 1px solid $black;
+        margin-top: 1rem;
+        border-radius: 0;
+        font-size: .9rem;
+      }
+
+      a:hover {
+        background: $black;
+        color: $white !important;
       }
     }
   }

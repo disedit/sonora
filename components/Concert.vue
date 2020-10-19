@@ -23,6 +23,18 @@
       {{ concert.venue }}<br>
       <span class="concert-place">{{ concert.town }}</span>
     </div>
+    <div class="concert-book">
+      <component
+        :is="dimmed ? 'span' : 'a'"
+        :href="!dimmed ? 'https://forms.gle/mnhVQJAYz9G9pWn78' : false"
+        :class="['btn', { 'disabled': dimmed }]"
+        :aria-hidden="dimmed"
+        target="_blank"
+        rel="noopener noreferer"
+      >
+        Reservar invitació
+      </component>
+    </div>
   </div>
 </template>
 
@@ -95,6 +107,26 @@ export default {
       a.artist-name:hover {
         color: $black;
         font-variation-settings: $font-headings-regular;
+      }
+    }
+
+    &-book {
+      a,
+      span {
+        display: inline-block;
+        font-family: $font-family-sans-serif;
+        padding: .5rem 1rem;
+        text-transform: uppercase;
+        background-color: $white;
+        color: $black;
+        border: 1px solid $black;
+        margin-top: .75rem;
+        border-radius: 0;
+      }
+
+      a:hover {
+        background: $black;
+        color: $white;
       }
     }
 
