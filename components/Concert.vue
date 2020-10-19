@@ -85,7 +85,7 @@ export default {
         display: block;
         line-height: 1;
         color: $black;
-        font-size: $text-lg;
+        font-size: 2.5rem;
         text-transform: uppercase;
         font-variation-settings: $font-headings-thin;
         text-decoration: none;
