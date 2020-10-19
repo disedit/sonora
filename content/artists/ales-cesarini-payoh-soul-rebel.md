@@ -1,9 +1,9 @@
 ---
 name: Ales Cesarini & Payoh Soul Rebel
 image: ales-cesarini.png
-accent: orange
+accent: yellow
 shape: 1
-order: 2
+order: 3
 facebook: https://facebook.com/ales.cesarini
 instagram: https://www.instagram.com/alescesarinimusic/
 spotify: https://open.spotify.com/artist/1mIBxDYjBpcJikWfQOjDks

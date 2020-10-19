@@ -1,9 +1,9 @@
 ---
 name: Funkiwis
-image: Funkiwis.png
-accent: orange
+image: funkiwis.png
+accent: green
 shape: 1
-order: 35
+order: 33
 facebook: https://www.facebook.com/Funkiwis/
 twitter: https://twitter.com/funkiwis?lang=es
 instagram: https://www.instagram.com/funkiwis/?hl=es

@@ -1,9 +1,9 @@
 ---
 name: Capricornio Uno
-image: CapricornioUno.png
-accent: blue
-shape: 2
-order: 9
+image: capricornio-uno.png
+accent: yellow
+shape: 1
+order: 8
 facebook: https://www.facebook.com/CapricornioUnolabanda/
 twitter: https://twitter.com/UnoCapricornio
 instagram: https://www.instagram.com/capricornio_uno1/

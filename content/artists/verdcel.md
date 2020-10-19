@@ -1,9 +1,9 @@
 ---
 name: Verdcel
 image: verdcel.png
-accent: orange
+accent: green
 shape: 1
-order: 14
+order: 10
 facebook: https://facebook.com/VerdCel/
 twitter: https://twitter.com/verdcel
 instagram: https://www.instagram.com/verdcel/

@@ -3,7 +3,7 @@ name: Ramonets
 image: ramonets.png
 accent: yellow
 shape: 2
-order: 21
+order: 17
 facebook: https://es-es.facebook.com/elsramonets
 instagram: https://www.instagram.com/ramonets_/?hl=es
 bandcamp: https://ramonets.bandcamp.com/

@@ -1,9 +1,9 @@
 ---
 name: El Diluvi
 image: el-diluvi.png
-accent: green
+accent: blue
 shape: 1
-order: 11
+order: 24
 facebook: https://facebook.com/elDiluviOficial
 twitter: https://twitter.com/el_diluvi
 instagram: https://www.instagram.com/eldiluvi/

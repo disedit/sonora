@@ -1,9 +1,9 @@
 ---
 name: Xavi Sarrià
-image: xavisarria.png
+image: xavi-sarria.png
 accent: green
 shape: 1
-order: 39
+order: 37
 facebook: https://es-es.facebook.com/xavisarria
 twitter: https://twitter.com/xavisarria?lang=es
 instagram: https://www.instagram.com/xavisarria/

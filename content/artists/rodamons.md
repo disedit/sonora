@@ -1,9 +1,9 @@
 ---
 name: Rodamons
 image: rodamons.png
-accent: yellow
-shape: 2
-order: 24
+accent: green
+shape: 1
+order: 19
 facebook: https://es-es.facebook.com/RodamonsT/
 website: http://www.rodamonsteatre.com/
 video: OUH7XpgI46I

@@ -3,7 +3,7 @@ name: Valira
 image: valira.png
 accent: orange
 shape: 1
-order: 15
+order: 11
 facebook: https://facebook.com/valiramusica/
 instagram: https://www.instagram.com/valiramusic/
 spotify: https://open.spotify.com/artist/7xzBMbJO4ooYoW2mJxX09u

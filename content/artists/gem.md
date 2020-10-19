@@ -1,9 +1,9 @@
 ---
 name: GEM
-image: Gem.png
+image: gem.png
 accent: green
-shape: 1
-order: 20
+shape: 2
+order: 16
 facebook: https://es-es.facebook.com/gemmusica/
 instagram: https://www.instagram.com/gemvlc/?hl=es
 spotify: https://open.spotify.com/artist/3vU6YkA3hmulwcbQt4xXaL

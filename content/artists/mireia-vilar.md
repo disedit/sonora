@@ -1,9 +1,9 @@
 ---
 name: Mireia Vilar
 image: mireia-vilar.png
-accent: orange
-shape: 1
-order: 19
+accent: blue
+shape: 2
+order: 15
 facebook: https://facebook.com/mireiavilarsona/
 twitter: https://twitter.com/mireiavilarsona
 instagram: https://www.instagram.com/mireiavilarsona/

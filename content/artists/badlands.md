@@ -1,9 +1,9 @@
 ---
 name: Badlands
-image: Badlands.png
-accent: blue
-shape: 2
-order: 29
+image: badlands.png
+accent: green
+shape: 1
+order: 28
 facebook: https://es-es.facebook.com/badlandsofficial/
 twitter: https://twitter.com/badlandsoficial?lang=es
 instagram: https://www.instagram.com/badlandsofficial/

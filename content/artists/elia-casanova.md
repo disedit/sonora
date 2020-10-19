@@ -1,9 +1,9 @@
 ---
 name: Èlia Casanova i La Tendresa
 image: elia-casanova.png
-accent: yellow
+accent: green
 shape: 2
-order: 10
+order: 41
 instagram: https://www.instagram.com/sopranoelia/
 spotify: https://open.spotify.com/artist/7n61Nr3MqULkZfoXJDEY7N
 website: http://eliacasanova.com/

@@ -1,9 +1,9 @@
 ---
 name: El Tio La Careta
-image: ElTioLaCareta.png
-accent: green
+image: el-tio-la-careta.png
+accent: orange
 shape: 1
-order: 36
+order: 34
 facebook: https://es-es.facebook.com/el.lacareta
 twitter: test
 instagram: https://www.instagram.com/eltiolacareta/?hl=es

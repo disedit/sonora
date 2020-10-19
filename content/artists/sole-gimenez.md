@@ -1,9 +1,9 @@
 ---
 name: Sole Giménez
 image: sole-gimenez.png
-accent: green
-shape: 1
-order: 17
+accent: yellow
+shape: 2
+order: 13
 facebook: https://facebook.com/SoleGimenez.uno
 twitter: https://twitter.com/SoleGimenez
 instagram: https://www.instagram.com/soysolegimenez/

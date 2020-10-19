@@ -2,8 +2,8 @@
 name: Canta Canalla
 image: canta-canalla.png
 accent: orange
-shape: 1
-order: 1
+shape: 2
+order: 2
 facebook: https://es-es.facebook.com/cantacanalla/
 instagram: https://www.instagram.com/cantacanalla/
 spotify: https://open.spotify.com/artist/5HKgr8Q50RQ74JbHX3mLtz

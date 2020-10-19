@@ -1,9 +1,9 @@
 ---
 name: Prozak Soup
-image: ProzacSoup.png
-accent: yellow
+image: prozak-soup.png
+accent: orange
 shape: 2
-order: 5
+order: 23
 facebook: https://es-es.facebook.com/ProzakSoup
 twitter: https://twitter.com/prozaksoup?lang=es
 instagram: https://www.instagram.com/prozaksoupoficial/?hl=es

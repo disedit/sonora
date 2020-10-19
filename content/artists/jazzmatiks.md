@@ -1,9 +1,9 @@
 ---
-name: Jazzmatics
-image: Jazzmatics.png
+name: Jazzmatiks
+image: jazzmatiks.png
 accent: orange
 shape: 1
-order: 3
+order: 4
 facebook: https://es-es.facebook.com/jazzmatiks/
 instagram: https://www.instagram.com/jazzmatiks/
 spotify: https://open.spotify.com/artist/7vChTKNEh4hYTiK6jECdoN

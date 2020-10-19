@@ -1,9 +1,9 @@
 ---
 name: Ed Bloom
-image: EdBloom.png
-accent: green
-shape: 1
-order: 30
+image: ed-bloom.png
+accent: yellow
+shape: 2
+order: 29
 facebook: https://es-es.facebook.com/edbloommusic
 instagram: https://www.instagram.com/edbloommusic/?hl=es
 spotify: https://open.spotify.com/artist/2ozUbpAZitp0ABpUwlHHeP

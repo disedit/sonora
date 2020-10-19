@@ -1,9 +1,9 @@
 ---
 name: Tortel
 image: tortel.png
-accent: blue
+accent: orange
 shape: 2
-order: 8
+order: 7
 facebook: https://facebook.com/holatortel/
 twitter: https://twitter.com/holatortel
 instagram: https://www.instagram.com/tortelgram/

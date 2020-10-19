@@ -1,9 +1,9 @@
 ---
 name: Neus Ferri
-image: NeusFerri.png
+image: neus-ferri.png
 accent: green
 shape: 1
-order: 37
+order: 35
 facebook: https://es-es.facebook.com/neusferri/
 twitter: https://twitter.com/neusferrimusic?lang=es
 instagram: https://www.instagram.com/neusferri/

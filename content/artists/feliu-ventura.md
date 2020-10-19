@@ -1,9 +1,9 @@
 ---
 name: Feliu Ventura
-image: FeliuVentura.png
-accent: yellow
+image: feliu-ventura.png
+accent: blue
 shape: 2
-order: 10
+order: 38
 facebook: https://es-es.facebook.com/Feliu.Ventura.Oficial/
 twitter: https://twitter.com/feliuventura?lang=es
 instagram: https://www.instagram.com/feliuventura/?hl=es

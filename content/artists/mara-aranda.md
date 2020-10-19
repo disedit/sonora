@@ -1,9 +1,9 @@
 ---
 name: Mara Aranda
-image: maraaranda.png
-accent: blue
-shape: 2
-order: 40
+image: mara-aranda.png
+accent: orange
+shape: 1
+order: 9
 facebook: https://www.facebook.com/MaraArandaMusica/
 instagram: https://www.instagram.com/maraarandamusica/
 spotify: https://open.spotify.com/artist/0KpZXROa4qnxPRCVFr5JY2

@@ -1,9 +1,9 @@
 ---
 name: Ángela Furquet
-image: AngelaFurquet.png
-accent: blue
+image: angela-furquet.png
+accent: orange
 shape: 2
-order: 18
+order: 14
 facebook: https://www.facebook.com/angela.furquet/
 instagram: https://www.instagram.com/insoma.ig/
 spotify: https://open.spotify.com/artist/5XA38EfVTfeQYzAuULkXVB

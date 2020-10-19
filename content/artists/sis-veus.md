@@ -1,9 +1,9 @@
 ---
 name: Sis Veus
-image: SisVeus.png
-accent: orange
+image: sis-veus.png
+accent: yellow
 shape: 1
-order: 38
+order: 36
 facebook: https://es-es.facebook.com/sisveus/
 twitter: https://twitter.com/6veus?lang=es
 instagram: https://www.instagram.com/sisveus/

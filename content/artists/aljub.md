@@ -1,9 +1,9 @@
 ---
 name: Aljub
-image: Aljub.png
-accent: yellow
+image: aljub.png
+accent: green
 shape: 2
-order: 31
+order: 30
 facebook: https://www.facebook.com/pages/category/Band/Aljub-179379246004753/
 website: https://joansamaravilla.wixsite.com/joansamaravilla/aljub
 video: P3RDyYvZ1r0

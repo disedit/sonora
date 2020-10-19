@@ -1,9 +1,9 @@
 ---
 name: Tesa
 image: tesa.png
-accent: yellow
-shape: 2
-order: 6
+accent: blue
+shape: 1
+order: 5
 facebook: https://facebook.com/tesaaltesa/
 twitter: https://twitter.com/Tesaltesa
 instagram: https://www.instagram.com/tesaaltesa/

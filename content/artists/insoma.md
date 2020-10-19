@@ -1,9 +1,9 @@
 ---
 name: Insoma
-image: Insoma.png
+image: insoma.png
 accent: blue
-shape: 2
-order: 16
+shape: 1
+order: 12
 facebook: https://es-la.facebook.com/INSOMAbanda/
 twitter: https://twitter.com/insomabanda?lang=es
 instagram: https://www.instagram.com/insoma.ig/

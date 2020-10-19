@@ -3,7 +3,7 @@ name: Spanish Brass
 image: spanish-brass.png
 accent: yellow
 shape: 2
-order: 24
+order: 39
 facebook: https://es-es.facebook.com/spanishbrass
 twitter: https://twitter.com/spanishbrass
 instagram: https://www.instagram.com/spanishbrass/

@@ -1,9 +1,9 @@
 ---
 name: Xavier de Bétera
-image: XavierDeBetera.png
-accent: green
+image: xavier-de-betera.png
+accent: yellow
 shape: 1
-order: 28
+order: 27
 facebook: https://www.facebook.com/xavierdebetera/
 instagram: https://www.instagram.com/xavierdebetera/?hl=es
 spotify: https://open.spotify.com/artist/45zS1it5qd4rTUHtWOWD6r

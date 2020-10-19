@@ -3,7 +3,7 @@ name: Viktorija Pilatovic
 image: viktorija-pilatovic.png
 accent: blue
 shape: 2
-order: 25
+order: 20
 facebook: https://es-es.facebook.com/viktorija.pilatovic.jazz/
 twitter: https://twitter.com/viktorija_pilat?lang=es
 instagram: https://www.instagram.com/viktorijapilatovic/?hl=es

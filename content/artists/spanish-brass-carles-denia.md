@@ -1,9 +1,9 @@
 ---
 name: Spanish Brass i Carles Dénia
 image: spanish-brass-carles-denia.png
-accent: yellow
+accent: orange
 shape: 2
-order: 24
+order: 40
 facebook: https://es-es.facebook.com/spanishbrass
 twitter: https://twitter.com/spanishbrass
 instagram: https://www.instagram.com/spanishbrass/

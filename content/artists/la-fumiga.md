@@ -1,9 +1,9 @@
 ---
 name: La Fúmiga
-image: LaFumiga.png
+image: la-fumiga.png
 accent: blue
 shape: 2
-order: 33
+order: 31
 facebook: https://es-es.facebook.com/lafumigaband/
 twitter: https://twitter.com/lafumigaband?lang=es
 instagram: https://www.instagram.com/lafumiga/

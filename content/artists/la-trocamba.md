@@ -1,9 +1,9 @@
 ---
 name: La Trocamba
-image: LaTrocamba.png
+image: la-trocamba.png
 accent: green
 shape: 1
-order: 12
+order: 26
 facebook: https://es-es.facebook.com/latrocambamatanusca
 twitter: https://twitter.com/latrocamba
 instagram: https://www.instagram.com/latrocamba/?hl=es

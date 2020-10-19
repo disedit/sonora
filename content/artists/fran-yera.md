@@ -1,9 +1,9 @@
 ---
 name: Fran Yera
-image: franyera.png
-accent: orange
+image: fran-yera.png
+accent: blue
 shape: 1
-order: 34
+order: 32
 facebook: https://es-es.facebook.com/FranYeraOficial
 twitter: https://twitter.com/fran_yera
 instagram: https://www.instagram.com/fran_yera/?hl=es

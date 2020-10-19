@@ -3,7 +3,7 @@ name: Miquel Gil
 image: miquel-gil.png
 accent: orange
 shape: 1
-order: 27
+order: 26
 facebook: https://facebook.com/miquelgil.oficial/
 twitter: https://twitter.com/miquelgil_ofic
 instagram: https://www.instagram.com/miquelgil.oficial/

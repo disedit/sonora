@@ -1,9 +1,9 @@
 ---
 name: El Hombre Viento
-image: ElHombreViento.png
-accent: blue
+image: el-hombre-viento.png
+accent: green
 shape: 2
-order: 7
+order: 6
 facebook: https://es-la.facebook.com/elhombreviento
 twitter: https://twitter.com/elhombreviento_?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor
 instagram: https://www.instagram.com/elhombreviento/

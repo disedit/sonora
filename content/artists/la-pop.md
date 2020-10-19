@@ -1,9 +1,9 @@
 ---
-name: La Petita Orquestra
-image: la-petita-orquestra.png
-accent: yellow
+name: La Petita Orquestra Peiotaire
+image: la-pop.png
+accent: orange
 shape: 2
-order: 22
+order: 18
 facebook: https://es-es.facebook.com/petitaorquestrapeiotaire/
 spotify: https://open.spotify.com/artist/1o82wnar9x21De7Ot7vsjI
 video: Oyg-92h2YyE
