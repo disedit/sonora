@@ -8,7 +8,7 @@ facebook: https://es-es.facebook.com/tardor
 twitter: https://twitter.com/tardorvlc?lang=es
 instagram: https://www.instagram.com/tardorvlc/
 spotify: https://open.spotify.com/artist/79zvwxLcJBLcUHaJ25n3yx
-website: www.tardorvlc.com
+website: http://www.tardorvlc.com
 video: tQS-S3VCTXg
 ---
 

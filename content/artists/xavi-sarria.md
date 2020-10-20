@@ -8,7 +8,7 @@ facebook: https://es-es.facebook.com/xavisarria
 twitter: https://twitter.com/xavisarria?lang=es
 instagram: https://www.instagram.com/xavisarria/
 spotify: https://open.spotify.com/artist/4PMfEsMG04n1mU3jbQGDVA
-website: www.xavisarria.cat
+website: http://www.xavisarria.cat
 video: f7dytPY8TNQ
 ---
 
