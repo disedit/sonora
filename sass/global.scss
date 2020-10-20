@@ -4,134 +4,65 @@
 
 //body
 body {
-  padding-top: 4rem;
+  padding-top: $navbar-safe-area;
+
+  &.nav-shown {
+    overflow: hidden;
+  }
 }
 
 //links
 a {
-  position: relative;
-  padding: .25rem;
-  padding-top: .35rem;
-  transition: .4s ease-in-out;
-
-  &::after {
-    content: '';
-    position: absolute;
-    background: $primary;
-    left: 0;
-    right: 0;
-    bottom: -1px;
-    height: 2px;
-    z-index: -1;
-    transition: height .4s ease-in-out;
-  }
-
-  &:hover {
-    text-decoration: none;
-    color: $background;
-
-    &::after {
-      height: 100%;
-    }
-  }
+  transition: .2s ease-in-out;
 }
 
+h1,
 h2 {
-  font-size: 7rem;
+  font-size: $text-xl;
+  text-transform: uppercase;
+  font-family: $font-headings;
+  font-variation-settings: $font-headings-thin;
 }
 
 body,
 .navbar {
   transition: .4s ease-in-out;
+  overflow-x: hidden;
 }
 
-.page-artist,
-.page-schedule,
-.page-about {
-  background: $primary;
-  min-height: 100vh;
+// artists
+.artist-image-wrapper {
+  position: sticky;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
 
-  a {
-    color: $background;
-
-    &::after {
-      background: $background;
-    }
-
-    &:hover {
-      color: $text;
-    }
-  }
-
-  strong {
-    color: $background;
-  }
-
-  .navbar-light {
-    background: $primary;
-  
-    .navbar-brand:hover {
-      .lt {
-        fill: $background;
-      }
-    }
-
-    .navbar-nav {
-      a.nav-link {
-        color: $background;
-
-        &:hover {
-          color: $text;
-        }
-      }
-    }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
   }
 }
 
-.page-artist .logos {
-  background: $primary !important;
+.page-enter-active,
+.page-leave-active {
+  transition: opacity .25s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
 }
 
-.page-schedule,
-.page-schedule .logos {
-  background: $terciary !important;
+.page-artistes-artist .page-leave-to,
+.page-artistes-artist .page-enter {
+  opacity: 1 !important;
 
-  .navbar-light {
-    background: $terciary;
-    border-color: $terciary;
-  }
-}
-
-.page-about,
-.page-about .logos {
-  background: $quaternary !important;
-
-  .navbar-light {
-    background: $quaternary;
-    border-color: $quaternary;
-  }
-}
-
-/* Modals */
-.modal {
-  &-backdrop {
-    background-color: rgba($primary, .5);
-    backdrop-filter: grayscale(100%) url(#multiply);
-  }
-
-  &-body {
-    padding: 2.5rem;
-    background: $background;
-  }
-
-  &-content {
-    border-radius: 0;
-    border: 0;
-  }
-}
-
-@include media-breakpoint-down(sm) {
-  h2 {
-    font-size: 4rem;
+  .artists-list,
+  .schedule {
+    opacity: 0;
   }
 }

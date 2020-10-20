@@ -1,0 +1,226 @@
+{
+  "concerts": [
+    {
+      "datetime": "2020-10-25 12:00",
+      "date": "25 d'octubre",
+      "time": "12:00",
+      "venue": "Parc de la Lomiquia",
+      "town": "Xest",
+      "artists": ["canta-canalla"]
+    },
+    {
+      "datetime": "2020-10-31 00:00",
+      "date": "31 d'octubre",
+      "time": "19:00",
+      "venue": "Centre Municipal Bernat i Baldoví",
+      "town": "Sueca",
+      "artists": ["ales-cesarini-payoh-soul-rebel", "jazzmatiks"]
+    },
+    {
+      "datetime": "2020-11-07 20:30",
+      "date": "7 de novembre",
+      "time": "20:30",
+      "venue": "Centre Cultural",
+      "town": "Sollana",
+      "artists": ["tesa", "el-hombre-viento"]
+    },
+    {
+      "datetime": "2020-11-07 20:30",
+      "date": "7 de novembre",
+      "time": "Hora per confirmar",
+      "venue": "Teatre Principal de Monovar",
+      "town": "Monòver",
+      "artists": ["tortel", "capricornio-uno"]
+    },
+    {
+      "datetime": "2020-11-08 00:00",
+      "date": "8 de novembre",
+      "time": "19:00",
+      "venue": "Casa de la Cultura",
+      "town": "Guardamar dels Sorells",
+      "artists": ["mara-aranda"]
+    },
+    {
+      "datetime": "2020-11-21 00:00",
+      "date": "21 de novembre",
+      "time": "19:00",
+      "venue": "Casa de la Cultura",
+      "town": "Gandia",
+      "artists": ["verdcel"]
+    },
+    {
+      "datetime": "2020-12-05 00:00",
+      "date": "5 de desembre",
+      "time": "19:00",
+      "venue": "Casa de la Cultura",
+      "town": "Bellreguard",
+      "artists": ["valira", "insoma"]
+    },
+    {
+      "datetime": "2020-12-11 00:00",
+      "date": "11 de desembre",
+      "time": "Hora per confirmar",
+      "town": "Llíria",
+      "artists": ["spanish-brass-carles-denia"]
+    },
+    {
+      "datetime": "2020-12-12 20:00",
+      "date": "12 de desembre",
+      "time": "20:00",
+      "venue": "Auditori Germanies",
+      "town": "Manises",
+      "artists": ["sole-gimenez", "angela-furquet"]
+    },
+    {
+      "datetime": "2020-12-12 19:00",
+      "date": "12 de desembre",
+      "time": "19:00",
+      "venue": "Auditori Principal",
+      "town": "Benlloc",
+      "artists": ["mireia-vilar", "gem"]
+    },
+    {
+      "datetime": "2020-12-12 19:00",
+      "date": "12 de desembre",
+      "time": "19:00",
+      "venue": "Casa de la Cultura",
+      "town": "La Pobla de Vallbona",
+      "artists": ["spanish-brass"]
+    },{
+      "datetime": "2020-12-23 00:00",
+      "date": "23 de desembre",
+      "time": "20:30",
+      "venue": "Auditori Municipal",
+      "town": "Vinaròs",
+      "artists": ["elia-casanova"]
+    },
+    {
+      "datetime": "2020-12-28 18:00",
+      "date": "28 de desembre",
+      "time": "18:00",
+      "venue": "Casa de la Cultura",
+      "town": "Alzira",
+      "artists": ["ramonets"]
+    },
+    {
+      "datetime": "2020-12-28 18:30",
+      "date": "28 de desembre",
+      "time": "18:30",
+      "venue": "Centre Cultural Papa Calixte III",
+      "town": "Canals",
+      "artists": ["la-pop"]
+    },
+    {
+      "datetime": "2021-01-04 00:00",
+      "date": "4 de gener",
+      "time": "18:00",
+      "venue": "Casa de la Cultura",
+      "town": "Picanya",
+      "artists": ["rodamons"]
+    },
+    {
+      "datetime": "2021-01-15 00:00",
+      "date": "15 de gener",
+      "time": "22:30",
+      "venue": "Casa de la Cultura Kakv",
+      "town": "Villena",
+      "artists": ["viktorija-pilatovic"]
+    },
+    {
+      "datetime": "2021-01-22 00:00",
+      "date": "22 de gener",
+      "time": "20:00",
+      "venue": "Teatre Auditori del Centre Social",
+      "town": "Dénia",
+      "artists": ["andres-belmonte"]
+    },
+    {
+      "datetime": "2021-01-23 00:00",
+      "date": "23 de gener",
+      "time": "20:00",
+      "venue": "Plaça de Bous d'Ondara",
+      "town": "Ondara",
+      "artists": ["mafalda", "prozak-soup"]
+    },
+    {
+      "datetime": "2021-01-30 20:00",
+      "date": "30 de gener",
+      "time": "22:00",
+      "venue": "Teatre Echegaray",
+      "town": "Ontinyent",
+      "artists": ["el-diluvi", "la-trocamba"]
+    },
+    {
+      "datetime": "2021-01-30 19:30",
+      "date": "30 de gener",
+      "time": "19:30",
+      "venue": "Casa de la Cultura",
+      "town": "Tavernes de la Valldigna",
+      "artists": ["miquel-gil"]
+    },
+    {
+      "datetime": "2021-02-06 22:00",
+      "date": "6 de febrer",
+      "time": "22:00",
+      "venue": "Sala Cultural La Llotja",
+      "town": "Elx",
+      "artists": ["badlands", "ed-bloom"]
+    },
+    {
+      "datetime": "2021-02-13 18:30",
+      "date": "13 de febrer",
+      "time": "18:30",
+      "venue": "Casa de la Cultura",
+      "town": "Almassora",
+      "artists": ["aljub"]
+    },
+    {
+      "datetime": "2021-02-19 19:30",
+      "date": "19 de febrer",
+      "time": "19:30",
+      "venue": "Centre Cultural Mario Monreal",
+      "town": "Sagunt",
+      "artists": ["tardor"]
+    },
+    {
+      "datetime": "2021-02-20 00:00",
+      "date": "20 de febrer",
+      "time": "Hora per confirmar",
+      "venue": "Auditori Municipal",
+      "town": "Aielo de Malferit",
+      "artists": ["la-fumiga", "fran-yera"]
+    },
+    {
+      "datetime": "2021-02-27 20:00",
+      "date": "27 de febrer",
+      "time": "20:00",
+      "venue": "Centre Cultural Carmen Valero",
+      "town": "Silla",
+      "artists": ["funkiwis", "el-tio-la-careta"]
+    },
+    {
+      "datetime": "2021-02-27 19:00",
+      "date": "27 de febrer",
+      "time": "19:00",
+      "venue": "Teatre Avenida",
+      "town": "Bocairent",
+      "artists": ["neus-ferri"]
+    },
+    {
+      "datetime": "2021-03-05 00:00",
+      "date": "5 de març",
+      "time": "20:00",
+      "venue": "Auditori Municipal",
+      "town": "Sant Mateu",
+      "artists": ["sis-veus"]
+    },
+    {
+      "datetime": "2021-03-13 00:00",
+      "date": "13 de març",
+      "time": "20:00",
+      "venue": "Auditori Municipal",
+      "town": "Carcaixent",
+      "artists": ["xavi-sarria", "feliu-ventura"]
+    }
+  ]
+}

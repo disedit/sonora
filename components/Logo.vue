@@ -4,9 +4,9 @@
     x="0px"
     y="0px"
     width="950.09px"
-    height="470.24px"
-    viewBox="0 0 950.09 470.24"
-    style="enable-background:new 0 0 950.09 470.24;"
+    height="450.24px"
+    viewBox="0 -30 950.09 450.24"
+    aria-label="Sonora"
   >
     <g>
       <path
@@ -1519,6 +1519,6 @@ export default {
   @import '../sass/variables';
 
   .st0 {
-    fill: $background;
+    fill: $body-bg;
   }
 </style>

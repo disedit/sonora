@@ -1,58 +1,109 @@
 <template>
-  <b-navbar toggleable="md" type="light" fixed="top">
-    <b-navbar-brand to="/">
-      <Logo />
-    </b-navbar-brand>
+  <nav :class="['sonora-nav', { scrolled, shown }]" aria-label="Navegació">
+    <div class="sonora-nav-logo">
+      <nuxt-link to="/">
+        <Logo />
+      </nuxt-link>
+    </div>
 
-    <b-navbar-toggle target="nav-collapse" />
+    <div class="sonora-nav-button">
+      <button @click="shown = !shown" :aria-expanded="shown ? 'true' : 'false'" aria-controls="navMenu">
+        <span v-if="!shown" class="text">Menú</span>
+        <span v-else class="icon"><CloseIcon /> <span class="sr-only">Cerrar menú</span></span>
+      </button>
+    </div>
 
-    <b-collapse id="nav-collapse" is-nav>
-      <b-navbar-nav class="ml-auto">
-        <b-nav-item to="/about">
-          Què és Sonora?
-        </b-nav-item>
-        <b-nav-item to="/schedule">
-          Programa
-        </b-nav-item>
-        <b-nav-item to="/artists">
-          Artistes
-        </b-nav-item>
-      </b-navbar-nav>
+    <div id="navMenu" class="sonora-nav-menu">
+      <ul class="sonora-nav-menu-items">
+        <li class="logo">
+          <nuxt-link to="/" aria-label="Sonora (pàgina principal)">
+            <Logo />
+          </nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/artistes">
+            Artistes
+          </nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/programa">
+            Programa
+          </nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/el-circuit">
+            El Circuit
+          </nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/contacte">
+            Contacte
+          </nuxt-link>
+        </li>
+        <li>
+          <a href="https://ivc.gva.es" class="ivc" target="_blank" rel="noopener noreferer">
+            <img src="~assets/images/logos/ivc.svg" alt="Institut Valencià de Cultura">
+          </a>
+        </li>
+      </ul>
+      <div class="sonora-nav-social">
+        <Logo class="sonora-nav-social-logo" />
 
-      <b-navbar-nav class="ml-auto">
-        <b-nav-item id="navContactButton" href="#" @click.prevent="showContact">
-          Contacte
-        </b-nav-item>
-        <b-nav-item href="https://www.facebook.com/GVAInstitutValenciadeCultura/" target="_blank" rel="noopener noreferrer">
-          <fa :icon="['fab', 'facebook-square']" /> <span class="d-md-none">Facebook</span>
-        </b-nav-item>
-        <b-nav-item href="https://twitter.com/GVAivc" target="_blank" rel="noopener noreferrer">
-          <fa :icon="['fab', 'twitter-square']" /> <span class="d-md-none">Twitter</span>
-        </b-nav-item>
-        <b-nav-item href="https://www.instagram.com/sonora_circuit/" target="_blank" rel="noopener noreferrer">
-          <fa :icon="['fab', 'instagram']" /> <span class="d-md-none">Instagram</span>
-        </b-nav-item>
-        <b-nav-item href="https://www.youtube.com/channel/UCOJWX2GnBA8M8z0Uvajh86Q" target="_blank" rel="noopener noreferrer">
-          <fa :icon="['fab', 'youtube']" /> <span class="d-md-none">Youtube</span>
-        </b-nav-item>
-      </b-navbar-nav>
-    </b-collapse>
-  </b-navbar>
+        <app-social />
+      </div>
+    </div>
+  </nav>
 </template>
 
 <script>
+import CloseIcon from '@/assets/images/icons/close.svg?inline'
 import Logo from './Logo'
+import AppSocial from './AppSocial'
 
 export default {
   name: 'AppNav',
 
   components: {
-    Logo
+    Logo,
+    CloseIcon,
+    AppSocial
+  },
+
+  data () {
+    return {
+      scrolled: false,
+      shown: false
+    }
+  },
+
+  watch: {
+    '$route' () {
+      this.shown = false
+    },
+
+    shown (newVal) {
+      const bodyTag = document.getElementsByTagName('body')[0]
+
+      if (newVal) {
+        bodyTag.classList.add('nav-shown')
+      } else {
+        bodyTag.classList.remove('nav-shown')
+      }
+    }
+  },
+
+  beforeMount () {
+    this.handleScroll()
+    window.addEventListener('scroll', this.handleScroll)
+  },
+
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.handleScroll)
   },
 
   methods: {
-    showContact () {
-      this.$root.$emit('bv::show::modal', 'contact', '#navContactButton')
+    handleScroll (event) {
+      this.scrolled = (window.scrollY > 0)
     }
   }
 }
@@ -61,77 +112,219 @@ export default {
 <style lang="scss">
   @import '../sass/variables';
 
-  .navbar-light {
-    background: $background;
-    border-bottom: 2px $primary solid;
+  .sonora-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: .2s ease;
+    border-bottom: 1px $black solid;
+    background: $white;
+    z-index: 1000;
 
-    .navbar-nav {
-      a.nav-link {
-        font-size: 1.25rem;
-        color: $primary;
+    @at-root .page-index & {
+      border-color: transparent;
+      background: transparent;
+    }
 
-        &::after {
-          display: none;
+    &-logo,
+    &-button,
+    &-social {
+      display: none;
+    }
+
+    &-menu {
+      &-items {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: .5rem 0;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+
+        li {
+          flex-shrink: 0;
+          flex-grow: 1;
+          width: 16.66%;
+        }
+
+        a {
+          font-family: $font-headings;
+          font-variation-settings: $font-headings-light;
+          font-size: 1rem;
+          color: $black;
+          padding: 1rem;
+          text-decoration: none;
+
+          &:hover {
+            color: $secondary;
+
+            .lt {
+              fill: $secondary;
+            }
+          }
+
+          &.nuxt-link-active {
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      .logo {
+        svg {
+          height: 48px;
+          width: 125px;
+        }
+
+        .lt {
+          transition: .2s ease;
+        }
+      }
+
+      a.ivc {
+        img {
+          height: 36px;
+          opacity: .6;
+          transition: .2s ease;
+        }
+
+        &:hover {
+          img {
+            opacity: 1;
+          }
         }
       }
     }
 
-    .navbar-brand {
-      svg {
-        height: 36px;
-        width: 87px;
-      }
-
-      &::after {
-        display: none;
-      }
-
-      &:hover {
-        .lt {
-          fill: $primary;
-        }
-      }
+    &.scrolled {
+      border-bottom: 1px $black solid;
+      background: $white;
     }
   }
 
-  @include media-breakpoint-down(md) {
-    .navbar {
-      &-toggler {
-        border: 0;
+  @include media-breakpoint-down (sm) {
+    .sonora-nav {
+      display: flex;
+      align-items: center;
+      padding: .5rem;
+      border-bottom: transparent;
+      background: transparent;
 
-        &-icon {
-          background-image: none !important;
-          position: relative;
+      &.scrolled {
+        border-bottom: 1px $black solid;
+        background: $white;
+      }
 
-          &::before,
-          &::after {
-            content: '';
-            position: absolute;
-            background: $text;
-            height: 2px;
-            left: 3px;
-            right: 3px;
-            top: 25%;
-            transition: .4s ease-in-out;
+      &-logo {
+        display: block;
+
+        svg {
+          height: 42px;
+          width: 100px;
+        }
+      }
+
+      &-button {
+        position: relative;
+        display: flex;
+        margin-left: auto;
+        align-items: center;
+        z-index: 2000;
+
+        button {
+          appearance: none;
+          background: transparent;
+          border: 0;
+          text-align: right;
+          font-family: $font-family-sans-serif;
+
+          .text {
+            display: block;
+            padding: .5rem 0;
           }
 
-          &::after {
-            content: '';
-            top: auto;
-            bottom: 25%;
+          .icon {
+            display: block;
+            font-size: 1.65rem;
+            padding: 0;
+
+            svg {
+              width: 1.5rem;
+              height: 1.5rem;
+            }
+          }
+        }
+      }
+
+      &-menu {
+        display: flex;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: $quaternary;
+        z-index: 1500;
+        padding-top: $navbar-safe-area;
+        transform: translateX(100%);
+        visibility: hidden;
+        transition: .5s ease;
+        flex-direction: column;
+        overflow-y: auto;
+
+        &-items {
+          flex-direction: column;
+          align-items: center;
+
+          li {
+            width: 100%;
+          }
+
+          a {
+            display: block;
+            font-size: 1.75rem;
+            text-align: center;
+            padding: 1rem;
+            line-height: 1;
+
+            &:hover {
+              color: $secondary;
+            }
           }
         }
 
-        &[aria-expanded="true"] {
-          .navbar-toggler-icon {
-            &::after {
-              transform: rotate(45deg) translateY(-9px);
-            }
+        .logo {
+          display: none;
+        }
+      }
 
-            &::before {
-              transform: rotate(-45deg) translateY(8px);
-            }
+      &-social {
+        display: block;
+        margin-top: auto;
+        margin-bottom: 4rem;
+
+        &-logo {
+          display: block;
+          width: 90%;
+          margin: 1rem auto;
+          max-width: 120px;
+          height: auto;
+
+          .lt {
+            fill: currentColor;
           }
+        }
+
+        ul {
+          justify-content: center;
+        }
+      }
+
+      &.shown {
+        .sonora-nav-menu {
+          transform: translateX(0);
+          visibility: visible;
         }
       }
     }

@@ -1,15 +1,49 @@
 //colors
-$primary: #D74139;
-$secondary: #02AF71;
-$background: #F5EBE6;
-$foreground: #FFD8CA;
-$text: #1a1512;
-$terciary: #607AB8;
-$quaternary: #d99336;
+$black: #231B28;
+$white: #F8F5F4;
+$yellow: #FFCC4D;
+$green: #5DCCA6;
+$blue: #6A86C3;
+$orange: #EF774E;
 
-$font-family-sans-serif: Sonora, sans-serif;
-$body-bg: $background;
-$body-color: $text;
+$sonora-colors: (
+  'yellow': $yellow,
+  'green': $green,
+  'blue': $blue,
+  'orange': $orange
+);
+
+$primary: $blue;
+$secondary: $orange;
+$terciary: $green;
+$quaternary: $yellow;
+
+$body-bg: $white;
+$body-color: $black;
+
+// fonts
+$font-family-sans-serif: Inter, sans-serif;
+$font-headings: 'GT Flexa VAR', sans-serif;
+$font-headings-thin: "wght" 200, "wdth" 100, "ital" 0;
+$font-headings-light: "wght" 300, "wdth" 100, "ital" 0;
+$font-headings-regular: "wght" 400, "wdth" 100, "ital" 0;
+$font-headings-light-extended: "wght" 300, "wdth" 120, "ital" 0;
+
+// text sizes
+$artist-font-size: calc(1vw + 1.75rem);
+$text-base: 1.25rem;
+$text-sm: 1rem;
+$text-lg: 2rem;
+$text-xl: 3rem;
+
+// navbar
+$navbar-safe-area: 4.5rem;
+
+// links
+$link-color: $primary;
+$link-decoration: none;
+$link-hover-color: $secondary;
+$link-hover-decoration: none;
 
 @import 'bootstrap/scss/_functions';
 @import 'bootstrap/scss/_variables';

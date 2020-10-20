@@ -1,15 +1,19 @@
 export default {
-  mode: 'universal',
+  target: 'static',
+
   /*
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    htmlAttrs: {
+      lang: 'ca'
+    },
+    title: 'Sonora - Circuit de Música Valenciana',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
-      { name: 'theme-color', content: '#f5ebe6' }
+      { hid: 'description', name: 'description', content: 'L’Institut Valencià de Cultura presenta la segona edició de Sonora, el circuit de concerts que porta als grups guanyadors i finalistes dels Premis Carles Santos de la Música Valenciana per tot el nostre territori.' },
+      { name: 'theme-color', content: '#EF774E' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicons/favicon.ico' },
@@ -22,7 +26,8 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#F24957' },
+
   /*
   ** Global CSS
   */
@@ -33,7 +38,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    //
+    './plugins/smooth-scroll.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -41,6 +46,8 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     // '@nuxtjs/eslint-module'
+    ['@nuxtjs/svg'],
+    ['@nuxtjs/fontawesome']
   ],
   /*
   ** Nuxt.js modules
@@ -48,20 +55,9 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    ['bootstrap-vue/nuxt'],
-    ['nuxt-fontawesome', {
-      component: 'fa',
-      imports: [
-        {
-          set: '@fortawesome/free-brands-svg-icons',
-          icons: ['faFacebookSquare', 'faTwitterSquare', 'faSpotify', 'faInstagram', 'faYoutube']
-        },
-        {
-          set: '@fortawesome/pro-regular-svg-icons',
-          icons: ['faArrowLeft', 'faArrowRight', 'faPlay', 'faGlobe']
-        }
-      ]
-    }]
+    '@nuxt/content',
+    '@nuxtjs/google-fonts',
+    ['bootstrap-vue/nuxt']
   ],
   /*
   ** Axios module configuration
@@ -76,15 +72,50 @@ export default {
     bootstrapCSS: false,
     bootstrapVueCSS: false,
     componentPlugins: [
-      'NavbarPlugin',
       'FormPlugin',
       'FormInputPlugin',
       'FormGroupPlugin',
       'ButtonPlugin',
-      'FormTextareaPlugin',
-      'ModalPlugin'
+      'FormTextareaPlugin'
     ]
   },
+  /*
+  ** Google fonts
+  */
+  googleFonts: {
+    families: {
+      Inter: [400]
+    }
+  },
+
+  /*
+  ** FontAwesome
+  */
+  fontawesome: {
+    icons: {
+      brands: ['faFacebook', 'faTwitter', 'faInstagram', 'faYoutube']
+    }
+  },
+
+  /*
+  ** Content
+  */
+  content: {
+    nestedProperties: ['concerts.artists']
+  },
+
+  /*
+  ** Redirects
+  */
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({ path: '/schedule', redirect: { name: 'programa' } })
+      routes.push({ path: '/about', redirect: { name: 'el-circuit' } })
+      routes.push({ path: '/artists', redirect: { name: 'artistes' } })
+      routes.push({ path: '/contact', redirect: { name: 'contacte' } })
+    }
+  },
+
   /*
   ** Build configuration
   */
