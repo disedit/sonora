@@ -3,7 +3,7 @@ name: Tardor
 image: tardor.png
 accent: blue
 shape: 2
-order: 1
+order: 30.5
 facebook: https://es-es.facebook.com/tardor
 twitter: https://twitter.com/tardorvlc?lang=es
 instagram: https://www.instagram.com/tardorvlc/

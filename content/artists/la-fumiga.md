@@ -1,7 +1,7 @@
 ---
 name: La Fúmiga
 image: la-fumiga.png
-accent: blue
+accent: orange
 shape: 2
 order: 31
 facebook: https://es-es.facebook.com/lafumigaband/

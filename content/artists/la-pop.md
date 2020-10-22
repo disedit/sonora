@@ -1,5 +1,5 @@
 ---
-name: La Petita Orquestra Peiotaire
+name: La Pop
 image: la-pop.png
 accent: orange
 shape: 2
