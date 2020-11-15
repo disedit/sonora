@@ -29,37 +29,44 @@ export default {
     Concert
   },
 
+  data () {
+    return {
+      artists: null,
+      upcomingConcerts: null,
+      pastConcerts: null
+    }
+  },
+
   async asyncData ({ $content }) {
     /* Gett all concerts */
     const concerts = await $content('concerts').fetch()
 
     /* Get all artists */
-    const artistsList = await $content('artists').only(['name', 'slug']).fetch()
     const artists = {}
-
-    /* Create easily accessible index of artists */
+    const artistsList = await $content('artists').only(['name', 'slug']).fetch()
     artistsList.forEach((artist) => {
       artists[artist.slug] = artist
     })
 
+    return {
+      concerts,
+      artists
+    }
+  },
+
+  mounted () {
     /* Filter upcoming concerts */
     const today = new Date()
-    const upcomingConcerts = concerts.concerts.filter((concert) => {
+    this.upcomingConcerts = this.concerts.concerts.filter((concert) => {
       const concertDate = new Date(concert.datetime)
       return today <= concertDate
     })
 
     /* Filter past concerts */
-    const pastConcerts = concerts.concerts.filter((concert) => {
+    this.pastConcerts = this.concerts.concerts.filter((concert) => {
       const concertDate = new Date(concert.datetime)
       return today > concertDate
     })
-
-    return {
-      upcomingConcerts,
-      pastConcerts,
-      artists
-    }
   },
 
   head () {
