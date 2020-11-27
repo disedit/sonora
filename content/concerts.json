@@ -157,7 +157,7 @@
       "time": "19:30",
       "venue": "Casa de la Cultura",
       "town": "Tavernes de la Valldigna",
-      "artists": ["miquel-gil"]
+      "artists": ["miquel-gil", "xavier-de-betera"]
     },
     {
       "datetime": "2021-02-06 22:00",
@@ -176,10 +176,10 @@
       "artists": ["aljub"]
     },
     {
-      "datetime": "2021-02-19 19:30",
+      "datetime": "2021-02-19 20:30",
       "date": "19 de febrer",
-      "time": "19:30",
-      "venue": "Centre Cultural Mario Monreal",
+      "time": "20:30",
+      "venue": "Auditori Joaquín Rodrigo",
       "town": "Sagunt",
       "artists": ["tardor"]
     },
