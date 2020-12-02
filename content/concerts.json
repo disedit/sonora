@@ -76,14 +76,6 @@
       "datetime": "2020-12-12 19:00",
       "date": "12 de desembre",
       "time": "19:00",
-      "venue": "Auditori Principal",
-      "town": "Benlloc",
-      "artists": ["mireia-vilar", "gem"]
-    },
-    {
-      "datetime": "2020-12-12 19:00",
-      "date": "12 de desembre",
-      "time": "19:00",
       "venue": "Casa de la Cultura",
       "town": "La Pobla de Vallbona",
       "artists": ["spanish-brass"]
@@ -112,10 +104,10 @@
       "artists": ["la-pop"]
     },
     {
-      "datetime": "2021-01-04 00:00",
+      "datetime": "2021-01-04 12:00",
       "date": "4 de gener",
-      "time": "18:00",
-      "venue": "Casa de la Cultura",
+      "time": "12:00",
+      "venue": "Pati de l’Escola Baladre",
       "town": "Picanya",
       "artists": ["rodamons"]
     },
@@ -214,6 +206,14 @@
       "venue": "Auditori Municipal",
       "town": "Sant Mateu",
       "artists": ["sis-veus"]
+    },
+    {
+      "datetime": "2021-03-12 19:00",
+      "date": "12 de març",
+      "time": "19:00",
+      "venue": "Auditori Municipal",
+      "town": "Benlloc",
+      "artists": ["mireia-vilar", "gem"]
     },
     {
       "datetime": "2021-03-13 00:00",
