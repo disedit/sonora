@@ -96,52 +96,12 @@
       "artists": ["ramonets"]
     },
     {
-      "datetime": "2020-12-28 18:30",
-      "date": "28 de desembre",
-      "time": "18:30",
-      "venue": "Centre Cultural Papa Calixte III",
-      "town": "Canals",
-      "artists": ["la-pop"]
-    },
-    {
       "datetime": "2021-01-04 12:00",
       "date": "4 de gener",
       "time": "12:00",
       "venue": "Pati de l’Escola Baladre",
       "town": "Picanya",
       "artists": ["rodamons"]
-    },
-    {
-      "datetime": "2021-01-15 00:00",
-      "date": "15 de gener",
-      "time": "22:30",
-      "venue": "Casa de la Cultura Kakv",
-      "town": "Villena",
-      "artists": ["viktorija-pilatovic"]
-    },
-    {
-      "datetime": "2021-01-22 00:00",
-      "date": "22 de gener",
-      "time": "20:00",
-      "venue": "Teatre Auditori del Centre Social",
-      "town": "Dénia",
-      "artists": ["andres-belmonte"]
-    },
-    {
-      "datetime": "2021-01-23 00:00",
-      "date": "23 de gener",
-      "time": "20:00",
-      "venue": "Plaça de Bous d'Ondara",
-      "town": "Ondara",
-      "artists": ["mafalda", "prozak-soup"]
-    },
-    {
-      "datetime": "2021-01-30 19:30",
-      "date": "30 de gener",
-      "time": "19:30",
-      "venue": "Casa de la Cultura",
-      "town": "Tavernes de la Valldigna",
-      "artists": ["miquel-gil", "xavier-de-betera"]
     },
     {
       "datetime": "2021-02-06 22:00",
@@ -176,6 +136,14 @@
       "artists": ["la-fumiga", "fran-yera"]
     },
     {
+      "datetime": "2021-02-27 00:00",
+      "date": "27 de febrer",
+      "time": "Hora per confirmar",
+      "venue": "Plaça de Bous d'Ondara",
+      "town": "Ondara",
+      "artists": ["mafalda", "prozak-soup"]
+    },
+    {
       "datetime": "2021-02-27 20:00",
       "date": "27 de febrer",
       "time": "20:00",
@@ -200,12 +168,20 @@
       "artists": ["sis-veus"]
     },
     {
-      "datetime": "2021-03-07 19:00",
-      "date": "7 de març",
+      "datetime": "2021-03-05 19:00",
+      "date": "5 de març",
       "time": "19:00",
       "venue": "Teatre Echegaray",
       "town": "Ontinyent",
       "artists": ["el-diluvi", "la-trocamba"]
+    },
+    {
+      "datetime": "2021-03-05 00:00",
+      "date": "5 de març",
+      "time": "Hora per confirmar",
+      "venue": "Casa de la Cultura Kakv",
+      "town": "Villena",
+      "artists": ["viktorija-pilatovic"]
     },
     {
       "datetime": "2021-03-12 19:00",
@@ -222,6 +198,30 @@
       "venue": "Auditori Municipal",
       "town": "Carcaixent",
       "artists": ["xavi-sarria", "feliu-ventura"]
+    },
+    {
+      "datetime": "2021-03-14 18:30",
+      "date": "14 de març",
+      "time": "18:30",
+      "venue": "Centre Cultural Papa Calixte III",
+      "town": "Canals",
+      "artists": ["la-pop"]
+    },
+    {
+      "datetime": "2021-03-19 00:00",
+      "date": "19 de març",
+      "time": "Hora per confirmar",
+      "venue": "Teatre Auditori del Centre Social",
+      "town": "Dénia",
+      "artists": ["andres-belmonte"]
+    },
+    {
+      "datetime": "2021-03-30 19:30",
+      "date": "Dia per confirmar",
+      "time": "Hora per confirmar",
+      "venue": "Casa de la Cultura",
+      "town": "Tavernes de la Valldigna",
+      "artists": ["miquel-gil", "xavier-de-betera"]
     }
   ]
 }
