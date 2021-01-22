@@ -1,7 +1,7 @@
 {
   "concerts": [
     {
-      "datetime": "2020-10-25 12:00",
+      "datetime": "2020-10-25T12:00+01",
       "date": "25 d'octubre",
       "time": "12:00",
       "venue": "Parc de la Lomiquia",
@@ -9,7 +9,7 @@
       "artists": ["canta-canalla"]
     },
     {
-      "datetime": "2020-10-31 00:00",
+      "datetime": "2020-10-31T00:00+01",
       "date": "31 d'octubre",
       "time": "19:00",
       "venue": "Centre Municipal Bernat i Baldoví",
@@ -17,7 +17,7 @@
       "artists": ["ales-cesarini-payoh-soul-rebel", "jazzmatiks"]
     },
     {
-      "datetime": "2020-11-07 20:00",
+      "datetime": "2020-11-07T20:00+01",
       "date": "7 de novembre",
       "time": "20:00",
       "venue": "Centre Cultural",
@@ -25,7 +25,7 @@
       "artists": ["tesa", "el-hombre-viento"]
     },
     {
-      "datetime": "2020-11-07 20:30",
+      "datetime": "2020-11-07T20:30+01",
       "date": "7 de novembre",
       "time": "20:30",
       "venue": "Teatre Principal de Monovar",
@@ -33,7 +33,7 @@
       "artists": ["tortel", "capricornio-uno"]
     },
     {
-      "datetime": "2020-11-08 00:00",
+      "datetime": "2020-11-08T00:00+01",
       "date": "8 de novembre",
       "time": "19:00",
       "venue": "Casa de la Cultura",
@@ -41,7 +41,7 @@
       "artists": ["mara-aranda"]
     },
     {
-      "datetime": "2020-11-21 00:00",
+      "datetime": "2020-11-21T00:00+01",
       "date": "21 de novembre",
       "time": "19:00",
       "venue": "Casa de la Cultura",
@@ -49,7 +49,7 @@
       "artists": ["verdcel"]
     },
     {
-      "datetime": "2020-12-05 00:00",
+      "datetime": "2020-12-05T00:00+01",
       "date": "5 de desembre",
       "time": "19:00",
       "venue": "Casa de la Cultura",
@@ -57,7 +57,7 @@
       "artists": ["valira", "insoma"]
     },
     {
-      "datetime": "2020-12-11 20:30",
+      "datetime": "2020-12-11T20:30+01",
       "date": "11 de desembre",
       "time": "20:30",
       "venue": "Teatre de la Unió Musical",
@@ -65,7 +65,7 @@
       "artists": ["spanish-brass-carles-denia"]
     },
     {
-      "datetime": "2020-12-12 20:00",
+      "datetime": "2020-12-12T20:00+01",
       "date": "12 de desembre",
       "time": "20:00",
       "venue": "Auditori Germanies",
@@ -73,14 +73,14 @@
       "artists": ["sole-gimenez", "angela-furquet"]
     },
     {
-      "datetime": "2020-12-12 19:00",
+      "datetime": "2020-12-12T19:00+01",
       "date": "12 de desembre",
       "time": "19:00",
       "venue": "Casa de la Cultura",
       "town": "La Pobla de Vallbona",
       "artists": ["spanish-brass"]
     },{
-      "datetime": "2020-12-23 00:00",
+      "datetime": "2020-12-23T00:00+01",
       "date": "23 de desembre",
       "time": "20:30",
       "venue": "Auditori Municipal",
@@ -88,7 +88,7 @@
       "artists": ["elia-casanova"]
     },
     {
-      "datetime": "2020-12-28 18:00",
+      "datetime": "2020-12-28T18:00+01",
       "date": "28 de desembre",
       "time": "18:00",
       "venue": "Casa de la Cultura",
@@ -96,7 +96,7 @@
       "artists": ["ramonets"]
     },
     {
-      "datetime": "2021-01-04 12:00",
+      "datetime": "2021-01-04T12:00+01",
       "date": "4 de gener",
       "time": "12:00",
       "venue": "Pati de l’Escola Baladre",
@@ -104,7 +104,7 @@
       "artists": ["rodamons"]
     },
     {
-      "datetime": "2021-02-06 22:00",
+      "datetime": "2021-02-06T22:00+01",
       "date": "6 de febrer",
       "time": "22:00",
       "venue": "Sala Cultural La Llotja",
@@ -112,7 +112,7 @@
       "artists": ["badlands", "ed-bloom"]
     },
     {
-      "datetime": "2021-02-13 18:30",
+      "datetime": "2021-02-13T18:30+01",
       "date": "13 de febrer",
       "time": "18:30",
       "venue": "Casa de la Cultura",
@@ -120,7 +120,7 @@
       "artists": ["aljub"]
     },
     {
-      "datetime": "2021-02-19 20:30",
+      "datetime": "2021-02-19T20:30+01",
       "date": "19 de febrer",
       "time": "20:30",
       "venue": "Auditori Joaquín Rodrigo",
@@ -128,7 +128,7 @@
       "artists": ["tardor"]
     },
     {
-      "datetime": "2021-02-20 00:00",
+      "datetime": "2021-02-20T00:00+01",
       "date": "20 de febrer",
       "time": "Hora per confirmar",
       "venue": "Auditori Municipal",
@@ -136,7 +136,7 @@
       "artists": ["la-fumiga", "fran-yera"]
     },
     {
-      "datetime": "2021-02-27 00:00",
+      "datetime": "2021-02-27T00:00+01",
       "date": "27 de febrer",
       "time": "Hora per confirmar",
       "venue": "Plaça de Bous d'Ondara",
@@ -144,7 +144,7 @@
       "artists": ["mafalda", "prozak-soup"]
     },
     {
-      "datetime": "2021-02-27 20:00",
+      "datetime": "2021-02-27T20:00+01",
       "date": "27 de febrer",
       "time": "20:00",
       "venue": "Centre Cultural Carmen Valero",
@@ -152,7 +152,7 @@
       "artists": ["funkiwis", "el-tio-la-careta"]
     },
     {
-      "datetime": "2021-02-27 19:00",
+      "datetime": "2021-02-27T19:00+01",
       "date": "27 de febrer",
       "time": "19:00",
       "venue": "Teatre Avenida",
@@ -160,7 +160,7 @@
       "artists": ["neus-ferri"]
     },
     {
-      "datetime": "2021-03-05 00:00",
+      "datetime": "2021-03-05T00:00+01",
       "date": "5 de març",
       "time": "20:00",
       "venue": "Auditori Municipal",
@@ -168,7 +168,7 @@
       "artists": ["sis-veus"]
     },
     {
-      "datetime": "2021-03-05 19:00",
+      "datetime": "2021-03-05T19:00+01",
       "date": "5 de març",
       "time": "19:00",
       "venue": "Teatre Echegaray",
@@ -176,7 +176,7 @@
       "artists": ["el-diluvi", "la-trocamba"]
     },
     {
-      "datetime": "2021-03-05 00:00",
+      "datetime": "2021-03-05T00:00+01",
       "date": "5 de març",
       "time": "Hora per confirmar",
       "venue": "Casa de la Cultura Kakv",
@@ -184,7 +184,7 @@
       "artists": ["viktorija-pilatovic"]
     },
     {
-      "datetime": "2021-03-12 19:00",
+      "datetime": "2021-03-12T19:00+01",
       "date": "12 de març",
       "time": "19:00",
       "venue": "Auditori Municipal",
@@ -192,7 +192,7 @@
       "artists": ["mireia-vilar", "gem"]
     },
     {
-      "datetime": "2021-03-13 00:00",
+      "datetime": "2021-03-13T00:00+01",
       "date": "13 de març",
       "time": "20:00",
       "venue": "Auditori Municipal",
@@ -200,7 +200,7 @@
       "artists": ["xavi-sarria", "feliu-ventura"]
     },
     {
-      "datetime": "2021-03-14 18:30",
+      "datetime": "2021-03-14T18:30+01",
       "date": "14 de març",
       "time": "18:30",
       "venue": "Centre Cultural Papa Calixte III",
@@ -208,7 +208,7 @@
       "artists": ["la-pop"]
     },
     {
-      "datetime": "2021-03-19 00:00",
+      "datetime": "2021-03-19T00:00+01",
       "date": "19 de març",
       "time": "Hora per confirmar",
       "venue": "Teatre Auditori del Centre Social",
@@ -216,7 +216,7 @@
       "artists": ["andres-belmonte"]
     },
     {
-      "datetime": "2021-03-30 19:30",
+      "datetime": "2021-03-30T19:30+01",
       "date": "Dia per confirmar",
       "time": "Hora per confirmar",
       "venue": "Casa de la Cultura",
