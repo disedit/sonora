@@ -74,7 +74,7 @@ export default {
   head () {
     const links = []
     this.artists.forEach((artist) => {
-      links.push({ rel: 'prefetch', as: 'image', href: `/images/artists/${artist.image}` })
+      links.push({ rel: 'preload', as: 'image', href: `/images/artists/${artist.image}` })
     })
 
     return {
