@@ -1,5 +1,5 @@
 ---
-name: Tortel
+name: Tórtel
 image: tortel.png
 accent: orange
 shape: 2
