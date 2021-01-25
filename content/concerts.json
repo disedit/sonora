@@ -112,14 +112,6 @@
       "artists": ["badlands", "ed-bloom"]
     },
     {
-      "datetime": "2021-02-28T18:30",
-      "date": "28 de febrer",
-      "time": "Hora per confirmar",
-      "venue": "Casa de la Cultura",
-      "town": "Almassora",
-      "artists": ["aljub"]
-    },
-    {
       "datetime": "2021-02-19T20:30",
       "date": "19 de febrer",
       "time": "20:30",
@@ -158,6 +150,14 @@
       "venue": "Teatre Avenida",
       "town": "Bocairent",
       "artists": ["neus-ferri"]
+    },
+    {
+      "datetime": "2021-02-28T18:30",
+      "date": "28 de febrer",
+      "time": "Hora per confirmar",
+      "venue": "Casa de la Cultura",
+      "town": "Almassora",
+      "artists": ["aljub"]
     },
     {
       "datetime": "2021-03-05T00:00",
