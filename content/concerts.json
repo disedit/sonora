@@ -104,14 +104,6 @@
       "artists": ["rodamons"]
     },
     {
-      "datetime": "2021-02-06T22:00",
-      "date": "6 de febrer",
-      "time": "22:00",
-      "venue": "Sala Cultural La Llotja",
-      "town": "Elx",
-      "artists": ["badlands", "ed-bloom"]
-    },
-    {
       "datetime": "2021-02-19T20:30",
       "date": "19 de febrer",
       "time": "20:30",
@@ -214,6 +206,14 @@
       "venue": "Teatre Auditori del Centre Social",
       "town": "Dénia",
       "artists": ["andres-belmonte"]
+    },
+    {
+      "datetime": "2021-03-20T22:00",
+      "date": "20 de març",
+      "time": "19:00",
+      "venue": "Sala Cultural La Llotja",
+      "town": "Elx",
+      "artists": ["badlands", "ed-bloom"]
     },
     {
       "datetime": "2021-03-30T19:30",
