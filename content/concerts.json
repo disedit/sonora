@@ -160,20 +160,20 @@
       "artists": ["sis-veus"]
     },
     {
-      "datetime": "2021-03-05T19:00",
-      "date": "5 de març",
-      "time": "19:00",
-      "venue": "Teatre Echegaray",
-      "town": "Ontinyent",
-      "artists": ["el-diluvi", "la-trocamba"]
-    },
-    {
       "datetime": "2021-03-05T00:00",
       "date": "5 de març",
       "time": "Hora per confirmar",
       "venue": "Casa de la Cultura Kakv",
       "town": "Villena",
       "artists": ["viktorija-pilatovic"]
+    },
+    {
+      "datetime": "2021-03-07T19:00",
+      "date": "7 de març",
+      "time": "19:00",
+      "venue": "Teatre Echegaray",
+      "town": "Ontinyent",
+      "artists": ["el-diluvi", "la-trocamba"]
     },
     {
       "datetime": "2021-03-12T19:00",
