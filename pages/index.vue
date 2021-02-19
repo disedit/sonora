@@ -3,7 +3,7 @@
     <header id="home">
       <h1>CIRCUIT<br> DE LA MÚSICA<br> VALENCIANA</h1>
       <p class="dates">
-        25.10.20 → 13.3.21
+        25.10.20 → 29.5.21
       </p>
       <div :style="{ transform: `translateX(${shapesPos}%)` }" class="fixed shapes" />
       <div :style="{ transform: `translateX(${illustrationPos}%)` }" class="fixed illustration" />

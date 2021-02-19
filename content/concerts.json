@@ -104,65 +104,9 @@
       "artists": ["rodamons"]
     },
     {
-      "datetime": "2021-02-19T20:30",
-      "date": "19 de febrer",
-      "time": "20:30",
-      "venue": "Auditori Joaquín Rodrigo",
-      "town": "Sagunt",
-      "artists": ["tardor"]
-    },
-    {
-      "datetime": "2021-02-20T00:00",
-      "date": "20 de febrer",
-      "time": "Hora per confirmar",
-      "venue": "Auditori Municipal",
-      "town": "Aielo de Malferit",
-      "artists": ["la-fumiga", "fran-yera"]
-    },
-    {
-      "datetime": "2021-02-27T00:00",
-      "date": "27 de febrer",
-      "time": "Hora per confirmar",
-      "venue": "Plaça de Bous d'Ondara",
-      "town": "Ondara",
-      "artists": ["mafalda", "prozak-soup"]
-    },
-    {
-      "datetime": "2021-02-27T20:00",
-      "date": "27 de febrer",
-      "time": "20:00",
-      "venue": "Centre Cultural Carmen Valero",
-      "town": "Silla",
-      "artists": ["funkiwis", "el-tio-la-careta"]
-    },
-    {
-      "datetime": "2021-02-27T19:00",
-      "date": "27 de febrer",
+      "datetime": "2021-03-05T00:00",
+      "date": "5 de març",
       "time": "19:00",
-      "venue": "Teatre Avenida",
-      "town": "Bocairent",
-      "artists": ["neus-ferri"]
-    },
-    {
-      "datetime": "2021-02-28T18:30",
-      "date": "28 de febrer",
-      "time": "Hora per confirmar",
-      "venue": "Casa de la Cultura",
-      "town": "Almassora",
-      "artists": ["aljub"]
-    },
-    {
-      "datetime": "2021-03-05T00:00",
-      "date": "5 de març",
-      "time": "20:00",
-      "venue": "Auditori Municipal",
-      "town": "Sant Mateu",
-      "artists": ["sis-veus"]
-    },
-    {
-      "datetime": "2021-03-05T00:00",
-      "date": "5 de març",
-      "time": "Hora per confirmar",
       "venue": "Casa de la Cultura Kakv",
       "town": "Villena",
       "artists": ["viktorija-pilatovic"]
@@ -179,9 +123,17 @@
       "datetime": "2021-03-12T19:00",
       "date": "12 de març",
       "time": "19:00",
+      "venue": "Casa de la Cultura",
+      "town": "Tavernes de la Valldigna",
+      "artists": ["miquel-gil", "xavier-de-betera"]
+    },
+    {
+      "datetime": "2021-03-13T19:00",
+      "date": "13 de març",
+      "time": "19:00",
       "venue": "Auditori Municipal",
       "town": "Benlloc",
-      "artists": ["mireia-vilar", "gem"]
+      "artists": ["gem"]
     },
     {
       "datetime": "2021-03-13T00:00",
@@ -202,7 +154,7 @@
     {
       "datetime": "2021-03-19T00:00",
       "date": "19 de març",
-      "time": "Hora per confirmar",
+      "time": "20:00",
       "venue": "Teatre Auditori del Centre Social",
       "town": "Dénia",
       "artists": ["andres-belmonte"]
@@ -216,12 +168,60 @@
       "artists": ["badlands", "ed-bloom"]
     },
     {
-      "datetime": "2021-03-30T19:30",
+      "datetime": "2021-04-10T19:30",
+      "date": "10 d'abril",
+      "time": "19:30",
+      "venue": "Centre Cultural Mario Monreal",
+      "town": "Sagunt",
+      "artists": ["tardor"]
+    },
+    {
+      "datetime": "2021-04-17T20:00",
+      "date": "17 d'abril",
+      "time": "20:00",
+      "venue": "Auditori Municipal",
+      "town": "Sant Mateu",
+      "artists": ["sis-veus"]
+    },
+    {
+      "datetime": "2021-04-24T20:00",
+      "date": "24 d'abril",
+      "time": "20:00",
+      "venue": "Centre Cultural Carmen Valero",
+      "town": "Silla",
+      "artists": ["funkiwis", "el-tio-la-careta"]
+    },
+    {
+      "datetime": "2021-05-29T20:00",
+      "date": "29 de maig",
+      "time": "20:00",
+      "venue": "Plaça de Bous d'Ondara",
+      "town": "Ondara",
+      "artists": ["mafalda", "prozak-soup"]
+    },
+    {
+      "datetime": "2021-05-29T20:00",
+      "date": "29 de maig",
+      "time": "20:00",
+      "venue": "Casa de la Cultura",
+      "town": "Almassora",
+      "artists": ["aljub"]
+    },
+    {
+      "datetime": "2021-07-20T00:00",
       "date": "Dia per confirmar",
       "time": "Hora per confirmar",
-      "venue": "Casa de la Cultura",
-      "town": "Tavernes de la Valldigna",
-      "artists": ["miquel-gil", "xavier-de-betera"]
+      "venue": "Més informació pròximament",
+      "town": "Aielo de Malferit",
+      "artists": ["la-fumiga", "fran-yera"]
+    },
+    {
+      "datetime": "2021-07-27T19:00",
+      "date": "Dia per confirmar",
+      "time": "Hora per confirmar",
+      "venue": "Més informació properament",
+      "town": "Bocairent",
+      "artists": ["neus-ferri"]
     }
   ]
 }
