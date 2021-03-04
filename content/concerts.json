@@ -120,28 +120,12 @@
       "artists": ["el-diluvi", "la-trocamba"]
     },
     {
-      "datetime": "2021-03-12T19:00",
-      "date": "12 de març",
-      "time": "19:00",
-      "venue": "Casa de la Cultura",
-      "town": "Tavernes de la Valldigna",
-      "artists": ["miquel-gil", "xavier-de-betera"]
-    },
-    {
       "datetime": "2021-03-13T19:00",
       "date": "13 de març",
       "time": "19:00",
       "venue": "Auditori Municipal",
       "town": "Benlloc",
       "artists": ["gem"]
-    },
-    {
-      "datetime": "2021-03-13T00:00",
-      "date": "13 de març",
-      "time": "20:00",
-      "venue": "Auditori Municipal",
-      "town": "Carcaixent",
-      "artists": ["xavi-sarria", "feliu-ventura"]
     },
     {
       "datetime": "2021-03-14T18:30",
@@ -168,12 +152,28 @@
       "artists": ["badlands", "ed-bloom"]
     },
     {
+      "datetime": "2021-04-10T19:00",
+      "date": "10 d'abril",
+      "time": "19:00",
+      "venue": "Més informació properament",
+      "town": "Bocairent",
+      "artists": ["neus-ferri"]
+    },
+    {
       "datetime": "2021-04-10T19:30",
       "date": "10 d'abril",
       "time": "19:30",
       "venue": "Centre Cultural Mario Monreal",
       "town": "Sagunt",
       "artists": ["tardor"]
+    },
+    {
+      "datetime": "2021-04-17T00:00",
+      "date": "17 d'abril",
+      "time": "20:00",
+      "venue": "Auditori Municipal",
+      "town": "Carcaixent",
+      "artists": ["xavi-sarria", "feliu-ventura"]
     },
     {
       "datetime": "2021-04-17T20:00",
@@ -184,12 +184,28 @@
       "artists": ["sis-veus"]
     },
     {
+      "datetime": "2021-04-23T19:00",
+      "date": "23 d'abril",
+      "time": "20:00",
+      "venue": "Casa de la Cultura",
+      "town": "Tavernes de la Valldigna",
+      "artists": ["miquel-gil", "xavier-de-betera"]
+    },
+    {
       "datetime": "2021-04-24T20:00",
       "date": "24 d'abril",
       "time": "20:00",
       "venue": "Centre Cultural Carmen Valero",
       "town": "Silla",
       "artists": ["funkiwis", "el-tio-la-careta"]
+    },
+    {
+      "datetime": "2021-04-25T00:00",
+      "date": "25 d'abril",
+      "time": "12:00",
+      "venue": "Més informació pròximament",
+      "town": "Aielo de Malferit",
+      "artists": ["la-fumiga", "fran-yera"]
     },
     {
       "datetime": "2021-05-29T20:00",
@@ -206,22 +222,6 @@
       "venue": "Casa de la Cultura",
       "town": "Almassora",
       "artists": ["aljub"]
-    },
-    {
-      "datetime": "2021-07-20T00:00",
-      "date": "Dia per confirmar",
-      "time": "Hora per confirmar",
-      "venue": "Més informació pròximament",
-      "town": "Aielo de Malferit",
-      "artists": ["la-fumiga", "fran-yera"]
-    },
-    {
-      "datetime": "2021-07-27T19:00",
-      "date": "Dia per confirmar",
-      "time": "Hora per confirmar",
-      "venue": "Més informació properament",
-      "town": "Bocairent",
-      "artists": ["neus-ferri"]
     }
   ]
 }
