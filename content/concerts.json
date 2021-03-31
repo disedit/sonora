@@ -160,10 +160,10 @@
       "artists": ["neus-ferri"]
     },
     {
-      "datetime": "2021-04-10T19:30",
+      "datetime": "2021-04-10T19:00",
       "date": "10 d'abril",
-      "time": "19:30",
-      "venue": "Centre Cultural Mario Monreal",
+      "time": "19:00",
+      "venue": "Auditori Joaquín Rodrigo",
       "town": "Sagunt",
       "artists": ["tardor"]
     },
@@ -200,10 +200,10 @@
       "artists": ["funkiwis", "el-tio-la-careta"]
     },
     {
-      "datetime": "2021-04-25T00:00",
+      "datetime": "2021-04-25T12:00",
       "date": "25 d'abril",
       "time": "12:00",
-      "venue": "Més informació pròximament",
+      "venue": "Pati del Grup Nou",
       "town": "Aielo de Malferit",
       "artists": ["la-fumiga", "fran-yera"]
     },
