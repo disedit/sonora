@@ -176,9 +176,9 @@
       "artists": ["xavi-sarria", "feliu-ventura"]
     },
     {
-      "datetime": "2021-04-17T20:00",
+      "datetime": "2021-04-17T19:00",
       "date": "17 d'abril",
-      "time": "20:00",
+      "time": "19:00",
       "venue": "Auditori Municipal",
       "town": "Sant Mateu",
       "artists": ["sis-veus"]
@@ -186,15 +186,15 @@
     {
       "datetime": "2021-04-23T19:00",
       "date": "23 d'abril",
-      "time": "20:00",
+      "time": "19:00",
       "venue": "Casa de la Cultura",
       "town": "Tavernes de la Valldigna",
       "artists": ["miquel-gil", "xavier-de-betera"]
     },
     {
-      "datetime": "2021-04-24T20:00",
+      "datetime": "2021-04-24T19:00",
       "date": "24 d'abril",
-      "time": "20:00",
+      "time": "19:00",
       "venue": "Centre Cultural Carmen Valero",
       "town": "Silla",
       "artists": ["funkiwis", "el-tio-la-careta"]
@@ -210,7 +210,7 @@
     {
       "datetime": "2021-05-29T20:00",
       "date": "29 de maig",
-      "time": "20:00",
+      "time": "Per confirmar",
       "venue": "Plaça de Bous d'Ondara",
       "town": "Ondara",
       "artists": ["mafalda", "prozak-soup"]
