@@ -1,7 +1,7 @@
 <template>
   <div :class="['concert', { hovering, dimmed }]">
     <div class="concert-date">
-      {{ concert.date }}
+      {{ concert.date | filterDayMonth }}
     </div>
     <h3 class="concert-artists">
       <span
@@ -19,9 +19,9 @@
       </span>
     </h3>
     <div class="concert-details">
-      {{ concert.time }}<br>
+      {{ concert.date | filterTime }}<br>
       {{ concert.venue }}<br>
-      <span class="concert-place">{{ concert.town }}</span>
+      <span class="concert-place">{{ concert.municipality }}</span>
     </div>
     <div class="concert-book">
       <component
@@ -41,6 +41,25 @@
 <script>
 export default {
   name: 'Concert',
+
+  filters: {
+    filterTime (datetime) {
+      return new Date(datetime).toTimeString().substr(0, 5)
+    },
+
+    filterDayMonth (datetime) {
+      const date = new Date(datetime)
+      const months = [
+        'de gener', 'de febrer', 'de març', 'd\'abril', 'de maig',
+        'de juny', 'de juliol', 'd\'agost', 'de setembre', 'd\'octubre',
+        'de novembre', 'de desembre'
+      ]
+      const month = date.getMonth()
+      const day = date.getDate()
+
+      return day + ' ' + months[month]
+    }
+  },
 
   props: {
     concert: {

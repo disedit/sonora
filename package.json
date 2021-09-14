@@ -16,6 +16,7 @@
     "@nuxtjs/axios": "^5.3.6",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.2",
+    "contentful": "^9.0.0",
     "nuxt": "^2.0.0",
     "vue-smooth-scroll": "^1.0.13"
   },

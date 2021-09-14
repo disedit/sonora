@@ -5,7 +5,7 @@
       <concert
         v-for="(concert, i) in upcomingConcerts"
         :key="`upcoming${i}`"
-        :concert="concert"
+        :concert="concert.fields"
         :artists="artists"
       />
 
@@ -13,7 +13,7 @@
       <concert
         v-for="(concert, i) in pastConcerts"
         :key="`past${i}`"
-        :concert="concert"
+        :concert="concert.fields"
         :artists="artists"
         dimmed
       />
@@ -23,23 +23,44 @@
 
 <script>
 import Concert from '@/components/Concert'
+const contentful = require('contentful')
+
+const client = contentful.createClient({
+  space: process.env.NUXT_ENV_CTF_SPACE_ID,
+  accessToken: process.env.NUXT_ENV_CTF_ACCESS_TOKEN
+})
 
 export default {
   components: {
     Concert
   },
 
-  data () {
-    return {
-      artists: null,
-      upcomingConcerts: null,
-      pastConcerts: null
+  computed: {
+    upcomingConcerts () {
+      const today = new Date()
+      return this.gigs.filter(({ fields: concert }) => {
+        const concertDate = new Date(concert.date)
+        return today <= concertDate
+      })
+    },
+
+    pastConcerts () {
+      const today = new Date()
+      return this.gigs.filter(({ fields: concert }) => {
+        const concertDate = new Date(concert.date)
+        return today > concertDate
+      })
     }
   },
 
   async asyncData ({ $content }) {
-    /* Gett all concerts */
+    /* Get all concerts */
     const concerts = await $content('concerts').fetch()
+
+    const { items: gigs } = await client.getEntries({
+      'content_type': 'concert',
+      order: '-sys.createdAt'
+    })
 
     /* Get all artists */
     const artists = {}
@@ -49,24 +70,10 @@ export default {
     })
 
     return {
+      gigs,
       concerts,
       artists
     }
-  },
-
-  mounted () {
-    /* Filter upcoming concerts */
-    const today = new Date()
-    this.upcomingConcerts = this.concerts.concerts.filter((concert) => {
-      const concertDate = new Date(concert.datetime)
-      return today <= concertDate
-    })
-
-    /* Filter past concerts */
-    this.pastConcerts = this.concerts.concerts.filter((concert) => {
-      const concertDate = new Date(concert.datetime)
-      return today > concertDate
-    })
   },
 
   head () {
