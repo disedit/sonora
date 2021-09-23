@@ -5,22 +5,19 @@
       :key="i"
     >
       <div class="concert-date">
-        {{ concert.date }} <br>
-        {{ concert.time }}
+        {{ concert.date | niceDate }} / {{ concert.time }}
       </div>
 
-      <div class="concert-venue mt-3">
-        <span class="concert-place">{{ concert.town }}</span> <br>
+      <div class="concert-venue mt-2">
+        {{ concert.town }} <br>
         {{ concert.venue }}
       </div>
 
-      <ul class="concert-artists mt-3">
-        <li v-for="artist in concert.artists" :key="i + artist">
-          <nuxt-link :to="`/artistes/${artist}`">
-            {{ artists[artist].name }}
-          </nuxt-link>
-        </li>
-      </ul>
+      <div class="concert-artists mt-2">
+        <nuxt-link :to="`/artistes/${artist}`" v-for="artist in concert.artists" :key="i + artist">
+          {{ artists[artist].name }}
+        </nuxt-link>
+      </div>
 
       <div class="concert-book">
         <a
@@ -40,6 +37,12 @@
 <script>
 export default {
   name: 'ArtistConcerts',
+
+  filters: {
+    niceDate (date) {
+      return date
+    }
+  },
 
   props: {
     concerts: {
@@ -64,5 +67,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .artist-concerts-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: $text-lg;
+  }
 
+  .concert-venue {
+    line-height: 1.1;
+  }
+
+  .concert-artists {
+    font-size: $text-base;
+  }
 </style>
