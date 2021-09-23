@@ -1,5 +1,5 @@
 <template>
-  <main class="about">
+  <main class="about safe-area">
     <div class="main-container">
       <h1 class="about-title">
         El circuit
@@ -54,17 +54,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import '../sass/variables';
-
   .about {
-    padding-top: $navbar-safe-area;
-    background: url(~assets/images/gradients/gradient-circuit.jpg);
+    background-image: url(~assets/images/gradients/gradient-circuit.jpg);
+    background-color: $yellow;
     background-size: cover;
-
-    &-title {
-      text-transform: uppercase;
-      font-size: $text-headline;
-    }
 
     &-text-lg {
       font-size: $text-lg;

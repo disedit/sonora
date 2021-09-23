@@ -79,17 +79,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import '../sass/variables';
-
   .contact {
-    padding-top: $navbar-safe-area;
     background: url(~assets/images/gradients/gradient-contact.jpg);
     background-size: cover;
-
-    &-title {
-      text-transform: uppercase;
-      font-size: $text-headline;
-    }
 
     &-form {
       padding-top: 2rem;

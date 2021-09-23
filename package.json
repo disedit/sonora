@@ -1,5 +1,5 @@
 {
-  "name": "Sonora",
+  "name": "sonora",
   "version": "1.0.0",
   "description": "Sonora",
   "author": "Disedit",
@@ -14,10 +14,11 @@
   "dependencies": {
     "@nuxt/content": "^1.9.0",
     "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/style-resources": "^1.2.1",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.2",
     "contentful": "^9.0.0",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.15.8",
     "vue-moveable": "^1.8.11",
     "vue-smooth-scroll": "^1.0.13"
   },
@@ -26,12 +27,11 @@
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.0.0",
     "@nuxtjs/fontawesome": "^1.1.2",
-    "@nuxtjs/google-fonts": "^1.0.3",
     "@nuxtjs/svg": "^0.1.12",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
     "node-sass": "^4.14.0",
-    "sass-loader": "^8.0.0"
+    "sass-loader": "^10.1.1"
   }
 }

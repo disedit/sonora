@@ -20,19 +20,9 @@
 </template>
 
 <script>
-import Concert from '@/components/Concert'
-const contentful = require('contentful')
-
-const client = contentful.createClient({
-  space: process.env.NUXT_ENV_CTF_SPACE_ID,
-  accessToken: process.env.NUXT_ENV_CTF_ACCESS_TOKEN
-})
+import client from '@/plugins/contentful'
 
 export default {
-  components: {
-    Concert
-  },
-
   computed: {
     upcomingConcerts () {
       const today = new Date()
@@ -82,6 +72,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import '../../sass/variables';
 
 </style>

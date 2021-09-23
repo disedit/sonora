@@ -26,29 +26,7 @@
   </footer>
 </template>
 
-<script>
-import Logo from '@/components/Logo'
-import AppSocial from '@/components/AppSocial'
-
-export default {
-  name: 'AppFooter',
-
-  components: {
-    Logo,
-    AppSocial
-  },
-
-  methods: {
-    showContact () {
-      this.$root.$emit('bv::show::modal', 'contact', '#footerContactButton')
-    }
-  }
-}
-</script>
-
 <style lang="scss">
-  @import '../sass/variables';
-
   .app-footer {
     --footer-padding: 2rem 3rem;
     font-size: .875rem;

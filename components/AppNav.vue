@@ -1,7 +1,7 @@
 <template>
   <nav :class="['sonora-nav', { shown }]" aria-label="Navegació">
     <nuxt-link to="/" class="sonora-nav-logo" aria-label="Sonora">
-      <Logo />
+      <logo />
     </nuxt-link>
 
     <div class="sonora-nav-button">
@@ -51,13 +51,11 @@
 <script>
 import MenuIcon from '@/assets/images/icons/menu.svg?inline'
 import IvcLogo from '@/assets/images/logos/ivc.svg?inline'
-import Logo from './Logo'
 
 export default {
   name: 'AppNav',
 
   components: {
-    Logo,
     MenuIcon,
     IvcLogo
   },
@@ -77,8 +75,6 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '../sass/variables';
-
   .sonora-nav {
     display: flex;
     position: fixed;

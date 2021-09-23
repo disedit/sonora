@@ -111,8 +111,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import '../sass/variables';
-
   .lt {
     fill: currentColor;
   }

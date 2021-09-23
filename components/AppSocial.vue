@@ -23,15 +23,7 @@
   </ul>
 </template>
 
-<script>
-export default {
-
-}
-</script>
-
 <style lang="scss" scoped>
-  @import '../sass/variables';
-
   .social-links {
     display: flex;
     flex-direction: row;

@@ -1,14 +1,16 @@
 <template>
   <main class="artists">
-    <h1>Artistes</h1>
-    <ul class="artists-list">
-      <li v-for="artist in artists" :key="artist.slug" class="artist">
-        <nuxt-link :to="`/artistes/${artist.slug}`">
-          <img :src="`/images/artists/${artist.image}`" alt="">
-          <h2>{{ artist.name }}</h2>
-        </nuxt-link>
-      </li>
-    </ul>
+    <div class="main-container">
+      <h1>Artistes</h1>
+      <ul class="artists-list">
+        <li v-for="artist in artists" :key="artist.slug" class="artist">
+          <nuxt-link :to="`/artistes/${artist.slug}`">
+            <img :src="`/images/artists/${artist.image}`" alt="">
+            <h2>{{ artist.name }}</h2>
+          </nuxt-link>
+        </li>
+      </ul>
+    </div>
   </main>
 </template>
 
@@ -31,15 +33,9 @@ export default {
   @import '../../sass/variables';
 
   .artists {
-    padding: $navbar-safe-area 2rem 2rem 2rem;
-    background: url(~assets/images/gradients/gradient-artists.jpg);
+    background-image: url(~assets/images/gradients/gradient-artists.jpg);
+    background-color: $pink;
     background-size: cover;
-
-    h1 {
-      text-transform: uppercase;
-      padding-top: 2rem;
-      font-size: $text-headline;
-    }
 
     &-list {
       display: grid;

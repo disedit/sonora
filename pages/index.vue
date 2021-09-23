@@ -1,5 +1,5 @@
 <template>
-  <main class="home">
+  <main class="home safe-area">
     <div class="main-container">
       <header id="header" class="header">
         <h1>CIRCUIT<br> DE LA MÚSICA<br> VALENCIANA</h1>
@@ -8,44 +8,44 @@
         </p>
         <div class="stickers" aria-hidden="true">
           <client-only>
-            <Moveable v-bind="moveable" @drag="handleDrag" class="sticker sticker-smiley">
+            <moveable v-bind="moveable" @drag="handleDrag" class="sticker sticker-smiley">
               <img src="~assets/images/stickers/sticker-smiley.svg" alt="">
-            </Moveable>
-            <Moveable v-bind="moveable" @drag="handleDrag" class="sticker sticker-year">
+            </moveable>
+            <moveable v-bind="moveable" @drag="handleDrag" class="sticker sticker-year">
               <img src="~assets/images/stickers/sticker-year.svg" alt="">
-            </Moveable>
-            <Moveable v-bind="moveable" @drag="handleDrag" class="sticker sticker-note">
+            </moveable>
+            <moveable v-bind="moveable" @drag="handleDrag" class="sticker sticker-note">
               <img src="~assets/images/stickers/sticker-note.svg" alt="">
-            </Moveable>
-            <Moveable v-bind="moveable" @drag="handleDrag" class="sticker sticker-love">
+            </moveable>
+            <moveable v-bind="moveable" @drag="handleDrag" class="sticker sticker-love">
               <img src="~assets/images/stickers/sticker-love.svg" alt="">
-            </Moveable>
+            </moveable>
           </client-only>
         </div>
       </header>
       <section id="venues" class="venues">
         <nuxt-link to="/programa/peniscola">
-          <peniscola-sticker class="venue-sticker" />
+          <venues-peniscola class="venue-sticker" />
           <span class="sr-only">Peníscola</span>
         </nuxt-link>
         <nuxt-link to="/programa/bocairent">
-          <bocairent-sticker class="venue-sticker" />
+          <venues-bocairent class="venue-sticker" />
           <span class="sr-only">Bocairent</span>
         </nuxt-link>
         <nuxt-link to="/programa/castello">
-          <castello-sticker class="venue-sticker" />
+          <venues-castello class="venue-sticker" />
           <span class="sr-only">Castelló</span>
         </nuxt-link>
         <nuxt-link to="/programa/alcoi">
-          <alcoi-sticker class="venue-sticker" />
+          <venues-alcoi class="venue-sticker" />
           <span class="sr-only">Alcoi</span>
         </nuxt-link>
         <nuxt-link to="/programa/castello-jazz">
-          <castello-jazz-sticker class="venue-sticker" />
+          <venues-castello-jazz class="venue-sticker" />
           <span class="sr-only">Castelló Jazz</span>
         </nuxt-link>
         <nuxt-link to="/programa/alacant">
-          <alacant-sticker class="venue-sticker" />
+          <venues-alacant class="venue-sticker" />
           <span class="sr-only">Alacant</span>
         </nuxt-link>
       </section>
@@ -59,29 +59,10 @@
 </template>
 
 <script>
-import AlacantSticker from '@/components/venues/AlacantSticker'
-import CastelloJazzSticker from '@/components/venues/CastelloJazzSticker'
-import AlcoiSticker from '@/components/venues/AlcoiSticker'
-import CastelloSticker from '@/components/venues/CastelloSticker'
-import BocairentSticker from '@/components/venues/BocairentSticker'
-import PeniscolaSticker from '@/components/venues/PeniscolaSticker'
-import MarqueeLine from '@/components/MarqueeLine'
-const contentful = require('contentful')
-
-const client = contentful.createClient({
-  space: process.env.NUXT_ENV_CTF_SPACE_ID,
-  accessToken: process.env.NUXT_ENV_CTF_ACCESS_TOKEN
-})
+import client from '@/plugins/contentful'
 
 export default {
   components: {
-    MarqueeLine,
-    PeniscolaSticker,
-    BocairentSticker,
-    CastelloSticker,
-    AlcoiSticker,
-    CastelloJazzSticker,
-    AlacantSticker,
     Moveable: () => {
       if (process.client) {
         return import('vue-moveable')
@@ -145,12 +126,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import '../sass/variables';
-
   .home {
-    padding-top: $navbar-safe-area;
-    background: url(~assets/images/gradients/gradient-home.jpg);
+    background-image: url(~assets/images/gradients/gradient-home.jpg);
+    background-color: $pink;
     background-size: cover;
+  }
+
+  .main-container {
+    padding-top: 1rem;
   }
 
   .header {
@@ -158,13 +141,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    min-height: calc(100vh - #{$navbar-safe-area} - 3rem);
-
-    h1 {
-      line-height: .95;
-      font-size: $text-headline;
-      letter-spacing: 0.02em;
-    }
+    min-height: calc(100vh - #{$navbar-safe-area} - 4rem);
 
     .dates {
       font-size: clamp(1rem, 3vw, 1.75rem);

@@ -1,5 +1,6 @@
 export default {
   target: 'static',
+  components: true,
 
   /*
   ** Headers of the page
@@ -38,7 +39,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    './plugins/smooth-scroll.js'
+    './plugins/contentful.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -46,8 +47,9 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     // '@nuxtjs/eslint-module'
-    ['@nuxtjs/svg'],
-    ['@nuxtjs/fontawesome']
+    '@nuxtjs/style-resources',
+    '@nuxtjs/svg',
+    '@nuxtjs/fontawesome'
   ],
   /*
   ** Nuxt.js modules
@@ -56,8 +58,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxt/content',
-    '@nuxtjs/google-fonts',
-    ['bootstrap-vue/nuxt']
+    'bootstrap-vue/nuxt'
   ],
   /*
   ** Axios module configuration
@@ -79,21 +80,13 @@ export default {
       'FormTextareaPlugin'
     ]
   },
-  /*
-  ** Google fonts
-  */
-  googleFonts: {
-    families: {
-      Inter: [400]
-    }
-  },
 
   /*
   ** FontAwesome
   */
   fontawesome: {
     icons: {
-      brands: ['faFacebook', 'faTwitter', 'faInstagram', 'faYoutube']
+      brands: ['faFacebook', 'faTwitter', 'faInstagram', 'faYoutube', 'faSpotify', 'faBandcamp']
     }
   },
 
@@ -102,6 +95,13 @@ export default {
   */
   content: {
     nestedProperties: ['concerts.artists']
+  },
+
+  /*
+  ** Style resources
+  */
+  styleResources: {
+    scss: './sass/_variables.scss'
   },
 
   /*
