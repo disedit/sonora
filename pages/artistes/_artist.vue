@@ -1,14 +1,9 @@
 <template>
   <article class="artist">
-    <Arrow />
     <section class="artist-image">
       <img :src="`/images/artists/${artist.image}`" alt="">
     </section>
     <section class="artist-content">
-      <header>
-        <h1>{{ artist.name }}</h1>
-      </header>
-
       <div class="text">
         <h2 id="artistInfoTitle" class="artist-section-title">
           <button @click="sections.content = !sections.content" :aria-expanded="sections.content ? 'true' : 'false'" aria-controls="artistInfo">
@@ -64,6 +59,9 @@
       </h2>
       <artist-concerts :concerts="concerts" :artists="artists" aria-labelledby="artistConcertsTitle" />
     </section>
+    <header>
+      <h1>{{ artist.name }}</h1>
+    </header>
     <section id="video" class="artist-video">
       <h2 id="artistVideoTitle" class="artist-section-title">
         <button @click="sections.video = !sections.video" :aria-expanded="sections.video ? 'true' : 'false'" aria-controls="artistVideo">
@@ -147,4 +145,7 @@ export default {
 <style lang="scss" scoped>
   @import '../../sass/variables';
 
+  .artist {
+    background: $white;
+  }
 </style>

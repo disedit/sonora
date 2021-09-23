@@ -162,7 +162,7 @@ export default {
 
     h1 {
       line-height: .95;
-      font-size: clamp(1.75rem, 5vw, 4rem);
+      font-size: $text-headline;
       letter-spacing: 0.02em;
     }
 
