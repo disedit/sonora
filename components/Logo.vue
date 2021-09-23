@@ -113,7 +113,7 @@ export default {
 <style lang="scss" scoped>
   @import '../sass/variables';
 
-  .st0 {
-    fill: $body-bg;
+  .lt {
+    fill: currentColor;
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <ul aria-label="Xarxes socials de Sonora">
+  <ul class="social-links" aria-label="Xarxes socials de Sonora">
     <li>
       <a href="https://www.facebook.com/GVAInstitutValenciadeCultura/" title="Facebook" target="_blank" rel="noreferer noopener">
         <font-awesome-icon :icon="['fab', 'facebook']" />
@@ -32,24 +32,24 @@ export default {
 <style lang="scss" scoped>
   @import '../sass/variables';
 
-  ul {
+  .social-links {
     display: flex;
     flex-direction: row;
     list-style: none;
     margin: 0;
     padding: 0;
-  }
 
-  li {
-    font-size: 1.5rem;
-    padding-right: .75rem;
-  }
+    li {
+      font-size: 1.5rem;
+      padding-right: .75rem;
+    }
 
-  a {
-    color: $black;
+    a {
+      color: $white;
 
-    &:hover {
-      color: $secondary;
+      &:hover {
+        color: $pink;
+      }
     }
   }
 </style>

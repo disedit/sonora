@@ -4,7 +4,7 @@
 
 //body
 body {
-  padding-top: $navbar-safe-area;
+  background-color: $black;
 
   &.nav-shown {
     overflow: hidden;
@@ -19,9 +19,7 @@ a {
 h1,
 h2 {
   font-size: $text-xl;
-  text-transform: uppercase;
-  font-family: $font-headings;
-  font-variation-settings: $font-headings-thin;
+  font-weight: bold;
 }
 
 body,
@@ -30,39 +28,35 @@ body,
   overflow-x: hidden;
 }
 
-// artists
-.artist-image-wrapper {
-  position: sticky;
-  display: flex;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 20;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: bottom center;
-  }
-}
-
+// transitions
 .page-enter-active,
 .page-leave-active {
   transition: opacity .25s;
 }
+
 .page-enter,
 .page-leave-to {
   opacity: 0;
 }
 
-.page-artistes-artist .page-leave-to,
-.page-artistes-artist .page-enter {
-  opacity: 1 !important;
+// Moveable
+.moveable-line {
+  background: transparent !important;
+}
 
-  .artists-list,
-  .schedule {
+// Venue stickers
+.venue-sticker {
+  #Colorful {
+    opacity: 0;
+  }
+}
+
+.venue-sticker:hover {
+  #Colorful {
+    opacity: 1;
+  }
+
+  #Outline {
     opacity: 0;
   }
 }

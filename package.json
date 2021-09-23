@@ -18,6 +18,7 @@
     "bootstrap-vue": "^2.0.2",
     "contentful": "^9.0.0",
     "nuxt": "^2.0.0",
+    "vue-moveable": "^1.8.11",
     "vue-smooth-scroll": "^1.0.13"
   },
   "devDependencies": {

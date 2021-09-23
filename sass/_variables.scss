@@ -1,36 +1,28 @@
 //colors
-$black: #231B28;
+$black: #0A080C;
 $white: #F8F5F4;
-$yellow: #FFCC4D;
-$green: #5DCCA6;
-$blue: #6A86C3;
-$orange: #EF774E;
+$yellow: #FECD1A;
+$red: #E53446;
+$blue: #374A97;
+$pink: #F2AAC8;
 
 $sonora-colors: (
   'yellow': $yellow,
-  'green': $green,
+  'red': $red,
   'blue': $blue,
-  'orange': $orange
+  'pink': $pink
 );
 
 $primary: $blue;
-$secondary: $orange;
-$terciary: $green;
-$quaternary: $yellow;
+$secondary: $pink;
 
 $body-bg: $white;
 $body-color: $black;
 
 // fonts
-$font-family-sans-serif: Inter, sans-serif;
-$font-headings: 'GT Flexa VAR', sans-serif;
-$font-headings-thin: "wght" 200, "wdth" 100, "ital" 0;
-$font-headings-light: "wght" 300, "wdth" 100, "ital" 0;
-$font-headings-regular: "wght" 400, "wdth" 100, "ital" 0;
-$font-headings-light-extended: "wght" 300, "wdth" 120, "ital" 0;
+$font-family-sans-serif: Sonora, sans-serif;
 
 // text sizes
-$artist-font-size: calc(1vw + 1.75rem);
 $text-base: 1.25rem;
 $text-sm: 1rem;
 $text-lg: 2rem;

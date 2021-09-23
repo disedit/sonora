@@ -1,77 +1,69 @@
 <template>
-  <nav :class="['sonora-nav', { scrolled, shown }]" aria-label="Navegació">
-    <div class="sonora-nav-logo">
-      <nuxt-link to="/">
-        <Logo />
-      </nuxt-link>
-    </div>
+  <nav :class="['sonora-nav', { shown }]" aria-label="Navegació">
+    <nuxt-link to="/" class="sonora-nav-logo" aria-label="Sonora">
+      <Logo />
+    </nuxt-link>
 
     <div class="sonora-nav-button">
       <button @click="shown = !shown" :aria-expanded="shown ? 'true' : 'false'" aria-controls="navMenu">
-        <span v-if="!shown" class="text">Menú</span>
-        <span v-else class="icon"><CloseIcon /> <span class="sr-only">Cerrar menú</span></span>
+        <menu-icon />
+        <span v-if="!shown" class="sr-only">Obri menú</span>
+        <span v-else class="sr-only">Tanca menú</span>
       </button>
     </div>
 
-    <div id="navMenu" class="sonora-nav-menu">
-      <ul class="sonora-nav-menu-items">
-        <li class="logo">
-          <nuxt-link to="/" aria-label="Sonora (pàgina principal)">
-            <Logo />
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/artistes">
-            Artistes
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/programa">
-            Programa
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/el-circuit">
-            El Circuit
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/contacte">
-            Contacte
-          </nuxt-link>
-        </li>
-        <li>
-          <a href="https://ivc.gva.es" class="ivc" target="_blank" rel="noopener noreferer">
-            <img src="~assets/images/logos/ivc.svg" alt="Institut Valencià de Cultura">
-          </a>
-        </li>
-      </ul>
-      <div class="sonora-nav-social">
-        <Logo class="sonora-nav-social-logo" />
-
-        <app-social />
+    <transition name="menu">
+      <div id="navMenu" v-if="shown" class="sonora-nav-menu">
+        <ul class="sonora-nav-menu-items">
+          <li>
+            <nuxt-link to="/artistes">
+              Artistes
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/programa">
+              Programa
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/el-circuit">
+              El Circuit
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/contacte">
+              Contacte
+            </nuxt-link>
+          </li>
+          <li>
+            <a href="https://ivc.gva.es" class="ivc" target="_blank" rel="noopener noreferer">
+              <ivc-logo />
+              <span class="sr-only">Institut Valencià de Cultura</span>
+            </a>
+          </li>
+        </ul>
       </div>
-    </div>
+    </transition>
+    <div v-if="shown" @click="shown = false" class="backdrop" />
   </nav>
 </template>
 
 <script>
-import CloseIcon from '@/assets/images/icons/close.svg?inline'
+import MenuIcon from '@/assets/images/icons/menu.svg?inline'
+import IvcLogo from '@/assets/images/logos/ivc.svg?inline'
 import Logo from './Logo'
-import AppSocial from './AppSocial'
 
 export default {
   name: 'AppNav',
 
   components: {
     Logo,
-    CloseIcon,
-    AppSocial
+    MenuIcon,
+    IvcLogo
   },
 
   data () {
     return {
-      scrolled: false,
       shown: false
     }
   },
@@ -79,31 +71,6 @@ export default {
   watch: {
     '$route' () {
       this.shown = false
-    },
-
-    shown (newVal) {
-      const bodyTag = document.getElementsByTagName('body')[0]
-
-      if (newVal) {
-        bodyTag.classList.add('nav-shown')
-      } else {
-        bodyTag.classList.remove('nav-shown')
-      }
-    }
-  },
-
-  beforeMount () {
-    this.handleScroll()
-    window.addEventListener('scroll', this.handleScroll)
-  },
-
-  beforeDestroy () {
-    window.removeEventListener('scroll', this.handleScroll)
-  },
-
-  methods: {
-    handleScroll (event) {
-      this.scrolled = (window.scrollY > 0)
     }
   }
 }
@@ -113,220 +80,116 @@ export default {
   @import '../sass/variables';
 
   .sonora-nav {
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    transition: .2s ease;
-    border-bottom: 1px $black solid;
-    background: $white;
+    height: $navbar-safe-area;
+    padding: 1rem;
     z-index: 1000;
 
-    @at-root .page-index & {
-      border-color: transparent;
-      background: transparent;
+    &-logo {
+      color: $black;
+
+      &:hover {
+        color: $white;
+      }
+
+      svg {
+        height: 3.5rem;
+        width: auto;
+      }
     }
 
-    &-logo,
-    &-button,
-    &-social {
-      display: none;
+    &-button {
+      position: relative;
+      z-index: 1500;
+      margin-left: auto;
+
+      button {
+        appearance: none;
+        background: transparent;
+        border: 0;
+        color: $pink;
+        transition: color .25s ease, transform .5s ease-in;
+
+        &:hover {
+          color: $white;
+        }
+
+        &:focus {
+          outline: 5px solid $yellow;
+        }
+
+        &[aria-expanded='true'] {
+          color: $white;
+          transform: rotate(360deg);
+        }
+
+        &:focus {
+          outline: 0;
+        }
+      }
+
+      svg {
+        height: 3rem;
+        width: 3rem;
+      }
     }
 
     &-menu {
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      right: 0;
+      background: $black;
+      color: $white;
+      padding: 6rem 10rem 10rem 4rem;
+      will-change: transform;
+
       &-items {
-        display: flex;
         list-style: none;
+        padding: 0;
         margin: 0;
-        padding: .5rem 0;
-        justify-content: space-around;
-        align-items: center;
-        text-align: center;
 
         li {
-          flex-shrink: 0;
-          flex-grow: 1;
-          width: 16.66%;
+          margin: 0;
+          padding: 0;
+          line-height: 1.25;
         }
 
         a {
-          font-family: $font-headings;
-          font-variation-settings: $font-headings-light;
-          font-size: 1rem;
-          color: $black;
-          padding: 1rem;
-          text-decoration: none;
+          display: block;
+          font-weight: bold;
+          font-size: 3rem;
+          color: $white;
+          text-transform: uppercase;
+          transition: .25s ease;
+          letter-spacing: 0.03em;
 
           &:hover {
-            color: $secondary;
-
-            .lt {
-              fill: $secondary;
-            }
+            color: $pink;
           }
-
-          &.nuxt-link-active {
-            text-transform: uppercase;
-          }
-        }
-      }
-
-      .logo {
-        svg {
-          height: 48px;
-          width: 125px;
-        }
-
-        .lt {
-          transition: .2s ease;
-        }
-      }
-
-      a.ivc {
-        img {
-          height: 36px;
-          opacity: .6;
-          transition: .2s ease;
-        }
-
-        &:hover {
-          img {
-            opacity: 1;
-          }
-        }
-      }
-    }
-
-    &.scrolled {
-      border-bottom: 1px $black solid;
-      background: $white;
-    }
-  }
-
-  @include media-breakpoint-down (sm) {
-    .sonora-nav {
-      display: flex;
-      align-items: center;
-      padding: .5rem;
-      border-bottom: transparent;
-      background: transparent;
-
-      &.scrolled {
-        border-bottom: 1px $black solid;
-        background: $white;
-      }
-
-      &-logo {
-        display: block;
-
-        svg {
-          height: 42px;
-          width: 100px;
-        }
-      }
-
-      &-button {
-        position: relative;
-        display: flex;
-        margin-left: auto;
-        align-items: center;
-        z-index: 2000;
-
-        button {
-          appearance: none;
-          background: transparent;
-          border: 0;
-          text-align: right;
-          font-family: $font-family-sans-serif;
-
-          .text {
-            display: block;
-            padding: .5rem 0;
-          }
-
-          .icon {
-            display: block;
-            font-size: 1.65rem;
-            padding: 0;
-
-            svg {
-              width: 1.5rem;
-              height: 1.5rem;
-            }
-          }
-        }
-      }
-
-      &-menu {
-        display: flex;
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: $quaternary;
-        z-index: 1500;
-        padding-top: $navbar-safe-area;
-        transform: translateX(100%);
-        visibility: hidden;
-        transition: .5s ease;
-        flex-direction: column;
-        overflow-y: auto;
-
-        &-items {
-          flex-direction: column;
-          align-items: center;
-
-          li {
-            width: 100%;
-          }
-
-          a {
-            display: block;
-            font-size: 1.75rem;
-            text-align: center;
-            padding: 1rem;
-            line-height: 1;
-
-            &:hover {
-              color: $secondary;
-            }
-          }
-        }
-
-        .logo {
-          display: none;
-        }
-      }
-
-      &-social {
-        display: block;
-        margin-top: auto;
-        margin-bottom: 4rem;
-
-        &-logo {
-          display: block;
-          width: 90%;
-          margin: 1rem auto;
-          max-width: 120px;
-          height: auto;
-
-          .lt {
-            fill: currentColor;
-          }
-        }
-
-        ul {
-          justify-content: center;
-        }
-      }
-
-      &.shown {
-        .sonora-nav-menu {
-          transform: translateX(0);
-          visibility: visible;
         }
       }
     }
   }
+
+  .backdrop {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+.menu-enter-active, .menu-leave-active {
+  transition: .5s ease;
+}
+
+.menu-enter, .menu-leave-to {
+  transform: translateX(100%);
+}
 </style>

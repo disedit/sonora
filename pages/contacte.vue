@@ -41,7 +41,6 @@
         </div>
       </div>
     </div>
-    <img class="contact-shape" src="../assets/images/shapes/contact.svg" alt="">
   </div>
 </template>
 

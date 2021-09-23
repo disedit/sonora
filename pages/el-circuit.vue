@@ -32,7 +32,6 @@
         </div>
       </div>
     </div>
-    <img class="about-shape" src="../assets/images/shapes/circuit.svg" alt="">
   </main>
 </template>
 

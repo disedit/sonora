@@ -1,5 +1,11 @@
 @font-face {
-	src: url('../assets/fonts/GT_Flexa_VAR.woff2') format('woff2-variations');
-	font-family: 'GT Flexa VAR';
-	font-style: normal;
+	src: url('../assets/fonts/Sonora-Bold.woff2') format('woff2');
+	font-family: 'Sonora';
+	font-weight: bold;
+}
+
+@font-face {
+	src: url('../assets/fonts/Sonora-Regular.woff2') format('woff2');
+	font-family: 'Sonora';
+	font-weight: normal;
 }

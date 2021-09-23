@@ -1,87 +1,143 @@
 <template>
-  <main>
-    <header id="home">
-      <h1>CIRCUIT<br> DE LA MÚSICA<br> VALENCIANA</h1>
-      <p class="dates">
-        25.10.20 → 29.5.21
-      </p>
-      <div :style="{ transform: `translateX(${shapesPos}%)` }" class="fixed shapes" />
-      <div :style="{ transform: `translateX(${illustrationPos}%)` }" class="fixed illustration" />
-    </header>
-    <section id="artists">
-      <artists-list :artists="artists" />
-    </section>
+  <main class="home">
+    <div class="main-container">
+      <header id="header" class="header">
+        <h1>CIRCUIT<br> DE LA MÚSICA<br> VALENCIANA</h1>
+        <p class="dates">
+          Octubre 2021 &mdash; Març 2022
+        </p>
+        <div class="stickers" aria-hidden="true">
+          <client-only>
+            <Moveable v-bind="moveable" @drag="handleDrag" class="sticker sticker-smiley">
+              <img src="~assets/images/stickers/sticker-smiley.svg" alt="">
+            </Moveable>
+            <Moveable v-bind="moveable" @drag="handleDrag" class="sticker sticker-love">
+              <img src="~assets/images/stickers/sticker-love.svg" alt="">
+            </Moveable>
+            <Moveable v-bind="moveable" @drag="handleDrag" class="sticker sticker-year">
+              <img src="~assets/images/stickers/sticker-year.svg" alt="">
+            </Moveable>
+            <Moveable v-bind="moveable" @drag="handleDrag" class="sticker sticker-note">
+              <img src="~assets/images/stickers/sticker-note.svg" alt="">
+            </Moveable>
+          </client-only>
+        </div>
+      </header>
+      <section id="venues" class="venues">
+        <nuxt-link to="/programa/peniscola">
+          <peniscola-sticker class="venue-sticker" />
+          <span class="sr-only">Peníscola</span>
+        </nuxt-link>
+        <nuxt-link to="/programa/bocairent">
+          <bocairent-sticker class="venue-sticker" />
+          <span class="sr-only">Bocairent</span>
+        </nuxt-link>
+        <nuxt-link to="/programa/castello">
+          <castello-sticker class="venue-sticker" />
+          <span class="sr-only">Castelló</span>
+        </nuxt-link>
+        <nuxt-link to="/programa/alcoi">
+          <alcoi-sticker class="venue-sticker" />
+          <span class="sr-only">Alcoi</span>
+        </nuxt-link>
+        <nuxt-link to="/programa/castello-jazz">
+          <castello-jazz-sticker class="venue-sticker" />
+          <span class="sr-only">Castelló Jazz</span>
+        </nuxt-link>
+        <nuxt-link to="/programa/alacant">
+          <alacant-sticker class="venue-sticker" />
+          <span class="sr-only">Alacant</span>
+        </nuxt-link>
+      </section>
+    </div>
+    <nuxt-link id="marquee" to="/programa" class="marquee">
+      <marquee-line :repeat="20" :duration="10">
+        {{ nextGig }} &nbsp; &nbsp; &nbsp; &nbsp;
+      </marquee-line>
+    </nuxt-link>
   </main>
 </template>
 
 <script>
-import ArtistsList from '@/components/ArtistsList'
+import AlacantSticker from '@/components/venues/AlacantSticker'
+import CastelloJazzSticker from '@/components/venues/CastelloJazzSticker'
+import AlcoiSticker from '@/components/venues/AlcoiSticker'
+import CastelloSticker from '@/components/venues/CastelloSticker'
+import BocairentSticker from '@/components/venues/BocairentSticker'
+import PeniscolaSticker from '@/components/venues/PeniscolaSticker'
+import MarqueeLine from '@/components/MarqueeLine'
+const contentful = require('contentful')
+
+const client = contentful.createClient({
+  space: process.env.NUXT_ENV_CTF_SPACE_ID,
+  accessToken: process.env.NUXT_ENV_CTF_ACCESS_TOKEN
+})
 
 export default {
   components: {
-    ArtistsList
-  },
-
-  transition: 'home',
-
-  data () {
-    return {
-      scroll: 0,
-      threshold: 800,
-      shapesPos: 0,
-      illustrationPos: 0
-    }
-  },
-
-  async asyncData ({ $content }) {
-    const artists = await $content('artists')
-      .only(['name', 'slug', 'image', 'accent'])
-      .sortBy('order', 'asc')
-      .fetch()
-
-    return {
-      artists
-    }
-  },
-
-  beforeMount () {
-    this.handleScroll()
-    window.addEventListener('scroll', this.handleScroll)
-  },
-
-  beforeDestroy () {
-    window.removeEventListener('scroll', this.handleScroll)
-  },
-
-  methods: {
-    handleScroll () {
-      this.scroll = window.scrollY
-      requestAnimationFrame(this.step)
-    },
-
-    step () {
-      const { scroll, threshold } = this
-      if (scroll < threshold) {
-        this.shapesPos = scroll >= 0 ? (scroll * 100 / threshold) * -1 : 0
-        this.illustrationPos = scroll >= 0 ? (scroll * 100 / threshold) : 0
-      } else {
-        this.shapesPos = -100
-        this.illustrationPos = 100
+    MarqueeLine,
+    PeniscolaSticker,
+    BocairentSticker,
+    CastelloSticker,
+    AlcoiSticker,
+    CastelloJazzSticker,
+    AlacantSticker,
+    Moveable: () => {
+      if (process.client) {
+        return import('vue-moveable')
       }
     }
   },
 
-  head () {
-    const links = []
-    this.artists.forEach((artist) => {
-      links.push({ rel: 'preload', as: 'image', href: `/images/artists/${artist.image}` })
+  data () {
+    return {
+      moveable: {
+        draggable: true,
+        resizable: false,
+        keepRatio: true,
+        scalable: false,
+        rotatable: false,
+        pinchable: false,
+        origin: false
+      }
+    }
+  },
+
+  computed: {
+    nextGig () {
+      const { date, artists } = this.gigs[0].fields
+      const concertDate = new Date(date)
+      const concertDay = `${concertDate.getDate()}`.padStart(2, '0')
+      const concertMonth = `${concertDate.getMonth() + 1}`.padStart(2, '0')
+      const artistsWithNames = artists.map(artist => this.artists[artist].name)
+      const artistsString = artistsWithNames.join(' + ')
+      return `Pròxim concert ${concertDay}/${concertMonth} ${artistsString}`
+    }
+  },
+
+  async asyncData ({ $content }) {
+    /* Get all concerts */
+    const { items: gigs } = await client.getEntries({
+      'content_type': 'concert',
+      order: '-sys.createdAt'
+    })
+
+    /* Get all artists */
+    const artists = {}
+    const artistsList = await $content('artists').only(['name', 'slug']).fetch()
+    artistsList.forEach((artist) => {
+      artists[artist.slug] = artist
     })
 
     return {
-      meta: [
-        { property: 'og:image', content: `https://circuitsonora.com/thumbnail.jpg` },
-        ...links
-      ]
+      gigs,
+      artists
+    }
+  },
+
+  methods: {
+    handleDrag ({ target, transform }) {
+      target.style.transform = transform
     }
   }
 }
@@ -90,95 +146,94 @@ export default {
 <style lang="scss" scoped>
   @import '../sass/variables';
 
-  main {
-    transition: .5s;
+  .home {
+    padding-top: $navbar-safe-area;
+    background: url(~assets/images/gradients/gradient-home.jpg);
+    background-size: cover;
   }
 
-  header {
+  .header {
     position: relative;
-    min-height: calc(100vh);
-    text-align: center;
-    padding-top: 20vh;
-    margin-top: -$navbar-safe-area;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: calc(100vh - #{$navbar-safe-area} - 2rem);
+    padding: 2rem;
 
-    h1,
-    p {
-      position: relative;
-      font-family: $font-headings;
-      font-variation-settings: $font-headings-thin;
-      font-size: calc(1.3vw + 1.85rem);
-      margin: 0;
-      z-index: 10;
-      transition: opacity .5s;
-      padding: 0 1rem;
+    h1 {
+      line-height: .95;
+      font-size: clamp(1.75rem, 5vw, 4rem);
+      letter-spacing: 0.02em;
     }
 
-    br {
-      display: none;
-    }
-  }
-
-  section {
-    padding-top: 250px;
-  }
-
-  .fixed {
-    position: fixed;
-    z-index: 1;
-    bottom: 0;
-    height: calc(100vh - #{$navbar-safe-area});
-    transition: opacity .5s;
-    will-change: transform, opacity;
-
-    &.shapes {
-      left: 0;
-      width: 45vw;
-      background: url('~assets/images/shapes/home-blue.svg'), url('~assets/images/shapes/home-yellow.svg');
-      background-position: left 0 bottom -10vw, left bottom;
-      background-size: contain, 28%;
-      background-repeat: no-repeat;
+    .dates {
+      font-size: clamp(1rem, 3vw, 1.75rem);
     }
 
-    &.illustration {
-      right: 0;
-      width: 65vw;
-      background: url('~assets/images/illustrations/home.png');
-      background-position: bottom -30px right;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-  }
+    .sticker {
+      position: absolute;
+      width: 12vw;
+      height: 12vw;
+      z-index: 500;
+      cursor: move;
+      transition: filter .5s ease;
 
-  .home-enter,
-  .home-leave-to {
-    &::v-deep .artists-list,
-    .fixed,
-    h1,
-    p {
-      opacity: 0;
-    }
-  }
-
-  @include media-breakpoint-down (sm) {
-    header {
-      padding-top: 18vh;
-
-      br {
-        display: inline;
-      }
-    }
-
-    .fixed {
-      &.shapes {
-        width: 90vw;
-        background-size: contain, 32vw;
-        background-position: left bottom, left -4vw bottom 12vw;
+      &:hover {
+        filter: drop-shadow(0 5px 5px rgba($blue, .2));
       }
 
-      &.illustration {
-        right: -20%;
-        width: 100vw;
+      &-love {
+        top: -1%;
+        right: 7%;
+        width: 18vw;
+        height: 18vw;
+        transform: rotate(-10deg);
+      }
+
+      &-note {
+        top: 15%;
+        right: 50%;
+      }
+
+      &-smiley {
+        bottom: 30%;
+        right: 30%;
+        transform: rotate(20deg);
+      }
+
+      &-year {
+        bottom: calc(30% - 6vw);
+        right: calc(30% - 9vw);
+        transform: rotate(-5deg);
       }
     }
+  }
+
+  .venues {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 6vw;
+    row-gap: 8vh;
+    padding: 10vh 0;
+
+    a {
+      text-align: center;
+    }
+
+    .venue-sticker {
+      width: 100%;
+      max-width: 20vw;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+
+  .marquee {
+    display: block;
+    background: $yellow;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    padding: .75rem 0;
+    text-transform: uppercase;
+    color: $black;
   }
 </style>

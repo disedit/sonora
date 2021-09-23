@@ -53,12 +53,17 @@ export default {
     --footer-padding: 2rem 3rem;
     font-size: .875rem;
     display: grid;
-    grid-template-columns: .75fr 1fr 1.75fr;
-    gap: 1rem;
+    grid-template-columns: auto 1fr 1.75fr;
+    gap: 3rem;
     align-items: center;
     padding: var(--footer-padding);
     border-top: 1px solid $black;
-    background: $white;
+    background: $black;
+    color: $white;
+
+    a {
+      color: $yellow;
+    }
 
     br {
       display: none;
@@ -72,11 +77,12 @@ export default {
       &-logo {
         height: auto;
         width: 100px;
+        color: $white;
       }
     }
 
     a.legal-notice {
-      color: $black;
+      color: $white;
       text-decoration: underline;
     }
 
@@ -87,10 +93,12 @@ export default {
       .gva {
         width: 200px;
         margin-right: 1rem;
+        filter: invert(1);
       }
 
       .ivc {
         width: 210px;
+        filter: invert(1);
       }
     }
   }

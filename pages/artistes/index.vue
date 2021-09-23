@@ -1,17 +1,11 @@
 <template>
-  <artists-list :artists="artists" />
+  <div>
+    List
+  </div>
 </template>
 
 <script>
-import ArtistsList from '@/components/ArtistsList'
-
 export default {
-  scrollToTop: true,
-
-  components: {
-    ArtistsList
-  },
-
   async asyncData ({ $content }) {
     const artists = await $content('artists')
       .only(['name', 'slug', 'image', 'accent'])
@@ -21,22 +15,6 @@ export default {
     return {
       artists
     }
-  },
-
-  head () {
-    const links = []
-    this.artists.forEach((artist) => {
-      links.push({ rel: 'prefetch', as: 'image', href: `/images/artists/${artist.image}` })
-    })
-
-    return {
-      title: 'Artistes - Sonora',
-      meta: [
-        { property: 'og:image', content: `https://circuitsonora.com/thumbnail.jpg` },
-        ...links
-      ]
-    }
-    sdnfgklsdknf
   }
 }
 </script>
