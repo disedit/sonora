@@ -1,13 +1,16 @@
 <template>
-  <div class="contact-wrapper">
-    <div class="main-container contact">
-      <h1>Contacta amb nosaltres emplenant el següent formulari</h1>
+  <div class="contact">
+    <div class="main-container">
+      <h1 class="contact-title">
+        Contacte
+      </h1>
       <div class="contact-form">
         <b-form v-if="!submitted" @submit.prevent="onSubmit">
           <b-form-group
             id="email-group"
             label="Correu electrònic"
             label-for="email"
+            class="email-group mb-0"
           >
             <b-form-input
               id="email"
@@ -21,6 +24,7 @@
             id="message-group"
             label="Missatge"
             label-for="message"
+            class="message-group mb-0"
           >
             <b-form-textarea
               id="message"
@@ -78,10 +82,13 @@ export default {
   @import '../sass/variables';
 
   .contact {
-    h1 {
-      text-align: left;
-      max-width: 1000px;
-      margin: 2rem 0;
+    padding-top: $navbar-safe-area;
+    background: url(~assets/images/gradients/gradient-contact.jpg);
+    background-size: cover;
+
+    &-title {
+      text-transform: uppercase;
+      font-size: $text-headline;
     }
 
     &-form {
@@ -90,14 +97,14 @@ export default {
 
       form {
         display: grid;
-        grid-template-columns: 1fr 1.75fr;
+        row-gap: 1rem;
+        column-gap: 3rem;
+        grid-template-columns: 1.2fr 1fr;
 
         .form-control {
           background: transparent;
-        }
-
-        #message-group {
-          margin-left: -1px;
+          padding: 1rem;
+          color: $black;
         }
 
         #email {
@@ -106,6 +113,10 @@ export default {
           &:focus {
             box-shadow: none;
           }
+        }
+
+        .message-group {
+          grid-column: 1;
         }
 
         #message {
@@ -122,10 +133,10 @@ export default {
           width: auto;
           grid-column: 2;
           align-self: end;
-          justify-self: end;
-          padding: .5rem 2rem;
+          justify-self: start;
+          padding: .5rem 4rem;
           text-transform: uppercase;
-          background-color: $white;
+          background-color: transparent;
           color: $black;
           border: 1px solid $black;
 
@@ -148,15 +159,6 @@ export default {
 
     &-wrapper {
       position: relative;
-    }
-
-    &-shape {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 70vw;
-      z-index: -10;
-      height: auto;
     }
   }
 
@@ -184,11 +186,11 @@ export default {
       h1 {
         margin: 1rem 0;
         font-size: $text-lg;
-        text-align: center;
       }
 
       &-form {
         margin-bottom: 2rem;
+
         form {
           grid-template-columns: 1fr;
 
@@ -196,11 +198,6 @@ export default {
             grid-column: 1;
           }
         }
-      }
-
-      &-shape {
-        height: auto;
-        width: auto;
       }
     }
   }

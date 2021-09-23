@@ -11,14 +11,14 @@
             <Moveable v-bind="moveable" @drag="handleDrag" class="sticker sticker-smiley">
               <img src="~assets/images/stickers/sticker-smiley.svg" alt="">
             </Moveable>
-            <Moveable v-bind="moveable" @drag="handleDrag" class="sticker sticker-love">
-              <img src="~assets/images/stickers/sticker-love.svg" alt="">
-            </Moveable>
             <Moveable v-bind="moveable" @drag="handleDrag" class="sticker sticker-year">
               <img src="~assets/images/stickers/sticker-year.svg" alt="">
             </Moveable>
             <Moveable v-bind="moveable" @drag="handleDrag" class="sticker sticker-note">
               <img src="~assets/images/stickers/sticker-note.svg" alt="">
+            </Moveable>
+            <Moveable v-bind="moveable" @drag="handleDrag" class="sticker sticker-love">
+              <img src="~assets/images/stickers/sticker-love.svg" alt="">
             </Moveable>
           </client-only>
         </div>
@@ -50,7 +50,7 @@
         </nuxt-link>
       </section>
     </div>
-    <nuxt-link id="marquee" to="/programa" class="marquee">
+    <nuxt-link id="marquee" v-if="nextGig" to="/programa" class="marquee">
       <marquee-line :repeat="20" :duration="10">
         {{ nextGig }} &nbsp; &nbsp; &nbsp; &nbsp;
       </marquee-line>
@@ -105,6 +105,7 @@ export default {
 
   computed: {
     nextGig () {
+      if (!this.gigs.length) { return false }
       const { date, artists } = this.gigs[0].fields
       const concertDate = new Date(date)
       const concertDay = `${concertDate.getDate()}`.padStart(2, '0')
@@ -157,8 +158,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    min-height: calc(100vh - #{$navbar-safe-area} - 2rem);
-    padding: 2rem;
+    min-height: calc(100vh - #{$navbar-safe-area} - 3rem);
 
     h1 {
       line-height: .95;

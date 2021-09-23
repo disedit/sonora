@@ -28,7 +28,15 @@ body,
   overflow-x: hidden;
 }
 
-// transitions
+// container
+.main-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 1rem calc(1rem + 3vw);
+  padding-bottom: 5rem;
+}
+
+/* transition*
 .page-enter-active,
 .page-leave-active {
   transition: opacity .25s;
@@ -38,7 +46,7 @@ body,
 .page-leave-to {
   opacity: 0;
 }
-
+*/
 // Moveable
 .moveable-line {
   background: transparent !important;

@@ -6,13 +6,6 @@ $red: #E53446;
 $blue: #374A97;
 $pink: #F2AAC8;
 
-$sonora-colors: (
-  'yellow': $yellow,
-  'red': $red,
-  'blue': $blue,
-  'pink': $pink
-);
-
 $primary: $blue;
 $secondary: $pink;
 
@@ -25,12 +18,12 @@ $font-family-sans-serif: Sonora, sans-serif;
 // text sizes
 $text-base: 1.25rem;
 $text-sm: 1rem;
-$text-lg: 2rem;
+$text-lg: 1.75rem;
 $text-xl: 3rem;
 $text-headline: clamp(1.75rem, 5vw, 4rem);
 
 // navbar
-$navbar-safe-area: 4.5rem;
+$navbar-safe-area: 5.5rem;
 
 // links
 $link-color: $primary;
