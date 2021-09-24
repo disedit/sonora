@@ -6,11 +6,14 @@
       </header>
 
       <section class="artist-image">
-        <img :src="`/images/artists/${artist.image}`" alt="">
+        <img :src="artist.image.fields.file.url" v-if="artist.image" alt="">
       </section>
 
       <section class="artist-content">
-        <nuxt-content :document="artist" />
+        <div>
+          {{ artist.description }}
+        </div>
+
         <ul class="artist-social">
           <li v-if="artist.hasOwnProperty('website')">
             <a :href="artist.website" target="_blank" rel="noopener noreferrer" title="Pàgina web">
@@ -72,6 +75,7 @@
 </template>
 
 <script>
+import client from '@/plugins/contentful'
 import LinkIcon from '@/assets/images/icons/link.svg?inline'
 
 export default {
@@ -90,27 +94,33 @@ export default {
     }
   },
 
-  async asyncData ({ $content, params }) {
+  async asyncData ({ params }) {
     /* Get artist content */
-    const artist = await $content('artists', params.artist).fetch()
-
-    /* Get all concerts and artists for filtering */
-    const allArtists = await $content('artists').only(['name', 'slug']).fetch()
-    const allConcerts = await $content('concerts').fetch()
+    const { items: artist } = await client.getEntries({
+      content_type: 'artist',
+      'fields.slug': params.artist
+    })
 
     /* Create easily accessible index of all artists */
     const artists = {}
-    allArtists.forEach((artist) => {
+    const { items: artistsList } = await client.getEntries({
+      content_type: 'artist',
+      select: 'fields.name,fields.slug',
+      order: 'fields.order'
+    })
+    artistsList.forEach(({ fields: artist }) => {
       artists[artist.slug] = artist
     })
 
     /* Filter artist's concerts */
-    const concerts = allConcerts.concerts.filter((concert) => {
-      return concert.artists.includes(params.artist)
+    const { items: concerts } = await client.getEntries({
+      'content_type': 'concert',
+      'fields.artists[exists]': params.artist,
+      order: '-fields.date'
     })
 
     return {
-      artist,
+      artist: artist[0].fields,
       artists,
       concerts
     }

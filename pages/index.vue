@@ -24,29 +24,9 @@
         </div>
       </header>
       <section id="venues" class="venues">
-        <nuxt-link to="/programa/peniscola">
-          <venues-peniscola class="venue-sticker" />
-          <span class="sr-only">Peníscola</span>
-        </nuxt-link>
-        <nuxt-link to="/programa/bocairent">
-          <venues-bocairent class="venue-sticker" />
-          <span class="sr-only">Bocairent</span>
-        </nuxt-link>
-        <nuxt-link to="/programa/castello">
-          <venues-castello class="venue-sticker" />
-          <span class="sr-only">Castelló</span>
-        </nuxt-link>
-        <nuxt-link to="/programa/alcoi">
-          <venues-alcoi class="venue-sticker" />
-          <span class="sr-only">Alcoi</span>
-        </nuxt-link>
-        <nuxt-link to="/programa/castello-jazz">
-          <venues-castello-jazz class="venue-sticker" />
-          <span class="sr-only">Castelló Jazz</span>
-        </nuxt-link>
-        <nuxt-link to="/programa/alacant">
-          <venues-alacant class="venue-sticker" />
-          <span class="sr-only">Alacant</span>
+        <nuxt-link v-for="(venueName, venueKey) in venues" :key="venueKey" :to="`/programa/${venueKey}`">
+          <component :is="`venues-${venueKey}`" class="venue-sticker" />
+          <span class="sr-only">{{ venueName }}</span>
         </nuxt-link>
       </section>
     </div>
@@ -60,6 +40,7 @@
 
 <script>
 import client from '@/plugins/contentful'
+import venues from '@/assets/venues'
 
 export default {
   components: {
@@ -72,6 +53,7 @@ export default {
 
   data () {
     return {
+      venues,
       moveable: {
         draggable: true,
         resizable: false,
@@ -98,16 +80,23 @@ export default {
   },
 
   async asyncData ({ $content }) {
-    /* Get all concerts */
+    /* Get next gig */
+    const today = new Date()
     const { items: gigs } = await client.getEntries({
       'content_type': 'concert',
-      order: '-sys.createdAt'
+      order: '-fields.date',
+      'fields.date[gte]': today,
+      limit: 1
     })
 
     /* Get all artists */
     const artists = {}
-    const artistsList = await $content('artists').only(['name', 'slug']).fetch()
-    artistsList.forEach((artist) => {
+    const { items: artistsList } = await client.getEntries({
+      content_type: 'artist',
+      select: 'fields.name,fields.slug',
+      order: 'fields.order'
+    })
+    artistsList.forEach(({ fields: artist }) => {
       artists[artist.slug] = artist
     })
 

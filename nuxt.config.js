@@ -35,6 +35,7 @@ export default {
   css: [
     './sass/global.scss'
   ],
+
   /*
   ** Plugins to load before mounting the App
   */
@@ -57,7 +58,6 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxt/content',
     'bootstrap-vue/nuxt'
   ],
   /*

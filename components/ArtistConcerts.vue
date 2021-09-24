@@ -1,27 +1,30 @@
 <template>
   <ul class="artist-concerts-list">
     <li
-      v-for="(concert, i) in concerts"
+      v-for="({ fields: concert }, i) in concerts"
       :key="i"
     >
       <div class="concert-date">
-        {{ concert.date | niceDate }} / {{ concert.time }}
+        {{ concert.date | niceDate }}
       </div>
 
       <div class="concert-venue mt-2">
-        {{ concert.town }} <br>
+        {{ concert.municipality | niceMunicipality }} <br>
         {{ concert.venue }}
       </div>
 
       <div class="concert-artists mt-2">
-        <nuxt-link :to="`/artistes/${artist}`" v-for="artist in concert.artists" :key="i + artist">
-          {{ artists[artist].name }}
-        </nuxt-link>
+        <template v-for="artist in concert.artists">
+          <nuxt-link :to="`/artistes/${artist}`" :key="i + artist">
+            {{ artists[artist].name }}
+          </nuxt-link>
+          <span :key="i + artist + 'plus'" class="plus">+</span>
+        </template>
       </div>
 
       <div class="concert-book">
         <a
-          v-if="!inThePast(concert.datetime)"
+          v-if="!inThePast(concert.date)"
           href="https://forms.gle/mnhVQJAYz9G9pWn78"
           class="btn"
           target="_blank"
@@ -35,12 +38,18 @@
 </template>
 
 <script>
+import venues from '@/assets/venues'
+
 export default {
   name: 'ArtistConcerts',
 
   filters: {
     niceDate (date) {
-      return date
+      return new Date(date)
+    },
+
+    niceMunicipality (municipality) {
+      return venues[municipality]
     }
   },
 
@@ -80,5 +89,9 @@ export default {
 
   .concert-artists {
     font-size: $text-base;
+
+    .plus:last-child {
+      display: none;
+    }
   }
 </style>
