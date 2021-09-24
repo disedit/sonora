@@ -5,6 +5,7 @@
 //body
 body {
   background-color: $black;
+  font-size: $text-sm;
 
   &.nav-shown {
     overflow: hidden;

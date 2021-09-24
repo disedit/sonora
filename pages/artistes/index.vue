@@ -15,15 +15,9 @@
 </template>
 
 <script>
-import client from '@/plugins/contentful'
-
 export default {
-  async asyncData () {
-    const { items: artists } = await client.getEntries({
-      content_type: 'artist',
-      select: 'fields.name,fields.slug,fields.image',
-      order: 'fields.order'
-    })
+  async asyncData ({ $api }) {
+    const artists = await $api.getArtists()
 
     return {
       artists

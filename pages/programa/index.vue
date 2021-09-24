@@ -1,62 +1,47 @@
 <template>
-  <main class="programme">
-    <!-- Upcoming concerts -->
-    <concert
-      v-for="(concert, i) in upcomingConcerts"
-      :key="`upcoming${i}`"
-      :concert="concert.fields"
-      :artists="artists"
-    />
+  <main class="programme safe-area">
+    <div class="main-container">
+      <h1 class="sr-only">
+        Programa
+      </h1>
 
-    <!-- Past concerts -->
-    <concert
-      v-for="(concert, i) in pastConcerts"
-      :key="`past${i}`"
-      :concert="concert.fields"
-      :artists="artists"
-      dimmed
-    />
+      <ul class="programme-venues p-0 m-0">
+        <li v-for="(venue, venueKey) in venues" :key="venueKey">
+          <nuxt-link :to="`/programa/${venueKey}`" class="venue-name">
+            <h2>{{ venue }}</h2>
+          </nuxt-link>
+          <ul class="programme-concerts p-0 m-0">
+            <li v-for="concert in concertsByVenue(venueKey)" :key="concert.id">
+              <concert :concert="concert.fields" :artists="artists" />
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </main>
 </template>
 
 <script>
-import client from '@/plugins/contentful'
-
 export default {
   computed: {
-    upcomingConcerts () {
-      const today = new Date()
-      return this.gigs.filter(({ fields: concert }) => {
-        const concertDate = new Date(concert.date)
-        return today <= concertDate
-      })
-    },
-
-    pastConcerts () {
-      const today = new Date()
-      return this.gigs.filter(({ fields: concert }) => {
-        const concertDate = new Date(concert.date)
-        return today > concertDate
-      })
+    venues () {
+      return this.$store.state.venues
     }
   },
 
-  async asyncData ({ $content }) {
-    const { items: gigs } = await client.getEntries({
-      'content_type': 'concert',
-      order: '-sys.createdAt'
-    })
-
-    /* Get all artists */
-    const artists = {}
-    const artistsList = await $content('artists').only(['name', 'slug']).fetch()
-    artistsList.forEach((artist) => {
-      artists[artist.slug] = artist
-    })
+  async asyncData ({ $api }) {
+    const concerts = await $api.getConcerts()
+    const artists = await $api.getArtistNames()
 
     return {
-      gigs,
+      concerts,
       artists
+    }
+  },
+
+  methods: {
+    concertsByVenue (venue) {
+      return this.concerts.filter(concert => concert.fields.municipality === venue)
     }
   },
 
@@ -72,5 +57,36 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.programme {
+  background-image: url(~assets/images/gradients/gradient-programme.jpg);
+  background-color: $pink;
+  background-size: cover;
 
+  &-venues {
+    list-style: none;
+
+    h2 {
+      font-weight: normal;
+      font-size: $text-base;
+    }
+
+    li {
+      margin-bottom: 2rem;
+    }
+
+    .venue-name {
+      position: relative;
+      z-index: 10;
+      color: $black;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-concerts {
+    list-style: none;
+  }
+}
 </style>

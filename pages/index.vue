@@ -32,16 +32,13 @@
     </div>
     <nuxt-link id="marquee" v-if="nextGig" to="/programa" class="marquee">
       <marquee-line :repeat="20" :duration="10">
-        {{ nextGig }} &nbsp; &nbsp; &nbsp; &nbsp;
+        {{ nextGigText }} &nbsp; &nbsp; &nbsp; &nbsp;
       </marquee-line>
     </nuxt-link>
   </main>
 </template>
 
 <script>
-import client from '@/plugins/contentful'
-import venues from '@/assets/venues'
-
 export default {
   components: {
     Moveable: () => {
@@ -53,7 +50,6 @@ export default {
 
   data () {
     return {
-      venues,
       moveable: {
         draggable: true,
         resizable: false,
@@ -67,41 +63,27 @@ export default {
   },
 
   computed: {
-    nextGig () {
-      if (!this.gigs.length) { return false }
-      const { date, artists } = this.gigs[0].fields
+    nextGigText () {
+      const { date, artists } = this.nextGig.fields
       const concertDate = new Date(date)
       const concertDay = `${concertDate.getDate()}`.padStart(2, '0')
       const concertMonth = `${concertDate.getMonth() + 1}`.padStart(2, '0')
       const artistsWithNames = artists.map(artist => this.artists[artist].name)
       const artistsString = artistsWithNames.join(' + ')
       return `Pròxim concert ${concertDay}/${concertMonth} ${artistsString}`
+    },
+
+    venues () {
+      return this.$store.state.venues
     }
   },
 
-  async asyncData ({ $content }) {
-    /* Get next gig */
-    const today = new Date()
-    const { items: gigs } = await client.getEntries({
-      'content_type': 'concert',
-      order: '-fields.date',
-      'fields.date[gte]': today,
-      limit: 1
-    })
-
-    /* Get all artists */
-    const artists = {}
-    const { items: artistsList } = await client.getEntries({
-      content_type: 'artist',
-      select: 'fields.name,fields.slug',
-      order: 'fields.order'
-    })
-    artistsList.forEach(({ fields: artist }) => {
-      artists[artist.slug] = artist
-    })
+  async asyncData ({ $api }) {
+    const [ nextGig ] = await $api.nextGig()
+    const artists = await $api.getArtistNames()
 
     return {
-      gigs,
+      nextGig,
       artists
     }
   },
@@ -180,7 +162,7 @@ export default {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 6vw;
     row-gap: 8vh;
-    padding: 10vh 0;
+    padding-top: calc(1.5rem + 4vh);
 
     a {
       text-align: center;

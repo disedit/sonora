@@ -1,36 +1,36 @@
 <template>
   <ul class="artist-concerts-list">
     <li
-      v-for="({ fields: concert }, i) in concerts"
-      :key="i"
+      v-for="({ fields: concert }) in concerts"
+      :key="concert.id"
     >
       <div class="concert-date">
         {{ concert.date | niceDate }}
       </div>
 
-      <div class="concert-venue mt-2">
-        {{ concert.municipality | niceMunicipality }} <br>
+      <div class="concert-venue mt-3">
+        {{ niceMunicipality(concert.municipality) }} <br>
         {{ concert.venue }}
       </div>
 
-      <div class="concert-artists mt-2">
-        <template v-for="artist in concert.artists">
+      <div class="concert-artists mt-3">
+        <template v-for="(artist, i) in concert.artists">
+          <span :key="i + artist + 'plus'" v-if="i > 0">+</span>
           <nuxt-link :to="`/artistes/${artist}`" :key="i + artist">
             {{ artists[artist].name }}
           </nuxt-link>
-          <span :key="i + artist + 'plus'" class="plus">+</span>
         </template>
       </div>
 
-      <div class="concert-book">
+      <div v-if="concert.button" class="concert-book">
         <a
           v-if="!inThePast(concert.date)"
-          href="https://forms.gle/mnhVQJAYz9G9pWn78"
+          :href="concert.ticket_url"
           class="btn"
           target="_blank"
           rel="noopener noreferer"
         >
-          Reservar invitació
+          {{ concert.button }}
         </a>
       </div>
     </li>
@@ -38,18 +38,14 @@
 </template>
 
 <script>
-import venues from '@/assets/venues'
+import niceDate from '@/plugins/nicedate'
 
 export default {
   name: 'ArtistConcerts',
 
   filters: {
-    niceDate (date) {
-      return new Date(date)
-    },
-
-    niceMunicipality (municipality) {
-      return venues[municipality]
+    niceDate (datetime) {
+      return niceDate(datetime)
     }
   },
 
@@ -64,12 +60,23 @@ export default {
     }
   },
 
+  computed: {
+    venues () {
+      return this.$store.state.venues
+    }
+  },
+
   methods: {
     inThePast (time) {
       const now = new Date()
       const concert = new Date(time)
 
       return now > concert
+    },
+
+    niceMunicipality (municipality) {
+      if (!municipality) { return '' }
+      return this.venues[municipality]
     }
   }
 }
@@ -83,15 +90,30 @@ export default {
     font-size: $text-lg;
   }
 
+  .concert-date {
+    line-height: 1.1;
+  }
+
   .concert-venue {
     line-height: 1.1;
   }
 
   .concert-artists {
     font-size: $text-base;
+  }
 
-    .plus:last-child {
-      display: none;
+  .btn {
+    border: 1px $black solid;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: .5rem 1.5rem;
+    text-align: center;
+    margin-top: .75rem;
+    transition: .25s ease;
+
+    &:hover {
+      background: $black;
+      color: $white;
     }
   }
 </style>

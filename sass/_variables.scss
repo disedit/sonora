@@ -6,6 +6,16 @@ $red: #E53446;
 $blue: #374A97;
 $pink: #F2AAC8;
 
+// venues
+$venue-colors: (
+  'peniscola': $yellow,
+  'bocairent': $pink,
+  'castello': $blue,
+  'alcoi': $red,
+  'castello-jazz': $yellow,
+  'alacant': $blue
+);
+
 $primary: $blue;
 $secondary: $pink;
 
@@ -17,7 +27,7 @@ $font-family-sans-serif: Sonora, sans-serif;
 
 // text sizes
 $text-base: 1.25rem;
-$text-sm: 1rem;
+$text-sm: 1.1rem;
 $text-lg: 1.75rem;
 $text-xl: 3rem;
 $text-headline: clamp(3rem, 5vw, 5.5rem);

@@ -1,63 +1,42 @@
 <template>
-  <div :class="['concert', { hovering, dimmed }]">
-    <div class="concert-date">
-      {{ concert.date | filterDayMonth }}
-    </div>
+  <div :class="['concert', { dimmed }]">
     <h3 class="concert-artists">
-      <span
-        v-for="artist in concert.artists"
-        :key="artist"
-        @mouseover="hovering = true"
-        @mouseleave="hovering = false"
-      >
-        <nuxt-link v-if="!dimmed" :to="`/artistes/${artist}`" class="artist-name">
+      <div v-for="(artist, i) in concert.artists" :key="artist">
+        <span v-if="i > 0" class="plus">+</span>
+        <nuxt-link :to="`/artistes/${artist}`" class="artist-name">
           {{ artists[artist].name }}
         </nuxt-link>
-        <span v-else class="artist-name">
-          {{ artists[artist].name }}
-        </span>
-      </span>
+      </div>
     </h3>
     <div class="concert-details">
-      {{ concert.date | filterTime }}<br>
-      {{ concert.venue }}<br>
-      <span class="concert-place">{{ concert.municipality }}</span>
+      {{ concert.date | niceDate }}<br>
+      {{ concert.venue }}
     </div>
     <div class="concert-book">
       <component
+        v-if="concert.button"
         :is="dimmed ? 'span' : 'a'"
-        :href="!dimmed ? 'https://forms.gle/mnhVQJAYz9G9pWn78' : false"
+        :href="!dimmed ? concert.ticket_url : false"
         :class="['btn', { 'disabled': dimmed }]"
         :aria-hidden="dimmed"
         target="_blank"
         rel="noopener noreferer"
       >
-        Reservar invitació
+        {{ concert.button }}
       </component>
     </div>
   </div>
 </template>
 
 <script>
+import niceDate from '@/plugins/nicedate'
+
 export default {
   name: 'Concert',
 
   filters: {
-    filterTime (datetime) {
-      return new Date(datetime).toTimeString().substr(0, 5)
-    },
-
-    filterDayMonth (datetime) {
-      const date = new Date(datetime)
-      const months = [
-        'de gener', 'de febrer', 'de març', 'd\'abril', 'de maig',
-        'de juny', 'de juliol', 'd\'agost', 'de setembre', 'd\'octubre',
-        'de novembre', 'de desembre'
-      ]
-      const month = date.getMonth()
-      const day = date.getDate()
-
-      return day + ' ' + months[month]
+    niceDate (datetime) {
+      return niceDate(datetime)
     }
   },
 
@@ -70,15 +49,65 @@ export default {
     artists: {
       type: Object,
       required: true
-    },
+    }
+  },
 
-    dimmed: {
-      type: Boolean,
-      default: false
+  computed: {
+    dimmed () {
+      const now = new Date()
+      const concert = new Date(this.concert.date)
+
+      return now > concert
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.concert {
+  display: grid;
+  grid-template-columns: 1fr auto minmax(10rem, 18vw);
+  column-gap: 5vw;
+
+  &-artists {
+    font-weight: bold;
+    font-size: $text-headline;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 0.9;
+
+    a {
+      color: $black;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  &-details {
+    padding-right: 4rem;
+    line-height: 1.2;
+    margin-top: .75rem;
+  }
+
+  &-book a {
+    display: block;
+    border: 1px $black solid;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: .5rem 1.5rem;
+    text-align: center;
+    margin-top: .75rem;
+    transition: .25s ease;
+
+    &:hover {
+      background: $white;
+    }
+  }
+}
+
+.dimmed {
+  opacity: .5;
+}
 </style>

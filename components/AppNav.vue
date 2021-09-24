@@ -90,6 +90,10 @@ export default {
 
       &:hover {
         color: $white;
+
+        @at-root .page-artistes-artist & {
+          color: $black;
+        }
       }
 
       svg {
@@ -115,6 +119,10 @@ export default {
         }
 
         &:focus {
+          outline: 0;
+        }
+
+        &:focus-visible {
           outline: 5px solid $yellow;
         }
 
@@ -122,15 +130,33 @@ export default {
           color: $white;
           transform: rotate(360deg);
         }
-
-        &:focus {
-          outline: 0;
-        }
       }
 
       svg {
         height: 3rem;
         width: 3rem;
+      }
+
+      /* Exceptions for menu handle */
+      @at-root .page-programa-venue & button {
+        color: $black;
+
+        &:hover,
+        &[aria-expanded='true'] {
+          color: $white;
+        }
+      }
+
+      @at-root .page-artistes-artist & button {
+        color: $pink;
+
+        &:hover {
+          color: $blue;
+        }
+
+        &[aria-expanded='true'] {
+          color: $white;
+        }
       }
     }
 

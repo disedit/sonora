@@ -40,7 +40,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    './plugins/contentful.js'
+    './plugins/api.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -58,7 +58,8 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
+    '@nuxtjs/markdownit'
   ],
   /*
   ** Axios module configuration
@@ -102,6 +103,13 @@ export default {
   */
   styleResources: {
     scss: './sass/_variables.scss'
+  },
+
+  /*
+  ** Markdown
+  */
+  markdownit: {
+    runtime: true
   },
 
   /*

@@ -1,5 +1,5 @@
 <template>
-  <div class="contact">
+  <div class="contact safe-area">
     <div class="main-container">
       <h1 class="contact-title">
         Contacte
@@ -133,8 +133,7 @@ export default {
           border: 1px solid $black;
 
           &:hover {
-            background: $black;
-            color: $white;
+            background: $white;
           }
         }
 

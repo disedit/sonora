@@ -13,13 +13,13 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/markdownit": "^2.0.0",
     "@nuxtjs/style-resources": "^1.2.1",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.2",
     "contentful": "^9.0.0",
     "nuxt": "^2.15.8",
-    "vue-moveable": "^1.8.11",
-    "vue-smooth-scroll": "^1.0.13"
+    "vue-moveable": "^1.8.11"
   },
   "devDependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.15.0",

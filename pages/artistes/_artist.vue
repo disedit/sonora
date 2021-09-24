@@ -10,9 +10,7 @@
       </section>
 
       <section class="artist-content">
-        <div>
-          {{ artist.description }}
-        </div>
+        <div v-html="$md.render(artist.description)" />
 
         <ul class="artist-social">
           <li v-if="artist.hasOwnProperty('website')">
@@ -75,7 +73,6 @@
 </template>
 
 <script>
-import client from '@/plugins/contentful'
 import LinkIcon from '@/assets/images/icons/link.svg?inline'
 
 export default {
@@ -83,44 +80,14 @@ export default {
     LinkIcon
   },
 
-  data () {
-    return {
-      sections: {
-        content: false,
-        social: false,
-        video: false,
-        concerts: false
-      }
-    }
-  },
-
-  async asyncData ({ params }) {
+  async asyncData ({ $api, params }) {
     /* Get artist content */
-    const { items: artist } = await client.getEntries({
-      content_type: 'artist',
-      'fields.slug': params.artist
-    })
-
-    /* Create easily accessible index of all artists */
-    const artists = {}
-    const { items: artistsList } = await client.getEntries({
-      content_type: 'artist',
-      select: 'fields.name,fields.slug',
-      order: 'fields.order'
-    })
-    artistsList.forEach(({ fields: artist }) => {
-      artists[artist.slug] = artist
-    })
-
-    /* Filter artist's concerts */
-    const { items: concerts } = await client.getEntries({
-      'content_type': 'concert',
-      'fields.artists[exists]': params.artist,
-      order: '-fields.date'
-    })
+    const [ artist ] = await $api.getArtist(params.artist)
+    const artists = await $api.getArtistNames()
+    const concerts = await $api.getArtistConcerts(params.artist)
 
     return {
-      artist: artist[0].fields,
+      artist: artist.fields,
       artists,
       concerts
     }
@@ -130,7 +97,7 @@ export default {
     return {
       title: `${this.artist.name} - Sonora`,
       meta: [
-        { property: 'og:image', content: `https://circuitsonora.com${this.artist.image}` }
+        { property: 'og:image', content: this.artist.image.fields.file.url }
       ]
     }
   }

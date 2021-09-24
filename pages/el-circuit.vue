@@ -1,7 +1,7 @@
 <template>
   <main class="about safe-area">
     <div class="main-container">
-      <h1 class="about-title">
+      <h1 class="about-title mb-4">
         El circuit
       </h1>
       <div class="row">
@@ -74,6 +74,15 @@ export default {
 
     p {
       width: 90%;
+    }
+
+    a {
+      color: $black;
+      text-decoration: underline;
+
+      &:hover {
+        color: $blue;
+      }
     }
   }
 </style>

@@ -29,7 +29,7 @@
 <style lang="scss">
   .app-footer {
     --footer-padding: 2rem 3rem;
-    font-size: .875rem;
+    font-size: 1rem;
     display: grid;
     grid-template-columns: auto 1fr 1.75fr;
     gap: 3rem;
