@@ -1,10 +1,10 @@
 <template>
   <div :class="['concert', { dimmed }]">
     <h3 class="concert-artists">
-      <div v-for="(artist, i) in concert.artists" :key="artist">
+      <div v-for="({ sys: { id }, fields: artist }, i) in concert.artists" :key="id">
         <span v-if="i > 0" class="plus">+</span>
-        <nuxt-link :to="`/artistes/${artist}`" class="artist-name">
-          {{ artists[artist].name }}
+        <nuxt-link :to="`/artistes/${artist.slug}`" class="artist-name">
+          {{ artist.name }}
         </nuxt-link>
       </div>
     </h3>
@@ -44,11 +44,6 @@ export default {
     concert: {
       type: Object,
       required: true
-    },
-
-    artists: {
-      type: Object,
-      required: true
     }
   },
 
@@ -66,7 +61,7 @@ export default {
 <style lang="scss" scoped>
 .concert {
   display: grid;
-  grid-template-columns: 1fr auto minmax(10rem, 18vw);
+  grid-template-columns: 4fr 2.5fr 1.5fr;
   column-gap: 5vw;
 
   &-artists {
@@ -78,31 +73,34 @@ export default {
 
     a {
       color: $black;
-
-      &:hover {
-        color: $white;
-      }
     }
   }
 
   &-details {
-    padding-right: 4rem;
+    display: flex;
     line-height: 1.2;
-    margin-top: .75rem;
+    height: $text-headline;
+    align-items: center;
   }
 
-  &-book a {
-    display: block;
-    border: 1px $black solid;
-    text-transform: uppercase;
-    border-radius: 0;
-    padding: .5rem 1.5rem;
-    text-align: center;
-    margin-top: .75rem;
-    transition: .25s ease;
+  &-book {
+    height: $text-headline;
+    display: flex;
+    align-items: center;
 
-    &:hover {
-      background: $white;
+    a {
+      display: block;
+      border: 1px $black solid;
+      text-transform: uppercase;
+      border-radius: 0;
+      padding: .5rem 1.5rem;
+      text-align: center;
+      transition: .25s ease;
+      flex-grow: 1;
+
+      &:hover {
+        background: $white;
+      }
     }
   }
 }

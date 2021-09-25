@@ -176,7 +176,6 @@ export default {
     .contact {
       h1 {
         margin: 1rem 0;
-        font-size: $text-lg;
       }
 
       &-form {

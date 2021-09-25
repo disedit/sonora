@@ -18,10 +18,7 @@
 export default {
   async asyncData ({ $api }) {
     const artists = await $api.getArtists()
-
-    return {
-      artists
-    }
+    return { artists }
   }
 }
 </script>

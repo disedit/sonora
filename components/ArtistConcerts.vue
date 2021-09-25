@@ -1,9 +1,6 @@
 <template>
-  <ul class="artist-concerts-list">
-    <li
-      v-for="({ fields: concert }) in concerts"
-      :key="concert.id"
-    >
+  <ul class="artist-concerts-list" aria-label="Concerts">
+    <li v-for="{ sys: { id }, fields: concert } in concerts" :key="id">
       <div class="concert-date">
         {{ concert.date | niceDate }}
       </div>
@@ -14,10 +11,10 @@
       </div>
 
       <div class="concert-artists mt-3">
-        <template v-for="(artist, i) in concert.artists">
-          <span :key="i + artist + 'plus'" v-if="i > 0">+</span>
-          <nuxt-link :to="`/artistes/${artist}`" :key="i + artist">
-            {{ artists[artist].name }}
+        <template v-for="({ sys: { id: artistId }, fields: artist }, i) in concert.artists">
+          <span :key="artistId + 'plus'" v-if="i > 0">+</span>
+          <nuxt-link :to="`/artistes/${artist.slug}`" :key="artistId">
+            {{ artist.name }}
           </nuxt-link>
         </template>
       </div>
@@ -53,10 +50,6 @@ export default {
     concerts: {
       type: Array,
       required: true
-    },
-    artists: {
-      type: Object,
-      required: true
     }
   },
 
@@ -88,6 +81,10 @@ export default {
     padding: 0;
     list-style: none;
     font-size: $text-lg;
+
+    li:not(:last-child) {
+      margin-bottom: 2rem;
+    }
   }
 
   .concert-date {

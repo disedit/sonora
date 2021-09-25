@@ -7,7 +7,7 @@
 
       <ul class="programme-venue-concerts mb-0 p-0">
         <li v-for="concert in concerts" :key="concert.id">
-          <concert :concert="concert.fields" :artists="artists" />
+          <concert :concert="concert.fields" />
         </li>
       </ul>
 
@@ -34,12 +34,7 @@ export default {
 
   async asyncData ({ $api, params }) {
     const concerts = await $api.getConcerts(params.venue)
-    const artists = await $api.getArtistNames()
-
-    return {
-      concerts,
-      artists
-    }
+    return { concerts }
   }
 }
 </script>
@@ -52,15 +47,20 @@ export default {
     font-weight: normal;
     font-size: $text-base;
     text-transform: unset;
+    margin-bottom: 1rem;
   }
 
   &-concerts {
     list-style: none;
+
+    li {
+      margin-bottom: 1rem;
+    }
   }
 
   &-sticker {
     position: absolute;
-    width: 20vw;
+    width: 18vw;
     height: auto;
     pointer-events: none;
 
@@ -73,14 +73,14 @@ export default {
     }
 
     &-bocairent {
-      top: 20%;
-      left: 50%;
+      top: 25vw;
+      left: 26vw;
     }
 
     &-peniscola {
-      transform: rotate(-20deg);
-      top: 50%;
-      left: 20%;
+      transform: rotate(-30deg);
+      bottom: 2%;
+      left: 29vw;
     }
   }
 }

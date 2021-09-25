@@ -68,7 +68,7 @@ export default {
       const concertDate = new Date(date)
       const concertDay = `${concertDate.getDate()}`.padStart(2, '0')
       const concertMonth = `${concertDate.getMonth() + 1}`.padStart(2, '0')
-      const artistsWithNames = artists.map(artist => this.artists[artist].name)
+      const artistsWithNames = artists.map(artist => artist.fields.name)
       const artistsString = artistsWithNames.join(' + ')
       return `Pròxim concert ${concertDay}/${concertMonth} ${artistsString}`
     },
@@ -80,12 +80,7 @@ export default {
 
   async asyncData ({ $api }) {
     const [ nextGig ] = await $api.nextGig()
-    const artists = await $api.getArtistNames()
-
-    return {
-      nextGig,
-      artists
-    }
+    return { nextGig }
   },
 
   methods: {

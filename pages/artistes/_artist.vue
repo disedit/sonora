@@ -52,7 +52,7 @@
       </section>
 
       <section class="artist-concerts">
-        <artist-concerts :concerts="concerts" :artists="artists" />
+        <artist-concerts :concerts="concerts" />
       </section>
 
       <section class="artist-video">
@@ -82,22 +82,21 @@ export default {
 
   async asyncData ({ $api, params }) {
     /* Get artist content */
-    const [ artist ] = await $api.getArtist(params.artist)
-    const artists = await $api.getArtistNames()
-    const concerts = await $api.getArtistConcerts(params.artist)
+    const [{ sys: { id }, fields: artist }] = await $api.getArtist(params.artist)
+    const concerts = await $api.getArtistConcerts(id)
 
     return {
-      artist: artist.fields,
-      artists,
+      artist,
       concerts
     }
   },
 
   head () {
+    const image = this.artist.hasOwnProperty('image') ? this.artist.image.fields.file.url : ''
     return {
       title: `${this.artist.name} - Sonora`,
       meta: [
-        { property: 'og:image', content: this.artist.image.fields.file.url }
+        { property: 'og:image', content: image }
       ]
     }
   }

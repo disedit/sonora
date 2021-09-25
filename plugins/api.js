@@ -5,7 +5,8 @@ class API {
     const { items } = await client.getEntries({
       content_type: 'artist',
       select: 'fields.name,fields.slug,fields.image',
-      order: 'fields.order'
+      // order: 'fields.order'
+      order: 'fields.name'
     })
 
     return items
@@ -20,30 +21,14 @@ class API {
     return items
   }
 
-  async getArtistConcerts (slug) {
+  async getArtistConcerts (id) {
     const { items } = await client.getEntries({
       'content_type': 'concert',
-      'fields.artists[exists]': slug,
+      'fields.artists.sys.id': id,
       order: '-fields.date'
     })
 
     return items
-  }
-
-  async getArtistNames () {
-    const artists = {}
-
-    const { items } = await client.getEntries({
-      content_type: 'artist',
-      select: 'fields.name,fields.slug',
-      order: 'fields.order'
-    })
-
-    items.forEach(({ fields: artist }) => {
-      artists[artist.slug] = artist
-    })
-
-    return artists
   }
 
   async getConcerts (municipality) {
@@ -64,7 +49,7 @@ class API {
     const today = new Date()
     const { items } = await client.getEntries({
       'content_type': 'concert',
-      order: '-fields.date',
+      order: 'fields.date',
       'fields.date[gte]': today,
       limit: 1
     })

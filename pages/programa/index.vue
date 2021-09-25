@@ -12,7 +12,7 @@
           </nuxt-link>
           <ul class="programme-concerts p-0 m-0">
             <li v-for="concert in concertsByVenue(venueKey)" :key="concert.id">
-              <concert :concert="concert.fields" :artists="artists" />
+              <concert :concert="concert.fields" />
             </li>
           </ul>
         </li>
@@ -31,12 +31,7 @@ export default {
 
   async asyncData ({ $api }) {
     const concerts = await $api.getConcerts()
-    const artists = await $api.getArtistNames()
-
-    return {
-      concerts,
-      artists
-    }
+    return { concerts }
   },
 
   methods: {
@@ -68,10 +63,11 @@ export default {
     h2 {
       font-weight: normal;
       font-size: $text-base;
+      margin-bottom: 1rem;
     }
 
     li {
-      margin-bottom: 2rem;
+      margin-bottom: calc(2rem + 2vw);
     }
 
     .venue-name {
@@ -87,6 +83,10 @@ export default {
 
   &-concerts {
     list-style: none;
+
+    li {
+      margin-bottom: 1rem;
+    }
   }
 }
 </style>
