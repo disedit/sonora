@@ -4,8 +4,9 @@
       <h1>Artistes</h1>
       <ul class="artists-list">
         <li v-for="{ fields: artist } in artists" :key="artist.slug" class="artist">
-          <nuxt-link :to="`/artistes/${artist.slug}`">
-            <img :src="artist.image.fields.file.url" v-if="artist.image" alt="">
+          <nuxt-link :to="`/artistes/${artist.slug}`" :style="{ '--rotation': getRandomRotation() }">
+            <img v-if="artist.image" :src="artist.image.fields.file.url" alt="">
+            <img v-else src="https://via.placeholder.com/600" alt="">
             <h2>{{ artist.name }}</h2>
           </nuxt-link>
         </li>
@@ -19,6 +20,15 @@ export default {
   async asyncData ({ $api }) {
     const artists = await $api.getArtists()
     return { artists }
+  },
+
+  methods: {
+    getRandomRotation () {
+      const randomInt = Math.floor(Math.random() * 6 + 2)
+      const isNegative = Math.random() > 0.5
+      const rotation = isNegative ? randomInt * -1 : randomInt
+      return rotation + 'deg'
+    }
   }
 }
 </script>
@@ -30,6 +40,10 @@ export default {
     background-image: url(~assets/images/gradients/gradient-artists.jpg);
     background-color: $pink;
     background-size: cover;
+
+    h1 {
+      margin-bottom: 3rem;
+    }
 
     &-list {
       display: grid;
@@ -47,8 +61,8 @@ export default {
       a {
         color: $black;
 
-        &:hover {
-          color: $white;
+        &:hover img {
+          transform: rotate(var(--rotation, 5deg));
         }
       }
 
@@ -57,11 +71,12 @@ export default {
         height: 300px;
         object-fit: cover;
         margin-bottom: .75rem;
+        transition: .2s ease;
       }
 
       h2 {
         font-weight: normal;
-        font-size: 1.5rem;
+        font-size: $text-base;
         text-transform: uppercase;
       }
     }

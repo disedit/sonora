@@ -113,9 +113,11 @@ export default {
         border: 0;
         color: $pink;
         transition: color .25s ease, transform .5s ease-in;
+        animation: rotation 8s infinite linear;
 
         &:hover {
           color: $white;
+          animation-play-state: paused;
         }
 
         &:focus {
@@ -128,7 +130,7 @@ export default {
 
         &[aria-expanded='true'] {
           color: $white;
-          transform: rotate(360deg);
+          animation-play-state: paused;
         }
       }
 
@@ -207,11 +209,21 @@ export default {
     bottom: 0;
   }
 
-.menu-enter-active, .menu-leave-active {
-  transition: .5s ease;
-}
+  .menu-enter-active, .menu-leave-active {
+    transition: .5s ease;
+  }
 
-.menu-enter, .menu-leave-to {
-  transform: translateX(100%);
-}
+  .menu-enter, .menu-leave-to {
+    transform: translateX(100%);
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
 </style>

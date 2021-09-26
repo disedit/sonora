@@ -13,6 +13,7 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    'vue/require-component-is': 'off'
+    'vue/require-component-is': 'off',
+    'vue/comment-directive': 'off'
   }
 }

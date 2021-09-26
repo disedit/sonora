@@ -8,16 +8,16 @@
         </p>
         <div class="stickers" aria-hidden="true">
           <client-only>
-            <moveable v-bind="moveable" @drag="handleDrag" class="sticker sticker-smiley">
+            <moveable v-bind="moveable" @drag="handleDrag" @drag-start="handleDragStart" @drag-end="handleDragEnd" class="sticker sticker-smiley">
               <img src="~assets/images/stickers/sticker-smiley.svg" alt="">
             </moveable>
-            <moveable v-bind="moveable" @drag="handleDrag" class="sticker sticker-year">
+            <moveable v-bind="moveable" @drag="handleDrag" @drag-start="handleDragStart" @drag-end="handleDragEnd" class="sticker sticker-year">
               <img src="~assets/images/stickers/sticker-year.svg" alt="">
             </moveable>
-            <moveable v-bind="moveable" @drag="handleDrag" class="sticker sticker-note">
+            <moveable v-bind="moveable" @drag="handleDrag" @drag-start="handleDragStart" @drag-end="handleDragEnd" class="sticker sticker-note">
               <img src="~assets/images/stickers/sticker-note.svg" alt="">
             </moveable>
-            <moveable v-bind="moveable" @drag="handleDrag" class="sticker sticker-love">
+            <moveable v-bind="moveable" @drag="handleDrag" @drag-start="handleDragStart" @drag-end="handleDragEnd" class="sticker sticker-love">
               <img src="~assets/images/stickers/sticker-love.svg" alt="">
             </moveable>
           </client-only>
@@ -86,6 +86,14 @@ export default {
   methods: {
     handleDrag ({ target, transform }) {
       target.style.transform = transform
+    },
+
+    handleDragStart ({ target }) {
+      target.classList.add('dragging')
+    },
+
+    handleDragEnd ({ target }) {
+      target.classList.remove('dragging')
     }
   }
 }
@@ -120,6 +128,14 @@ export default {
       z-index: 500;
       cursor: move;
       transition: filter .5s ease;
+
+      img {
+        transition: .5s ease;
+      }
+
+      &.dragging img {
+        transform: scale(1.1) rotate(4deg);
+      }
 
       &:hover {
         filter: drop-shadow(0 5px 5px rgba($blue, .2));

@@ -80,7 +80,8 @@ export default {
 
 <style lang="scss" scoped>
   .contact {
-    background: url(~assets/images/gradients/gradient-contact.jpg);
+    background-image: url(~assets/images/gradients/gradient-contact.jpg);
+    background-color: $blue;
     background-size: cover;
 
     &-form {

@@ -7,10 +7,11 @@
 
       <section class="artist-image">
         <img :src="artist.image.fields.file.url" v-if="artist.image" alt="">
+        <img v-else src="https://via.placeholder.com/600" alt="">
       </section>
 
       <section class="artist-content">
-        <div v-html="$md.render(artist.description)" />
+        <div v-if="artist.description" v-html="$md.render(artist.description)" />
 
         <ul class="artist-social">
           <li v-if="artist.hasOwnProperty('website')">
@@ -126,12 +127,18 @@ export default {
 
     &-image {
       grid-area: image;
+      position: relative;
 
       img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         width: 100%;
         height: 100%;
-        background: $yellow;
         object-fit: cover;
+        object-position: top;
       }
     }
 
