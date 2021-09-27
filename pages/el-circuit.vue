@@ -56,7 +56,7 @@ export default {
 <style lang="scss" scoped>
   .about {
     background-image: url(~assets/images/gradients/gradient-circuit.jpg);
-    background-color: $yellow;
+    background-color: #c2cfef;
     background-size: cover;
 
     &-text-lg {

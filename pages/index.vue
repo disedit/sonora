@@ -195,4 +195,53 @@ export default {
     text-transform: uppercase;
     color: $black;
   }
+
+  @include media-breakpoint-down(md) {
+    .home {
+      background-size: 100% 100%;
+    }
+
+    .header {
+      .sticker {
+        width: 34vw;
+        height: 34vw;
+
+        &-love {
+          top: 23%;
+          left: -16%;
+          right: auto;
+          width: 50vw;
+          height: 50vw;
+          transform: rotate(-13deg);
+        }
+
+        &-note {
+          top: -5%;
+          right: 50%;
+        }
+
+        &-smiley {
+          bottom: 45%;
+          right: -15%;
+          transform: rotate(20deg);
+          z-index: 800;
+        }
+
+        &-year {
+          bottom: calc(45% + 3vw);
+          right: calc(-15% + 40vw);
+          transform: rotate(-5deg);
+        }
+      }
+    }
+
+    .venues {
+      grid-template-columns: 1fr;
+      row-gap: 2vh;
+
+      .venue-sticker {
+        max-width: 80%;
+      }
+    }
+  }
 </style>

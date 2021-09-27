@@ -12,6 +12,12 @@ body {
   }
 }
 
+@include media-breakpoint-down(md) {
+  .nav-shown {
+    overflow: hidden;
+  }
+}
+
 //links
 a {
   transition: .2s ease-in-out;

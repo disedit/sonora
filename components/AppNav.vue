@@ -42,6 +42,10 @@
             </a>
           </li>
         </ul>
+        <div class="sonora-nav-footer d-md-none">
+          <logo class="sonora-logo" />
+          <app-social />
+        </div>
       </div>
     </transition>
     <div v-if="shown" @click="shown = false" class="backdrop" />
@@ -69,6 +73,14 @@ export default {
   watch: {
     '$route' () {
       this.shown = false
+    },
+
+    shown (shown) {
+      if (shown) {
+        document.documentElement.classList.add('nav-shown')
+      } else {
+        document.documentElement.classList.remove('nav-shown')
+      }
     }
   }
 }
@@ -171,6 +183,7 @@ export default {
       color: $white;
       padding: 6rem 10rem 10rem 4rem;
       will-change: transform;
+      overflow-y: auto;
 
       &-items {
         list-style: none;
@@ -196,6 +209,31 @@ export default {
             color: $pink;
           }
         }
+      }
+    }
+
+    &-footer {
+      margin-top: 4rem;
+
+      svg {
+        width: 40%;
+        height: auto;
+        margin-bottom: 1rem;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .sonora-nav {
+      &-menu {
+        left: 0;
+        bottom: 0;
+        padding: 6rem 1rem 3rem 1rem;
+        text-align: center;
       }
     }
   }
