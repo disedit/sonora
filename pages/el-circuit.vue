@@ -57,7 +57,7 @@ export default {
   .about {
     background-image: url(~assets/images/gradients/gradient-circuit.jpg);
     background-color: #c2cfef;
-    background-size: cover;
+    background-size: 100% 100%;
 
     &-text-lg {
       font-size: $text-lg;

@@ -172,4 +172,32 @@ export default {
       }
     }
   }
+
+  @include media-breakpoint-down(md) {
+    .artist {
+      &-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "image"
+          "name"
+          "concerts"
+          "content"
+          "video";
+        gap: 1rem;
+      }
+
+      &-image {
+        margin: -1rem -1.25rem .5rem -1.25rem;
+
+        img {
+          position: static;
+          height: 40vh;
+        }
+      }
+
+      &-video {
+        margin: 0 -1.25rem -1.25rem -1.25rem;
+      }
+    }
+  }
 </style>

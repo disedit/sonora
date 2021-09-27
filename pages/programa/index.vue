@@ -55,7 +55,7 @@ export default {
 .programme {
   background-image: url(~assets/images/gradients/gradient-programme.jpg);
   background-color: $pink;
-  background-size: cover;
+  background-size: 100% 100%;
 
   &-venues {
     list-style: none;

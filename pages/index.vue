@@ -103,7 +103,7 @@ export default {
   .home {
     background-image: url(~assets/images/gradients/gradient-home.jpg);
     background-color: $pink;
-    background-size: cover;
+    background-size: 100% 100%;
   }
 
   .main-container {
@@ -197,10 +197,6 @@ export default {
   }
 
   @include media-breakpoint-down(md) {
-    .home {
-      background-size: 100% 100%;
-    }
-
     .header {
       .sticker {
         width: 34vw;

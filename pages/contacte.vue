@@ -82,7 +82,7 @@ export default {
   .contact {
     background-image: url(~assets/images/gradients/gradient-contact.jpg);
     background-color: $pink;
-    background-size: cover;
+    background-size: 100% 100%;
 
     &-form {
       padding-top: 2rem;

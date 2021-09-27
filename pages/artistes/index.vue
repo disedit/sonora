@@ -39,7 +39,7 @@ export default {
   .artists {
     background-image: url(~assets/images/gradients/gradient-artists.jpg);
     background-color: $pink;
-    background-size: cover;
+    background-size: 100% 100%;
 
     h1 {
       margin-bottom: 3rem;
@@ -78,6 +78,25 @@ export default {
         font-weight: normal;
         font-size: $text-base;
         text-transform: uppercase;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .artists {
+      &-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .artist {
+        h2 {
+          font-size: 1rem;
+        }
+
+        img {
+          height: 150px;
+        }
       }
     }
   }
