@@ -198,6 +198,8 @@ export default {
 
   @include media-breakpoint-down(md) {
     .header {
+      min-height: calc(80vh - #{$navbar-safe-area} - 4rem);
+
       .sticker {
         width: 34vw;
         height: 34vw;
@@ -217,15 +219,15 @@ export default {
         }
 
         &-smiley {
-          bottom: 45%;
-          right: -15%;
+          bottom: 25%;
+          right: 0;
           transform: rotate(20deg);
           z-index: 800;
         }
 
         &-year {
-          bottom: calc(45% + 3vw);
-          right: calc(-15% + 40vw);
+          bottom: calc(25% + 25vw);
+          right: 10vw;
           transform: rotate(-5deg);
         }
       }

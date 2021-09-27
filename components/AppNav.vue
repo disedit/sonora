@@ -43,7 +43,9 @@
           </li>
         </ul>
         <div class="sonora-nav-footer d-md-none">
-          <logo class="sonora-logo" />
+          <nuxt-link to="/">
+            <logo class="sonora-logo" />
+          </nuxt-link>
           <app-social />
         </div>
       </div>
@@ -223,6 +225,10 @@ export default {
 
       .social-links {
         justify-content: center;
+      }
+
+      a {
+        color: $white;
       }
     }
   }
