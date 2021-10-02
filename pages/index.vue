@@ -196,7 +196,7 @@ export default {
 
   @include media-breakpoint-down(md) {
     .header {
-      min-height: calc(80vh - #{$navbar-safe-area} - 4rem);
+      min-height: calc(90vh - #{$navbar-safe-area} - 4rem);
 
       .sticker {
         width: 34vw;

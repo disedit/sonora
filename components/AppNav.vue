@@ -180,6 +180,7 @@ export default {
     &-menu {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       position: fixed;
       z-index: 1000;
       top: 0;
@@ -187,13 +188,12 @@ export default {
       bottom: 0;
       background: $black;
       color: $white;
-      padding: 6rem 10rem 10rem 4rem;
       will-change: transform;
       overflow-y: auto;
 
       &-items {
         list-style: none;
-        padding: 0;
+        padding: 6rem 10rem 6rem 4rem;
         margin: 0;
 
         li {
