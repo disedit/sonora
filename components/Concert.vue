@@ -12,18 +12,13 @@
       {{ concert.date | niceDate }}<br>
       {{ concert.venue }}
     </div>
-    <div class="concert-book">
-      <component
-        v-if="concert.ticket_url"
-        :is="dimmed ? 'span' : 'a'"
-        :href="!dimmed ? concert.ticket_url : false"
-        :class="['btn', { 'disabled': dimmed }]"
-        :aria-hidden="dimmed"
-        target="_blank"
-        rel="noopener noreferer"
-      >
-        {{ !dimmed ? concert.button : 'CONCERT REALITZAT' }}
-      </component>
+    <div v-if="concert.tickets_url" class="concert-book">
+      <span v-if="dimmed">
+        CONCERT REALITZAT
+      </span>
+      <a v-else :href="concert.tickets_url" class="btn" target="_blank" rel="noopener noreferer">
+        {{ concert.button }}
+      </a>
     </div>
   </div>
 </template>
