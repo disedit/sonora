@@ -250,7 +250,7 @@ export default {
           padding: 0 2rem;
 
           a {
-            font-size: 2em;
+            font-size: 2.75em;
           }
 
           .ivc {
