@@ -5,8 +5,10 @@
       <ul class="artists-list">
         <li v-for="{ fields: artist } in artists" :key="artist.slug" class="artist">
           <nuxt-link :to="`/artistes/${artist.slug}`" :style="{ '--rotation': getRandomRotation() }">
-            <img v-if="artist.image" :src="artist.image.fields.file.url" alt="">
-            <img v-else src="https://via.placeholder.com/600" alt="">
+            <div class="artist-thumbnail">
+              <img v-if="artist.image" :src="artist.image.fields.file.url" alt="">
+              <img v-else src="https://via.placeholder.com/600" alt="">
+            </div>
             <h2>{{ artist.name }}</h2>
           </nuxt-link>
         </li>
@@ -66,12 +68,18 @@ export default {
         }
       }
 
-      img {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
+      &-thumbnail {
+        display: flex;
         margin-bottom: .75rem;
-        transition: .2s ease;
+        aspect-ratio: 1 / 1;
+        min-height: 200px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: .2s ease;
+        }
       }
 
       h2 {
@@ -92,10 +100,6 @@ export default {
       .artist {
         h2 {
           font-size: 1rem;
-        }
-
-        img {
-          height: 150px;
         }
       }
     }

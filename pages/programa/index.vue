@@ -89,4 +89,12 @@ export default {
     }
   }
 }
+
+@include media-breakpoint-down(md) {
+  .programme {
+    &-concerts li {
+      margin-bottom: 2.5rem;
+    }
+  }
+}
 </style>

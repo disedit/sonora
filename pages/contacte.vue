@@ -200,4 +200,10 @@ export default {
       }
     }
   }
+
+  @include media-breakpoint-down(md) {
+    .btn.btn-primary {
+      margin: 0 auto;
+    }
+  }
 </style>

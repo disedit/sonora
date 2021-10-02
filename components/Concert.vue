@@ -14,7 +14,7 @@
     </div>
     <div class="concert-book">
       <component
-        v-if="concert.button"
+        v-if="concert.ticket_url"
         :is="dimmed ? 'span' : 'a'"
         :href="!dimmed ? concert.ticket_url : false"
         :class="['btn', { 'disabled': dimmed }]"
@@ -70,6 +70,7 @@ export default {
     text-transform: uppercase;
     letter-spacing: 0.02em;
     line-height: 0.9;
+    margin-bottom: 0;
 
     a {
       color: $black;
@@ -93,7 +94,7 @@ export default {
       border: 1px $black solid;
       text-transform: uppercase;
       border-radius: 0;
-      padding: .5rem 1.5rem;
+      padding: .5rem 1.25rem;
       text-align: center;
       transition: .25s ease;
       flex-grow: 1;
@@ -107,5 +108,22 @@ export default {
 
 .dimmed {
   opacity: .5;
+}
+
+@include media-breakpoint-down(md) {
+  .concert {
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+
+    &-details {
+      margin-top: -.25rem;
+    }
+
+    &-book a {
+      width: fit-content;
+      flex-grow: 0;
+      padding: .5rem 1.75rem;
+    }
+  }
 }
 </style>

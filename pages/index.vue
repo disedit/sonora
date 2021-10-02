@@ -50,6 +50,7 @@ export default {
 
   data () {
     return {
+      nextGig: null,
       moveable: {
         draggable: true,
         resizable: false,
@@ -78,9 +79,9 @@ export default {
     }
   },
 
-  async asyncData ({ $api }) {
-    const [ nextGig ] = await $api.nextGig()
-    return { nextGig }
+  async created () {
+    const [ nextGig ] = await this.$api.nextGig()
+    this.nextGig = nextGig
   },
 
   methods: {
