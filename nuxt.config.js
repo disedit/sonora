@@ -27,7 +27,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#F24957' },
+  loading: { color: '#E53446' },
 
   /*
   ** Global CSS
@@ -49,8 +49,7 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     // '@nuxtjs/eslint-module'
     '@nuxtjs/style-resources',
-    '@nuxtjs/svg',
-    '@nuxtjs/fontawesome'
+    '@nuxtjs/svg'
   ],
   /*
   ** Nuxt.js modules
@@ -80,15 +79,6 @@ export default {
       'ButtonPlugin',
       'FormTextareaPlugin'
     ]
-  },
-
-  /*
-  ** FontAwesome
-  */
-  fontawesome: {
-    icons: {
-      brands: ['faFacebook', 'faTwitter', 'faInstagram', 'faYoutube', 'faSpotify', 'faBandcamp']
-    }
   },
 
   /*

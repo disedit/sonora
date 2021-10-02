@@ -22,7 +22,7 @@
         target="_blank"
         rel="noopener noreferer"
       >
-        {{ concert.button }}
+        {{ !dimmed ? concert.button : 'CONCERT REALITZAT' }}
       </component>
     </div>
   </div>

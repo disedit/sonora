@@ -19,8 +19,7 @@
         <a href="https://ivc.gva.es/val/ivc-val/qui-som-ivc/avis-legal-val/politica-de-privadesa/nota-legal-val" class="legal-notice" target="_blank" rel="noopener noreferrer">Nota Legal</a>
       </div>
       <a class="logos" href="https://ivc.gva.es/" target="_blank" rel="noopener noreferer">
-        <img src="../assets/images/logos/generalitat.svg" class="gva" alt="Conselleria d'Educació">
-        <img src="../assets/images/logos/ivc-cultura.png" class="ivc" alt="IVC - Fes Cultura">
+        <img src="../assets/images/logos/institucionals.svg" class="ivc" alt="IVC - Fes Cultura">
       </a>
     </div>
   </footer>
@@ -75,7 +74,7 @@
       }
 
       .ivc {
-        width: 210px;
+        width: 345px;
         filter: invert(1);
       }
     }

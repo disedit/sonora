@@ -24,7 +24,7 @@ export default {
 
   methods: {
     getRandomRotation () {
-      const randomInt = Math.floor(Math.random() * 6 + 2)
+      const randomInt = Math.floor(Math.random() * 2 + 1.75)
       const isNegative = Math.random() > 0.5
       const rotation = isNegative ? randomInt * -1 : randomInt
       return rotation + 'deg'

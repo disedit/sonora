@@ -42,7 +42,7 @@
             </a>
           </li>
         </ul>
-        <div class="sonora-nav-footer d-md-none">
+        <div class="sonora-nav-footer d-lg-none">
           <nuxt-link to="/">
             <logo class="sonora-logo" />
           </nuxt-link>
@@ -96,7 +96,7 @@ export default {
     left: 0;
     right: 0;
     height: $navbar-safe-area;
-    padding: 1rem;
+    padding: 1.25rem;
     z-index: 1000;
 
     &-logo {
@@ -111,7 +111,7 @@ export default {
       }
 
       svg {
-        height: 3.5rem;
+        height: 3rem;
         width: auto;
       }
     }
@@ -128,6 +128,7 @@ export default {
         color: $pink;
         transition: color .25s ease, transform .5s ease-in;
         animation: rotation 8s infinite linear;
+        padding: 0;
 
         &:hover {
           color: $white;
@@ -177,10 +178,13 @@ export default {
     }
 
     &-menu {
+      display: flex;
+      flex-direction: column;
       position: fixed;
       z-index: 1000;
       top: 0;
       right: 0;
+      bottom: 0;
       background: $black;
       color: $white;
       padding: 6rem 10rem 10rem 4rem;
@@ -219,6 +223,7 @@ export default {
 
       svg {
         width: 40%;
+        max-width: 150px;
         height: auto;
         margin-bottom: 1rem;
       }

@@ -1,6 +1,6 @@
 <template>
   <main class="about safe-area">
-    <div class="main-container">
+    <div class="main-container smh">
       <h1 class="about-title mb-4">
         El circuit
       </h1>
@@ -33,7 +33,7 @@
         </div>
         <div class="col-md-5">
           <img class="about-image" src="~assets/images/photos/el-circuit-1.jpg" alt="Guitarrista saluda al públic a un concert">
-          <img class="about-image" src="~assets/images/photos/el-circuit-2.jpg" alt="Foto de Xavi Sarrià">
+          <img class="about-image mb-0" src="~assets/images/photos/el-circuit-2.jpg" alt="Foto de Xavi Sarrià">
         </div>
       </div>
     </div>
@@ -61,6 +61,7 @@ export default {
 
     &-text-lg {
       font-size: $text-lg;
+      line-height: 1.35;
     }
 
     &-text {
@@ -84,5 +85,9 @@ export default {
         color: $blue;
       }
     }
+  }
+
+  .smh {
+    margin-bottom: calc(1rem + 3vw);
   }
 </style>

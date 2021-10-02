@@ -126,7 +126,7 @@ export default {
       width: 12vw;
       height: 12vw;
       z-index: 500;
-      cursor: move;
+      cursor: grab;
       transition: filter .5s ease;
 
       img {
@@ -135,10 +135,6 @@ export default {
 
       &.dragging img {
         transform: scale(1.1) rotate(4deg);
-      }
-
-      &:hover {
-        filter: drop-shadow(0 5px 5px rgba($blue, .2));
       }
 
       &-love {
@@ -173,7 +169,8 @@ export default {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 6vw;
     row-gap: 8vh;
-    padding-top: calc(1.5rem + 4vh);
+    padding-top: calc(1.5rem + 10vh);
+    padding-bottom: 4vh;
 
     a {
       text-align: center;

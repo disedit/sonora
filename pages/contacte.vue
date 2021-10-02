@@ -4,6 +4,9 @@
       <h1 class="contact-title">
         Contacte
       </h1>
+      <p class="contact-text-lg">
+        Contacta amb nosaltres omplint aquest formulari.
+      </p>
       <div class="contact-form">
         <b-form v-if="!submitted" @submit.prevent="onSubmit">
           <b-form-group
@@ -84,8 +87,13 @@ export default {
     background-color: $pink;
     background-size: 100% 100%;
 
+    &-text-lg {
+      font-size: $text-lg;
+      line-height: 1.35;
+      padding: 1.5rem 0;
+    }
+
     &-form {
-      padding-top: 2rem;
       font-size: $text-base;
 
       form {

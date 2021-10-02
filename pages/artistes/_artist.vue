@@ -16,37 +16,32 @@
         <ul class="artist-social">
           <li v-if="artist.hasOwnProperty('website')">
             <a :href="artist.website" target="_blank" rel="noopener noreferrer" title="Pàgina web">
-              <link-icon />
+              <web-icon />
             </a>
           </li>
           <li v-if="artist.hasOwnProperty('facebook')">
             <a :href="artist.facebook" target="_blank" rel="noopener noreferrer" title="Facebook">
-              <font-awesome-icon :icon="['fab', 'facebook']" />
+              <facebook-icon />
             </a>
           </li>
           <li v-if="artist.hasOwnProperty('twitter')">
             <a :href="artist.twitter" target="_blank" rel="noopener noreferrer" title="Twitter">
-              <font-awesome-icon :icon="['fab', 'twitter']" />
+              <twitter-icon />
             </a>
           </li>
           <li v-if="artist.hasOwnProperty('instagram')">
             <a :href="artist.instagram" target="_blank" rel="noopener noreferrer" title="Instagram">
-              <font-awesome-icon :icon="['fab', 'instagram']" />
+              <instagram-icon />
             </a>
           </li>
           <li v-if="artist.hasOwnProperty('spotify')">
             <a :href="artist.spotify" target="_blank" rel="noopener noreferrer" title="Spotify">
-              <font-awesome-icon :icon="['fab', 'spotify']" />
-            </a>
-          </li>
-          <li v-if="artist.hasOwnProperty('bandcamp')">
-            <a :href="artist.bandcamp" target="_blank" rel="noopener noreferrer" title="Bandcamp">
-              <font-awesome-icon :icon="['fab', 'bandcamp']" />
+              <spotify-icon />
             </a>
           </li>
           <li v-if="artist.hasOwnProperty('youtube')">
             <a :href="artist.youtube" target="_blank" rel="noopener noreferrer" title="Canal de YouTube">
-              <font-awesome-icon :icon="['fab', 'youtube']" />
+              <youtube-icon />
             </a>
           </li>
         </ul>
@@ -74,11 +69,21 @@
 </template>
 
 <script>
-import LinkIcon from '@/assets/images/icons/link.svg?inline'
+import FacebookIcon from '@/assets/images/icons/facebook.svg?inline'
+import InstagramIcon from '@/assets/images/icons/instagram.svg?inline'
+import TwitterIcon from '@/assets/images/icons/twitter.svg?inline'
+import SpotifyIcon from '@/assets/images/icons/spotify.svg?inline'
+import WebIcon from '@/assets/images/icons/web.svg?inline'
+import YoutubeIcon from '@/assets/images/icons/youtube.svg?inline'
 
 export default {
   components: {
-    LinkIcon
+    InstagramIcon,
+    FacebookIcon,
+    TwitterIcon,
+    WebIcon,
+    SpotifyIcon,
+    YoutubeIcon
   },
 
   async asyncData ({ $api, params }) {
@@ -166,9 +171,15 @@ export default {
       list-style: none;
       font-size: $text-lg;
       gap: 1rem;
+      align-items: center;
 
       a {
         color: $black;
+      }
+
+      svg {
+        height: 1em;
+        width: 1em;
       }
     }
   }

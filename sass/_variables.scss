@@ -10,10 +10,10 @@ $pink: #F2AAC8;
 $venue-colors: (
   'peniscola': $yellow,
   'bocairent': $pink,
-  'castello': $blue,
+  'castello': $pink,
   'alcoi': $yellow,
   'castello-jazz': $pink,
-  'alacant': $red
+  'alacant': $yellow
 );
 
 $primary: $blue;
@@ -28,7 +28,7 @@ $font-family-sans-serif: Sonora, sans-serif;
 // text sizes
 $text-base: 1.25rem;
 $text-sm: 1.1rem;
-$text-lg: 1.75rem;
+$text-lg: 1.85rem;
 $text-xl: 3rem;
 $text-headline: clamp(3rem, 5vw, 5.5rem);
 
