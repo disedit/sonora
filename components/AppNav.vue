@@ -1,6 +1,6 @@
 <template>
   <nav :class="['sonora-nav', { shown }]" aria-label="Navegació">
-    <nuxt-link to="/" class="sonora-nav-logo" aria-label="Sonora">
+    <nuxt-link @click.capture="shown = false" to="/" class="sonora-nav-logo" aria-label="Sonora">
       <logo />
     </nuxt-link>
 
@@ -13,7 +13,7 @@
     </div>
 
     <transition name="menu">
-      <div id="navMenu" v-if="shown" class="sonora-nav-menu">
+      <div id="navMenu" v-if="shown" @click.capture="shown = false" class="sonora-nav-menu">
         <ul class="sonora-nav-menu-items">
           <li>
             <nuxt-link to="/artistes">
@@ -219,7 +219,7 @@ export default {
     }
 
     &-footer {
-      margin-top: 4rem;
+      margin-top: 3rem;
 
       svg {
         width: 40%;
@@ -245,6 +245,18 @@ export default {
         bottom: 0;
         padding: 6rem 1rem 3rem 1rem;
         text-align: center;
+
+        &-items {
+          padding: 0 2rem;
+
+          a {
+            font-size: 2em;
+          }
+
+          .ivc {
+            margin-top: 1rem;
+          }
+        }
       }
     }
   }

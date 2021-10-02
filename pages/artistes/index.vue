@@ -101,6 +101,10 @@ export default {
         h2 {
           font-size: 1rem;
         }
+
+        &-thumbnail {
+          min-height: 100px;
+        }
       }
     }
   }
