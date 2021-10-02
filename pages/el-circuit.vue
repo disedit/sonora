@@ -88,6 +88,6 @@ export default {
   }
 
   .smh {
-    margin-bottom: calc(1rem + 3vw);
+    padding-bottom: calc(1rem + 3vw);
   }
 </style>
