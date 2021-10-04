@@ -39,6 +39,11 @@
               <spotify-icon />
             </a>
           </li>
+          <li v-if="artist.hasOwnProperty('bandcamp')">
+            <a :href="artist.bandcamp" target="_blank" rel="noopener noreferrer" title="Bandcamp">
+              <bandcamp-icon />
+            </a>
+          </li>
           <li v-if="artist.hasOwnProperty('youtube')">
             <a :href="artist.youtube" target="_blank" rel="noopener noreferrer" title="Canal de YouTube">
               <youtube-icon />
@@ -75,6 +80,7 @@ import TwitterIcon from '@/assets/images/icons/twitter.svg?inline'
 import SpotifyIcon from '@/assets/images/icons/spotify.svg?inline'
 import WebIcon from '@/assets/images/icons/web.svg?inline'
 import YoutubeIcon from '@/assets/images/icons/youtube.svg?inline'
+import BandcampIcon from '@/assets/images/icons/bandcamp.svg?inline'
 
 export default {
   components: {
@@ -83,7 +89,8 @@ export default {
     TwitterIcon,
     WebIcon,
     SpotifyIcon,
-    YoutubeIcon
+    YoutubeIcon,
+    BandcampIcon
   },
 
   async asyncData ({ $api, params }) {
