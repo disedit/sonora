@@ -75,6 +75,11 @@ export default {
 
     a {
       color: $black;
+      transition: .1s ease;
+
+      &:hover {
+        color: $white;
+      }
     }
   }
 

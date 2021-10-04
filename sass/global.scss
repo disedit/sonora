@@ -57,7 +57,7 @@ body,
     bottom: 0;
     background-size: 100% 100%;
     z-index: 1;
-    animation: fadeInOut 10s linear infinite;
+    animation: fadeInOut 5s linear infinite;
   }
 
   .main-container {
@@ -95,6 +95,10 @@ body,
 @include media-breakpoint-down(md) {
   .main-container {
     padding: 1.25rem;
+  }
+
+  .animated-gradient::before {
+    display: none;
   }
 
   .nav-shown {

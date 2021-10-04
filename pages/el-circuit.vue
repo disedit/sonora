@@ -23,7 +23,21 @@
         </div>
         <div class="col-md-5">
           <img class="about-image" src="~assets/images/photos/el-circuit-1.jpg" alt="Guitarrista saluda al públic a un concert">
-          <img class="about-image mb-0" src="~assets/images/photos/el-circuit-2.jpg" alt="Foto de Xavi Sarrià">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              src="https://www.youtube.com/embed/Q-Zh_rxuCb4"
+              class="embed-responsive-item"
+              width="560"
+              height="315"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -61,10 +75,6 @@ export default {
     &-image {
       width: 100%;
       margin-bottom: 2rem;
-    }
-
-    p {
-      width: 90%;
     }
 
     a {

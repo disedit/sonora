@@ -11,6 +11,12 @@
         </li>
       </ul>
 
+      <p class="full-programme">
+        <nuxt-link to="/programa">
+          Veure el programa complet
+        </nuxt-link>
+      </p>
+
       <client-only>
         <moveable
           v-bind="moveable"
@@ -159,6 +165,18 @@ export default {
       top: 34vw;
       left: 31vw;
       transform: rotate(-10deg);
+    }
+  }
+}
+
+.full-programme {
+  margin-top: 3rem;
+  a {
+    font-size: $text-base;
+    color: $black;
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 }

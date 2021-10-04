@@ -7,9 +7,7 @@
 
       <ul class="programme-venues p-0 m-0">
         <li v-for="(venue, venueKey) in venues" :key="venueKey">
-          <nuxt-link :to="`/programa/${venueKey}`" class="venue-name">
-            <h2>{{ venue }}</h2>
-          </nuxt-link>
+          <h2>{{ venue }}</h2>
           <ul class="programme-concerts p-0 m-0">
             <li v-for="concert in concertsByVenue(venueKey)" :key="concert.id">
               <concert :concert="concert.fields" />
@@ -73,11 +71,6 @@ export default {
     .venue-name {
       position: relative;
       z-index: 10;
-      color: $black;
-
-      &:hover {
-        text-decoration: underline;
-      }
     }
   }
 

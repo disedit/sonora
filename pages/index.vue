@@ -123,6 +123,7 @@ export default {
 
     .dates {
       font-size: clamp(1rem, 3vw, 1.75rem);
+      margin: 0;
     }
 
     .sticker {
