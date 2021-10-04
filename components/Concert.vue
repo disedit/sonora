@@ -13,7 +13,7 @@
       {{ concert.venue }}
     </div>
     <div class="concert-book">
-      <span v-if="dimmed">
+      <span v-if="dimmed" class="faux-btn">
         CONCERT REALITZAT
       </span>
       <a v-else-if="concert.tickets_url" :href="concert.tickets_url" class="btn" target="_blank" rel="noopener noreferer">
@@ -101,7 +101,7 @@ export default {
       transition: .25s ease;
       flex-grow: 1;
       line-height: 1;
-      height: 3.375rem;
+      height: 3.25rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -137,10 +137,19 @@ export default {
       margin-top: -.25rem;
     }
 
-    &-book a {
+    &-book .btn,
+    &-book .faux-btn {
       width: fit-content;
       flex-grow: 0;
       padding: .5rem 1.75rem;
+    }
+
+    &-book a {
+      white-space: nowrap;
+    }
+
+    .concert-text {
+      align-self: start;
     }
   }
 }
