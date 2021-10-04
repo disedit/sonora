@@ -68,11 +68,11 @@ export default {
   methods: {
     onSubmit () {
       this.submitting = true
-      axios.post('https://disedit.com/sonora/contact.php', this.form)
+      axios.post('https://services.disedit.com/sonora/contact', this.form)
         .then(() => {
           this.submitted = true
-        }).catch((error) => {
-          alert(error)
+        }).catch(() => {
+          alert('Ha ocorregut un error enviant el correu. Torna a intentar-ho més tard.')
         }).then(() => {
           this.submitting = false
         })
@@ -175,7 +175,7 @@ export default {
   }
 
   .alert-success {
-    background: $secondary;
+    background: $blue;
     color: $white;
     border: 0;
     margin-bottom: 30rem;
