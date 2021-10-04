@@ -1,5 +1,5 @@
 <template>
-  <main class="home safe-area">
+  <main class="home animated-gradient safe-area">
     <div class="main-container">
       <header id="header" class="header">
         <h1>CIRCUIT<br> DE LA MÚSICA<br> VALENCIANA</h1>
@@ -104,7 +104,10 @@ export default {
   .home {
     background-image: url(~assets/images/gradients/gradient-home.jpg);
     background-color: $pink;
-    background-size: 100% 100%;
+
+    &::before {
+      background-image: url(~assets/images/gradients/gradient-home-to.jpg);
+    }
   }
 
   .main-container {
@@ -192,6 +195,8 @@ export default {
     padding: .75rem 0;
     text-transform: uppercase;
     color: $black;
+    position: relative;
+    z-index: 5;
   }
 
   @include media-breakpoint-down(md) {

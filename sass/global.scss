@@ -44,21 +44,32 @@ body,
   padding-bottom: 5rem;
 }
 
+.animated-gradient {
+  position: relative;
+  background-size: 100% 100%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: 100% 100%;
+    z-index: 1;
+    animation: fadeInOut 10s linear infinite;
+  }
+
+  .main-container {
+    position: relative;
+    z-index: 5;
+  }
+}
+
 .safe-area {
   padding-top: $navbar-safe-area;
 }
 
-/* transition*
-.page-enter-active,
-.page-leave-active {
-  transition: opacity .25s;
-}
-
-.page-enter,
-.page-leave-to {
-  opacity: 0;
-}
-*/
 // Moveable
 .moveable-line {
   background: transparent !important;
@@ -88,5 +99,19 @@ body,
 
   .nav-shown {
     overflow: hidden;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
