@@ -54,7 +54,7 @@ export default {
 <style lang="scss" scoped>
 .programme {
   background-image: url(~assets/images/gradients/gradient-programme.jpg);
-  background-color: $pink;
+  background-color: #fdcd69;
   background-size: 100% 100%;
 
   &-venues {

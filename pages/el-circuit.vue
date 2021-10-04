@@ -8,26 +8,16 @@
         <div class="col-md-7">
           <div class="about-text-lg">
             <p>
-              Benvinguts i benvingudes a Sonora!
+              Sonora: la música et fa viatjar, véns?
             </p>
             <p>
-              L’<a href="https://ivc.gva.es" target="_blank">Institut Valencià de Cultura</a>  presenta la segona edició de Sonora, el circuit de concerts que porta als grups guanyadors i finalistes dels Premis Carles Santos de la Música Valenciana per tot el nostre territori.
+              Cultura de la Generalitat, mitjançant l'<a href="https://ivc.gva.es" target="_blank">Institut Valencià de Cultura</a>, presenta la tercera edició de Sonora, el circuit de concerts que porta als grups guanyadors i finalistes dels Premis Carles Santos de la Música Valenciana per tot el nostre territori.
             </p>
           </div>
 
           <div class="about-text">
             <p>
-              La segona edició de Sonora es desenvoluparà entre octubre de 2020 i març de 2021 al llarg i ample del país, per tal de crear una plataforma estable i regular perquè els intèrprets valencians puguen mostrar els seus treballs en 28 de les localitats que formen part del Circuit Cultural Valencià, dins de les programacions culturals que aquestes ofereixen. Al mateix temps, es pretén desestacionalitzar l'oferta musical i que, d’aquesta manera, grups i solistes tinguen la possibilitat d’actuar en diferents punts del territori fora de la temporada estival.
-            </p>
-
-            <p>
-              Sonora suposa un pas endavant en el propòsit de portar la cultura i, en aquest cas, la música valenciana a moltes poblacions valencianes, amb una programació variada i de qualitat que atrega a nous públics i consolide la projecció dels nostres artistes.
-            </p>
-          </div>
-
-          <div class="about-text-lg">
-            <p>
-              Sou tots i totes benvinguts a Sonora, el circuit de la música valenciana, feu-lo vostre!
+              La tercera edició de Sonora es desenvoluparà entre octubre de 2021 i març de 2022 de nord a sud del país, per tal de crear una plataforma estable i regular perquè els intèrprets valencians puguen mostrar els seus treballs en 5 localitats: Peníscola, Castelló, Alacant i les capitals culturals valencianes 2021, Alcoi i Bocairent. Al mateix temps, es pretén desestacionalitzar l'oferta musical i que, d'aquesta manera, grups i solistes més guardonats tinguen la possibilitat d'actuar en diferents punts del territori fora de la temporada estival.
             </p>
           </div>
         </div>
@@ -56,7 +46,7 @@ export default {
 <style lang="scss" scoped>
   .about {
     background-image: url(~assets/images/gradients/gradient-circuit.jpg);
-    background-color: #c2cfef;
+    background-color: #fdcd69;
     background-size: 100% 100%;
 
     &-text-lg {
