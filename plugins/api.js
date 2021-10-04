@@ -25,7 +25,7 @@ class API {
     const { items } = await client.getEntries({
       'content_type': 'concert',
       'fields.artists.sys.id': id,
-      order: '-fields.date'
+      order: 'fields.date'
     })
 
     return items

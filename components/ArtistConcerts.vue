@@ -1,6 +1,6 @@
 <template>
   <ul class="artist-concerts-list" aria-label="Concerts">
-    <li v-for="{ sys: { id }, fields: concert } in concerts" :key="id">
+    <li v-for="{ sys: { id }, fields: concert } in concerts" :key="id" :class="{ dimmed: inThePast(concert.date) }">
       <div class="concert-date">
         {{ concert.date | niceDate }}
       </div>
@@ -20,15 +20,18 @@
       </div>
 
       <div v-if="concert.button" class="concert-book">
-        <a
-          v-if="!inThePast(concert.date)"
-          :href="concert.ticket_url"
-          class="btn"
-          target="_blank"
-          rel="noopener noreferer"
-        >
+        <span v-if="inThePast(concert.date)" class="faux-btn">
+          CONCERT REALITZAT
+        </span>
+        <a v-else-if="concert.tickets_url" :href="concert.tickets_url" class="btn" target="_blank" rel="noopener noreferer">
           {{ concert.button }}
         </a>
+        <span v-else-if="concert.municipality === 'bocairent'" class="contact-text">
+          Per reservar les vostres localitats, envieu un email a <a href="mailto:info@bocairent.es">info@bocairent.es</a> o truqueu al telèfon <a href="tel:962350014">962 35 00 14</a>
+        </span>
+        <span v-else class="faux-btn">
+          Entrades a la venda properament
+        </span>
       </div>
     </li>
   </ul>
@@ -99,18 +102,44 @@ export default {
     font-size: $text-base;
   }
 
-  .btn {
-    border: 1px $black solid;
-    text-transform: uppercase;
-    border-radius: 0;
-    padding: .5rem 1.5rem;
-    text-align: center;
-    margin-top: .75rem;
-    transition: .25s ease;
+  .concert-book {
+    display: flex;
+    margin-top: 1rem;
 
-    &:hover {
+    .btn,
+    .faux-btn {
+      border: 1px $black solid;
+      text-transform: uppercase;
+      border-radius: 0;
+      padding: .5rem 1.25rem;
+      text-align: center;
+      transition: .25s ease;
+      line-height: 1;
+      height: 3.25rem;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
       background: $black;
       color: $white;
     }
+  }
+
+  .contact-text {
+    line-height: 1.1;
+    font-size: 0.9rem;
+    align-self: start;
+
+    a {
+      color: $black;
+      text-decoration: underline;
+    }
+  }
+
+  .dimmed {
+    opacity: .5;
   }
 </style>
