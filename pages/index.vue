@@ -102,11 +102,11 @@ export default {
 
 <style lang="scss" scoped>
   .home {
-    background-image: url(~assets/images/gradients/gradient-home.jpg);
+    background-image: url(~assets/images/gradients/lg/gradient-home-from.jpg);
     background-color: $pink;
 
     &::before {
-      background-image: url(~assets/images/gradients/gradient-home-to.jpg);
+      background-image: url(~assets/images/gradients/lg/gradient-home-to.jpg);
     }
   }
 
@@ -201,6 +201,10 @@ export default {
   }
 
   @include media-breakpoint-down(md) {
+    .home {
+      background-image: url(~assets/images/gradients/sm/gradient-home.jpg);
+    }
+
     .header {
       min-height: calc(90vh - #{$navbar-safe-area} - 4rem);
 

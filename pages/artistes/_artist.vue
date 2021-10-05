@@ -1,5 +1,5 @@
 <template>
-  <article class="artist safe-area">
+  <article class="artist animated-gradient safe-area">
     <div class="main-container artist-grid">
       <header class="artist-name">
         <h1>{{ artist.name }}</h1>
@@ -54,20 +54,6 @@
 
       <section class="artist-concerts">
         <artist-concerts :concerts="concerts" />
-      </section>
-
-      <section class="artist-video">
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe
-            :src="`https://www.youtube.com/embed/${artist.video}`"
-            class="embed-responsive-item"
-            width="560"
-            height="315"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          />
-        </div>
       </section>
     </div>
   </article>
@@ -128,8 +114,7 @@ export default {
       grid-template-areas:
         "concerts image"
         "content image"
-        "name name"
-        "video video";
+        "name name";
       gap: 2rem;
     }
 
@@ -157,10 +142,6 @@ export default {
       h1 {
         font-size: clamp(2rem, 10vw, 10rem);
       }
-    }
-
-    &-video {
-      grid-area: video;
     }
 
     &-social {
@@ -191,8 +172,7 @@ export default {
           "image"
           "name"
           "concerts"
-          "content"
-          "video";
+          "content";
         gap: 1rem;
       }
 
@@ -203,10 +183,6 @@ export default {
           position: static;
           width: 100%;
         }
-      }
-
-      &-video {
-        margin: 0 -1.25rem -1.25rem -1.25rem;
       }
     }
   }

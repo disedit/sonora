@@ -1,5 +1,5 @@
 <template>
-  <div class="contact safe-area">
+  <div class="contact animated-gradient safe-area">
     <div class="main-container">
       <h1 class="contact-title">
         Contacte
@@ -83,9 +83,12 @@ export default {
 
 <style lang="scss" scoped>
   .contact {
-    background-image: url(~assets/images/gradients/gradient-contact.jpg);
+    background-image: url(~assets/images/gradients/lg/gradient-contact-from.jpg);
     background-color: $pink;
-    background-size: 100% 100%;
+
+    &::before {
+      background-image: url(~assets/images/gradients/lg/gradient-contact-to.jpg);
+    }
 
     &-text-lg {
       font-size: $text-lg;
@@ -204,6 +207,10 @@ export default {
   @include media-breakpoint-down(md) {
     .btn.btn-primary {
       margin: 0 auto;
+    }
+
+    .contact {
+      background-image: url(~assets/images/gradients/sm/gradient-contact.jpg);
     }
   }
 </style>
