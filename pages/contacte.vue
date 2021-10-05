@@ -68,7 +68,7 @@ export default {
   methods: {
     onSubmit () {
       this.submitting = true
-      axios.post('https://services.disedit.com/sonora/contact', this.form)
+      axios.post('https://services.disedit.com/api/sonora/contact', this.form)
         .then(() => {
           this.submitted = true
         }).catch(() => {
