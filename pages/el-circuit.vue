@@ -1,5 +1,5 @@
 <template>
-  <main class="about safe-area">
+  <main class="about animated-gradient safe-area">
     <div class="main-container smh">
       <h1 class="about-title mb-4">
         El circuit
@@ -59,9 +59,12 @@ export default {
 
 <style lang="scss" scoped>
   .about {
-    background-image: url(~assets/images/gradients/gradient-circuit.jpg);
-    background-color: #fdcd69;
-    background-size: 100% 100%;
+    background-image: url(~assets/images/gradients/lg/gradient-circuit-from.jpg);
+    background-color: $pink;
+
+    &::before {
+      background-image: url(~assets/images/gradients/lg/gradient-circuit-to.jpg);
+    }
 
     &-text-lg {
       font-size: $text-lg;
@@ -89,5 +92,11 @@ export default {
 
   .smh {
     padding-bottom: calc(1rem + 3vw);
+  }
+
+  @include media-breakpoint-down(md) {
+    .about {
+      background-image: url(~assets/images/gradients/sm/gradient-circuit.jpg);
+    }
   }
 </style>

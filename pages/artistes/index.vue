@@ -1,5 +1,5 @@
 <template>
-  <main class="artists safe-area">
+  <main class="artists animated-gradient safe-area">
     <div class="main-container">
       <h1>Artistes</h1>
       <ul class="artists-list">
@@ -39,9 +39,12 @@ export default {
   @import '../../sass/variables';
 
   .artists {
-    background-image: url(~assets/images/gradients/gradient-artists.jpg);
+    background-image: url(~assets/images/gradients/lg/gradient-artists-from.jpg);
     background-color: $pink;
-    background-size: 100% 100%;
+
+    &::before {
+      background-image: url(~assets/images/gradients/lg/gradient-artists-to.jpg);
+    }
 
     h1 {
       margin-bottom: 3rem;
@@ -92,6 +95,8 @@ export default {
 
   @include media-breakpoint-down(md) {
     .artists {
+      background-image: url(~assets/images/gradients/sm/gradient-artists.jpg);
+
       &-list {
         grid-template-columns: 1fr 1fr;
         gap: 1rem;

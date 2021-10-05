@@ -46,7 +46,8 @@ body,
 
 .animated-gradient {
   position: relative;
-  background-size: 100% 100%;
+  background-size: 110% 110%;
+  background-position: center;
 
   &::before {
     content: '';
@@ -55,7 +56,8 @@ body,
     left: 0;
     right: 0;
     bottom: 0;
-    background-size: 100% 100%;
+    background-size: 110% 110%;
+    background-position: center;
     z-index: 1;
     animation: fadeInOut 5s linear infinite;
   }

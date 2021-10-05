@@ -1,5 +1,5 @@
 <template>
-  <main class="programme safe-area">
+  <main class="programme animated-gradient safe-area">
     <div class="main-container">
       <h1 class="sr-only">
         Programa
@@ -50,10 +50,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.programme {
-  background-image: url(~assets/images/gradients/gradient-programme.jpg);
-  background-color: #fdcd69;
-  background-size: 100% 100%;
+  .programme {
+    background-image: url(~assets/images/gradients/lg/gradient-programme-from.jpg);
+    background-color: $pink;
+
+    &::before {
+      background-image: url(~assets/images/gradients/lg/gradient-programme-to.jpg);
+    }
 
   &-venues {
     list-style: none;
@@ -85,6 +88,8 @@ export default {
 
 @include media-breakpoint-down(md) {
   .programme {
+    background-image: url(~assets/images/gradients/sm/gradient-programme.jpg);
+
     &-concerts li {
       margin-bottom: 2.5rem;
     }

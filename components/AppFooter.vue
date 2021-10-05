@@ -14,7 +14,7 @@
         </address>
         <div>
           <span>Tel. <a href="tel:+34963539300">963 539 300</a></span>
-          <span>E-mail <a href="mailto:ivc@gva.es">ivc@gva.es</a></span>
+          <span>E-mail <a href="mailto:circuit_sonora@gva.es">circuit_sonora@gva.es</a></span>
         </div>
         <a href="https://ivc.gva.es/val/ivc-val/qui-som-ivc/avis-legal-val/politica-de-privadesa/nota-legal-val" class="legal-notice" target="_blank" rel="noopener noreferrer">Nota Legal</a>
       </div>
