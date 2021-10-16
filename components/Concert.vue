@@ -20,7 +20,7 @@
         {{ concert.button }}
       </a>
       <span v-else-if="concert.municipality === 'bocairent'" class="contact-text">
-        Per reservar les vostres localitats, envieu un email a <a href="mailto:info@bocairent.es">info@bocairent.es</a> o truqueu al telèfon <a href="tel:962350014">962 35 00 14</a>
+        Per reservar les vostres localitats, envieu un email a <a href="mailto:cij@bocairent.es">cij@bocairent.es</a> o truqueu al telèfon <a href="tel:962355006">962 35 50 06</a>
       </span>
       <span v-else class="faux-btn">
         Entrades a la venda properament
