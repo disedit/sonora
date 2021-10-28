@@ -30,7 +30,7 @@
             </a>
           </li>
           <li v-if="artist.hasOwnProperty('instagram')">
-            <a :href="artist.instagram" target="_blank" rel="noopener noreferrer" title="Instagram">
+            <a :href="`https://instagram.com/${artist.instagram}`" target="_blank" rel="noopener noreferrer" title="Instagram">
               <instagram-icon />
             </a>
           </li>
