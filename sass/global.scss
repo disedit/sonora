@@ -2,38 +2,19 @@
 @import 'fonts';
 @import 'bootstrap/scss/bootstrap';
 
-//body
+// body
 body {
-  background-color: $black;
   font-size: $text-sm;
+  font-weight: 350;
 
   &.nav-shown {
     overflow: hidden;
   }
 }
 
-//links
+// links
 a {
   transition: .2s ease-in-out;
-}
-
-h1 {
-    line-height: .95;
-    font-size: $text-headline;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-h2 {
-  font-size: $text-xl;
-  font-weight: bold;
-}
-
-body,
-.navbar {
-  transition: .4s ease-in-out;
-  overflow-x: hidden;
 }
 
 // container
@@ -42,82 +23,4 @@ body,
   margin: 0 auto;
   padding: calc(1.5rem + 3vh) calc(1rem + 3vw);
   padding-bottom: 5rem;
-}
-
-.animated-gradient {
-  position: relative;
-  background-size: 110% 110%;
-  background-position: center;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-size: 110% 110%;
-    background-position: center;
-    z-index: 1;
-    animation: fadeInOut 5s linear infinite;
-  }
-
-  .main-container {
-    position: relative;
-    z-index: 5;
-  }
-}
-
-.safe-area {
-  padding-top: $navbar-safe-area;
-}
-
-// Moveable
-.moveable-line {
-  background: transparent !important;
-}
-
-// Venue stickers
-.venue-sticker {
-  #Colorful {
-    opacity: 0;
-  }
-}
-
-.venue-sticker:hover {
-  #Colorful {
-    opacity: 1;
-  }
-
-  #Outline {
-    opacity: 0;
-  }
-}
-
-@include media-breakpoint-down(md) {
-  .main-container {
-    padding: 1.25rem;
-  }
-
-  .animated-gradient::before {
-    display: none;
-  }
-
-  .nav-shown {
-    overflow: hidden;
-  }
-}
-
-@keyframes fadeInOut {
-  0% {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
 }

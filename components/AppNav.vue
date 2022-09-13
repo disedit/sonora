@@ -7,8 +7,8 @@
     <div class="sonora-nav-button">
       <button @click="shown = !shown" :aria-expanded="shown ? 'true' : 'false'" aria-controls="navMenu">
         <menu-icon />
-        <span v-if="!shown" class="sr-only">Obri menú</span>
-        <span v-else class="sr-only">Tanca menú</span>
+        <span v-if="!shown" class="visually-hidden">Obri menú</span>
+        <span v-else class="visually-hidden">Tanca menú</span>
       </button>
     </div>
 
@@ -38,7 +38,7 @@
           <li>
             <a href="https://ivc.gva.es" class="ivc" target="_blank" rel="noopener noreferer">
               <ivc-logo />
-              <span class="sr-only">Institut Valencià de Cultura</span>
+              <span class="visually-hidden">Institut Valencià de Cultura</span>
             </a>
           </li>
         </ul>

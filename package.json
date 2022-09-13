@@ -1,6 +1,6 @@
 {
   "name": "sonora",
-  "version": "1.0.0",
+  "version": "4.0.0",
   "description": "Sonora",
   "author": "Disedit",
   "private": true,
@@ -15,7 +15,7 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/markdownit": "^2.0.0",
     "@nuxtjs/style-resources": "^1.2.1",
-    "bootstrap": "^4.3.1",
+    "bootstrap": "^5.2.1",
     "bootstrap-vue": "^2.0.2",
     "contentful": "^9.0.0",
     "nuxt": "^2.15.8",
@@ -29,7 +29,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
-    "node-sass": "^4.14.0",
+    "sass": "^1.54.9",
     "sass-loader": "^10.1.1"
   }
 }

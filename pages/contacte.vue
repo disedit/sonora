@@ -83,13 +83,6 @@ export default {
 
 <style lang="scss" scoped>
   .contact {
-    background-image: url(~assets/images/gradients/lg/gradient-contact-from.jpg);
-    background-color: $pink;
-
-    &::before {
-      background-image: url(~assets/images/gradients/lg/gradient-contact-to.jpg);
-    }
-
     &-text-lg {
       font-size: $text-lg;
       line-height: 1.35;
