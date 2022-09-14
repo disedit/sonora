@@ -31,6 +31,7 @@ $font-family-serif: roslindale, serif;
 
 // text sizes
 $text-base: 1.25rem;
+$text-xs: .875rem;
 $text-sm: 1.1rem;
 $text-lg: 1.65rem;
 $text-lgr: 1.875rem;
@@ -39,6 +40,7 @@ $text-headline: clamp(3rem, 5vw, 5.5rem);
 
 // navbar and footer
 $navbar-safe-area: 5.5rem;
+$mobile-nav: 3rem;
 $footer-height: 8rem;
 $viewport-x-padding: calc(.5rem + 2vw);
 

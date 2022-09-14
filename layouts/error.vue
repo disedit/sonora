@@ -26,15 +26,5 @@ export default {
 </script>
 
 <style lang="scss">
-.error {
-  background-image: url(~assets/images/gradients/lg/gradient-home-from.jpg);
-  background-color: $pink;
-  background-size: cover;
-  min-height: 80vh;
 
-  a {
-    color: $white;
-    font-size: 2rem;
-  }
-}
 </style>

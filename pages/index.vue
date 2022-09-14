@@ -71,8 +71,11 @@ export default {
 
   methods: {
     setStickerPos () {
-      const top = '-10%'
-      const right = '30%'
+      const randomT = Math.floor(Math.random() * (40 + 1)) - 10
+      const randomR = Math.floor(Math.random() * (80 + 1))
+      const top = `${randomT}%`
+      const right = `${randomR}%`
+
       this.stickerPos = { top, right }
     },
 
@@ -159,6 +162,25 @@ export default {
 
   &.dragging img {
     transform: scale(1.1) rotate(4deg);
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .home {
+    min-height: 100vh;
+  }
+
+  .menu {
+    a {
+      border-width: 1px;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  }
+
+  .sticker {
+    top: -4rem !important;
+    right: .5rem !important;
   }
 }
 </style>
