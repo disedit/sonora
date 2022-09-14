@@ -22,27 +22,28 @@ $venue-colors: (
 $primary: $blue;
 $secondary: $pink;
 
-$body-bg: $white;
+$body-bg: $gray;
 $body-color: $black;
 
 // fonts
 $font-family-sans-serif: lausanne, sans-serif;
+$font-family-serif: roslindale, serif;
 
 // text sizes
 $text-base: 1.25rem;
 $text-sm: 1.1rem;
 $text-lg: 1.65rem;
+$text-lgr: 1.875rem;
 $text-xl: 3rem;
 $text-headline: clamp(3rem, 5vw, 5.5rem);
 
-// navbar
+// navbar and footer
 $navbar-safe-area: 5.5rem;
+$footer-height: 8rem;
+$viewport-x-padding: calc(.5rem + 2vw);
 
 // links
-$link-color: $primary;
-$link-decoration: none;
-$link-hover-color: $secondary;
-$link-hover-decoration: none;
+$link-color: $black;
 
 @import '~bootstrap/scss/_functions';
 @import '~bootstrap/scss/_variables';

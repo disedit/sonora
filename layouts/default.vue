@@ -1,8 +1,9 @@
 <template>
   <div class="page">
-    <app-nav />
+    <sonora-header v-if="this.$route.name !== 'index'" class="d-none d-md-block" />
+    <sonora-nav v-if="this.$route.name !== 'index'" />
     <nuxt />
-    <app-footer />
+    <sonora-footer />
   </div>
 </template>
 

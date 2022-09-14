@@ -16,11 +16,3 @@ body {
 a {
   transition: .2s ease-in-out;
 }
-
-// container
-.main-container {
-  max-width: 1920px;
-  margin: 0 auto;
-  padding: calc(1.5rem + 3vh) calc(1rem + 3vw);
-  padding-bottom: 5rem;
-}
