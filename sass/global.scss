@@ -12,12 +12,35 @@ body {
   }
 }
 
-// links
-a {
-  transition: .2s ease-in-out;
-}
-
 // nav
 .nav-shown {
   overflow: hidden;
+}
+
+// button
+.sonora-button {
+  appearance: none;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 2px $black solid;
+  text-decoration: none;
+  font-size: $text-lg;
+  padding: 1.25rem 1.75rem;
+  border-radius: 100%;
+
+  span {
+    position: relative;
+    top: .115em;
+  }
+
+  &:hover {
+    background-color: $black;
+    color: var(--hover-color, #{$body-bg});
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .sonora-button {
+    border-width: 1px;
+  }
 }

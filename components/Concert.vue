@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import niceDate from '@/plugins/nicedate'
+import { niceDate } from '@/plugins/nicedate'
 
 export default {
   name: 'Concert',

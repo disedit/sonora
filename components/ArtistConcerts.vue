@@ -1,44 +1,49 @@
 <template>
   <ul class="artist-concerts-list" aria-label="Concerts">
-    <li v-for="{ sys: { id }, fields: concert } in concerts" :key="id" :class="{ dimmed: inThePast(concert.date) }">
+    <li
+      v-for="{ sys: { id }, fields: concert } in concerts"
+      :key="id"
+      class="concert"
+    >
       <div class="concert-date">
-        {{ concert.date | niceDate }}
+        {{ concert.date | niceDate }}<br>
+        {{ concert.date | niceTime }}
       </div>
 
-      <div class="concert-venue mt-3">
-        {{ niceMunicipality(concert.municipality) }} <br>
+      <div class="concert-venue mt-4">
         {{ concert.venue }}
       </div>
 
-      <div class="concert-artists mt-3">
-        <template v-for="({ sys: { id: artistId }, fields: artist }, i) in concert.artists">
-          <span :key="artistId + 'plus'" v-if="i > 0">+</span>
-          <nuxt-link :to="`/artistes/${artist.slug}`" :key="artistId">
+      <div class="concert-municipality">
+        {{ niceMunicipality(concert.municipality) }}
+      </div>
+
+      <div class="concert-book">
+        <span v-if="inThePast(concert.date)">
+          Concert realitzat
+        </span>
+        <a v-else-if="concert.tickets_url" :href="concert.tickets_url" class="sonora-button" target="_blank" rel="noopener noreferer">
+          <span>Entrades</span>
+        </a>
+        <span v-else>
+          Entrades a la venda properament
+        </span>
+      </div>
+
+      <div v-if="concert.artists.length > 1" class="concert-with">
+        Amb actuació de
+        <template v-for="{ sys: { id: artistId }, fields: artist } in concert.artists">
+          <nuxt-link v-if="artist.slug !== context.slug" :to="`/artistes/${artist.slug}`" :key="artistId">
             {{ artist.name }}
           </nuxt-link>
         </template>
-      </div>
-
-      <div v-if="concert.button" class="concert-book">
-        <span v-if="inThePast(concert.date)" class="faux-btn">
-          CONCERT REALITZAT
-        </span>
-        <a v-else-if="concert.tickets_url" :href="concert.tickets_url" class="btn" target="_blank" rel="noopener noreferer">
-          {{ concert.button }}
-        </a>
-        <span v-else-if="concert.municipality === 'bocairent'" class="contact-text">
-          Per reservar les vostres localitats, envieu un email a <a href="mailto:cij@bocairent.es">cij@bocairent.es</a> o truqueu al telèfon <a href="tel:962355006">962 35 50 06</a>
-        </span>
-        <span v-else class="faux-btn">
-          Entrades a la venda properament
-        </span>
       </div>
     </li>
   </ul>
 </template>
 
 <script>
-import niceDate from '@/plugins/nicedate'
+import { niceDate, niceTime } from '@/plugins/nicedate'
 
 export default {
   name: 'ArtistConcerts',
@@ -46,12 +51,20 @@ export default {
   filters: {
     niceDate (datetime) {
       return niceDate(datetime)
+    },
+
+    niceTime (datetime) {
+      return niceTime(datetime)
     }
   },
 
   props: {
     concerts: {
       type: Array,
+      required: true
+    },
+    context: {
+      type: Object,
       required: true
     }
   },
@@ -90,52 +103,38 @@ export default {
     }
   }
 
-  .concert-date {
-    line-height: 1.1;
-  }
+  .concert {
+    text-align: center;
 
-  .concert-venue {
-    line-height: 1.1;
-  }
-
-  .concert-artists {
-    font-size: $text-base;
-  }
-
-  .concert-book {
-    display: flex;
-    margin-top: 1rem;
-
-    .btn,
-    .faux-btn {
-      border: 1px $black solid;
+    &-date {
+      font-family: 'Maison Mono', monospace;
       text-transform: uppercase;
-      border-radius: 0;
-      padding: .5rem 1.25rem;
-      text-align: center;
-      transition: .25s ease;
+      font-size: $text-lgr - .25rem;
+      line-height: 1.1;
+    }
+
+    &-venue {
+      font-family: gtalpina, serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: $text-lgr;
       line-height: 1;
-      height: 3.25rem;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1rem;
     }
 
-    .btn:hover {
-      background: $black;
-      color: $white;
+    &-municipality {
+      font-family: akzidenz;
+      font-size: $text-lgr;
+      text-transform: uppercase;
+      line-height: 1;
     }
-  }
 
-  .contact-text {
-    line-height: 1.1;
-    font-size: 0.9rem;
-    align-self: start;
+    &-book {
+      margin: 2rem 0;
+    }
 
-    a {
-      color: $black;
-      text-decoration: underline;
+    &-with {
+      text-transform: uppercase;
+      font-size: $text-base;
     }
   }
 

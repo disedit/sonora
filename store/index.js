@@ -1,10 +1,10 @@
 export const state = () => ({
   venues: {
-    peniscola: 'Peníscola',
-    bocairent: 'Bocairent',
+    orihuela: 'Orihuela',
+    alzira: 'Alzira',
+    aielo: 'Aielo de Malferit',
+    peniscola: 'Peniscola',
     castello: 'Castelló',
-    alcoi: 'Alcoi',
-    'castello-jazz': 'Castelló Jazz',
     alacant: 'Alacant'
   }
 })

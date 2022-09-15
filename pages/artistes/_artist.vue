@@ -6,11 +6,11 @@
       <component :is="shape" class="shape shape-last" />
     </header>
 
-    <section :style="{ backgroundImage: `url(${image})` }" class="artist-image" />
-
-    <section class="artist-description">
-      <div v-html="$md.render(artist.description)" v-if="artist.description" />
+    <section class="artist-concerts">
+      <artist-concerts :concerts="concerts" :context="artist" />
     </section>
+
+    <section :style="{ backgroundImage: `url(${image})` }" class="artist-image" />
 
     <section class="artist-social">
       <ul aria-label="Xarxes socials">
@@ -52,8 +52,8 @@
       </ul>
     </section>
 
-    <section class="artist-concerts">
-      <artist-concerts :concerts="concerts" />
+    <section class="artist-description">
+      <div v-html="$md.render(artist.description)" v-if="artist.description" />
     </section>
   </article>
 </template>
@@ -218,6 +218,9 @@ export default {
       grid-area: concerts;
       background-color: var(--secondary-color);
       padding: 1.5rem $viewport-x-padding;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 
@@ -238,7 +241,7 @@ export default {
           writing-mode: vertical-rl;
           text-orientation: mixed;
           padding: 1rem 0;
-          font-size: $text-xl;
+          font-size: $text-2xl;
           text-align: center;
           white-space: nowrap;
 
