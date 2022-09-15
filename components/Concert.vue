@@ -1,5 +1,5 @@
 <template>
-  <div :class="['concert', { dimmed }]">
+  <article :class="['concert', { dimmed }]">
     <h3 class="concert-artists">
       <div v-for="({ sys: { id }, fields: artist }, i) in concert.artists" :key="id">
         <span v-if="i > 0" class="plus">+</span>
@@ -8,29 +8,36 @@
         </nuxt-link>
       </div>
     </h3>
-    <div class="concert-details">
+
+    <div class="concert-date mt-4">
       {{ concert.date | niceDate }}<br>
+      {{ concert.date | niceTime }}
+    </div>
+
+    <div class="concert-venue mt-4">
       {{ concert.venue }}
     </div>
+
+    <div class="concert-municipality">
+      {{ municipality }}
+    </div>
+
     <div class="concert-book">
-      <span v-if="dimmed" class="faux-btn">
-        CONCERT REALITZAT
+      <span v-if="dimmed">
+        Concert realitzat
       </span>
-      <a v-else-if="concert.tickets_url" :href="concert.tickets_url" class="btn" target="_blank" rel="noopener noreferer">
-        {{ concert.button }}
+      <a v-else-if="concert.tickets_url" :href="concert.tickets_url" class="sonora-button" target="_blank" rel="noopener noreferer">
+        <span>Entrades</span>
       </a>
-      <span v-else-if="concert.municipality === 'bocairent'" class="contact-text">
-        Per reservar les vostres localitats, envieu un email a <a href="mailto:cij@bocairent.es">cij@bocairent.es</a> o truqueu al telèfon <a href="tel:962355006">962 35 50 06</a>
-      </span>
-      <span v-else class="faux-btn">
+      <span v-else>
         Entrades a la venda properament
       </span>
     </div>
-  </div>
+  </article>
 </template>
 
 <script>
-import { niceDate } from '@/plugins/nicedate'
+import { niceDate, niceTime } from '@/plugins/nicedate'
 
 export default {
   name: 'Concert',
@@ -38,6 +45,10 @@ export default {
   filters: {
     niceDate (datetime) {
       return niceDate(datetime)
+    },
+
+    niceTime (datetime) {
+      return niceTime(datetime)
     }
   },
 
@@ -54,108 +65,66 @@ export default {
       const concert = new Date(this.concert.date)
 
       return now > concert
+    },
+
+    municipality () {
+      return this.$store.state.venues[this.concert.municipality]
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.concert {
-  display: grid;
-  grid-template-columns: 4fr 2.5fr 1.5fr;
-  column-gap: 5vw;
+  .concert {
+    text-align: center;
 
-  &-artists {
-    font-weight: bold;
-    font-size: $text-headline;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    line-height: 0.9;
-    margin-bottom: 0;
+    &-artists {
+      text-transform: uppercase;
+      font-size: $text-lgr + .25rem;
+      line-height: 1;
 
-    a {
-      color: $black;
-      transition: .25s ease;
+      .plus {
+        display: block;
+      }
 
-      &:hover {
-        color: $white;
+      a {
+        text-decoration: none;
       }
     }
-  }
 
-  &-details {
-    display: flex;
-    line-height: 1.2;
-    height: $text-headline;
-    align-items: center;
-  }
-
-  &-book {
-    height: $text-headline;
-    display: flex;
-    align-items: center;
-
-    .btn,
-    .faux-btn {
-      display: block;
-      border: 1px $black solid;
+    &-date {
+      font-family: 'Maison Mono', monospace;
       text-transform: uppercase;
-      border-radius: 0;
-      padding: .5rem 1.25rem;
-      text-align: center;
-      transition: .25s ease;
-      flex-grow: 1;
+      font-size: $text-lg - .25rem;
+      line-height: 1.1;
+    }
+
+    &-venue {
+      font-family: gtalpina, serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: $text-lg - .25rem;
       line-height: 1;
-      height: 3.25rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1rem;
     }
 
-    .btn:hover {
-      background: $white;
-    }
-  }
-}
-
-.contact-text {
-  line-height: 1.1;
-  font-size: 0.9rem;
-
-  a {
-    color: $black;
-    text-decoration: underline;
-  }
-}
-
-.dimmed {
-  opacity: .5;
-}
-
-@include media-breakpoint-down(md) {
-  .concert {
-    grid-template-columns: 1fr;
-    row-gap: 1rem;
-
-    &-details {
-      margin-top: -.25rem;
+    &-municipality {
+      font-family: akzidenz;
+      font-size: $text-lg - .25rem;
+      text-transform: uppercase;
+      line-height: 1;
     }
 
-    &-book .btn,
-    &-book .faux-btn {
-      width: fit-content;
-      flex-grow: 0;
-      padding: .5rem 1.75rem;
+    &-book {
+      margin-top: 2rem;
     }
 
-    &-book a {
-      white-space: nowrap;
-    }
-
-    .concert-text {
-      align-self: start;
+    &-with {
+      text-transform: uppercase;
+      font-size: $text-base;
     }
   }
-}
+
+  .dimmed {
+    opacity: .5;
+  }
 </style>

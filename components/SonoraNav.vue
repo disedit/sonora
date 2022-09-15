@@ -35,32 +35,32 @@
           <transition name="slide">
             <ul v-if="submenuShown" class="submenu d-md-none">
               <li>
-                <nuxt-link to="/programa/orihuela">
+                <nuxt-link to="/programa/#orihuela">
                   Orihuela
                 </nuxt-link>
               </li>
               <li>
-                <nuxt-link to="/programa/alzira">
+                <nuxt-link to="/programa/#alzira">
                   Alzira
                 </nuxt-link>
               </li>
               <li>
-                <nuxt-link to="/programa/aielo">
+                <nuxt-link to="/programa/#aielo">
                   Aielo de Malferit
                 </nuxt-link>
               </li>
               <li>
-                <nuxt-link to="/programa/peniscola">
+                <nuxt-link to="/programa/#peniscola">
                   Peníscola
                 </nuxt-link>
               </li>
               <li>
-                <nuxt-link to="/programa/castello">
+                <nuxt-link to="/programa/#castello">
                   Castelló de la Plana
                 </nuxt-link>
               </li>
               <li>
-                <nuxt-link to="/programa/alacant">
+                <nuxt-link to="/programa/#alacant">
                   Alacant
                 </nuxt-link>
               </li>

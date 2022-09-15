@@ -137,8 +137,4 @@ export default {
       font-size: $text-base;
     }
   }
-
-  .dimmed {
-    opacity: .5;
-  }
 </style>

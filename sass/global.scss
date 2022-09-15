@@ -3,6 +3,10 @@
 @import 'bootstrap/scss/bootstrap';
 
 // body
+html {
+  scroll-padding-top: $mobile-nav;
+}
+
 body {
   font-size: $text-sm;
   font-weight: 350;
@@ -43,4 +47,18 @@ body {
   .sonora-button {
     border-width: 1px;
   }
+}
+
+// transitions
+.slide-enter-active,
+.slide-leave-active {
+  transition: all .4s;
+  max-height: 800px;
+  overflow: hidden;
+}
+
+.slide-enter,
+.slide-leave-to {
+  max-height: 0;
+  overflow: hidden;
 }
