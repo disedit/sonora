@@ -16,7 +16,6 @@
     "@nuxtjs/markdownit": "^2.0.0",
     "@nuxtjs/style-resources": "^1.2.1",
     "bootstrap": "^5.2.1",
-    "bootstrap-vue": "^2.0.2",
     "contentful": "^9.0.0",
     "nuxt": "^2.15.8",
     "vue-moveable": "^1.8.11"

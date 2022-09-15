@@ -39,7 +39,13 @@ body {
 
   &:hover {
     background-color: $black;
-    color: var(--hover-color, #{$body-bg});
+    color: $body-bg;
+  }
+
+  @each $venue, $color in $venue-colors {
+    &-#{$venue}:hover {
+      color: $color;
+    }
   }
 }
 

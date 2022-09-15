@@ -26,7 +26,13 @@
       <span v-if="dimmed">
         Concert realitzat
       </span>
-      <a v-else-if="concert.tickets_url" :href="concert.tickets_url" class="sonora-button" target="_blank" rel="noopener noreferer">
+      <a
+        v-else-if="concert.tickets_url"
+        :href="concert.tickets_url"
+        :class="['sonora-button', `sonora-button-${concert.municipality}`]"
+        target="_blank"
+        rel="noopener noreferer"
+      >
         <span>Entrades</span>
       </a>
       <span v-else>

@@ -57,29 +57,8 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    'bootstrap-vue/nuxt',
     '@nuxtjs/markdownit'
   ],
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
-  axios: {
-  },
-  /*
-  **
-  */
-  bootstrapVue: {
-    bootstrapCSS: false,
-    bootstrapVueCSS: false,
-    componentPlugins: [
-      'FormPlugin',
-      'FormInputPlugin',
-      'FormGroupPlugin',
-      'ButtonPlugin',
-      'FormTextareaPlugin'
-    ]
-  },
 
   /*
   ** Content
@@ -112,12 +91,5 @@ export default {
       routes.push({ path: '/artists', redirect: { name: 'artistes' } })
       routes.push({ path: '/contact', redirect: { name: 'contacte' } })
     }
-  },
-
-  /*
-  ** Build configuration
-  */
-  build: {
-    extractCSS: true
   }
 }

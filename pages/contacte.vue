@@ -1,50 +1,43 @@
 <template>
-  <div class="contact animated-gradient safe-area">
-    <div class="main-container">
-      <h1 class="contact-title">
-        Contacte
-      </h1>
-      <p class="contact-text-lg">
-        Contacta amb nosaltres omplint aquest formulari.
-      </p>
-      <div class="contact-form">
-        <b-form v-if="!submitted" @submit.prevent="onSubmit">
-          <b-form-group
-            id="email-group"
-            label="Correu electrònic"
-            label-for="email"
-            class="email-group mb-0"
-          >
-            <b-form-input
-              id="email"
-              v-model="form.email"
-              type="email"
-              required
-            />
-          </b-form-group>
-
-          <b-form-group
-            id="message-group"
-            label="Missatge"
-            label-for="message"
-            class="message-group mb-0"
-          >
-            <b-form-textarea
-              id="message"
-              v-model="form.message"
-              required
-              rows="4"
-              max-rows="6"
-            />
-          </b-form-group>
-          <b-button :disabled="submitting" type="submit" variant="primary">
+  <div class="contact">
+    <h1 class="contact-title visually-hidden">
+      Contacta
+    </h1>
+    <div class="contact-text">
+      Contacta amb nosaltres<br>omplint aquest formulari.
+    </div>
+    <div class="contact-form">
+      <form v-if="!submitted" @submit.prevent="onSubmit">
+        <label for="email">
+          Correu electrònic
+        </label>
+        <input
+          id="email"
+          v-model="form.email"
+          class="contact-form-input"
+          type="email"
+          required
+        >
+        <label for="message">
+          Missatge
+        </label>
+        <textarea
+          id="message"
+          v-model="form.message"
+          class="contact-form-input"
+          required
+          rows="4"
+          max-rows="6"
+        />
+        <div>
+          <button :disabled="submitting" type="submit" class="sonora-button">
             Enviar
-          </b-button>
-        </b-form>
-        <div v-else class="submitted">
-          <div class="alert alert-success">
-            Hem rebut el teu correu. Et contestarem tan prompte com siga possible.
-          </div>
+          </button>
+        </div>
+      </form>
+      <div v-else class="submitted">
+        <div class="alert alert-success">
+          Hem rebut el teu correu. Et contestarem tan prompte com siga possible.
         </div>
       </div>
     </div>
@@ -82,5 +75,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: $black;
+  gap: 2px;
 
+  &-text {
+    background: $body-bg;
+    padding: $viewport-x-padding;
+    text-transform: uppercase;
+    font-size: $text-xl;
+    line-height: 1.1;
+  }
+
+  &-form {
+    background: $body-bg;
+
+    label {
+      display: block;
+    }
+  }
+}
 </style>
