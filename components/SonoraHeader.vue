@@ -17,7 +17,7 @@ export default {
 <style lang="scss" scoped>
 .header {
   text-align: center;
-  padding: 1rem $viewport-x-padding .25rem $viewport-x-padding;
+  padding: 1.25rem $viewport-x-padding .5rem $viewport-x-padding;
 
   .logo {
     width: 9.5rem;

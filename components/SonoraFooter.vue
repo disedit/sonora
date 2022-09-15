@@ -145,7 +145,6 @@ export default {
     align-items: center;
     text-align: center;
     height: auto;
-    border-width: 1px;
 
     .social {
       gap: 0;
@@ -165,6 +164,12 @@ export default {
         }
       }
     }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .sonora-footer {
+    border-width: 1px;
   }
 }
 </style>
