@@ -2,7 +2,7 @@
   <div class="page">
     <sonora-header v-if="this.$route.name !== 'index'" class="d-none d-md-block" />
     <sonora-nav v-if="this.$route.name !== 'index'" />
-    <nuxt />
+    <nuxt class="page-content" />
     <sonora-footer />
   </div>
 </template>
@@ -18,3 +18,15 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-content {
+  flex-grow: 1;
+}
+</style>

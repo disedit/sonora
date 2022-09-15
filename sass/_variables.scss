@@ -10,13 +10,22 @@ $green: #A79F57;
 $gray: #D0D2D6;
 
 // venues
+$colors: (
+  'yellow': $yellow,
+  'red': $red,
+  'blue': $blue,
+  'brown': $brown,
+  'pink': $pink,
+  'green': $green
+);
+
 $venue-colors: (
-  'peniscola': $yellow,
-  'bocairent': $pink,
-  'castello': $pink,
-  'alcoi': $yellow,
-  'castello-jazz': $pink,
-  'alacant': $yellow
+  'orihuela': $brown,
+  'alzira': $green,
+  'aielo': $yellow,
+  'peniscola': $red,
+  'castello': $blue,
+  'alacant': $pink
 );
 
 $primary: $blue;
