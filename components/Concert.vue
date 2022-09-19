@@ -23,7 +23,7 @@
     </div>
 
     <div class="concert-book">
-      <span v-if="dimmed">
+      <span v-if="dimmed" class="text">
         Concert realitzat
       </span>
       <a
@@ -33,10 +33,10 @@
         target="_blank"
         rel="noopener noreferer"
       >
-        <span>Entrades</span>
+        <span>Entrada</span>
       </a>
-      <span v-else>
-        Entrades a la venda properament
+      <span v-else class="text">
+        Entrades properament
       </span>
     </div>
   </article>
@@ -121,16 +121,14 @@ export default {
     }
 
     &-book {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
+      text-transform: uppercase;
+      font-size: $text-lg - .25rem;
     }
 
     &-with {
       text-transform: uppercase;
       font-size: $text-base;
     }
-  }
-
-  .dimmed {
-    opacity: .5;
   }
 </style>

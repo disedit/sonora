@@ -6,7 +6,7 @@
 
     <ul class="programme-grid d-none d-md-grid">
       <template v-for="(venue, venueKey) in venues">
-        <li v-for="concert in concertsByVenue(venueKey)" :key="concert.id" :class="`venue-${venueKey}`">
+        <li v-for="concert in concertsByVenue(venueKey)" :key="concert.id" :class="[`venue-${venueKey}`, { dimmed: inThePast(concert.fields.date) }]">
           <concert :concert="concert.fields" />
         </li>
       </template>
@@ -86,6 +86,13 @@ export default {
         this.expanded.push(venue)
         window.location.hash = venue
       }
+    },
+
+    inThePast (time) {
+      const now = new Date()
+      const concert = new Date(time)
+
+      return now > concert
     }
   },
 
@@ -117,6 +124,10 @@ export default {
       border-right: 2px $black solid;
       border-bottom: 2px $black solid;
       padding: $viewport-x-padding;
+
+      &.dimmed {
+        background: $gray;
+      }
     }
   }
 

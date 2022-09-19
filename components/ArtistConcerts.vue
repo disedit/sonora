@@ -19,14 +19,14 @@
       </div>
 
       <div class="concert-book">
-        <span v-if="inThePast(concert.date)">
+        <span v-if="inThePast(concert.date)" class="text">
           Concert realitzat
         </span>
         <a v-else-if="concert.tickets_url" :href="concert.tickets_url" class="sonora-button" target="_blank" rel="noopener noreferer">
-          <span>Entrades</span>
+          <span>Entrada</span>
         </a>
-        <span v-else>
-          Entrades a la venda properament
+        <span v-else class="text">
+          Entrades properament
         </span>
       </div>
 
@@ -129,7 +129,9 @@ export default {
     }
 
     &-book {
-      margin: 2rem 0;
+      margin: 1.5rem 0;
+      text-transform: uppercase;
+      font-size: $text-lg - .25rem;
     }
 
     &-with {
