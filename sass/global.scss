@@ -23,13 +23,14 @@ body {
 
 // button
 .sonora-button {
+  display: inline-block;
   appearance: none;
   text-transform: uppercase;
   background-color: transparent;
   border: 2px $black solid;
   text-decoration: none;
   font-size: $text-lg;
-  padding: 1.25rem 1.75rem;
+  padding: .75rem 2.5rem;
   border-radius: 100%;
 
   span {
@@ -67,4 +68,8 @@ body {
 .slide-leave-to {
   max-height: 0;
   overflow: hidden;
+}
+
+.moveable-control-box {
+  display: none !important;
 }

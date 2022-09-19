@@ -1,9 +1,11 @@
 <template>
   <main class="about">
     <div class="about-content">
-      <h1 class="mb-4">
-        SONORA 2022-2023<br>
-        EL CIRCUIT DE LA MÚSICA VALENCIANA
+      <h1 class="mb-3 mb-md-4">
+        SONORA 2022-2023
+        <div class="mt-3 mt-md-0">
+          EL CIRCUIT DE LA MÚSICA VALENCIANA
+        </div>
       </h1>
 
       <p>
@@ -31,8 +33,9 @@
         amb la voluntat de desestacionalitzar l'oferta musical i donar difusió
         a les propostes que han estat reconegudes als premis.
       </p>
+      <img src="../assets/images/photos/circuit-2.jpg" alt="" class="d-md-none">
     </div>
-    <div class="about-image" />
+    <div class="about-image d-none d-md-block" />
   </main>
 </template>
 
@@ -59,12 +62,22 @@ export default {
   &-content {
     background: $body-bg;
     padding: $viewport-x-padding;
+
+    img {
+      width: 100%;
+    }
   }
 
   &-image {
     background-image: url(../assets/images/photos/circuit.jpg);
     background-size: cover;
     background-position: center;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .about {
+    grid-template-columns: 1fr;
   }
 }
 </style>

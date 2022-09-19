@@ -1,14 +1,11 @@
 <template>
   <div class="contact">
-    <h1 class="contact-title visually-hidden">
-      Contacta
-    </h1>
     <div class="contact-text">
-      Contacta amb nosaltres<br>omplint aquest formulari.
+      <h1>Contacta amb nosaltres<br>omplint aquest formulari.</h1>
     </div>
     <div class="contact-form">
       <form v-if="!submitted" @submit.prevent="onSubmit">
-        <label for="email">
+        <label for="email" class="contact-form-label">
           Correu electrònic
         </label>
         <input
@@ -18,7 +15,7 @@
           type="email"
           required
         >
-        <label for="message">
+        <label for="message" class="contact-form-label">
           Missatge
         </label>
         <textarea
@@ -26,19 +23,17 @@
           v-model="form.message"
           class="contact-form-input"
           required
-          rows="4"
-          max-rows="6"
+          rows="6"
+          max-rows="10"
         />
-        <div>
+        <div class="contact-form-button">
           <button :disabled="submitting" type="submit" class="sonora-button">
-            Enviar
+            <span>{{ submitting ? 'Enviant...' : 'Enviar' }}</span>
           </button>
         </div>
       </form>
       <div v-else class="submitted">
-        <div class="alert alert-success">
-          Hem rebut el teu correu. Et contestarem tan prompte com siga possible.
-        </div>
+        Hem rebut el teu correu. Et contestarem tan prompte com siga possible.
       </div>
     </div>
   </div>
@@ -92,8 +87,56 @@ export default {
   &-form {
     background: $body-bg;
 
-    label {
+    &-label {
       display: block;
+      border-bottom: 2px $black solid;
+      padding: 1.5rem $viewport-x-padding;
+    }
+
+    &-input {
+      display: block;
+      background: $white;
+      border: 0;
+      border-bottom: 2px $black solid;
+      width: 100%;
+      font-family: inherit;
+      padding: 1.5rem $viewport-x-padding;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    &-button {
+      text-align: center;
+      padding: 1.5rem $viewport-x-padding;
+
+      button:disabled {
+        color: $black;
+        opacity: .25;
+      }
+    }
+  }
+}
+
+.submitted {
+  background: $yellow;
+  padding: $viewport-x-padding;
+  font-size: $text-lg;
+  line-height: 1.1;
+  border-bottom: 2px $black solid;
+}
+
+@include media-breakpoint-down(md) {
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 0;
+
+    &-form {
+      &-label,
+      &-input {
+        border-width: 1px;
+      }
     }
   }
 }

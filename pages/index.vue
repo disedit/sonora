@@ -98,9 +98,10 @@ export default {
 .home {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - #{$footer-height});
-  gap: 3rem;
-  overflow: hidden;
+}
+
+.header {
+  margin-bottom: 3rem;
 }
 
 .content {
@@ -182,11 +183,5 @@ export default {
     top: -4rem !important;
     right: .5rem !important;
   }
-}
-</style>
-
-<style lang="scss">
-.moveable-control-box {
-  --moveable-color: transparent;
 }
 </style>
