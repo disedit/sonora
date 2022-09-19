@@ -101,6 +101,7 @@ export default {
       width: 100%;
       font-family: inherit;
       padding: 1.5rem $viewport-x-padding;
+      border-radius: 0;
 
       &:focus {
         outline: 0;
@@ -110,6 +111,7 @@ export default {
     &-button {
       text-align: center;
       padding: 1.5rem $viewport-x-padding;
+      font-size: $text-lg;
 
       button:disabled {
         color: $black;

@@ -148,6 +148,7 @@ export default {
     border-bottom: 1px $black solid;
     padding: 1rem $viewport-x-padding;
     align-items: center;
+    color: $black;
 
     svg {
       height: .75em;
