@@ -264,6 +264,7 @@ export default {
           --rotate: -90deg;
           height: 100%;
           width: auto;
+          max-width: 4rem;
         }
 
         h1 {
