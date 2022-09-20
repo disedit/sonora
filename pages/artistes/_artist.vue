@@ -1,5 +1,5 @@
 <template>
-  <article :class="['artist', `primary-${artist.color1}`, `secondary-${artist.color2}`]">
+  <article :class="['artist', `artist-${artist.slug}`, `primary-${artist.color1}`, `secondary-${artist.color2}`]">
     <header :class="['artist-name', `shape-${artist.shape}`]">
       <component :is="shape" class="shape shape-first" />
       <h1><span>{{ artist.name }}</span></h1>
@@ -130,16 +130,6 @@ export default {
 <style lang="scss" scoped>
   @import '../../sass/variables';
 
-  @each $name, $color in $colors {
-    .primary-#{$name} {
-      --primary-color: #{$color};
-    }
-
-    .secondary-#{$name} {
-      --secondary-color: #{$color};
-    }
-  }
-
   .artist {
     display: grid;
     gap: 1px;
@@ -179,7 +169,7 @@ export default {
       }
 
       &::v-deep .shape :is(path, polygon) {
-        fill: var(--secondary-color);
+        fill: var(--shape-color, var(--secondary-color));
       }
     }
 
@@ -207,6 +197,7 @@ export default {
         svg {
           height: 2.25rem;
           width: auto;
+          max-width: 3.25rem;
         }
       }
     }
@@ -228,6 +219,20 @@ export default {
       align-items: center;
       justify-content: center;
     }
+  }
+
+  @each $name, $color in $colors {
+    .primary-#{$name} {
+      --primary-color: #{$color};
+    }
+
+    .secondary-#{$name} {
+      --secondary-color: #{$color};
+    }
+  }
+
+  .artist-zoo {
+    --shape-color: #{$black};
   }
 
   @include media-breakpoint-up(md) {
