@@ -97,19 +97,21 @@ export default {
     padding: 0;
     list-style: none;
     font-size: $text-lg;
+    flex-grow: 1;
 
-    li:not(:last-child) {
-      margin-bottom: 2rem;
+    li:not(:first-child) {
+      border-top: 2px $black solid;
     }
   }
 
   .concert {
+    padding: 1.5rem $viewport-x-padding;
     text-align: center;
 
     &-date {
       font-family: 'Maison Mono', monospace;
       text-transform: uppercase;
-      font-size: $text-lgr - .25rem;
+      font-size: $text-lg - .25rem;
       line-height: 1.1;
     }
 
@@ -117,19 +119,19 @@ export default {
       font-family: gtalpina, serif;
       font-weight: bold;
       text-transform: uppercase;
-      font-size: $text-lgr;
+      font-size: $text-lg - .25rem;
       line-height: 1;
     }
 
     &-municipality {
       font-family: akzidenz;
-      font-size: $text-lgr;
+      font-size: $text-lg - .25rem;
       text-transform: uppercase;
       line-height: 1;
     }
 
     &-book {
-      margin: 1.5rem 0;
+      margin-top: 1.5rem;
       text-transform: uppercase;
       font-size: $text-lg - .25rem;
     }
@@ -137,6 +139,14 @@ export default {
     &-with {
       text-transform: uppercase;
       font-size: $text-base;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .artist-concerts-list {
+      li:not(:first-child) {
+        border-width: 1px;
+      }
     }
   }
 </style>

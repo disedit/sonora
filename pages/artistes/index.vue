@@ -86,11 +86,12 @@ export default {
     }
 
     .artist-maluks,
-    .artist-sandra-monfort {
+    .artist-sandra-monfort,
+    .artist-ding-dong-system {
       flex-grow: 0 !important;
 
       a {
-        padding-right: 6vw;
+        padding-right: 4.5vw;
       }
     }
 
@@ -99,7 +100,7 @@ export default {
       flex-grow: 0 !important;
 
       a {
-        padding-left: 6vw;
+        padding-left: 4.5vw;
       }
     }
 

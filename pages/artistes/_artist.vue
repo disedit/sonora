@@ -150,6 +150,7 @@ export default {
         "social"
         "description";
     background: $black;
+    min-height: 55vw;
 
     &-name {
       grid-area: name;
@@ -157,10 +158,14 @@ export default {
       background-color: var(--primary-color);
 
       h1 {
+        display: flex;
         flex-grow: 1;
         text-transform: uppercase;
         font-weight: 300;
         line-height: 1;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
       }
 
       .shape {
@@ -198,7 +203,7 @@ export default {
         margin: 0;
 
         svg {
-          height: 2.5rem;
+          height: 2.25rem;
           width: auto;
         }
       }
@@ -217,7 +222,6 @@ export default {
     &-concerts {
       grid-area: concerts;
       background-color: var(--secondary-color);
-      padding: 1.5rem $viewport-x-padding;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -227,8 +231,8 @@ export default {
   @include media-breakpoint-up(md) {
     .artist {
       gap: 2px;
-      grid-template-columns: 1fr 9rem 1fr;
-      grid-template-rows: 1fr 5rem 1fr;
+      grid-template-columns: 1fr 9vw 1fr;
+      grid-template-rows: auto 5rem 1fr;
       grid-template-areas:
         "concerts name image"
         "social name image"
@@ -241,13 +245,12 @@ export default {
           writing-mode: vertical-rl;
           text-orientation: mixed;
           padding: 1rem 0;
-          font-size: $text-2xl;
-          text-align: center;
+          font-size: 2.5rem;
           white-space: nowrap;
 
           span {
             position: relative;
-            right: .16em;
+            right: .12em;
           }
         }
       }
@@ -268,12 +271,8 @@ export default {
         }
 
         h1 {
-          display: flex;
           height: 100%;
           padding: .5rem;
-          text-align: center;
-          justify-content: center;
-          align-items: center;
 
           span {
             position: relative;

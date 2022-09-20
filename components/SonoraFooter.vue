@@ -107,7 +107,7 @@ export default {
   justify-content: space-between;
   gap: 1.5rem;
   border-top: 2px $black solid;
-  padding: 1.5rem $viewport-x-padding;
+  padding: 1.25rem $viewport-x-padding;
   height: $footer-height;
   font-size: $text-xs;
 
@@ -128,9 +128,21 @@ export default {
       margin: 0;
       padding: 0;
 
+      a {
+        text-decoration: none;
+      }
+
       svg {
         display: none;
       }
+    }
+  }
+
+  a {
+    transition: .1s ease;
+
+    &:hover {
+      opacity: .5;
     }
   }
 

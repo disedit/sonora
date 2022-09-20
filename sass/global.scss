@@ -5,6 +5,8 @@
 // body
 html {
   scroll-padding-top: $mobile-nav;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {

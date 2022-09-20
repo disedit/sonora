@@ -117,16 +117,20 @@ export default {
   a {
     display: block;
     border-top: 2px $black solid;
-    padding: .25rem $viewport-x-padding;
-    font-size: clamp(2.5rem, 4vw, 5rem);
-    text-decoration: none;
+    font-size: 4.5rem;
     font-weight: 300;
+    padding: 0 $viewport-x-padding;
+    text-decoration: none;
     text-transform: uppercase;
-    line-height: 1.6;
 
     span {
-      display: block;
-      margin-bottom: -0.2em;
+      position: relative;
+      top: .125em;
+    }
+
+    &:hover {
+      background: $black;
+      color: $gray;
     }
   }
 
@@ -140,7 +144,7 @@ export default {
   }
 
   &-circuit {
-    background: $brown;
+    background: $green;
   }
 
   &-contacte {
@@ -150,7 +154,7 @@ export default {
 
 .sticker {
   position: absolute;
-  width: 12vw;
+  width: 10vw;
   min-width: 140px;
   z-index: 500;
   cursor: grab;
@@ -163,6 +167,12 @@ export default {
 
   &.dragging img {
     transform: scale(1.1) rotate(4deg);
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .menu a {
+    font-size: clamp(2rem, 6.5vw, 4.5rem);
   }
 }
 
