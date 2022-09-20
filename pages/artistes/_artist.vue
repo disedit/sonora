@@ -195,7 +195,7 @@ export default {
         margin: 0;
 
         svg {
-          height: 2.25rem;
+          height: 2rem;
           width: auto;
           max-width: 3.25rem;
         }
@@ -206,6 +206,7 @@ export default {
       grid-area: description;
       background-color: var(--secondary-color);
       padding: 1.5rem $viewport-x-padding;
+      font-size: $text-base;
 
       &::v-deep p:last-child {
         margin-bottom: 0;

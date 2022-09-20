@@ -139,6 +139,7 @@ export default {
     &-with {
       text-transform: uppercase;
       font-size: $text-base;
+      margin-top: 1rem;
     }
   }
 

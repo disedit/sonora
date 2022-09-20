@@ -125,10 +125,5 @@ export default {
       text-transform: uppercase;
       font-size: $text-lg - .25rem;
     }
-
-    &-with {
-      text-transform: uppercase;
-      font-size: $text-base;
-    }
   }
 </style>
