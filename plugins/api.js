@@ -4,8 +4,7 @@ class API {
   async getArtists () {
     const { items } = await client.getEntries({
       content_type: 'artist',
-      select: 'fields.name,fields.slug,fields.image',
-      // order: 'fields.order'
+      select: 'fields.name,fields.slug,fields.color2',
       order: 'fields.name'
     })
 

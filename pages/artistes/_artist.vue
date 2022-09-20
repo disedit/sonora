@@ -231,7 +231,7 @@ export default {
   @include media-breakpoint-up(md) {
     .artist {
       gap: 2px;
-      grid-template-columns: 1fr 9vw 1fr;
+      grid-template-columns: 1fr clamp(7rem, 9vw, 12rem) 1fr;
       grid-template-rows: auto 5rem 1fr;
       grid-template-areas:
         "concerts name image"

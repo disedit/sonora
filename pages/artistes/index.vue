@@ -5,7 +5,11 @@
     </h1>
     <div class="artist-grid">
       <div v-for="(artists, i) in rows" :key="i" class="artist-row">
-        <div v-for="{ fields: artist } in artists" :key="artist.slug" :class="['artist', `artist-${artist.slug}`, { empty: !artist.name }]">
+        <div
+          v-for="{ fields: artist } in artists"
+          :key="artist.slug"
+          :class="['artist', `artist-${artist.slug}`, `artist-color-${artist.color2}`, { empty: !artist.name }]"
+        >
           <nuxt-link :to="`/artistes/${artist.slug}`" v-if="artist.name">
             <span>{{ artist.name }}</span>
           </nuxt-link>
@@ -52,13 +56,15 @@ export default {
       font-weight: 300;
       padding: 0 $viewport-x-padding;
 
-      &:hover {
-        background-color: $pink;
-      }
-
       span {
         position: relative;
         top: .125em;
+      }
+    }
+
+    @each $name, $color in $colors {
+      &-color-#{$name} a:hover {
+        background: $color;
       }
     }
   }
