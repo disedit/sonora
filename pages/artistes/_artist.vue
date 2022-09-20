@@ -77,7 +77,9 @@ const shapes = [
   () => import('@/assets/images/shapes/7.svg?inline'),
   () => import('@/assets/images/shapes/8.svg?inline'),
   () => import('@/assets/images/shapes/9.svg?inline'),
-  () => import('@/assets/images/shapes/10.svg?inline')
+  () => import('@/assets/images/shapes/10.svg?inline'),
+  () => import('@/assets/images/shapes/11.svg?inline'),
+  () => import('@/assets/images/shapes/12.svg?inline')
 ]
 
 export default {
