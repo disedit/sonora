@@ -7,27 +7,22 @@
     <div class="social d-xl-none">
       <ul class="social-list">
         <li>
-          <a href="" target="_blank" rel="noopener noreferer">
-            <spotify-icon /> <span>Spotify</span>
-          </a>
-        </li>
-        <li>
-          <a href="" target="_blank" rel="noopener noreferer">
+          <a href="https://www.instagram.com/sonora_circuit/" target="_blank" rel="noopener noreferer">
             <instagram-icon /> <span>Instagram</span>
           </a>
         </li>
         <li>
-          <a href="" target="_blank" rel="noopener noreferer">
+          <a href="https://twitter.com/GVAivc" target="_blank" rel="noopener noreferer">
             <twitter-icon /> <span>Twitter</span>
           </a>
         </li>
         <li>
-          <a href="" target="_blank" rel="noopener noreferer">
+          <a href="https://www.facebook.com/GVAInstitutValenciadeCultura/" target="_blank" rel="noopener noreferer">
             <facebook-icon /> <span>Facebook</span>
           </a>
         </li>
         <li>
-          <a href="" target="_blank" rel="noopener noreferer">
+          <a href="https://www.youtube.com/channel/UCOJWX2GnBA8M8z0Uvajh86Q" target="_blank" rel="noopener noreferer">
             <youtube-icon /> <span>Youtube</span>
           </a>
         </li>
@@ -36,29 +31,24 @@
 
     <ul class="social-list d-none d-xl-block">
       <li>
-        <a href="" target="_blank" rel="noopener noreferer">
-          <spotify-icon /> <span>Spotify</span>
-        </a>
-      </li>
-      <li>
-        <a href="" target="_blank" rel="noopener noreferer">
+        <a href="https://www.instagram.com/sonora_circuit/" target="_blank" rel="noopener noreferer">
           <instagram-icon /> <span>Instagram</span>
         </a>
       </li>
       <li>
-        <a href="" target="_blank" rel="noopener noreferer">
+        <a href="https://twitter.com/GVAivc" target="_blank" rel="noopener noreferer">
           <twitter-icon /> <span>Twitter</span>
         </a>
       </li>
     </ul>
     <ul class="social-list d-none d-xl-block">
       <li>
-        <a href="" target="_blank" rel="noopener noreferer">
+        <a href="https://www.facebook.com/GVAInstitutValenciadeCultura/" target="_blank" rel="noopener noreferer">
           <facebook-icon /> <span>Facebook</span>
         </a>
       </li>
       <li>
-        <a href="" target="_blank" rel="noopener noreferer">
+        <a href="https://www.youtube.com/channel/UCOJWX2GnBA8M8z0Uvajh86Q" target="_blank" rel="noopener noreferer">
           <youtube-icon /> <span>Youtube</span>
         </a>
       </li>

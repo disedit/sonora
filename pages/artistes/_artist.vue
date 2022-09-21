@@ -232,8 +232,15 @@ export default {
     }
   }
 
+  /* Exceptions */
   .artist-zoo {
     --shape-color: #{$black};
+  }
+
+  .artist-ding-dong-system {
+    .artist-image {
+      background-position: bottom;
+    }
   }
 
   @include media-breakpoint-up(md) {
