@@ -60,15 +60,13 @@ export default {
         position: relative;
         top: .125em;
       }
-
-      &:active {
-        background: $gray;
-      }
     }
 
-    @each $name, $color in $colors {
-      &-color-#{$name} a:hover {
-        background: $color;
+    @include media-breakpoint-up(md) {
+      @each $name, $color in $colors {
+        &-color-#{$name} a:hover {
+          background: $color;
+        }
       }
     }
   }

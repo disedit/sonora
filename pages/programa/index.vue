@@ -5,11 +5,9 @@
     </h1>
 
     <ul class="programme-grid d-none d-md-grid">
-      <template v-for="(venue, venueKey) in venues">
-        <li v-for="concert in concertsByVenue(venueKey)" :key="concert.id" :class="[`venue-${venueKey}`, { dimmed: inThePast(concert.fields.date) }]">
-          <concert :concert="concert.fields" />
-        </li>
-      </template>
+      <li v-for="concert in concertsByDate" :key="concert.id" :class="[`venue-${concert.fields.municipality}`, { dimmed: inThePast(concert.fields.date) }]">
+        <concert :concert="concert.fields" />
+      </li>
     </ul>
 
     <ul class="programme-drawers d-md-none">
@@ -54,6 +52,10 @@ export default {
   computed: {
     venues () {
       return this.$store.state.venues
+    },
+
+    concertsByDate () {
+      return this.concerts
     }
   },
 
