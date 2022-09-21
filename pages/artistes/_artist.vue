@@ -240,7 +240,7 @@ export default {
     .artist {
       gap: 2px;
       grid-template-columns: 1fr clamp(7rem, 9vw, 12rem) 1fr;
-      grid-template-rows: auto 5rem 1fr;
+      grid-template-rows: auto 4rem 1fr;
       grid-template-areas:
         "concerts name image"
         "social name image"
@@ -275,7 +275,7 @@ export default {
           --rotate: -90deg;
           height: 100%;
           width: auto;
-          max-width: 4rem;
+          max-width: 5rem;
         }
 
         h1 {

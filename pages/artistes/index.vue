@@ -60,6 +60,10 @@ export default {
         position: relative;
         top: .125em;
       }
+
+      &:active {
+        background: $gray;
+      }
     }
 
     @each $name, $color in $colors {

@@ -208,7 +208,7 @@ export default {
         appearance: none;
         border: 0;
         background: transparent;
-        padding: .5rem 1rem;
+        padding: .5rem $viewport-x-padding;
         margin: -.5rem -1.25rem;
         margin-left: auto;
       }
