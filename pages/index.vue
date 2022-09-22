@@ -1,6 +1,5 @@
 <template>
   <main class="home">
-    <sonora-header class="header" />
     <div class="content">
       <ul class="menu">
         <li class="menu-artistes">
@@ -100,13 +99,10 @@ export default {
   flex-direction: column;
 }
 
-.header {
-  margin-bottom: 3rem;
-}
-
 .content {
   position: relative;
   margin-top: auto;
+  padding-top: 3rem;
 }
 
 .menu {
@@ -178,7 +174,7 @@ export default {
 
 @include media-breakpoint-down(md) {
   .home {
-    min-height: 100vh;
+    min-height: calc(100vh - 8.625rem - 3rem);
   }
 
   .menu {
@@ -190,7 +186,7 @@ export default {
   }
 
   .sticker {
-    top: -4rem !important;
+    top: -1rem !important;
     right: .5rem !important;
   }
 }
