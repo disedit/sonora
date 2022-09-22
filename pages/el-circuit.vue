@@ -33,7 +33,7 @@
         amb la voluntat de desestacionalitzar l'oferta musical i donar difusió
         a les propostes que han estat reconegudes als premis.
       </p>
-      <img src="../assets/images/photos/circuit-3.jpg" alt="" class="d-md-none">
+      <img src="../assets/images/photos/circuit.jpg" alt="" class="d-md-none">
     </div>
     <div class="about-image d-none d-md-block" />
   </main>
@@ -69,7 +69,7 @@ export default {
   }
 
   &-image {
-    background-image: url(../assets/images/photos/circuit-3.jpg);
+    background-image: url(../assets/images/photos/circuit.jpg);
     background-size: cover;
     background-position: center;
   }
