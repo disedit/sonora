@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <sonora-header :class="{ 'd-none d-md-block': this.$route.name !== 'index' }" />
+    <sonora-header :class="['header', { 'header-hidden': this.$route.name !== 'index' }]" />
     <transition name="page">
       <sonora-nav v-if="this.$route.name !== 'index'" />
     </transition>
@@ -31,5 +31,22 @@ export default {
 
 .page-content {
   flex-grow: 1;
+}
+
+.header {
+  transition: 1s ease;
+  transition-delay: 1s;
+}
+
+.header-hidden {
+  opacity: 1;
+}
+
+@include media-breakpoint-down(md) {
+  .header-hidden {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
 }
 </style>
