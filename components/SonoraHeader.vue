@@ -20,14 +20,14 @@ export default {
   padding: 1.25rem $viewport-x-padding .5rem $viewport-x-padding;
 
   .logo {
-    width: 9.5rem;
+    height: 4rem;
     margin-bottom: .5rem;
   }
 
   h1 {
     font-family: $font-family-serif;
     text-transform: uppercase;
-    font-size: $text-lgr;
+    font-size: 1.6rem;
   }
 
   a {

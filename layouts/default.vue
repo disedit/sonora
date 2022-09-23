@@ -1,7 +1,9 @@
 <template>
   <div class="page">
-    <sonora-header v-if="this.$route.name !== 'index'" class="d-none d-md-block" />
-    <sonora-nav v-if="this.$route.name !== 'index'" />
+    <sonora-header :class="{ 'd-none d-md-block': this.$route.name !== 'index' }" />
+    <transition name="page">
+      <sonora-nav v-if="this.$route.name !== 'index'" />
+    </transition>
     <nuxt class="page-content" />
     <sonora-footer />
   </div>

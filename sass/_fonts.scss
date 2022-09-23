@@ -2,30 +2,35 @@
 	src: url('../assets/fonts/akzidenz.woff') format('woff');
 	font-family: akzidenz;
 	font-weight: bold;
+	font-display: block;
 }
 
 @font-face {
 	src: url('../assets/fonts/gtalpina.woff') format('woff');
 	font-family: gtalpina;
 	font-weight: bold;
+	font-display: block;
 }
 
 @font-face {
 	src: url('../assets/fonts/lausanne300.woff') format('woff');
 	font-family: lausanne;
 	font-weight: 300;
+	font-display: block;
 }
 
 @font-face {
 	src: url('../assets/fonts/lausanne350.woff') format('woff');
 	font-family: lausanne;
 	font-weight: 350;
+	font-display: block;
 }
 
 @font-face {
 	src: url('../assets/fonts/akzidenz.woff') format('woff');
 	font-family: lausanne;
 	font-weight: bold;
+	font-display: block;
 }
 
 @font-face {
@@ -38,4 +43,5 @@
 	src: url('../assets/fonts/roslindale.woff') format('woff');
 	font-family: roslindale;
 	font-weight: normal;
+	font-display: block;
 }
