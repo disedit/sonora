@@ -3,8 +3,8 @@ export const state = () => ({
     orihuela: 'Orihuela',
     alzira: 'Alzira',
     aielo: 'Aielo de Malferit',
-    peniscola: 'Peniscola',
-    castello: 'Castelló',
+    peniscola: 'Peníscola',
+    castello: 'Castelló de la Plana',
     alacant: 'Alacant'
   }
 })
