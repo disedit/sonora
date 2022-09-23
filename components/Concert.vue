@@ -36,7 +36,7 @@
         <span>Entrada</span>
       </a>
       <span v-else class="text">
-        Entrades properament
+        {{ concert.text || 'Entrades properament' }}
       </span>
     </div>
   </article>
