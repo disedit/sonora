@@ -41,6 +41,7 @@
 
 <script>
 export default {
+  layout: 'home',
   components: {
     Moveable: () => {
       if (process.client) {

@@ -88,10 +88,39 @@ body {
 }
 
 .page-enter-active,
-.page-leave-active {
+.page-leave-active,
+.layout-enter-active,
+.layout-leave-active {
   transition: opacity .25s;
 }
+
 .page-enter,
-.page-leave-to {
+.page-leave-to,
+.layout-enter,
+.layout-leave-to {
   opacity: 0;
+}
+
+
+
+@include media-breakpoint-up(md) {
+  .layout-enter-active,
+  .layout-leave-active {
+    transition: opacity .25s;
+  }
+
+  .layout-enter,
+  .layout-leave-to {
+    opacity: 0.9;
+  }
+
+  .layout-enter-active :is(.page-content, .sonora-footer, .menu),
+  .layout-leave-active :is(.page-content, .sonora-footer, .menu) {
+    transition: opacity .25s;
+  }
+
+  .layout-enter :is(.page-content, .sonora-footer, .menu),
+  .layout-leave-to :is(.page-content, .sonora-footer, .menu) {
+    opacity: 0;
+  }
 }

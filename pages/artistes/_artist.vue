@@ -68,18 +68,18 @@ import YoutubeIcon from '@/assets/images/icons/youtube.svg?inline'
 import BandcampIcon from '@/assets/images/icons/bandcamp.svg?inline'
 
 const shapes = [
-  () => import('@/assets/images/shapes/1.svg?inline'),
-  () => import('@/assets/images/shapes/2.svg?inline'),
-  () => import('@/assets/images/shapes/3.svg?inline'),
-  () => import('@/assets/images/shapes/4.svg?inline'),
-  () => import('@/assets/images/shapes/5.svg?inline'),
-  () => import('@/assets/images/shapes/6.svg?inline'),
-  () => import('@/assets/images/shapes/7.svg?inline'),
-  () => import('@/assets/images/shapes/8.svg?inline'),
-  () => import('@/assets/images/shapes/9.svg?inline'),
-  () => import('@/assets/images/shapes/10.svg?inline'),
-  () => import('@/assets/images/shapes/11.svg?inline'),
-  () => import('@/assets/images/shapes/12.svg?inline')
+  require('@/assets/images/shapes/1.svg?inline'),
+  require('@/assets/images/shapes/2.svg?inline'),
+  require('@/assets/images/shapes/3.svg?inline'),
+  require('@/assets/images/shapes/4.svg?inline'),
+  require('@/assets/images/shapes/5.svg?inline'),
+  require('@/assets/images/shapes/6.svg?inline'),
+  require('@/assets/images/shapes/7.svg?inline'),
+  require('@/assets/images/shapes/8.svg?inline'),
+  require('@/assets/images/shapes/9.svg?inline'),
+  require('@/assets/images/shapes/10.svg?inline'),
+  require('@/assets/images/shapes/11.svg?inline'),
+  require('@/assets/images/shapes/12.svg?inline')
 ]
 
 export default {
