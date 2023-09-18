@@ -68,7 +68,7 @@
       <p><a href="https://ivc.gva.es/val/ivc-val/qui-som-ivc/avis-legal-val/politica-de-privadesa/nota-legal-val" class="legal-notice" target="_blank" rel="noopener noreferrer">Nota Legal</a></p>
     </div>
     <a class="institutions" href="https://ivc.gva.es/" target="_blank" rel="noopener noreferer">
-      <img src="../assets/images/logos/institucionals.svg" class="ivc" alt="IVC - Fes Cultura">
+      <img src="../assets/images/logos/generalitat.svg" class="ivc" alt="IVC - Fes Cultura">
     </a>
   </footer>
 </template>

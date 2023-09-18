@@ -1,45 +1,38 @@
 //colors
 $black: #000;
-$white: #FBFAF9;
-$yellow: #F7C046;
-$red: #F55309;
-$blue: #8CB9C2;
-$brown: #B1713F;
-$pink: #EDB4BC;
-$green: #A79F57;
-$gray: #D0D2D6;
+$white: #FEFDF0;
+$purple: #715DB7;
+$gold: #B48223;
+$blue: #9EE0D3;
+$pink: #FB81B4;
+
+// delete
+$gray: gray;
 
 // venues
 $colors: (
-  'yellow': $yellow,
-  'red': $red,
-  'orange': $red,
+  'purple': $purple,
+  'gold': $gold,
   'blue': $blue,
-  'brown': $brown,
-  'pink': $pink,
-  'green': $green,
-  'gray': $gray,
-  'black': $black
+  'pink': $pink
 );
 
-$venue-colors: (
-  'orihuela': $brown,
-  'alzira': $green,
-  'aielo': $yellow,
-  'peniscola': $red,
+$venues: (
+  'guardamar': $purple,
+  'geldo': $gold,
   'castello': $blue,
-  'alacant': $pink
+  'alacant': $pink,
 );
 
 $primary: $blue;
 $secondary: $pink;
 
-$body-bg: $gray;
+$body-bg: $white;
 $body-color: $black;
 
 // fonts
-$font-family-sans-serif: lausanne, sans-serif;
-$font-family-serif: roslindale, serif;
+$font-family-sans-serif: "Apfel Grotezk", sans-serif;
+$font-family-serif: Reckless, serif;
 
 // text sizes
 $text-base: 1.25rem;
@@ -47,15 +40,16 @@ $text-xs: .875rem;
 $text-sm: 1.1rem;
 $text-lg: 1.65rem;
 $text-lgr: 1.875rem;
-$text-xl: 2.15rem;
+$text-xl: clamp(1.75rem, 1.5vw, 2.15rem);
 $text-2xl: 3rem;
 $text-headline: clamp(3rem, 5vw, 5.5rem);
 
 // navbar and footer
-$navbar-safe-area: 5.5rem;
+$navbar-safe-area: 4.3rem;
 $mobile-nav: 3rem;
 $footer-height: 6.875rem;
-$viewport-x-padding: calc(.5rem + 2vw);
+$viewport-x-padding: 2rem;
+$viewport-y-padding: .8rem;
 
 // links
 $link-color: $black;

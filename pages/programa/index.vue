@@ -180,7 +180,7 @@ export default {
   }
 }
 
-@each $venue, $color in $venue-colors {
+@each $venue, $color in $venues {
   .venue-#{$venue} {
     background-color: $color;
   }

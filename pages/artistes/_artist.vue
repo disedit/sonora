@@ -59,43 +59,11 @@
 </template>
 
 <script>
-import FacebookIcon from '@/assets/images/icons/facebook.svg?inline'
-import InstagramIcon from '@/assets/images/icons/instagram.svg?inline'
-import TwitterIcon from '@/assets/images/icons/twitter.svg?inline'
-import SpotifyIcon from '@/assets/images/icons/spotify.svg?inline'
-import WebIcon from '@/assets/images/icons/web.svg?inline'
-import YoutubeIcon from '@/assets/images/icons/youtube.svg?inline'
-import BandcampIcon from '@/assets/images/icons/bandcamp.svg?inline'
-
-const shapes = [
-  require('@/assets/images/shapes/1.svg?inline'),
-  require('@/assets/images/shapes/2.svg?inline'),
-  require('@/assets/images/shapes/3.svg?inline'),
-  require('@/assets/images/shapes/4.svg?inline'),
-  require('@/assets/images/shapes/5.svg?inline'),
-  require('@/assets/images/shapes/6.svg?inline'),
-  require('@/assets/images/shapes/7.svg?inline'),
-  require('@/assets/images/shapes/8.svg?inline'),
-  require('@/assets/images/shapes/9.svg?inline'),
-  require('@/assets/images/shapes/10.svg?inline'),
-  require('@/assets/images/shapes/11.svg?inline'),
-  require('@/assets/images/shapes/12.svg?inline')
-]
-
 export default {
-  components: {
-    InstagramIcon,
-    FacebookIcon,
-    TwitterIcon,
-    WebIcon,
-    SpotifyIcon,
-    YoutubeIcon,
-    BandcampIcon
-  },
 
   computed: {
     shape () {
-      return shapes[this.artist.shape - 1]
+      return 1
     },
 
     image () {

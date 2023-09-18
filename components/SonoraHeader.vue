@@ -1,9 +1,13 @@
 <template>
   <header class="header">
-    <nuxt-link to="/">
+    <nuxt-link to="/" class="header-title">
+      <h1>Circuit de la<br>Música Valenciana</h1>
+    </nuxt-link>
+    <nav class="header-nav d-none">
+      Nav
+    </nav>
+    <nuxt-link class="header-logo" to="/" aria-label="Sonora (anar a la pàgina principal)">
       <sonora-logo class="logo" />
-      <span class="visually-hidden">Sonora</span>
-      <h1>Circuit de la música valenciana</h1>
     </nuxt-link>
   </header>
 </template>
@@ -16,22 +20,26 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  text-align: center;
-  padding: 1.25rem $viewport-x-padding .5rem $viewport-x-padding;
+  padding: $viewport-y-padding $viewport-x-padding;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $navbar-safe-area;
 
-  .logo {
-    height: 4rem;
-    margin-bottom: .5rem;
-  }
-
-  h1 {
-    font-family: $font-family-serif;
-    text-transform: uppercase;
-    font-size: 1.6rem;
-  }
-
-  a {
+  &-title {
     text-decoration: none;
+
+    h1 {
+      line-height: .9;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+  }
+
+  &-logo {
+    svg {
+      height: 2.75rem;
+    }
   }
 }
 </style>

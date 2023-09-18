@@ -1,47 +1,22 @@
 @font-face {
-	src: url('../assets/fonts/akzidenz.woff') format('woff');
-	font-family: akzidenz;
-	font-weight: bold;
-	font-display: block;
-}
-
-@font-face {
-	src: url('../assets/fonts/gtalpina.woff') format('woff');
-	font-family: gtalpina;
-	font-weight: bold;
-	font-display: block;
-}
-
-@font-face {
-	src: url('../assets/fonts/lausanne300.woff') format('woff');
-	font-family: lausanne;
-	font-weight: 300;
-	font-display: block;
-}
-
-@font-face {
-	src: url('../assets/fonts/lausanne350.woff') format('woff');
-	font-family: lausanne;
-	font-weight: 350;
-	font-display: block;
-}
-
-@font-face {
-	src: url('../assets/fonts/akzidenz.woff') format('woff');
-	font-family: lausanne;
-	font-weight: bold;
-	font-display: block;
-}
-
-@font-face {
-	src: url('../assets/fonts/maison-mono.woff') format('woff');
-	font-family: 'Maison Mono';
+	src: url('../assets/fonts/ApfelGrotezk-Regular.woff2') format('woff2');
+	font-family: "Apfel Grotezk";
 	font-weight: normal;
+	font-display: block;
 }
 
 @font-face {
-	src: url('../assets/fonts/roslindale.woff') format('woff');
-	font-family: roslindale;
+	src: url('../assets/fonts/Reckless-LightItalic.woff2') format('woff2');
+	font-family: Reckless;
+	font-weight: 200;
+	font-style: italic;
+	font-display: block;
+}
+
+@font-face {
+	src: url('../assets/fonts/Reckless-RegularItalic.woff2') format('woff2');
+	font-family: Reckless;
 	font-weight: normal;
+	font-style: italic;
 	font-display: block;
 }
