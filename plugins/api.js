@@ -1,11 +1,11 @@
 import client from './contentful'
 
 class API {
-  async getArtists () {
+  async getArtists ({ order }) {
     const { items } = await client.getEntries({
       content_type: 'artist',
-      select: 'fields.name,fields.slug,fields.color2',
-      order: 'fields.name'
+      select: 'fields.name,fields.slug,fields.venue,fields.hover,fields.image',
+      order
     })
 
     return items
@@ -41,18 +41,6 @@ class API {
     }
 
     const { items } = await client.getEntries(query)
-    return items
-  }
-
-  async nextGig () {
-    const today = new Date()
-    const { items } = await client.getEntries({
-      'content_type': 'concert',
-      order: 'fields.date',
-      'fields.date[gte]': today,
-      limit: 1
-    })
-
     return items
   }
 }

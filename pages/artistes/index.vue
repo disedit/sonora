@@ -1,20 +1,24 @@
 <template>
   <main class="artists">
-    <h1 class="visually-hidden">
+    <h1 class="artists-title">
       Artistes
     </h1>
     <div class="artist-grid">
-      <div v-for="(artists, i) in rows" :key="i" class="artist-row">
-        <div
-          v-for="{ fields: artist } in artists"
-          :key="artist.slug"
-          :class="['artist', `artist-${artist.slug}`, `artist-color-${artist.color2}`, { empty: !artist.name }]"
-        >
-          <nuxt-link :to="`/artistes/${artist.slug}`" v-if="artist.name">
-            <span>{{ artist.name }}</span>
-          </nuxt-link>
+      <nuxt-link
+        v-for="{ fields: artist } in artists"
+        :key="artist.slug"
+        :to="`/artistes/${artist.slug}`"
+        :class="['artist', `artist-${artist.slug}`, `venue-${artist.venue}`]"
+      >
+        <div class="artist-image">
+          <img v-if="artist.image" :alt="artist.name" :src="artist.image.fields.file.url">
+          <div v-else class="placeholder" />
+          <span class="hover reckless">{{ artist.hover }}</span>
         </div>
-      </div>
+        <h2 class="artist-name">
+          {{ artist.name }}
+        </h2>
+      </nuxt-link>
     </div>
   </main>
 </template>
@@ -22,22 +26,8 @@
 <script>
 export default {
   async asyncData ({ $api }) {
-    const artists = await $api.getArtists()
-
-    // insert empty spaces
-    const spaces = [3, 13, 14, 19, 21, 24]
-    spaces.forEach((index) => {
-      artists.splice(index, 0, { fields: { name: null, slug: `empty-${index}` } })
-    })
-
-    // Split into rows
-    const rows = []
-    for (let i = 0; i < artists.length; i += 2) {
-      const chunk = artists.slice(i, i + 2)
-      rows.push(chunk)
-    }
-
-    return { rows }
+    const artists = await $api.getArtists({ order: 'fields.name' })
+    return { artists }
   }
 }
 </script>
@@ -45,93 +35,90 @@ export default {
 <style lang="scss" scoped>
   @import '../../sass/variables';
 
+  .artists {
+    margin-top: $navbar-safe-area + 2rem;
+    padding: $viewport-x-padding;
+  }
+
+  .artist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $viewport-x-padding;
+  }
+
   .artist {
-    text-align: center;
+    text-decoration: none;
 
-    a {
-      display: block;
-      text-transform: uppercase;
-      text-decoration: none;
-      font-size: clamp(2rem, 5vw, 4.5rem);
-      font-weight: 300;
-      padding: 0 $viewport-x-padding;
+    &-image {
+      position: relative;
+      margin-bottom: .75rem;
 
-      span {
-        position: relative;
-        top: .125em;
+      img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+
+      .placeholder {
+        aspect-ratio: 1;
+        background: gray;
+      }
+
+      .hover {
+        display: flex;
+        position: absolute;
+        inset: 0;
+        background: var(--venue-color);
+        opacity: 0;
+        transition: .25s ease-in-out;
+        align-items: end;
+        justify-content: center;
+        padding: .5rem;
+        font-size: 8vw;
+        line-height: 1;
       }
     }
 
-    @include media-breakpoint-up(md) {
-      @each $name, $color in $colors {
-        &-color-#{$name} a:hover {
-          background: $color;
-        }
+    &-name {
+      font-size: $text-lg;
+      margin: 0;
+    }
+
+    &:hover {
+      .hover {
+        opacity: 1;
       }
     }
   }
 
-  @include media-breakpoint-up(md) {
-    .artist-row {
-      display: flex;
+  @include media-breakpoint-down(lg) {
+    .artists {
+      margin-top: $mobile-nav + .25rem;
+      padding: 0 $mobile-padding;
 
-      &:not(:last-child) {
-        border-bottom: 2px $black solid;
-      }
-
-      .artist {
-        flex-grow: 1;
-
-        &:first-child {
-          text-align: left;
-          border-right: 2px $black solid;
-        }
-
-        &:last-child {
-          text-align: right;
-        }
+      &-title {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
       }
     }
 
-    .artist-maluks,
-    .artist-sandra-monfort,
-    .artist-ding-dong-system {
-      flex-grow: 0 !important;
+    .artist-grid {
+      gap: $mobile-padding;
+    }
 
-      a {
-        padding-right: 4.5vw;
+    .artist {
+      &-name {
+        font-size: 1.25rem;
+        margin-bottom: .5rem;
       }
-    }
-
-    .artist-marcel-el-marcia,
-    .artist-zoo {
-      flex-grow: 0 !important;
-
-      a {
-        padding-left: 4.5vw;
-      }
-    }
-
-    .artist-santero-y-los-muchachos {
-      border-right: 0 !important;
-    }
-
-    .artist-empty-21 {
-      display: none;
     }
   }
 
-  @include media-breakpoint-down(md) {
-    .artist-row:not(:last-child) .artist {
-      border-bottom: 1px $black solid;
-    }
-
-    .artist a {
-      padding: .5em .25em;
-    }
-
-    .empty {
-      display: none;
+  @include media-breakpoint-up(lg) {
+    .artists-title {
+      overflow: hidden;
+      height: 0;
     }
   }
 </style>

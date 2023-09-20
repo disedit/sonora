@@ -8,7 +8,9 @@
         v-for="artist in venue.artists"
         :key="artist.name"
       >
-        {{ artist.name }}
+        <nuxt-link :to="`/artistes/${artist.slug}`">
+          {{ artist.name }}
+        </nuxt-link>
       </li>
     </ul>
     <img
@@ -54,8 +56,6 @@ export default {
   font-size: $text-xl;
   flex-shrink: 0;
   overflow: hidden;
-  cursor: default;
-  user-select: none;
 
   &-name {
     font-size: inherit;
@@ -79,6 +79,18 @@ export default {
     li {
       margin-bottom: .15em;
     }
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:focus-visible {
+        outline: 4px $blue solid;
+      }
+    }
   }
 
   &-flower {
@@ -88,7 +100,8 @@ export default {
     transition: .5s ease-in-out;
   }
 
-  &:hover {
+  &:hover,
+  &:focus-within {
     .venue-artists,
     .venue-name,
     .venue-flower {
