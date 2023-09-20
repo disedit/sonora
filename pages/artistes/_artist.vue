@@ -1,9 +1,13 @@
 <template>
-  <article :class="['artist', `artist-${artist.slug}`, `primary-${artist.color1}`, `secondary-${artist.color2}`]">
-    <header :class="['artist-name', `shape-${artist.shape}`]">
-      <component :is="shape" class="shape shape-first" />
-      <h1><span>{{ artist.name }}</span></h1>
-      <component :is="shape" class="shape shape-last" />
+  <article :class="['artist', `artist-${artist.slug}`, `venue-${artist.venue}`]">
+    <header class="artist-name">
+      <nuxt-link to="/artistes" class="artists-section">
+        Artistes
+      </nuxt-link>
+      <h1>{{ artist.name }}</h1>
+      <span class="artist-date reckless">
+        {{ artist.hover }}
+      </span>
     </header>
 
     <section class="artist-concerts">
@@ -12,49 +16,51 @@
 
     <section :style="{ backgroundImage: `url(${image})` }" class="artist-image" />
 
-    <section class="artist-social">
+    <section class="artist-socials">
       <ul aria-label="Xarxes socials">
         <li v-if="artist.hasOwnProperty('website')">
-          <a :href="artist.website" target="_blank" rel="noopener noreferrer" title="Pàgina web">
-            <web-icon />
+          <a :href="artist.website" target="_blank" rel="noopener noreferrer">
+            Web
           </a>
         </li>
         <li v-if="artist.hasOwnProperty('facebook')">
-          <a :href="artist.facebook" target="_blank" rel="noopener noreferrer" title="Facebook">
-            <facebook-icon />
+          <a :href="artist.facebook" target="_blank" rel="noopener noreferrer">
+            Facebook
           </a>
         </li>
         <li v-if="artist.hasOwnProperty('twitter')">
-          <a :href="artist.twitter" target="_blank" rel="noopener noreferrer" title="Twitter">
-            <twitter-icon />
+          <a :href="artist.twitter" target="_blank" rel="noopener noreferrer">
+            X
           </a>
         </li>
         <li v-if="artist.hasOwnProperty('instagram')">
-          <a :href="`https://instagram.com/${artist.instagram}`" target="_blank" rel="noopener noreferrer" title="Instagram">
-            <instagram-icon />
+          <a :href="`https://instagram.com/${artist.instagram}`" target="_blank" rel="noopener noreferrer">
+            Instagram
           </a>
         </li>
         <li v-if="artist.hasOwnProperty('spotify')">
-          <a :href="artist.spotify" target="_blank" rel="noopener noreferrer" title="Spotify">
-            <spotify-icon />
+          <a :href="artist.spotify" target="_blank" rel="noopener noreferrer">
+            Spotify
           </a>
         </li>
         <li v-if="artist.hasOwnProperty('bandcamp')">
-          <a :href="artist.bandcamp" target="_blank" rel="noopener noreferrer" title="Bandcamp">
-            <bandcamp-icon />
+          <a :href="artist.bandcamp" target="_blank" rel="noopener noreferrer">
+            Bandcamp
           </a>
         </li>
         <li v-if="artist.hasOwnProperty('youtube')">
-          <a :href="artist.youtube" target="_blank" rel="noopener noreferrer" title="Canal de YouTube">
-            <youtube-icon />
+          <a :href="artist.youtube" target="_blank" rel="noopener noreferrer">
+            YouTube
           </a>
         </li>
       </ul>
     </section>
 
-    <section class="artist-description">
-      <div v-html="$md.render(artist.description)" v-if="artist.description" />
-    </section>
+    <section
+      v-html="$md.render(artist.description)"
+      v-if="artist.description"
+      class="artist-description"
+    />
   </article>
 </template>
 
@@ -62,10 +68,6 @@
 export default {
 
   computed: {
-    shape () {
-      return 1
-    },
-
     image () {
       return this.artist.hasOwnProperty('image')
         ? this.artist.image.fields.file.url
@@ -100,177 +102,145 @@ export default {
 
   .artist {
     display: grid;
-    gap: 1px;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
-        "name"
-        "concerts"
-        "image"
-        "social"
-        "description";
-    background: $black;
-    min-height: 55vw;
+      "name image"
+      "concerts image"
+      "description image"
+      "socials image";
+    margin-top: $navbar-safe-area;
+    background: var(--venue-color);
+    min-height: calc(100vh - $navbar-safe-area);
 
     &-name {
       grid-area: name;
-      display: flex;
-      background-color: var(--primary-color);
+      padding: $viewport-x-padding;
+      font-size: calc(7rem + 4vw);
 
       h1 {
-        display: flex;
-        flex-grow: 1;
-        text-transform: uppercase;
-        font-weight: 300;
-        line-height: 1;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+        font-size: inherit;
+        margin: 0;
+        letter-spacing: -0.03em;
+        line-height: .8;
       }
+    }
 
-      .shape {
-        transform: rotate(var(--rotate, 0deg)) scaleY(var(--scaleY, 1));
+    &-date {
+      display: block;
+      font-size: .95em;
+      font-weight: 300;
+      letter-spacing: -.05em;
+      line-height: 1;
+      margin-top: .1em;
+    }
 
-        &-last {
-          --scaleY: -1;
-        }
-      }
-
-      &::v-deep .shape :is(path, polygon) {
-        fill: var(--shape-color, var(--secondary-color));
-      }
+    &-concerts {
+      grid-area: concerts;
+      padding: 0 $viewport-x-padding;
+      margin-top: 2rem;
     }
 
     &-image {
       grid-area: image;
-      background-color: var(--secondary-color);
-      background-position: center;
       background-size: cover;
+      background-position: center;
     }
 
-    &-social {
-      grid-area: social;
-      display: flex;
-      align-items: center;
-      background-color: var(--primary-color);
+    &-socials {
+      grid-area: socials;
+      padding: 5rem $viewport-x-padding;
+      font-size: 1.5rem;
+      text-transform: uppercase;
 
       ul {
         display: flex;
-        flex-grow: 1;
-        justify-content: space-between;
         list-style: none;
-        padding: .85rem $viewport-x-padding;
         margin: 0;
+        padding: 0;
+        justify-content: space-evenly;
+      }
 
-        svg {
-          height: 2rem;
-          width: auto;
-          max-width: 3.25rem;
+      a {
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
         }
       }
     }
 
     &-description {
       grid-area: description;
-      background-color: var(--secondary-color);
-      padding: 1.5rem $viewport-x-padding;
-      font-size: $text-base;
+      padding: $viewport-x-padding;
+      line-height: 1.2;
+      font-size: 1.5rem;
+      padding-bottom: 0;
 
       &::v-deep p:last-child {
         margin-bottom: 0;
       }
     }
-
-    &-concerts {
-      grid-area: concerts;
-      background-color: var(--secondary-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
   }
 
-  @each $name, $color in $colors {
-    .primary-#{$name} {
-      --primary-color: #{$color};
-    }
-
-    .secondary-#{$name} {
-      --secondary-color: #{$color};
-    }
-  }
-
-  /* Exceptions */
-  .artist-zoo {
-    --shape-color: #{$black};
-  }
-
-  .artist-ding-dong-system {
-    .artist-image {
-      background-position: bottom;
-    }
-  }
-
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-down(lg) {
     .artist {
-      gap: 2px;
-      grid-template-columns: 1fr clamp(7rem, 9vw, 12rem) 1fr;
-      grid-template-rows: auto 4rem 1fr;
+      grid-template-columns: 1fr;
+      background: $white;
+      margin-top: $mobile-nav;
       grid-template-areas:
-        "concerts name image"
-        "social name image"
-        "description name image";
+        "name"
+        "concerts"
+        "image"
+        "description"
+        "socials";
 
       &-name {
-        flex-direction: column;
-
-        h1 {
-          writing-mode: vertical-rl;
-          text-orientation: mixed;
-          padding: 1rem 0;
-          font-size: 2.5rem;
-          white-space: nowrap;
-
-          span {
-            position: relative;
-            right: .12em;
-          }
-        }
+        padding: $mobile-padding;
+        font-size: calc(3rem + 2.5vw);
+        padding-top: 0;
       }
-    }
-  }
 
-  @include media-breakpoint-down(md) {
-    .artist {
-      &-name {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-
-        .shape {
-          --rotate: -90deg;
-          height: 100%;
-          width: auto;
-          max-width: 5.25rem;
-        }
-
-        h1 {
-          height: 100%;
-          padding: .5rem;
-
-          span {
-            position: relative;
-            top: .16em;
-          }
-        }
+      &-concerts {
+        padding: $mobile-padding;
+        margin: 0;
+        padding-top: 0;
       }
 
       &-image {
         height: 100vw;
       }
 
-      &-social ul svg {
-        height: 1.5em;
+      &-description {
+        padding: $mobile-padding;
+        font-size: 1.25rem;
       }
+
+      &-socials {
+        padding: $mobile-padding;
+        margin-bottom: 4rem;
+
+        ul {
+          flex-direction: column;
+          line-height: 1.75;
+        }
+      }
+    }
+
+    .artists-section {
+      display: block;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      margin-bottom: 2.75rem;
+      line-height: 1;
+      text-decoration: none;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .artists-section {
+      display: block;
+      overflow: hidden;
+      height: 0;
     }
   }
 </style>

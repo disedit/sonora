@@ -19,5 +19,5 @@ export function niceDate (datetime) {
 export function niceTime (datetime) {
   const date = new Date(datetime)
   const time = date.toTimeString().substr(0, 5)
-  return time
+  return time + ' h'
 }

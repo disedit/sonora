@@ -71,11 +71,13 @@ export default {
         background: var(--venue-color);
         opacity: 0;
         transition: .25s ease-in-out;
-        align-items: end;
+        align-items: flex-end;
         justify-content: center;
         padding: .5rem;
-        font-size: 8vw;
+        font-size: 9vw;
         line-height: 1;
+        font-weight: 300;
+        letter-spacing: -.05em;
       }
     }
 
@@ -93,13 +95,13 @@ export default {
 
   @include media-breakpoint-down(lg) {
     .artists {
-      margin-top: $mobile-nav + .25rem;
+      margin-top: $mobile-nav;
       padding: 0 $mobile-padding;
 
       &-title {
         text-transform: uppercase;
         font-size: 1.5rem;
-        margin-bottom: 2rem;
+        margin-bottom: 2.75rem;
       }
     }
 
@@ -111,6 +113,10 @@ export default {
       &-name {
         font-size: 1.25rem;
         margin-bottom: .5rem;
+      }
+
+      .hover {
+        display: none;
       }
     }
   }

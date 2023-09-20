@@ -1,5 +1,5 @@
 <template>
-  <nav :class="['sonora-nav', { shown: navShown }]" aria-label="Navegació">
+  <nav :class="['sonora-nav', { shown: navShown, scrolled }]" aria-label="Navegació">
     <div class="sonora-navbar d-lg-none">
       <nuxt-link to="/" class="logo" aria-label="Sonora (Pàgina principal)">
         <sonora-logo />
@@ -63,7 +63,8 @@ export default {
 
   data () {
     return {
-      navShown: false
+      navShown: false,
+      scrolled: false
     }
   },
 
@@ -79,6 +80,16 @@ export default {
         document.documentElement.classList.remove('nav-shown')
       }
     }
+  },
+
+  mounted () {
+    document.addEventListener('scroll', this.handleScroll)
+  },
+
+  methods: {
+    handleScroll (e) {
+      this.scrolled = window.scrollY > 0
+    }
   }
 }
 </script>
@@ -91,7 +102,6 @@ export default {
     left: 0;
     right: 0;
     padding: .5rem $mobile-padding;
-    background: $white;
     z-index: 1100;
     grid-template-columns: 1fr auto;
 
@@ -163,6 +173,12 @@ export default {
       opacity: 1;
       transition-delay: 0s;
       transform: translateY(0);
+    }
+  }
+
+  .scrolled {
+    .sonora-navbar {
+      background: $white;
     }
   }
 

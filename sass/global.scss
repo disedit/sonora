@@ -51,27 +51,19 @@ body {
   appearance: none;
   text-transform: uppercase;
   background-color: transparent;
-  border: 2px $black solid;
+  border: 1px $black solid;
   text-decoration: none;
-  padding: 1rem 2.75rem;
-  border-radius: 100%;
+  padding: .4em 1.75em;
+  border-radius: 4rem;
   font-weight: normal;
   color: $black;
 
-  span {
-    position: relative;
-    top: .115em;
-  }
-
   &:hover {
-    background-color: $black;
-    color: $body-bg;
+    background-color: $white;
   }
 
-  @each $venue, $color in $venues {
-    &-#{$venue}:hover {
-      color: $color;
-    }
+  @include media-breakpoint-down(lg) {
+    padding: .6em 1.75em;
   }
 }
 

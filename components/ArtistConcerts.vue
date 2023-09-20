@@ -5,17 +5,18 @@
       :key="id"
       class="concert"
     >
-      <div class="concert-date">
-        {{ concert.date | niceDate }}<br>
-        {{ concert.date | niceTime }}
-      </div>
+      <div>
+        <div class="concert-date">
+          {{ concert.date | niceTime }}
+        </div>
 
-      <div class="concert-venue mt-4">
-        {{ concert.venue }}
-      </div>
+        <div class="concert-municipality">
+          {{ niceMunicipality(concert.municipality) }}
+        </div>
 
-      <div class="concert-municipality">
-        {{ niceMunicipality(concert.municipality) }}
+        <div class="concert-venue reckless">
+          {{ concert.venue }}
+        </div>
       </div>
 
       <div class="concert-book">
@@ -23,36 +24,23 @@
           Concert realitzat
         </span>
         <a v-else-if="concert.tickets_url" :href="concert.tickets_url" class="sonora-button" target="_blank" rel="noopener noreferer">
-          <span>Entrada</span>
+          Entrades
         </a>
         <span v-else class="text">
           {{ concert.text || 'Entrades properament' }}
         </span>
-      </div>
-
-      <div v-if="concert.artists.length > 1" class="concert-with">
-        Amb actuació de
-        <template v-for="{ sys: { id: artistId }, fields: artist } in concert.artists">
-          <nuxt-link v-if="artist.slug !== context.slug" :to="`/artistes/${artist.slug}`" :key="artistId">
-            {{ artist.name }}
-          </nuxt-link>
-        </template>
       </div>
     </li>
   </ul>
 </template>
 
 <script>
-import { niceDate, niceTime } from '@/plugins/nicedate'
+import { niceTime } from '@/plugins/nicedate'
 
 export default {
   name: 'ArtistConcerts',
 
   filters: {
-    niceDate (datetime) {
-      return niceDate(datetime)
-    },
-
     niceTime (datetime) {
       return niceTime(datetime)
     }
@@ -97,56 +85,40 @@ export default {
     padding: 0;
     list-style: none;
     font-size: $text-lg;
-    flex-grow: 1;
-
-    li:not(:first-child) {
-      border-top: 2px $black solid;
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .concert {
-    padding: 1.5rem $viewport-x-padding;
-    text-align: center;
-
-    &-date {
-      font-family: 'Maison Mono', monospace;
-      text-transform: uppercase;
-      font-size: $text-lg - .25rem;
-      line-height: 1.1;
-    }
-
-    &-venue {
-      font-family: gtalpina, serif;
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: $text-lg - .25rem;
-      line-height: 1;
-    }
+    display: flex;
+    line-height: 1.1;
+    gap: 1rem;
+    align-items: center;
 
     &-municipality {
-      font-family: akzidenz;
-      font-size: $text-lg - .25rem;
       text-transform: uppercase;
-      line-height: 1;
     }
 
     &-book {
-      margin-top: 1.5rem;
-      text-transform: uppercase;
-      font-size: $text-lg - .25rem;
-    }
-
-    &-with {
-      text-transform: uppercase;
-      font-size: $text-base;
-      margin-top: 1rem;
+      margin-left: auto;
     }
   }
 
-  @include media-breakpoint-down(md) {
-    .artist-concerts-list {
-      li:not(:first-child) {
-        border-width: 1px;
+  @include media-breakpoint-down(lg) {
+    .concert {
+      align-items: flex-start;
+      flex-direction: column;
+      font-size: 1.25rem;
+
+      &-book {
+        margin: .5rem 0;
+        width: 100%;
+
+        .sonora-button {
+          display: block;
+          text-align: center;
+        }
       }
     }
   }
