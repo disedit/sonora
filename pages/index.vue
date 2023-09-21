@@ -82,7 +82,7 @@ export default {
 
 .cover {
   height: 100vh;
-  height: 100svh;
+  height: 100dvh;
   background-image:
     url(../assets/images/illustrations/home.png),
     url(../assets/images/gradients/castello.jpg);
