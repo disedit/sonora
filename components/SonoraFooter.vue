@@ -1,5 +1,5 @@
 <template>
-  <footer class="sonora-footer">
+  <footer :class="['sonora-footer', { dark }]">
     <div class="sonora-footer-level sonora-footer-level-1 align-items-center">
       <div class="sonora-dates reckless">
         set. 23<br>
@@ -96,6 +96,13 @@ export default {
     FacebookIcon,
     TwitterIcon,
     YoutubeIcon
+  },
+
+  props: {
+    dark: {
+      type: Boolean,
+      default: false
+    }
   }
 }
 </script>
@@ -106,7 +113,6 @@ export default {
   flex-direction: column;
   gap: 1rem;
   padding: 1.25rem $viewport-x-padding;
-  // height: $footer-height;
   font-size: $text-xs;
 
   &-level {
@@ -158,6 +164,19 @@ export default {
 
   p, address {
     margin: 0;
+  }
+
+  &.dark {
+    background: $black;
+    color: $white;
+
+    a {
+      color: $white;
+    }
+
+    img {
+      filter: invert(1);
+    }
   }
 }
 

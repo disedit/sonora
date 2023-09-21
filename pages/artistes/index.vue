@@ -86,10 +86,15 @@ export default {
       margin: 0;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       .hover {
         opacity: 1;
       }
+    }
+
+    &:focus-visible {
+      outline: 4px var(--venue-color) solid;
     }
   }
 

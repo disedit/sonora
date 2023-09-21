@@ -81,6 +81,7 @@ export default {
     }
 
     a {
+      display: block;
       text-decoration: none;
 
       &:hover {

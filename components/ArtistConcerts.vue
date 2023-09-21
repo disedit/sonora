@@ -7,6 +7,7 @@
     >
       <div>
         <div class="concert-date">
+          <span class="visually-hidden">{{ concert.date | niceDate }}</span>
           {{ concert.date | niceTime }}
         </div>
 
@@ -20,13 +21,13 @@
       </div>
 
       <div class="concert-book">
-        <span v-if="inThePast(concert.date)" class="text">
+        <span v-if="inThePast(concert.date)" class="text reckless">
           Concert realitzat
         </span>
         <a v-else-if="concert.tickets_url" :href="concert.tickets_url" class="sonora-button" target="_blank" rel="noopener noreferer">
           Entrades
         </a>
-        <span v-else class="text">
+        <span v-else class="text reckless">
           {{ concert.text || 'Entrades properament' }}
         </span>
       </div>
@@ -35,7 +36,7 @@
 </template>
 
 <script>
-import { niceTime } from '@/plugins/nicedate'
+import { niceTime, niceDate } from '@/plugins/nicedate'
 
 export default {
   name: 'ArtistConcerts',
@@ -43,6 +44,10 @@ export default {
   filters: {
     niceTime (datetime) {
       return niceTime(datetime)
+    },
+
+    niceDate (datetime) {
+      return niceDate(datetime)
     }
   },
 
@@ -102,6 +107,12 @@ export default {
 
     &-book {
       margin-left: auto;
+
+      .sonora-button {
+        &:focus-visible {
+          outline: 3px $white solid;
+        }
+      }
     }
   }
 

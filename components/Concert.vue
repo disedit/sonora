@@ -1,9 +1,9 @@
 <template>
-  <article :class="['concert', { dimmed }]">
+  <article :class="['concert', `venue-${concert.venue}`, { dimmed: inThePast }]">
     <h3 class="concert-artists">
-      <div v-for="({ sys: { id }, fields: artist }, i) in concert.artists" :key="id">
-        <span v-if="i > 0" class="plus">+</span>
+      <div v-for="({ sys: { id }, fields: artist }) in concert.artists" :key="id">
         <nuxt-link :to="`/artistes/${artist.slug}`" class="artist-name">
+          <img v-if="artist.image" :src="artist.image.fields.file.url" alt="">
           {{ artist.name }}
         </nuxt-link>
       </div>
@@ -14,11 +14,8 @@
       {{ concert.date | niceTime }}
     </div>
 
-    <div class="concert-venue mt-4">
-      {{ concert.venue }}
-    </div>
-
-    <div class="concert-municipality">
+    <div class="concert-venue">
+      {{ concert.venue }}<br>
       {{ municipality }}
     </div>
 
@@ -29,7 +26,7 @@
       <a
         v-else-if="concert.tickets_url"
         :href="concert.tickets_url"
-        :class="['sonora-button', `sonora-button-${concert.municipality}`]"
+        class="sonora-button"
         target="_blank"
         rel="noopener noreferer"
       >
@@ -66,7 +63,7 @@ export default {
   },
 
   computed: {
-    dimmed () {
+    inThePast () {
       const now = new Date()
       const concert = new Date(this.concert.date)
 
@@ -81,49 +78,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .concert {
-    text-align: center;
 
-    &-artists {
-      text-transform: uppercase;
-      font-size: $text-lgr + .25rem;
-      line-height: 1;
-
-      .plus {
-        display: block;
-      }
-
-      a {
-        text-decoration: none;
-      }
-    }
-
-    &-date {
-      font-family: 'Maison Mono', monospace;
-      text-transform: uppercase;
-      font-size: $text-lg - .25rem;
-      line-height: 1.1;
-    }
-
-    &-venue {
-      font-family: gtalpina, serif;
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: $text-lg - .25rem;
-      line-height: 1;
-    }
-
-    &-municipality {
-      font-family: akzidenz;
-      font-size: $text-lg - .25rem;
-      text-transform: uppercase;
-      line-height: 1;
-    }
-
-    &-book {
-      margin-top: 1.5rem;
-      text-transform: uppercase;
-      font-size: $text-lg - .25rem;
-    }
-  }
 </style>

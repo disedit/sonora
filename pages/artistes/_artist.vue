@@ -166,6 +166,10 @@ export default {
         &:hover {
           text-decoration: underline;
         }
+
+        &:focus-visible {
+          outline: 3px $white solid;
+        }
       }
     }
 
@@ -241,6 +245,12 @@ export default {
       display: block;
       overflow: hidden;
       height: 0;
+
+      &:focus {
+        height: auto;
+        font-size: 1.5rem;
+        outline: 3px $white solid;
+      }
     }
   }
 </style>

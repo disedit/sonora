@@ -2,7 +2,7 @@
   <div class="page">
     <sonora-header />
     <nuxt class="page-content" />
-    <sonora-footer v-if="$route.name !== 'index'" />
+    <sonora-footer v-if="$route.name !== 'index'" :dark="['el-circuit', 'contacte'].includes($route.name)" />
   </div>
 </template>
 

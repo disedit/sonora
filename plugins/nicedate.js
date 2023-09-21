@@ -1,19 +1,10 @@
 export function niceDate (datetime) {
   const date = new Date(datetime)
-  const weekdays = [
-    'diumenge', 'dilluns', 'dimarts', 'dimecres',
-    'dijous', 'divendres', 'dissabte'
-  ]
-  const months = [
-    'gener', 'febrer', 'març', 'abril', 'maig',
-    'juny', 'juliol', 'agost', 'setembre', 'octubre',
-    'novembre', 'desembre'
-  ]
-  const month = date.getMonth()
-  const day = date.getDate()
-  const weekday = date.getDay()
+  const month = `${date.getMonth() + 1}`.padStart(2, '0')
+  const day = `${date.getDate()}`.padStart(2, '0')
+  const year = date.getFullYear() - 2000
 
-  return `${weekdays[weekday]} ${day} ${months[month]}`
+  return `${day}.${month}.${year}`
 }
 
 export function niceTime (datetime) {
