@@ -1,5 +1,5 @@
 <template>
-  <ul class="programme-grid d-none d-md-grid">
+  <ul class="programa-grid">
     <li
       v-for="concert in concerts"
       :key="concert.id"
@@ -31,4 +31,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.programa-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    border-top: 1px $black solid;
+
+    @include media-breakpoint-up(lg) {
+      &:last-child {
+        border-bottom: 1px $black solid;
+      }
+    }
+  }
+}
 </style>

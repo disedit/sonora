@@ -128,6 +128,7 @@ export default {
 
   @include media-breakpoint-up(lg) {
     .artists-title {
+      position: absolute;
       overflow: hidden;
       height: 0;
     }

@@ -9,30 +9,38 @@
       </div>
     </h3>
 
-    <div class="concert-date mt-4">
-      {{ concert.date | niceDate }}<br>
-      {{ concert.date | niceTime }}
+    <div class="concert-date-time">
+      <div class="reckless concert-date">
+        {{ concert.date | niceDate }}
+      </div>
+      <div class="concert-time">
+        {{ concert.date | niceTime }}
+      </div>
     </div>
 
-    <div class="concert-venue">
-      {{ concert.venue }}<br>
-      {{ municipality }}
+    <div class="concert-location">
+      <div class="concert-municipality">
+        {{ municipality }}
+      </div>
+      <div class="concert-venue">
+        {{ concert.venue }}
+      </div>
     </div>
 
     <div class="concert-book">
-      <span v-if="dimmed" class="text">
+      <span v-if="dimmed" class="text reckless">
         Concert realitzat
       </span>
       <a
         v-else-if="concert.tickets_url"
         :href="concert.tickets_url"
-        class="sonora-button"
+        class="concert-link"
         target="_blank"
         rel="noopener noreferer"
       >
-        <span>Entrada</span>
+        Entrades
       </a>
-      <span v-else class="text">
+      <span v-else class="text reckless">
         {{ concert.text || 'Entrades properament' }}
       </span>
     </div>
@@ -78,5 +86,107 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.concert {
+  display: grid;
+  grid-template-columns: 1fr 100px 350px 200px;
+  font-size: 1.5rem;
+  gap: 1rem;
+  align-items: center;
 
+  &-artists {
+    display: flex;
+    margin: 0;
+    column-gap: 1.5rem;
+    flex-wrap: wrap;
+
+    .artist-name {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      font-size: 2.3rem;
+      text-decoration: none;
+      line-height: .9;
+
+      img {
+        display: block;
+        height: 75px;
+        width: 100px;
+        object-fit: cover;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-date-time {
+    line-height: 1.1;
+  }
+
+  &-location {
+    line-height: 1.1;
+  }
+
+  &-municipality {
+    text-transform: uppercase;
+  }
+
+  &-book {
+    line-height: 1.1;
+    text-align: center;
+  }
+
+  &-link {
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .concert {
+    &:hover {
+      background: var(--venue-color);
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .concert {
+    grid-template-columns: 1fr;
+    padding: $mobile-padding;
+    font-size: 1.25rem;
+
+    &-artists {
+      flex-direction: column;
+
+      .artist-name {
+        img {
+          display: none;
+        }
+      }
+    }
+
+    &-book {
+      text-align: left;
+
+      .text {
+        display: block;
+        margin-top: 1rem;
+      }
+    }
+
+    &-link {
+      text-align: center;
+      padding: .75rem 1rem;
+      border: 1px $black solid;
+      border-radius: 2rem;
+    }
+  }
+}
 </style>

@@ -1,17 +1,17 @@
 <template>
-  <main class="programme">
-    <h1 class="visually-hidden">
+  <main class="programa">
+    <h1 class="section-title">
       Programa
     </h1>
 
-    <ul>
+    <ul class="programa-filters">
       <li v-for="(thisVenue, key) in venues" :key="key">
         <nuxt-link :to="`/programa/${key}`">
           {{ thisVenue }}
         </nuxt-link>
       </li>
       <li>
-        <nuxt-link to="/programa">
+        <nuxt-link to="/programa" class="all">
           Veure tot
         </nuxt-link>
       </li>
@@ -34,7 +34,69 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.programme {
-  padding-top: $navbar-safe-area;
+.programa {
+  margin-top: $navbar-safe-area + 2rem;
+  padding: $viewport-x-padding;
+
+  &-filters {
+    display: flex;
+    list-style: none;
+    column-gap: 2rem;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    flex-wrap: wrap;
+
+    a {
+      font-family: $font-family-serif;
+      font-style: italic;
+      text-decoration: none;
+      letter-spacing: -.025em;
+      white-space: nowrap;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &.nuxt-link-exact-active {
+        text-decoration: underline;
+      }
+
+      &.all {
+        font-family: $font-family-sans-serif;
+        font-style: normal;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .programa {
+    margin-top: $mobile-nav;
+    padding: 0;
+
+    &-filters {
+      padding: 0 $mobile-padding;
+      font-size: 1.25rem;
+      column-gap: 1rem;
+      row-gap: .25rem;
+    }
+  }
+
+  .section-title {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-bottom: 2.75rem;
+    padding: 0 $mobile-padding;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .section-title {
+    overflow: hidden;
+    height: 0;
+  }
 }
 </style>
