@@ -4,7 +4,7 @@
       <h1>Circuit de la<br>Música Valenciana</h1>
     </nuxt-link>
     <nav class="header-nav">
-      <ul aria-label="Navegació">
+      <ul aria-label="Navegació" class="d-none">
         <li>
           <router-link to="/artistes">
             Artistes

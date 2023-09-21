@@ -4,13 +4,14 @@
       <nuxt-link to="/" class="logo" aria-label="Sonora (Pàgina principal)">
         <sonora-logo />
       </nuxt-link>
-      <button @click="navShown = !navShown" class="toggler">
+      <button @click="navShown = !navShown" class="toggler d-none">
         <hamburger-icon v-if="!navShown" />
         <close-icon v-else />
         <span class="visually-hidden">
           {{ !navShown ? 'Obrir menú' : 'Tancar menú' }}
         </span>
       </button>
+      <div />
       <transition name="slide">
         <div v-if="$route.name === 'index' || navShown" class="sonora-title">
           Circuit de la<br>
@@ -20,7 +21,7 @@
     </div>
 
     <div id="navMenu" class="menu">
-      <ul class="menu-items">
+      <ul class="menu-items d-none">
         <li>
           <nuxt-link to="/artistes">
             Artistes
