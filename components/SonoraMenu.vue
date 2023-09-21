@@ -43,7 +43,7 @@ export default {
 .header {
   padding: $viewport-y-padding $viewport-x-padding;
   display: grid;
-  grid-template-columns: 200px 1fr 200px;
+  grid-template-columns: 190px 1fr 190px;
   align-items: center;
   height: $navbar-safe-area;
   position: fixed;

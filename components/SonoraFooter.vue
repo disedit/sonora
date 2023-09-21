@@ -167,15 +167,17 @@ export default {
   }
 
   &.dark {
-    background: $black;
-    color: $white;
-
-    a {
+    @include media-breakpoint-up(lg) {
+      background: $black;
       color: $white;
-    }
 
-    img {
-      filter: invert(1);
+      a {
+        color: $white;
+      }
+
+      img {
+        filter: invert(1);
+      }
     }
   }
 }

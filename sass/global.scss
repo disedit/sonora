@@ -77,9 +77,12 @@ body {
   }
 }
 
-@include media-breakpoint-down(md) {
-  .sonora-button {
-    border-width: 1px;
+@include media-breakpoint-down(lg) {
+  .section-title {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-bottom: 2.75rem;
+    padding: 0 $mobile-padding;
   }
 }
 

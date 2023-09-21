@@ -84,13 +84,6 @@ export default {
       row-gap: .25rem;
     }
   }
-
-  .section-title {
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    margin-bottom: 2.75rem;
-    padding: 0 $mobile-padding;
-  }
 }
 
 @include media-breakpoint-up(lg) {

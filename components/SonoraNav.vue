@@ -1,5 +1,5 @@
 <template>
-  <nav :class="['sonora-nav', { shown: navShown, scrolled }]" aria-label="Navegació">
+  <nav :class="['sonora-nav', { shown: navShown, scrolled: scrolled && $route.name !== 'index' }]" aria-label="Navegació">
     <div class="sonora-navbar d-lg-none">
       <nuxt-link to="/" class="logo" aria-label="Sonora (Pàgina principal)">
         <sonora-logo />
@@ -101,7 +101,7 @@ export default {
     top: 0;
     left: 0;
     right: 0;
-    padding: .5rem calc($mobile-padding + env(safe-area-inset));
+    padding: .5rem $mobile-padding;
     z-index: 1100;
     grid-template-columns: 1fr auto;
 
@@ -113,7 +113,7 @@ export default {
       appearance: none;
       border: 0;
       background: transparent;
-      padding: .5rem calc($mobile-padding + env(safe-area-inset));
+      padding: .5rem $mobile-padding;
       margin: -.5rem -1.25rem;
       margin-left: auto;
 
@@ -140,7 +140,6 @@ export default {
     opacity: 0;
     z-index: 1000;
     transition: visibility 0s linear .25s, opacity .25s ease, transform .25s ease;
-    transform: translateY(-150px);
     background: $body-bg;
     padding: $mobile-padding;
     padding-top: 8rem;

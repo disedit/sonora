@@ -102,7 +102,6 @@ export default {
     font-size: 1.5rem;
     margin-top: 7rem;
     padding: 0 $mobile-padding;
-    margin-right: env(safe-area-inset);
   }
 }
 
