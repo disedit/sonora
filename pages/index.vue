@@ -55,6 +55,14 @@ export default {
       return this.artists.filter(artist => artist.fields.venue === venue)
         .map(artist => ({ name: artist.fields.name, slug: artist.fields.slug }))
     }
+  },
+
+  head () {
+    return {
+      meta: [
+        { name: 'theme-color', content: `#5d589d` }
+      ]
+    }
   }
 }
 </script>
@@ -72,8 +80,8 @@ export default {
 }
 
 .cover {
-  height: 110vh;
-  height: 100dvh;
+  height: 100vh;
+  height: 100svh;
   background-image:
     url(../assets/images/illustrations/home.png),
     url(../assets/images/gradients/castello.jpg);
