@@ -28,6 +28,16 @@ export default {
   async asyncData ({ $api }) {
     const artists = await $api.getArtists({ order: 'fields.name' })
     return { artists }
+  },
+
+  head () {
+    return {
+      title: 'Artistes - Sonora',
+      meta: [
+        { property: 'og:image', content: `https://circuitsonora.com/thumbnail.jpg` },
+        { name: 'theme-color', content: '#D0D2D6' }
+      ]
+    }
   }
 }
 </script>

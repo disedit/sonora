@@ -101,7 +101,7 @@ export default {
     top: 0;
     left: 0;
     right: 0;
-    padding: .5rem $mobile-padding;
+    padding: .5rem calc($mobile-padding + env(safe-area-inset));
     z-index: 1100;
     grid-template-columns: 1fr auto;
 
@@ -113,7 +113,7 @@ export default {
       appearance: none;
       border: 0;
       background: transparent;
-      padding: .5rem $mobile-padding;
+      padding: .5rem calc($mobile-padding + env(safe-area-inset));
       margin: -.5rem -1.25rem;
       margin-left: auto;
 

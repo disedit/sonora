@@ -53,6 +53,7 @@ export default {
       submitting: false
     }
   },
+
   methods: {
     onSubmit () {
       this.submitting = true
@@ -64,6 +65,16 @@ export default {
         }).then(() => {
           this.submitting = false
         })
+    }
+  },
+
+  head () {
+    return {
+      title: 'Contacte - Sonora',
+      meta: [
+        { property: 'og:image', content: `https://circuitsonora.com/thumbnail.jpg` },
+        { name: 'theme-color', content: '#D0D2D6' }
+      ]
     }
   }
 }
