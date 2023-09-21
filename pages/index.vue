@@ -70,6 +70,7 @@ export default {
 <style lang="scss" scoped>
 .home {
   padding-top: $navbar-safe-area;
+  overflow: hidden;
 }
 
 .venues {
