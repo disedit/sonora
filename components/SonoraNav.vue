@@ -1,5 +1,5 @@
 <template>
-  <nav :class="['sonora-nav', { shown: navShown, scrolled }]" aria-label="Navegació">
+  <nav :class="['sonora-nav', { shown: navShown, scrolled: scrolled && $route.name !== 'index' }]" aria-label="Navegació">
     <div class="sonora-navbar d-lg-none">
       <nuxt-link to="/" class="logo" aria-label="Sonora (Pàgina principal)">
         <sonora-logo />
