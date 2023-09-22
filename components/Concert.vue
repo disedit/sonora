@@ -1,7 +1,7 @@
 <template>
   <article :class="['concert', `venue-${concert.venue}`, { dimmed: inThePast }]">
     <h3 class="concert-artists">
-      <div v-for="({ sys: { id }, fields: artist }) in concert.artists" :key="id">
+      <div v-for="({ sys: { id }, fields: artist }) in concert.artists" :key="id" class="concert-artist">
         <nuxt-link :to="`/artistes/${artist.slug}`" class="artist-name">
           <img v-if="artist.image" :src="artist.image.fields.file.url" alt="">
           {{ artist.name }}
@@ -117,6 +117,10 @@ export default {
         text-decoration: underline;
       }
     }
+  }
+
+  &-artist {
+    flex-basis: min-content;
   }
 
   &-date-time {
