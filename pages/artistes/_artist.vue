@@ -116,7 +116,7 @@ export default {
     &-name {
       grid-area: name;
       padding: $viewport-x-padding;
-      font-size: calc(7rem + 4vw);
+      font-size: calc(4.25rem + 4.5vw);
 
       h1 {
         font-size: inherit;

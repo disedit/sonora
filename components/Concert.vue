@@ -97,7 +97,6 @@ export default {
     display: flex;
     margin: 0;
     column-gap: 1.5rem;
-    flex-wrap: wrap;
 
     .artist-name {
       display: flex;

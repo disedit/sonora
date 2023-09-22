@@ -54,6 +54,7 @@ export default {
       text-decoration: none;
       letter-spacing: -.025em;
       white-space: nowrap;
+      font-feature-settings: "ss01", "ss04", "ss11", "liga" 0, "dlig" 0;
 
       &:hover {
         text-decoration: underline;
