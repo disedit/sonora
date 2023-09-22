@@ -45,7 +45,7 @@ export default {
     margin: 0;
     padding: 0;
     margin-bottom: 2rem;
-    font-size: 1.5rem;
+    font-size: $text-md;
     flex-wrap: wrap;
 
     a {

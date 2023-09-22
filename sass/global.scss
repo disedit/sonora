@@ -53,10 +53,11 @@ body {
   background-color: transparent;
   border: 1px $black solid;
   text-decoration: none;
-  padding: .4em 1.75em;
+  padding: .5em 2em;
   border-radius: 4rem;
   font-weight: normal;
   color: $black;
+  line-height: 1;
 
   &:hover {
     background-color: $white;
@@ -80,9 +81,18 @@ body {
 @include media-breakpoint-down(lg) {
   .section-title {
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: $text-md;
     margin-bottom: 2.75rem;
     padding: 0 $mobile-padding;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .section-title {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
   }
 }
 

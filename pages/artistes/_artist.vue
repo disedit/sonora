@@ -150,7 +150,7 @@ export default {
     &-socials {
       grid-area: socials;
       padding: 5rem $viewport-x-padding;
-      font-size: 1.5rem;
+      font-size: $text-md;
       text-transform: uppercase;
 
       ul {
@@ -178,7 +178,7 @@ export default {
       grid-area: description;
       padding: $viewport-x-padding;
       line-height: 1.2;
-      font-size: 1.5rem;
+      font-size: $text-md;
       padding-bottom: 0;
 
       &::v-deep p:last-child {
@@ -234,7 +234,7 @@ export default {
     .artists-section {
       display: block;
       text-transform: uppercase;
-      font-size: 1.5rem;
+      font-size: $text-md;
       margin-bottom: 2.75rem;
       line-height: 1;
       text-decoration: none;
@@ -249,7 +249,7 @@ export default {
 
       &:focus {
         height: auto;
-        font-size: 1.5rem;
+        font-size: $text-md;
         outline: 3px $white solid;
       }
     }

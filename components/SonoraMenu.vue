@@ -58,7 +58,7 @@ export default {
 
     h1 {
       line-height: .9;
-      font-size: 1.5rem;
+      font-size: $text-md;
       margin: 0;
     }
   }
@@ -77,7 +77,7 @@ export default {
         display: block;
         text-decoration: none;
         text-transform: uppercase;
-        font-size: 1.5rem;
+        font-size: $text-md;
         text-align: center;
 
         &:hover,

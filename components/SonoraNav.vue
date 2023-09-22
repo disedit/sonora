@@ -123,7 +123,7 @@ export default {
     }
 
     .sonora-title {
-      font-size: 1.5rem;
+      font-size: $text-md;
       line-height: .9;
       margin-top: .75rem;
     }
@@ -153,7 +153,7 @@ export default {
       a {
         display: block;
         text-decoration: none;
-        font-size: 1.5rem;
+        font-size: $text-md;
         text-transform: uppercase;
         border-top: 1px $black solid;
         padding: .75rem 0;

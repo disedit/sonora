@@ -54,6 +54,10 @@ export default {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: $viewport-x-padding;
+
+    @include media-breakpoint-up(xl) {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   .artist {
@@ -115,7 +119,7 @@ export default {
 
       &-title {
         text-transform: uppercase;
-        font-size: 1.5rem;
+        font-size: $text-md;
         margin-bottom: 2.75rem;
       }
     }

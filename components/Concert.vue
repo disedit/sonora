@@ -89,7 +89,7 @@ export default {
 .concert {
   display: grid;
   grid-template-columns: 1fr 100px 350px 200px;
-  font-size: 1.5rem;
+  font-size: $text-md;
   gap: 1rem;
   align-items: center;
 

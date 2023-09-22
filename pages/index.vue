@@ -99,7 +99,7 @@ export default {
     margin-left: auto;
     letter-spacing: -0.24px;
     line-height: .8;
-    font-size: 1.5rem;
+    font-size: $text-md;
     margin-top: 7rem;
     padding: 0 $mobile-padding;
   }

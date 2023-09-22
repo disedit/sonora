@@ -124,7 +124,7 @@ export default {
   .sonora-dates {
     line-height: 90%;
     letter-spacing: -0.24px;
-    font-size: 1.5rem;
+    font-size: $text-md;
   }
 
   .logo {
