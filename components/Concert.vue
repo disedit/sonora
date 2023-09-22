@@ -111,16 +111,13 @@ export default {
         height: 75px;
         width: 100px;
         object-fit: cover;
+        flex-shrink: 0;
       }
 
       &:hover {
         text-decoration: underline;
       }
     }
-  }
-
-  &-artist {
-    flex-basis: min-content;
   }
 
   &-date-time {
