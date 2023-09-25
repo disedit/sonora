@@ -24,7 +24,7 @@ export default {
       title: `Programació - ${venue} - Sonora`,
       meta: [
         { property: 'og:image', content: `https://circuitsonora.com/thumbnail.jpg` },
-        { name: 'theme-color', content: '#D0D2D6' }
+        { name: 'theme-color', content: '#FEFDF0' }
       ]
     }
   }

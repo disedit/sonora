@@ -91,7 +91,7 @@ export default {
       title: `${this.artist.name} - Sonora`,
       meta: [
         { property: 'og:image', content: this.image },
-        { name: 'theme-color', content: '#D0D2D6' }
+        { name: 'theme-color', content: '#FEFDF0' }
       ]
     }
   }
