@@ -41,7 +41,7 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  padding: $viewport-y-padding $viewport-x-padding;
+  padding: 0 $viewport-x-padding;
   display: grid;
   grid-template-columns: 190px 1fr 190px;
   align-items: center;
@@ -92,7 +92,7 @@ export default {
     margin-left: auto;
 
     svg {
-      height: 2.75rem;
+      height: 2.25rem;
     }
   }
 

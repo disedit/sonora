@@ -69,7 +69,7 @@ export default {
 
   computed: {
     image () {
-      return this.artist.hasOwnProperty('image')
+      return this.artist.hasOwnProperty('image') && this.artist.image.hasOwnProperty('fields')
         ? this.artist.image.fields.file.url + '?w=2000&h=2000'
         : ''
     }

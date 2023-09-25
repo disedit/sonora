@@ -124,11 +124,11 @@ export default {
   .sonora-dates {
     line-height: 90%;
     letter-spacing: -0.24px;
-    font-size: $text-md;
+    font-size: 1.1rem;
   }
 
   .logo {
-    height: 3rem;
+    height: 2.25rem;
   }
 
   .institutions img {

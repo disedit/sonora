@@ -89,7 +89,7 @@ export default {
     margin: 0;
     padding: 0;
     list-style: none;
-    font-size: $text-lg;
+    font-size: $text-md;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -97,7 +97,7 @@ export default {
 
   .concert {
     display: flex;
-    line-height: 1.1;
+    line-height: 1.2;
     gap: 1rem;
     align-items: center;
 

@@ -43,6 +43,11 @@ class API {
     const { items } = await client.getEntries(query)
     return items
   }
+
+  async getAboutPage () {
+    const page = await client.getEntry(process.env.NUXT_ENV_CTF_ABOUT_ENTRY_ID_2023)
+    return page
+  }
 }
 
 export default ({ app }, inject) => {

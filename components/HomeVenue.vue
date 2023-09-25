@@ -84,10 +84,6 @@ export default {
       display: block;
       text-decoration: none;
 
-      &:hover {
-        text-decoration: underline;
-      }
-
       &:focus-visible {
         outline: 4px $blue solid;
       }

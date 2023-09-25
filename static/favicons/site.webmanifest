@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Sonora",
+    "short_name": "Sonora",
     "icons": [
         {
             "src": "/android-chrome-96x96.png",
@@ -8,7 +8,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#fefdf0",
+    "background_color": "#fefdf0",
     "display": "standalone"
 }

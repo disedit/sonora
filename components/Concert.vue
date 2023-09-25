@@ -3,7 +3,8 @@
     <h3 class="concert-artists">
       <div v-for="({ sys: { id }, fields: artist }) in concert.artists" :key="id" class="concert-artist">
         <nuxt-link :to="`/artistes/${artist.slug}`" class="artist-name">
-          <img v-if="artist.image" :src="`${artist.image.fields.file.url}?w=200&h=200`" alt="">
+          <img v-if="artist.image && artist.image.fields" :src="`${artist.image.fields.file.url}?w=200&h=200`" alt="">
+          <div v-else class="placeholder" />
           {{ artist.name }}
         </nuxt-link>
       </div>
@@ -28,7 +29,7 @@
     </div>
 
     <div class="concert-book">
-      <span v-if="dimmed" class="text reckless">
+      <span v-if="inThePast" class="text reckless">
         Concert realitzat
       </span>
       <a
@@ -114,8 +115,10 @@ export default {
         flex-shrink: 0;
       }
 
-      &:hover {
-        text-decoration: underline;
+      .placeholder {
+        height: 75px;
+        width: 100px;
+        background: gray;
       }
     }
   }
