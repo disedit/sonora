@@ -14,35 +14,36 @@
       </li>
     </ul>
     <img
-      :src="flowers[venue.key]"
+      :src="flower"
+      @load="$emit('loaded', { type: 'flower', key: venue.key })"
       alt=""
       class="venue-flower"
+    >
+    <img
+      :src="gradient"
+      @load="$emit('loaded', { type: 'gradient', key: venue.key })"
+      alt=""
+      class="venue-gradient"
     >
   </section>
 </template>
 
 <script>
-import GuardamarFlower from '@/assets/images/illustrations/guardamar.png'
-import GeldoFlower from '@/assets/images/illustrations/geldo.png'
-import CastelloFlower from '@/assets/images/illustrations/castello.png'
-import AlacantFlower from '@/assets/images/illustrations/alacant.png'
-
 export default {
   props: {
     venue: {
       type: Object,
       required: true
-    }
-  },
+    },
 
-  computed: {
-    flowers () {
-      return {
-        guardamar: GuardamarFlower,
-        geldo: GeldoFlower,
-        castello: CastelloFlower,
-        alacant: AlacantFlower
-      }
+    flower: {
+      type: String,
+      required: true
+    },
+
+    gradient: {
+      type: String,
+      required: true
     }
   }
 }
@@ -50,6 +51,7 @@ export default {
 
 <style lang="scss" scoped>
 .venue {
+  position: relative;
   display: flex;
   flex-direction: column;
   background-size: 100% 100%;
@@ -97,6 +99,19 @@ export default {
     transition: .5s ease-in-out;
   }
 
+  &-gradient {
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+  }
+
   &:hover,
   &:focus-within {
     .venue-artists,
@@ -108,8 +123,6 @@ export default {
 }
 
 .venue-guardamar {
-  background-image: url(../assets/images/gradients/guardamar.jpg);
-
   .venue-flower {
     transform: translateX(-30%);
     width: 120%;
@@ -117,8 +130,6 @@ export default {
 }
 
 .venue-geldo {
-  background-image: url(../assets/images/gradients/geldo.jpg);
-
   .venue-flower {
     transform: translateX(2%);
     width: 120%;
@@ -126,8 +137,6 @@ export default {
 }
 
 .venue-castello {
-  background-image: url(../assets/images/gradients/castello.jpg);
-
   .venue-flower {
     transform: translateX(-5%);
     width: 135%;
@@ -135,8 +144,6 @@ export default {
 }
 
 .venue-alacant {
-  background-image: url(../assets/images/gradients/alacant.jpg);
-
   .venue-flower {
     width: 145%;
   }

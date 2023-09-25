@@ -12,7 +12,6 @@
       <div class="about-content">
         <div class="about-illustrations d-none d-lg-block">
           <img src="../assets/images/illustrations/guardamar.png" alt="" class="about-illustrations-1">
-          <img src="../assets/images/illustrations/alacant.png" alt="" class="about-illustrations-2">
         </div>
         <div v-html="$md.render(page.content)" v-if="page.content" class="about-text" />
       </div>
@@ -70,7 +69,7 @@ export default {
 
   &-text {
     font-size: $text-lg;
-    line-height: 1.2;
+    line-height: 1.25;
 
     p {
       margin-bottom: 1em;
@@ -91,9 +90,9 @@ export default {
     }
 
     &-1 {
-      width: 155%;
+      width: 135%;
       right: 0;
-      top: -10%;
+      top: -30%;
     }
 
     &-2 {

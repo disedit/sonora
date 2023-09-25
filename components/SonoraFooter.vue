@@ -114,6 +114,7 @@ export default {
   gap: 1rem;
   padding: 1.25rem $viewport-x-padding;
   font-size: $text-xs;
+  line-height: 1.25;
 
   &-level {
     display: flex;

@@ -5,6 +5,9 @@
         v-for="venue in venues"
         :key="venue.key"
         :venue="venue"
+        :flower="flowers[venue.key]"
+        :gradient="gradients[venue.key]"
+        @loaded="imageLoaded"
       />
     </div>
     <div class="cover d-lg-none">
@@ -13,11 +16,34 @@
         &mdash; març 24
       </div>
     </div>
+    <transition name="fade">
+      <div v-if="!finishedLoading" class="loader">
+        <transition name="fade">
+          <sonora-logo v-if="showSpinner" class="logo" />
+        </transition>
+      </div>
+    </transition>
   </main>
 </template>
 
 <script>
+import GuardamarFlower from '@/assets/images/illustrations/guardamar.webp'
+import GuardamarGradient from '@/assets/images/gradients/guardamar.jpg'
+import GeldoFlower from '@/assets/images/illustrations/geldo.webp'
+import GeldoGradient from '@/assets/images/gradients/geldo.jpg'
+import CastelloFlower from '@/assets/images/illustrations/castello.webp'
+import CastelloGradient from '@/assets/images/gradients/castello.jpg'
+import AlacantFlower from '@/assets/images/illustrations/alacant.webp'
+import AlacantGradient from '@/assets/images/gradients/alacant.jpg'
+
 export default {
+  data () {
+    return {
+      loaded: [],
+      finishedLoading: false,
+      showSpinner: false
+    }
+  },
   computed: {
     venues () {
       return [
@@ -42,6 +68,30 @@ export default {
           artists: this.getArtists('alacant')
         }
       ]
+    },
+    flowers () {
+      return {
+        guardamar: GuardamarFlower,
+        geldo: GeldoFlower,
+        castello: CastelloFlower,
+        alacant: AlacantFlower
+      }
+    },
+    gradients () {
+      return {
+        guardamar: GuardamarGradient,
+        geldo: GeldoGradient,
+        castello: CastelloGradient,
+        alacant: AlacantGradient
+      }
+    }
+  },
+
+  watch: {
+    loaded (loaded) {
+      if (loaded.length >= 8) {
+        this.finishedLoading = true
+      }
     }
   },
 
@@ -50,10 +100,18 @@ export default {
     return { artists }
   },
 
+  mounted () {
+    setTimeout(() => { this.showSpinner = true }, 1000)
+  },
+
   methods: {
     getArtists (venue) {
       return this.artists.filter(artist => artist.fields.venue === venue)
         .map(artist => ({ name: artist.fields.name, slug: artist.fields.slug }))
+    },
+
+    imageLoaded (image) {
+      this.loaded.push(image)
     }
   },
 
@@ -61,6 +119,16 @@ export default {
     return {
       meta: [
         { name: 'theme-color', content: `#5d589d` }
+      ],
+      link: [
+        { rel: 'preload', href: GuardamarFlower, as: 'image' },
+        { rel: 'preload', href: GuardamarGradient, as: 'image' },
+        { rel: 'preload', href: GeldoFlower, as: 'image' },
+        { rel: 'preload', href: GeldoGradient, as: 'image' },
+        { rel: 'preload', href: CastelloFlower, as: 'image' },
+        { rel: 'preload', href: CastelloGradient, as: 'image' },
+        { rel: 'preload', href: AlacantFlower, as: 'image' },
+        { rel: 'preload', href: AlacantGradient, as: 'image' }
       ]
     }
   }
@@ -102,6 +170,19 @@ export default {
     font-size: $text-md;
     margin-top: 7rem;
     padding: 0 $mobile-padding;
+  }
+}
+
+.loader {
+  position: fixed;
+  background-color: $white;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-content: center;
+
+  .logo {
+    height: 8rem;
   }
 }
 

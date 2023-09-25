@@ -89,9 +89,9 @@ export default {
 <style lang="scss" scoped>
 .concert {
   display: grid;
-  grid-template-columns: 1fr 100px 350px 200px;
+  grid-template-columns: 1fr minmax(100px, .2fr) minmax(250px, .4fr) 240px;
   font-size: $text-md;
-  gap: 1rem;
+  gap: 1.5rem;
   align-items: center;
 
   &-artists {
@@ -106,6 +106,8 @@ export default {
       font-size: 2.3rem;
       text-decoration: none;
       line-height: .9;
+      height: 75px;
+      overflow: hidden;
 
       img {
         display: block;
@@ -119,6 +121,7 @@ export default {
         height: 75px;
         width: 100px;
         background: gray;
+        flex-shrink: 0;
       }
     }
   }
