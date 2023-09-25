@@ -11,7 +11,7 @@
         :class="['artist', `artist-${artist.slug}`, `venue-${artist.venue}`]"
       >
         <div class="artist-image">
-          <img v-if="artist.image" :alt="artist.name" :src="artist.image.fields.file.url">
+          <img v-if="artist.image" :alt="artist.name" :src="`${artist.image.fields.file.url}?w=800&h=800`">
           <div v-else class="placeholder" />
           <span class="hover reckless">{{ artist.hover }}</span>
         </div>

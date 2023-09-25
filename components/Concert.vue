@@ -3,7 +3,7 @@
     <h3 class="concert-artists">
       <div v-for="({ sys: { id }, fields: artist }) in concert.artists" :key="id" class="concert-artist">
         <nuxt-link :to="`/artistes/${artist.slug}`" class="artist-name">
-          <img v-if="artist.image" :src="artist.image.fields.file.url" alt="">
+          <img v-if="artist.image" :src="`${artist.image.fields.file.url}?w=200&h=200`" alt="">
           {{ artist.name }}
         </nuxt-link>
       </div>
