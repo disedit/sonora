@@ -151,7 +151,7 @@ export default {
   height: 100vh;
   height: 100dvh;
   background-image:
-    url(../assets/images/illustrations/home.png),
+    url(../assets/images/illustrations/home.webp),
     url(../assets/images/gradients/castello.jpg);
   background-size: 100%, 100% 100%;
   background-repeat: no-repeat, no-repeat;

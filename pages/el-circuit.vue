@@ -11,13 +11,13 @@
 
       <div class="about-content">
         <div class="about-illustrations d-none d-lg-block">
-          <img src="../assets/images/illustrations/guardamar.png" alt="" class="about-illustrations-1">
+          <img src="../assets/images/illustrations/guardamar.webp" alt="" class="about-illustrations-1">
         </div>
         <div v-html="$md.render(page.content)" v-if="page.content" class="about-text" />
       </div>
     </div>
     <div class="about-illustration d-lg-none">
-      <img src="../assets/images/illustrations/home.png" alt="" class="about-illustration-0">
+      <img src="../assets/images/illustrations/home.webp" alt="" class="about-illustration-0">
     </div>
   </main>
 </template>

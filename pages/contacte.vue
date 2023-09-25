@@ -41,8 +41,8 @@
         </div>
       </div>
       <div class="contact-illustrations d-none d-lg-block">
-        <img src="../assets/images/illustrations/geldo.png" class="contact-illustrations-1" alt="">
-        <img src="../assets/images/illustrations/castello.png" class="contact-illustrations-2" alt="">
+        <img src="../assets/images/illustrations/geldo.webp" class="contact-illustrations-1" alt="">
+        <img src="../assets/images/illustrations/castello.webp" class="contact-illustrations-2" alt="">
       </div>
     </div>
   </div>
