@@ -128,6 +128,7 @@ export default {
       width: 100%;
       max-width: 800px;
       line-height: 1.2;
+      border-radius: 0;
 
       &:focus {
         outline: 0;

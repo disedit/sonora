@@ -123,6 +123,10 @@ export default {
         background: gray;
         flex-shrink: 0;
       }
+
+      &:focus-visible {
+        outline: 4px $black solid;
+      }
     }
   }
 
@@ -156,7 +160,8 @@ export default {
 
 @include media-breakpoint-up(lg) {
   .concert {
-    &:hover {
+    &:hover,
+    &:focus-within {
       background: var(--venue-color);
     }
   }

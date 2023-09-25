@@ -60,6 +60,10 @@ export default {
         text-decoration: underline;
       }
 
+      &:focus-visible {
+        outline: 4px $blue solid;
+      }
+
       &.nuxt-link-exact-active {
         text-decoration: underline;
       }
