@@ -56,6 +56,14 @@ $mobile-padding: 1.15rem;
 // links
 $link-color: $black;
 
+// reckless
+@mixin reckless {
+  font-family: $font-family-serif;
+  font-style: italic;
+  font-feature-settings: "ss01", "ss04", "ss11", "liga" 0, "dlig" 0;
+  letter-spacing: -0.045rem;
+}
+
 @import '~bootstrap/scss/_functions';
 @import '~bootstrap/scss/_variables';
 @import '~bootstrap/scss/_mixins';

@@ -186,6 +186,8 @@ export default {
   }
 
   .footer-logos {
+    text-align: center;
+
     img {
       max-height: 3.5rem;
       width: auto;

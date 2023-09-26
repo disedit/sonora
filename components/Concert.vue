@@ -29,7 +29,7 @@
     </div>
 
     <div class="concert-book">
-      <span v-if="inThePast" class="text reckless">
+      <span v-if="inThePast" class="text">
         Concert realitzat
       </span>
       <a
@@ -41,7 +41,7 @@
       >
         Entrades
       </a>
-      <span v-else class="text reckless">
+      <span v-else class="text">
         {{ concert.text || 'Entrades properament' }}
       </span>
     </div>
@@ -164,6 +164,12 @@ export default {
     &:focus-within {
       background: var(--venue-color);
     }
+
+    &-book {
+      .text {
+        text-transform: uppercase;
+      }
+    }
   }
 }
 
@@ -172,11 +178,14 @@ export default {
     grid-template-columns: 1fr;
     padding: $mobile-padding;
     font-size: 1.25rem;
+    gap: .75rem;
 
     &-artists {
       flex-direction: column;
 
       .artist-name {
+        height: auto;
+
         img {
           display: none;
         }
@@ -189,6 +198,7 @@ export default {
       .text {
         display: block;
         margin-top: 1rem;
+        @include reckless;
       }
     }
 

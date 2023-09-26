@@ -13,7 +13,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'L’Institut Valencià de Cultura presenta la segona edició de Sonora, el circuit de concerts que porta als grups guanyadors i finalistes dels Premis Carles Santos de la Música Valenciana per tot el nostre territori.' },
+      { hid: 'description', name: 'description', content: 'Del setembre de 2023 al març de 2024, la música ens farà viatjar de nou des de Guardamar del Segura, a Geldo, Alacant i Castelló, amb 14 concerts de tots els estils musicals a sis espais diferents.' },
       { name: 'msapplication-TileColor', content: '#715db7' }
     ],
     link: [

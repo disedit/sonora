@@ -14,7 +14,9 @@
       <artist-concerts :concerts="concerts" :context="artist" />
     </section>
 
-    <section :style="{ backgroundImage: `url(${image})` }" class="artist-image" />
+    <section :class="['artist-image', { loaded: imageLoaded }]">
+      <img :src="image" @load="imageLoaded = true" alt="">
+    </section>
 
     <section class="artist-socials">
       <ul aria-label="Xarxes socials">
@@ -66,6 +68,11 @@
 
 <script>
 export default {
+  data () {
+    return {
+      imageLoaded: false
+    }
+  },
 
   computed: {
     image () {
@@ -132,7 +139,6 @@ export default {
       font-weight: 300;
       letter-spacing: -.05em;
       line-height: 1;
-      margin-top: .1em;
     }
 
     &-concerts {
@@ -143,8 +149,21 @@ export default {
 
     &-image {
       grid-area: image;
-      background-size: cover;
-      background-position: center;
+      display: flex;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: .25s ease;
+        opacity: 0;
+      }
+
+      &.loaded img {
+        opacity: 1;
+      }
     }
 
     &-socials {

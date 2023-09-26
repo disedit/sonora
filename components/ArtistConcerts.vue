@@ -109,6 +109,11 @@ export default {
       margin-left: auto;
 
       .sonora-button {
+        &:hover {
+          background-color: $white;
+          color: $black;
+        }
+
         &:focus-visible {
           outline: 3px $white solid;
         }
