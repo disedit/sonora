@@ -76,8 +76,12 @@ export default {
     navShown (shown) {
       if (shown) {
         document.documentElement.classList.add('nav-shown')
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#FEFDF0')
       } else {
         document.documentElement.classList.remove('nav-shown')
+        if (this.$route.name === 'index') {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#715DB7')
+        }
       }
     }
   },
