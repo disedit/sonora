@@ -11,7 +11,7 @@
           {{ !navShown ? 'Obrir menú' : 'Tancar menú' }}
         </span>
       </button>
-      <transition name="slide">
+      <transition name="menu-slide">
         <div v-if="$route.name === 'index' || navShown" class="sonora-title">
           Circuit de la<br>
           Música Valenciana
@@ -19,35 +19,41 @@
       </transition>
     </div>
 
-    <div id="navMenu" class="menu">
-      <ul class="menu-items">
-        <li>
-          <nuxt-link to="/artistes">
-            Artistes
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/programa">
-            Programa
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/el-circuit">
-            El circuit
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/contacte">
-            Contacte
-          </nuxt-link>
-        </li>
-        <li class="footer-logos">
-          <a href="https://ivc.gva.es" target="_blank" rel="noopener noreferer">
-            <img src="../assets/images/logos/generalitat.svg" alt="Generalitat Valenciana. Vicepresidència Primera i Conselleria de Cultura i Esport. Institut Valencià de Cultura">
-          </a>
-        </li>
-      </ul>
-    </div>
+    <transition :delay="2" name="menu">
+      <div id="navMenu" v-if="navShown" class="menu">
+        <ul class="menu-items">
+          <li>
+            <nuxt-link to="/artistes">
+              Artistes
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/programa">
+              Programa
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/el-circuit">
+              El circuit
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/contacte">
+              Contacte
+            </nuxt-link>
+          </li>
+          <li class="footer-logos">
+            <a href="https://ivc.gva.es" target="_blank" rel="noopener noreferer">
+              <img src="../assets/images/logos/generalitat.svg" alt="Generalitat Valenciana. Vicepresidència Primera i Conselleria de Cultura i Esport. Institut Valencià de Cultura">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </transition>
+
+    <transition name="menu-fade">
+      <div v-if="navShown" class="backdrop" />
+    </transition>
   </nav>
 </template>
 
@@ -134,16 +140,13 @@ export default {
   }
 
   .menu {
-    visibility: hidden;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     overflow-y: auto;
-    opacity: 0;
     z-index: 1000;
-    transition: visibility 0s linear .25s, opacity .25s ease, transform .25s ease;
     background: $body-bg;
     padding: $mobile-padding;
     padding-top: 8rem;
@@ -170,19 +173,20 @@ export default {
     }
   }
 
-  .shown {
-    .menu {
-      visibility: visible;
-      opacity: 1;
-      transition-delay: 0s;
-      transform: translateY(0);
-    }
-  }
-
   .scrolled {
     .sonora-navbar {
       background: $white;
     }
+  }
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    background: $body-bg;
   }
 
   .footer-logos {
@@ -196,6 +200,7 @@ export default {
     }
   }
 
+  /* Transitions */
   .slide-enter-active,
   .slide-leave-active {
     transition: all .25s;
@@ -205,5 +210,46 @@ export default {
   .slide-leave-to {
     opacity: 0;
     transform: translateY(-20%);
+  }
+
+  .menu-enter-active,
+  .menu-leave-active {
+    transition: all .35s ease-in-out;
+  }
+
+  .menu-enter-active {
+    transition-delay: .3s;
+  }
+
+  .menu-enter,
+  .menu-leave-to {
+    opacity: 0;
+  }
+
+  .menu-slide-enter-active,
+  .menu-slide-leave-active {
+    transition: all .4s;
+  }
+
+  .menu-slide-enter-active {
+    transition-delay: .25s;
+  }
+
+  .menu-slide-enter,
+  .menu-slide-leave-to {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+
+  .menu-fade-enter-active, .menu-fade-leave-active {
+    transition: opacity .5s;
+  }
+
+  .menu-fade-leave-active {
+    transition-delay: .25s;
+  }
+
+  .menu-fade-enter, .menu-fade-leave-to {
+    opacity: 0;
   }
 </style>
