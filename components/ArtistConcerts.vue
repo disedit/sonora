@@ -21,13 +21,13 @@
       </div>
 
       <div class="concert-book">
-        <span v-if="inThePast(concert.date)" class="text reckless">
+        <span v-if="inThePast(concert.date)" class="text">
           Concert realitzat
         </span>
         <a v-else-if="concert.tickets_url" :href="concert.tickets_url" class="sonora-button" target="_blank" rel="noopener noreferer">
           Entrades
         </a>
-        <span v-else class="text reckless">
+        <span v-else class="text">
           {{ concert.text || 'Entrades properament' }}
         </span>
       </div>
@@ -121,6 +121,18 @@ export default {
     }
   }
 
+  @include media-breakpoint-up(lg) {
+    .concert {
+      &-book {
+        text-align: right;
+
+        .text {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
   @include media-breakpoint-down(lg) {
     .concert {
       align-items: flex-start;
@@ -130,6 +142,10 @@ export default {
       &-book {
         margin: .5rem 0;
         width: 100%;
+
+        .text {
+          @include reckless;
+        }
 
         .sonora-button {
           display: block;

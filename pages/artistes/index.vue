@@ -116,6 +116,7 @@ export default {
     .artists {
       margin-top: $mobile-nav;
       padding: 0 $mobile-padding;
+      margin-bottom: 4rem;
 
       &-title {
         text-transform: uppercase;
